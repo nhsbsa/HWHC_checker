@@ -1,0 +1,26 @@
+<div class="item {% block css-class %}{% endblock %}" id="{% block id %}{% endblock %}">
+  <div class="item-content">
+    <div class="item-header">
+      <span class="item-heading">
+        {% block heading %}{% endblock %}
+      </span>
+      <div class="item-leadin">
+        {% block leadin %}{% endblock %}
+      </div>
+      <div class="item-leadin-cta">
+        {% block leadin-cta %}{% endblock %}
+      </div>
+      <a href="#" class="item-collapse-link">
+        Show more
+      </a>
+    </div>
+
+    <div class="item-body item-body-collapsed">
+      {% block body %}{% endblock %}
+      <div class="item-collapse">
+	       <a href="#" class="item-collapse-link" tabindex="0">Show less</a>
+      </div>
+    </div>
+  </div>
+  <div class="shadow"></div>
+</div>

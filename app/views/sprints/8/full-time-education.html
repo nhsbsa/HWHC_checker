@@ -1,0 +1,64 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+         <!--3- Are you in full time education?-->
+    <h2 class="heading-large">Are you in full time education or on an apprenticeship?</h2>
+
+    <form action="eligibility-handler" method="get" class="form">
+
+    <div class="form-item-wrapper">
+      <div class="form-group">
+        <input type="radio" id="fte" name="eligibility-fte">
+        <label class="form-control-radio" for="fte">
+          Full time education
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="radio" id="apprenticeship" name="eligibility-fte">
+        <label class="form-control-radio" for="apprenticeship">
+          Apprenticeship
+        </label>
+      </div>
+      <p>or</p>
+      <div class="form-group">
+        <input type="radio" id="none" name="eligibility-fte">
+        <label class="form-control-radio" for="none">
+         No, I'm not in either
+        </label>
+      </div>
+      </div>
+
+
+    {{
+      form_macros.button({
+        label: 'Next'
+      })
+    }}
+
+  </form>
+      </div>
+    </div>
+
+</main>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+

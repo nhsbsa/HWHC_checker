@@ -1,0 +1,59 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+
+{% block afterHeader %}
+  <div class="service-header">
+    <div class="service-name">
+      Your planner for type 2 diabetes
+    </div>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <main id="content" class="planner" role="main">
+    <section>
+      <div class="js-cards items-container">
+        {% for card in cards.past %}
+          {% set template = 'planner/cards/' + card + '.html' %}
+          {% include template %}
+        {% endfor %}
+      </div>
+    </section>
+
+    <section>
+      <header>
+        <h2>Things to do now</h2>
+      </header>
+
+      <div class="js-cards items-container">
+        {% for card in cards.present %}
+          {% set template = 'planner/cards/' + card + '.html' %}
+          {% include template %}
+        {% endfor %}
+
+        {% if !cards.present.length %}
+          <p>You’re all done for now. You’ll get a text message when you need
+          to book another appointment or pick up your medication.</p>
+
+          <p>
+            There’s information about
+            <a href="/type-2-diabetes/information-and-support-type-2-diabetes">understanding
+            diabetes, education courses and support groups</a>.
+          </p>
+        {% endif %}
+      </div>
+    </section>
+
+    <section>
+      <header>
+        <h2>Appointments and reminders</h2>
+      </header>
+
+      <div class="js-cards items-container">
+        {% for card in cards.future %}
+          {% set template = 'planner/cards/' + card + '.html' %}
+          {% include template %}
+        {% endfor %}
+      </div>
+    </section>
+  </main>
+{% endblock %}

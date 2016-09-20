@@ -1,0 +1,43 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+        <h1 class="heading-large">Children under 16</h1>
+
+        <p class="intro-to-list">
+          You already get free:
+        </p>
+        <ul class="list list-bullet">
+          <li>NHS prescriptions </li>
+          <li>NHS dental treatment for any course of treatment that starts before your 18th birthday</li>
+          <li>NHS sight tests</li>
+          <li>NHS wigs and fabric supports</li>
+        </ul>
+
+                <p class="intro-to-list">
+          You'll also:
+        </p>
+        <ul class="list list-bullet">
+          <li>Get help towards the cost of glasses or contact lenses</li>
+          <li>May get help towards the cost of repair or replacement of glasses or contact lenses</li>
+          <li>May get help with travel costs for NHS treatment</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

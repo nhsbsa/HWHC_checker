@@ -1,0 +1,31 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+  <h1 class="heading-large">
+      Help with health costs if you are on a low income
+  </h1>
+
+ <p>If you have difficulty in meeting your health costs and do not qualify for any other kind of help, you may be able to get help under the NHS low income scheme.</p>
+
+  <form action="eligibility-handler" method="get" class="form">
+        <p>
+          <a class="button button-get-started" href="../care-home" id="next">Start a new application</a>
+        </p>
+
+  </form>
+    </div>
+    </div>
+</main>
+
+{% endblock %}

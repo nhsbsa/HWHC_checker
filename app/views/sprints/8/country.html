@@ -1,0 +1,129 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
+{% endblock %}
+
+{% block content %}
+
+<style>
+
+    .right-col-details{
+        margin-top: 1em}
+
+    .right-col-details div:first-child {
+    border-bottom: 7px solid #0072C6;
+        padding-bottom: 0px;}
+
+</style>
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+   <!--1B- lives in the UK-->
+    <h2 class="heading-large">Which country do you live in?</h2>
+    
+  <form action="care-home-handler" method="get" class="form">
+
+
+    <div class="form-item-wrapper">
+             <fieldset>
+      <div class="form-group">
+        <input type="radio" id="england" name="carehome" value="england">
+        <label class="form-control-radio" for="england">
+          England
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="radio" id="scotland" name="carehome" value="scotland">
+        <label class="form-control-radio" for="scotland">
+          Scotland
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="radio" id="wales" name="carehome" value="wales">
+        <label class="form-control-radio" for="wales">
+          Wales
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="radio" id="ni" name="carehome" value="ni">
+        <label class="form-control-radio" for="ni">
+          Northern Ireland
+        </label>
+      </div>
+              <fieldset>
+      </div>
+
+
+    {{
+      form_macros.button({
+        label: 'Next',
+        href : "date-of-birth"
+      })
+    }}
+
+  </form>
+      </div>
+
+
+<!-- help received-->
+<!--
+        <div class="column-third">
+         <div class="right-col-details">
+
+         <div>
+          <h3 class="heading-medium" style="margin-bottom:0em">You get free:</h3>
+         </div>
+
+          <div class="info-panel prescription" id="prescription" style="margin-top:1em">
+             <p class="lede" style="font-weight:bold; margin:0 0 0 0; padding-left:1.2em;">Prescriptions</p>
+          </div>
+
+          <div class="info-panel dental-exam" id="dental-exam">
+             <p class="lede" style="font-weight:bold; margin:0 0 0 0; padding-left:1.2em;">NHS dental exam</p>
+          </div>
+
+        <div>
+          <h3 class="heading-medium" style="margin-bottom:0em; border-bottom: 7px solid #0072C6;">You do not get free:</h3>
+         </div>
+
+           <div class="info-panel-negative dental" id="dental-treatment" style="margin-top:1em">
+             <p class="lede" style="font-weight:bold; margin:0 0 0 0; padding-left:1.2em;">NHS dental treatment</p>
+          </div>
+
+           <div class="info-panel-negative sight-test" id="sight-test">
+             <p class="lede" style="font-weight:bold; margin:0 0 0 0; padding-left:1.2em;">Sight tests</p>
+          </div>
+
+           <div class="info-panel-negative glasses" id="glasses">
+             <p class="lede" style="font-weight:bold; margin:0 0 0 0;padding-left:1.2em;">Glasses or contact lenses</p>
+          </div>
+
+           <div class="info-panel-negative wigs" id="wigs">
+             <p class="lede" style="font-weight:bold; margin:0 0 0 0; padding-left:1.2em;">NHS wigs</p>
+          </div>
+
+
+           <div class="info-panel-negative travel" id="travel">
+             <p class="lede" style="font-weight:bold; margin:0 0 0 0; padding-left:1.2em;">Travel costs</p>
+          </div>
+
+    </div>
+    </div>
+-->
+    </div>
+
+</main>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+

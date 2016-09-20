@@ -1,0 +1,45 @@
+{% extends 'templates/planner_card.html' %}
+
+{% block id %}test-results{% endblock %}
+
+{% block heading %}
+  Your latest blood sugar test results
+{% endblock %}
+
+{% block body %}
+  <div class="test-results">
+    <div class="primary">
+      Result from 27 August 2015
+      <div class="result">55<span>mmol/mol</span></div>
+    </div>
+    <div class="secondary">
+      Target for 27 August 2015
+      <div class="result">48<span>mmol/mol</span></div>
+    </div>
+    <div>
+      <a href="javascript:void(0)">Learn more about your blood sugar test result</a>
+    </div>
+  </div>
+
+  <div class="item-body-content">
+    <h2>What you can do now</h2>
+
+    <p>As discussed with your GP you should:</p>
+
+    <ul class="list-bullet">
+      <li>continue to take 500mg metformin a day</li>
+      <li>
+        <a href="/type-2-diabetes/diet">
+          cut down of fatty and sugary foods you eat
+        </a>
+      </li>
+      <li>
+        <a href="/type-2-diabetes/diet">increase the time you’re active each
+        week</a> by 20 minutes
+      </li>
+    </ul>
+
+    <p><a href="javascript:void(0)">See older test results</a></p>
+  </div>
+
+{% endblock %}

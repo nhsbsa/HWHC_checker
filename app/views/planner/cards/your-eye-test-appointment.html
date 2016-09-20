@@ -1,0 +1,55 @@
+{% extends 'templates/planner_card.html' %}
+{% import 'includes/ui_element_macros.html' as ui_element_macros %}
+
+{% block id %}your-eye-test-appointment{% endblock %}
+
+{% block heading %}
+  Your diabetes eye check<br>
+  <span style="font-weight: normal;">
+    {{ booked_eye_test.appointment_date }} at {{ booked_eye_test.appointment_time }}
+  </span>
+{% endblock %}
+
+{% block leadin %}
+  <div class="item-leadin-content">
+    You shouldn’t drive for 2 hours after the eye check.
+  </div>
+{% endblock %}
+
+{% block body %}
+  <div class="item-body-content">
+    {{
+      ui_element_macros.appointment_summary({
+        appointment_date: booked_eye_test.appointment_date,
+        appointment_time: booked_eye_test.appointment_time,
+        appointment_days_away: booked_eye_test.appointment_days_away,
+        avatar_img_path: '/public/images/' + booked_eye_test.practitioner.photo,
+        name: booked_eye_test.practitioner.name,
+        position: booked_eye_test.practitioner.role,
+        gender: booked_eye_test.practitioner.gender,
+        appointment_length: booked_eye_test.appointment_length,
+        appointment_type: booked_eye_test.appointment_type,
+        appointment_type_class: booked_eye_test.appointment_type_class,
+        address: booked_eye_test.address.join('<br>'),
+        tools: 'true'
+      })
+    }}
+
+    <p><strong>Prepare for your appointment:</strong></p>
+
+    <ul class="list-bullet">
+      <li>wear your glasses or contact lenses</li>
+      <li>bring sunglasses (the drops can make your eyes sensitive to light)</li>
+    </ul>
+
+    <details>
+      <summary>What’s a diabetes eye check?</summary>
+      <div>
+        <p>Diabetes can damage your blood vessels which can cause sight problems
+        (diabetic retinopathy) and blindness. Eye checks can detect damage before
+        you notice changes to your sight. Treating damaged blood vessels early can
+        stop them affecting your sight.</p>
+      </div>
+    </details>
+  </div>
+{% endblock %}

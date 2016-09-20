@@ -1,0 +1,263 @@
+@import '../typography/variables';
+@import '../typography/modular-scale';
+@import '../typography/mixins';
+
+// Panels
+// ==========================================================================
+
+// Indented panels with a grey left hand border
+.panel-indent {
+  @extend %contain-floats;
+  clear: both;
+  border-left: 6px solid $nhs-grey-4;
+  padding: 0 1rem 2rem 1rem;
+}
+
+.panel-indent legend {
+  margin-top: 0;
+}
+
+// Remove bottom margin on last paragraph
+.panel-indent p:only-child,
+.panel-indent p:last-child {
+  margin-bottom: 0;
+}
+
+.panel-indent .form-group:last-child {
+  margin-bottom: 0;
+}
+
+// NHS Panels
+// ==========================================================================
+
+// Content callout
+.callout-box {
+  font-weight: bold;
+  padding: 1px 18px;
+  margin: 24px 0;
+  background-color: tint($nhs-yellow, 80);
+  border-left: 3px solid $nhs-yellow;
+}
+
+// Appointment option links
+.appointment-option {
+
+  //max-width: 600px;
+
+  .button-secondary-cta {
+    @include fontsize(16, all);
+  }
+}
+
+.appointment-distance {
+  color: $white;
+  font-weight: bold;
+  padding: 0.75rem 2rem;
+  background-color: $nhs-black;
+}
+
+.appointment-time {
+  margin-top: 2px;
+  padding: 0.75rem 2rem;
+  background-color: tint($nhs-blue, 75);
+  border-top: 2px solid tint($nhs-blue, 50);
+}
+
+.appointment-location {
+  margin-top: 2px;
+  padding: 0.5rem 2rem;
+  background-color: tint($nhs-blue, 90);
+
+  @extend %contain-floats;
+
+  .appointment-address {
+    float: left;
+    @include fontsize(14, all);
+  }
+
+  .appointment-map-link {
+    float: right;
+    @include fontsize(14, all);
+  }
+}
+
+.appointment-telephone-alert {
+  @include fontsize(14, all);
+  padding: 0.5rem 2rem 0.5rem 4rem;
+  background: url('/public/images/icon-telephone.svg') no-repeat 2rem center tint($nhs-yellow, 75);
+  background-size: auto 16px;
+}
+
+.appointment-details {
+  padding: 1rem 2rem;
+
+  @extend %contain-floats;
+
+  .mugshot {
+    float: left;
+    width: 60px;
+    height: 60px;
+    margin-right: 18px;
+
+    & > img {
+      max-width: 100%;
+    }
+  }
+
+  .details {
+    float: left;
+  }
+
+  .practioner-name {
+    font-weight: bold;
+  }
+  .practioner-details,
+  .appointment-type {
+    @include fontsize(16, all);
+    line-height: 1.2
+  }
+
+  .cta {
+    clear: both;
+    padding-top: 0.75rem;
+    margin: 0 -2rem;
+
+    @include breakpoint(break-1) {
+      clear: none;
+      float: right;
+      margin: 0;
+    }
+  }
+}
+
+// Appointment summary panels
+.appointment-summary {
+  margin-bottom: 2rem;
+  //padding: 1rem 0 0 1rem;
+  //border-left: 5px solid rgba($nhs-grey-4, 1);
+
+  .details {
+    float: left;
+    width: 80%;
+    @include breakpoint(break-1) {
+      //width: auto;
+    }
+  }
+
+  .mugshot {
+    float: left;
+    width: 15%;
+    margin-right: 5%;
+    @include breakpoint(break-1) {
+      max-width: 8rem;
+      margin-right: 2rem;
+    }
+  }
+  img {
+    max-width: none;
+    width: 100%;
+    border-radius: 100%;
+    box-shadow: 0px 0px 2px 0px rgba($nhs-black,0.5);
+  }
+
+  h3 {
+    @include sassline($fontsize: medium, $font: $bodytype, $lineheight: 2, $below: 1, $breakpoint: all);
+  }
+}
+
+// Practitioner link panels
+.practioner-link {
+  display: block;
+  padding: 0.85rem 1rem 1rem 1rem;
+  margin-bottom: 2rem;
+  box-shadow: inset 0px 0px 0px 1px rgba($nhs-blue, 0.2);
+  border-left: 5px solid rgba($nhs-blue, 0.2);
+
+  transition: background-color 0.2s ease-out;
+
+  @include breakpoint(break-1) {
+    float: left;
+    clear: both;
+  }
+
+  .details {
+    float: left;
+    width: 80%;
+    @include breakpoint(break-1) {
+      width: auto;
+    }
+  }
+
+  .mugshot {
+    float: left;
+    width: 15%;
+    margin-right: 5%;
+    @include breakpoint(break-1) {
+      width: 5rem;
+      height: 5rem;
+      margin-right: 1rem;
+    }
+  }
+  img {
+    max-width: none;
+    width: 100%;
+    border-radius: 100%;
+    box-shadow: 0px 0px 2px 0px rgba($nhs-black,0.5);
+  }
+
+  h3 {
+    @include sassline($fontsize: small, $font: $bodytype, $lineheight: 2, $below: 0, $breakpoint: all);
+    color: $nhs-blue;
+    text-decoration: underline;
+  }
+}
+
+// Shared styles
+/*.appointment-option,
+.appointment-option:link,
+.appointment-option:active,
+.appointment-option:hover,
+.appointment-option:visited,
+.practioner-link,
+.practioner-link:link,
+.practioner-link:active,
+.practioner-link:hover,
+.practioner-link:visited {
+  color: $nhs-black;
+  text-decoration: none;
+}
+
+.appointment-option:hover,
+.appointment-option:focus,
+.practioner-link:hover,
+.practioner-link:focus {
+  background-color: rgba($nhs-blue, 0.1);
+}
+
+.appointment-option,
+.appointment-summary,
+.practioner-link {
+
+  max-width: 50rem;
+
+  @extend %contain-floats;
+
+  p {
+    @include sassline($fontsize: small, $font: $bodytype, $lineheight: 2, $below: 1, $breakpoint: all);
+  }
+
+  .appointment-type {
+    min-height: 2rem;
+    padding-left: 3rem;
+    &.telephone {
+      background: url('/public/images/icon-telephone.svg') no-repeat left 0.5rem;
+    }
+    &.face-to-face {
+      background: url('/public/images/icon-face-to-face.svg') no-repeat left 0.5rem;
+    }
+  }
+
+  .appointment-address {
+    @include fontsize(16, all);
+  }
+}*/

@@ -1,0 +1,48 @@
+// Proposed amends and additions to the GOV.UK Elements
+
+
+// ======================================================
+// _forms.scss
+
+// Fix full-width buttons on mobile.
+// At the moment the right edge sticks out.
+
+.button {
+  @include media(mobile) {
+    box-sizing: border-box
+  }
+}
+
+
+// Make bold form labels the same as non-bold ones
+/*.form-label-bold {
+  @include bold-19;
+  margin-bottom: 5px;
+}*/
+
+
+// In Webkit, the bottom margin of a legend and the top margin
+// of the next element don't overlap, which they should. This
+// addresses that by ignoring the top margin of the next element
+
+legend + * {
+    -webkit-margin-top-collapse : discard;
+}
+
+
+// Set textarea to block so Chrome and FF don't add a funny little bottom margin
+textarea{
+  display: block
+}
+
+
+
+
+// ======================================================
+// _panels.scss
+
+
+
+
+// ======================================================
+// _typography.scss

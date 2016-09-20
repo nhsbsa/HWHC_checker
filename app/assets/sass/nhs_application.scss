@@ -1,0 +1,225 @@
+// Add "tint" and "shade" mixins
+
+// Add percentage of white to a color
+@function tint($color, $percent){
+  @return mix(white, $color, $percent);
+}
+
+// Add percentage of black to a color
+@function shade($color, $percent){
+  @return mix(black, $color, $percent);
+}
+
+// Import GOV.UK frontend toolkit
+@import "colours";
+@import "device-pixels";
+@import "measurements";
+@import "conditionals";
+@import "shims";
+//@import "typography";
+@import "grid_layout";
+@import "css3";
+@import "design-patterns/buttons";
+
+// Import GOV.UK elements
+
+@import "elements/helpers";
+@import "elements/reset";
+//@import "elements/typography";
+@import "elements/layout";
+@import "elements/forms";
+@import "elements/tables";
+@import "elements/buttons";
+@import "elements/details";
+//@import "elements/lists";
+@import "elements/panels";
+@import "elements/icons";
+@import "elements/utilities";
+@import "elements/cards";
+
+
+// Import modules
+
+@import "modules/shame";
+@import "modules/for-elements";
+@import "modules/form-navigation";
+@import "modules/other-specify";
+@import "modules/radios-and-checkboxes";
+//@import "modules/auto-suggest";
+@import "modules/select-boxes";
+@import "modules/guide_navigation";
+@import "modules/page_meta";
+@import "modules/breadcrumbs";
+
+// NHS.UK Template
+
+@import "modules/nhs-template";
+
+// NHS "Sassline" based typography
+@import "typography/variables";
+@import "typography/modular-scale";
+@import "typography/mixins";
+@import "typography/typography";
+
+// Default content stuff
+
+.markdown-content {
+  h1 { @extend .heading-large; }
+  h2 { @extend .heading-medium; }
+  h3 { @extend .heading-small; }
+
+  ul { @extend .list-bullet; }
+  ol { @extend .list-number; }
+}
+
+// Prototype warning banner
+@import "modules/prototype-warning";
+
+
+// My styles
+
+blockquote {
+font-size: 24px;
+margin: 0.25em 0;
+padding: 0.25em 40px;
+line-height: 1.45;
+position: relative;
+color: #383838;
+}
+
+    @media screen and (max-width: 480px) {
+    blockquote {
+        font-size: 18px;
+    }
+}
+    
+blockquote:before {
+font-family: Georgia, serif;
+font-size: 18px;
+font-style: italic;
+display: block;
+content: "\201C";
+font-size: 80px;
+position: absolute;
+left: -20px;
+top: -20px;
+color: #7a7a7a;
+}
+
+
+.info-panel {
+  padding: 20px 20px 20px 60px;
+  font-weight: bold;
+  background: #0072C6;
+  text-align: left;
+  color: white;
+  margin-bottom: 5px;}
+
+.info-panel-negative {
+  padding: 20px 20px 20px 60px;
+  font-weight: bold;
+  background: #eff3f5;
+  text-align: left;
+  color: gray;
+  margin-bottom: 5px;}
+
+/*icons for types of care*/
+.prescription {
+  background-image: url(/public/images/prescription.svg);
+  background-repeat: no-repeat;
+  background-position: 1em;
+  background-size: 3.4em
+}
+
+.sight-test {
+  background-image: url(/public/images/sight-test-neg.svg);
+  background-repeat: no-repeat;
+  background-position: 1em;
+  background-size: 3.4em
+}
+
+.glasses {
+  background-image: url(/public/images/glasses-neg.svg);
+  background-repeat: no-repeat;
+  background-position: 1em;
+  background-size: 3.4em
+}
+
+.dental {
+  background-image: url(/public/images/dental-neg.svg);
+  background-repeat: no-repeat;
+  background-position: 1em;
+    background-size: 3.4em}
+
+.dental-exam {
+  background-image: url(/public/images/dental.svg);
+  background-repeat: no-repeat;
+  background-position: 1em;
+    background-size: 3.4em}
+
+.wigs {
+  background-image: url(/public/images/wigs-neg.svg);
+  background-repeat: no-repeat;
+  background-position: 1em;
+    background-size: 3.4em}
+
+.travel {
+  background-image: url(/public/images/travel-neg.svg);
+  background-repeat: no-repeat;
+  background-position: 0.5em;
+    background-size: 4.1em}
+
+.right-col-details {
+  @include clearfix;
+  margin-top: 1em;
+  div {
+  margin-bottom: 15px;
+    &:first-child {
+      border-bottom: 7px solid $nhs-blue;
+    }
+  }
+}
+
+    .right-col-details div:first-child {
+    border-bottom: 7px solid #0072C6;
+        padding-bottom: 0px;}
+    .success {
+  background-image: url("/public/images/tick-green.svg");
+  background-repeat: no-repeat;
+  background-position: 95% 55%; }
+
+.form-hint-list-item {
+	margin:0 0 0.6em 0;
+	display:table
+}
+.form-hint-list-item__indicator {
+	vertical-align:middle;
+	margin-right:.26316em;
+	display:inline-block;
+	width:20px;
+	height:20px;
+	background-position:center center;
+	background-repeat:no-repeat;
+	background-image:url("../images/bullet-icon.svg")
+}
+.form-hint-list-item--valid {
+	color:#00823B
+}
+.form-hint-list-item--valid .form-hint-list-item__indicator {
+	background-image:url("/public/images/tick-green.svg")
+}
+    .form-hint-list-item--false {
+	color:grey
+}
+.form-hint-list-item--false .form-hint-list-item__indicator {
+	background-image:url("/public/images/cross-red.svg")
+}
+.form-hint-list-item__primary {
+	display:table-cell
+}
+    
+.hidden {
+  display: none;
+}
+
+

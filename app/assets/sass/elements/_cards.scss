@@ -1,0 +1,212 @@
+.planner section {
+  margin: 0 auto;
+  max-width: 600px;
+  padding-bottom: 1rem;
+}
+
+.planner header {
+  padding-bottom: 1rem;
+}
+
+.planner h2 {
+  @extend .lede;
+  font-weight: normal;
+}
+
+.item {
+  position: relative;
+}
+
+.item-content {
+  padding: 1px;
+  background-color: $white;
+  border: 1px solid $nhs-black;
+  border-bottom: 1px solid $white;
+  cursor: pointer;
+  @include breakpoint(break-1) {
+    padding-bottom: 1rem;
+  }
+}
+.item-open .item-content {
+  cursor: default;
+  border-bottom: 1px solid $nhs-black;
+}
+
+.item-header {
+  @include breakpoint(break-1) {
+    position: relative;
+  }
+
+  .item-heading {
+    display: block;
+    color: $white;
+    font-weight: bold;
+    padding: 0.75rem 1rem;
+    background-color: $nhs-blue;
+
+    @include breakpoint(break-1) {
+      padding-right: 7rem;
+    }
+  }
+
+  .item-collapse-link {
+    border-top: 1px solid $white;
+
+    &:before {
+      background-image: url('/public/images/icon-triangle-closed-black.svg');
+    }
+    .item-open &:before {
+      background-image: url('/public/images/icon-triangle-open-black.svg');
+    }
+  }
+}
+
+.item-cta {
+  .item-header .item-heading {
+    background-color: $nhs-black;
+  }
+}
+
+.item-leadin {
+  background-color: tint($nhs-yellow, 75);
+  border-top: 1px solid $white;
+}
+
+.item-leadin-content {
+  @include fontsize(13, 0);
+  @include measure(0);
+  padding: 1rem;
+
+  @include breakpoint(break-1) {
+    @include fontsize(14, 1);
+    @include measure(1);
+  }
+
+  & * {
+    font-size: 1em;
+  }
+}
+
+.item-leadin-cta {
+
+  .button {
+    display: block;
+    width: auto;
+    margin: 1rem;
+    @include breakpoint(break-1) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 3rem;
+      line-height: 3rem;
+      margin: 0;
+    }
+  }
+}
+
+.item-body {
+  overflow: hidden;
+}
+
+.item-open .item-body {
+  overflow: visible;
+}
+
+.item-collapse {
+  @include breakpoint(break-1) {
+    position: relative;
+    top: 1rem;
+  }
+}
+
+.item-body-content {
+  padding: 1rem 1rem 0 1rem;
+  @include measure(0);
+  @include breakpoint(break-1) {
+    @include measure(1);
+  }
+}
+
+.item-collapse-link {
+  @include fontsize(14, all);
+  display: block;
+  padding: 0.5rem 1rem;
+  font-weight: normal;
+  white-space: nowrap;
+  color: $nhs-black;
+  background-color: tint($nhs-blue, 90);
+  border-top: 2px solid tint($nhs-blue, 80);
+
+  &:link,
+  &:active,
+  &:visited,
+  &:hover {
+    color: $nhs-black;
+  }
+
+  &:focus {
+    background-color: tint($nhs-blue, 90);
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    float: left;
+    width: 1rem;
+    height: 2rem;
+    margin-right: 0.25rem;
+    background: url('/public/images/icon-triangle-close-black.svg') center no-repeat;
+  }
+}
+
+.shadow {
+  height: 1rem;
+  margin-top: -1rem;
+  background: -moz-linear-gradient(top,  rgba($white,0) 0%, rgba($white,1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba($white,0)), color-stop(100%,rgba($white,1)));
+  background: -webkit-linear-gradient(top,  rgba($white,0) 0%,rgba($white,1) 100%);
+  background: -o-linear-gradient(top,  rgba($white,0) 0%,rgba($white,1) 100%);
+  background: -ms-linear-gradient(top,  rgba($white,0) 0%,rgba($white,1) 100%);
+  background: linear-gradient(to bottom,  rgba($white,0) 0%,rgba($white,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='$white',GradientType=0 );
+
+  border-bottom: 1rem solid $white;
+
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+
+  -webkit-transition: margin-top 0.25s ease-in-out;
+  transition: margin-top 0.25s ease-in-out;
+}
+
+.item-open .shadow {
+  margin-top: 0;
+}
+
+
+/* Test details card */
+.test-results {
+  padding: 1rem 1rem 0;
+  margin-bottom: 1rem;
+  background-color: tint($nhs-yellow, 75);
+
+  .primary .result {
+    font-size: 72px;
+    line-height: 78px;
+    font-weight: bold;
+
+    span {
+      font-size: 36px;
+    }
+  }
+
+  .secondary .result {
+    font-size: 50px;
+    line-height: 56px;
+
+    span {
+      font-size: 25px;
+    }
+  }
+}

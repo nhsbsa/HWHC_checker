@@ -1,0 +1,121 @@
+// Buttons
+// ==========================================================================
+
+.button {
+  //@include box-sizing (border-box);
+  @include inline-block;
+  width: 100%;
+  height: 4rem;
+  line-height: 4rem;
+  padding: 0 1rem;
+  border: 0;
+  color: $white;
+  background-color: $nhs-dark-green;
+  cursor: pointer;
+  border: 3px solid $nhs-websafe-dark-green;
+
+  @include border-radius(0);
+  -webkit-appearance: none;
+
+  &:link,
+  &:hover,
+  &:focus,
+  &:visited{
+    color: $white;
+    background-color: $nhs-dark-green;
+  }
+
+  /* to be fixed */
+  text-decoration: none !important;
+
+  @include media (tablet) {
+    width: auto;
+  }
+}
+
+// Fix unwanted button padding in Firefox
+.button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+.button:focus {
+  outline: 3px solid $nhs-yellow;
+}
+
+// Disabled buttons
+.button[disabled="disabled"] {
+  background: $button-colour;
+}
+
+.button[disabled="disabled"]:focus {
+  outline: none;
+}
+
+// Start now buttons
+.button-get-started {
+  font-weight: bold;
+  padding-right: 3rem;
+  background-image: url("/public/images/icon-button-start.svg");
+  background-repeat: no-repeat;
+  background-position: 95% 55%;
+}
+
+// Cancel buttons
+.button-cancel {
+  padding-right: 3rem;
+  background-image: url("/public/images/icon-button-cancel.svg");
+  background-repeat: no-repeat;
+  background-position: 92% 50%;
+  background-color: $nhs-dark-pink;
+  border-color: $nhs-dark-red;
+
+  &:link,
+  &:hover,
+  &:focus,
+  &:visited{
+    background-color: $nhs-dark-pink;
+  }
+}
+
+// Secondary buttons
+.button-secondary {
+  background-color: $nhs-grey-3;
+  border-color: $nhs-grey-3;
+  color: $nhs-black;
+
+  &:link,
+  &:hover,
+  &:focus,
+  &:visited{
+    color: $nhs-black;
+    background-color: $nhs-grey-3;
+  }
+}
+
+// Secondary CTA buttons (NHS blue)
+.button-secondary-cta {
+  background-color: $nhs-blue;
+  border-color: $nhs-dark-blue;
+  border-width: 2px;
+  color: $white;
+
+  height: 3rem;
+  line-height: 3rem;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  padding-right: 2.5rem;
+  background-image: url("/public/images/icon-button-start.svg");
+  background-repeat: no-repeat;
+  background-position: 97.5% 57.5%;
+
+  &:link,
+  &:hover,
+  &:focus,
+  &:visited{
+    color: $white;
+    background-color: $nhs-blue;
+  }
+}

@@ -1,0 +1,62 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+
+       <!--3- Are you named on a Tax Credits Exemption certificate-->
+    <h1 class="heading-large">Are you pregnant, or had a baby in the last 12 months?</h1>
+         <form action="lis-handler" method="get" class="form">
+<!--         <p class="form-hint">This also includes if you have had a miscarriage or stillborn birth.</p>-->
+
+
+<div class="form-item-wrapper">
+        <fieldset>
+          <div class="inline-form-groups">
+            <div class="form-group">
+              <input id="pregnancy-yes" name="pregnancy" type="radio">
+              <label class="form-control-radio" for="pregnancy-yes">
+                Yes
+              </label>
+            </div>
+            <div class="form-group">
+              <input id="pregnancy-no" name="pregnancy" type="radio">
+              <label class="form-control-radio" for="pregnancy-no">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+    {{
+      form_macros.button({
+        label: 'Next'
+      })
+    }}
+
+  </form>
+      </div>
+        </div>
+
+</main>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+

@@ -1,0 +1,232 @@
+// Forms
+// ==========================================================================
+
+input:focus,
+textarea:focus,
+select:focus,
+button:focus,
+.form-group:focus {
+  outline: 3px solid $nhs-yellow;
+}
+
+// Fieldset is used to group more than one .form-group
+fieldset {
+  width: 100%;
+  @extend %contain-floats;
+}
+
+.form-item-wrapper {
+  padding: 1rem 0 0 0;
+  @extend %contain-floats;
+}
+
+// Form group is used to wrap label and input pairs
+.form-group {
+  float: left;
+  width: 100%;
+  @extend %contain-floats;
+  margin-bottom: 1rem;
+}
+
+.form-group-related {
+  margin-bottom: 1rem;
+}
+
+// Inline fieldsets for compound controls such as date
+.inline-form-groups {
+  @extend %contain-floats;
+  .form-group {
+    width: auto;
+    margin-right: 2rem;
+    clear: none;
+  }
+}
+
+// Labels
+
+// Form labels, or for legends styled to look like labels
+.form-label,
+.form-label-bold {
+  display: block;
+}
+
+.form-label-bold + input,
+.form-label-bold + textarea,
+.form-label-bold ~ .ui-autocomplete-input {
+  margin-top: 1rem;
+}
+.form-label-bold + .inline-form-groups {
+  padding-top: 1rem;
+}
+
+
+// Hints
+
+// Form hints & examples are light grey and sit above a form control
+.form-hint {
+  display: block;
+  font-weight: normal;
+  color: $nhs-grey-1;
+}
+
+
+// Form controls
+
+// By default, form controls are 50% width for desktop,
+// and 100% width for mobile
+.form-control,
+.ui-autocomplete-input {
+  display: block;
+  width: 100%;
+  @include box-sizing(border-box);
+  height: 4rem;
+  line-height: 4rem;
+  padding: 0 1rem;
+  background-color: $white;
+  border: 1px solid $nhs-black;
+  -webkit-box-shadow: inset 0px 0px 0px 2px $nhs-grey-2;
+  -moz-box-shadow: inset 0px 0px 0px 2px $nhs-grey-2;
+  box-shadow: inset 0px 0px 0px 2px $nhs-grey-2;
+
+  // Disable webkit appearance and remove rounded corners
+  -webkit-appearance: none;
+  border-radius: 0;
+
+  @include media(tablet) {
+    width: 50%;
+  }
+
+  &:focus {
+    -webkit-box-shadow: inset 0px 0px 0px 2px $nhs-black;
+    -moz-box-shadow: inset 0px 0px 0px 2px $nhs-black;
+    box-shadow: inset 0px 0px 0px 2px $nhs-black;
+  }
+}
+
+textarea.form-control {
+  min-height: 10rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  line-height: 2rem;
+}
+
+
+// Form control widths
+.form-control-1-1 {
+  width: 100%;
+}
+
+.form-control-1-2 {
+  width: 100%;
+  @include media(tablet) {
+    width: 50%;
+  }
+}
+
+.form-control-1-3 {
+  width: 100%;
+  @include media(tablet) {
+    width: 33.33%;
+  }
+}
+
+.form-control-2-3 {
+  width: 100%;
+  @include media(tablet) {
+    width: 66.66%;
+  }
+}
+
+.form-control-1-4 {
+  width: 100%;
+  @include media(tablet) {
+    width: 25%;
+  }
+}
+
+.form-control-3-4 {
+  width: 100%;
+  @include media(tablet) {
+    width: 75%;
+  }
+}
+
+.form-control-1-8 {
+  width: 100%;
+  @include media(tablet) {
+    width: 12.5%;
+  }
+}
+
+
+// Radio buttons
+.form-radio {
+  display: block;
+  margin: 10px 0;
+}
+.form-radio input {
+  vertical-align: middle;
+  margin: -4px 5px 0 0;
+}
+
+
+// Checkboxes
+.form-checkbox {
+  display: block;
+  margin: $gutter-half 0;
+}
+.form-checkbox input {
+  vertical-align: middle;
+  margin: -2px 5px 0 0;
+}
+
+// input[type="number"]
+// Hide the 'spinner' for webkit
+// and also for Firefox
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0
+}
+input[type=number] {
+  -moz-appearance: textfield
+}
+
+
+// Form validation
+//@import "forms/form-validation";
+
+
+// Form patterns
+//@import "forms/form-date";
+//@import "forms/form-block-labels";
+
+// Autocomplete - i.e. GP finder...
+.ui-autocomplete {
+  padding: 0;
+  list-style: none;
+  background-color: $white;
+  width: 218px;
+  border: 1px solid $border-colour;
+  max-height: 350px;
+  overflow-x: hidden;
+  text-transform: capitalize;
+}
+.ui-autocomplete .ui-menu-item {
+  border-top: 1px solid $border-colour;
+  display: block;
+  padding: 0.5rem 1rem;
+  color: $nhs-black;
+  cursor: pointer;
+}
+.ui-autocomplete .ui-menu-item:first-child {
+  border-top: none;
+}
+.ui-autocomplete .ui-menu-item.ui-state-focus {
+  background-color: $nhs-yellow;
+  color: $nhs-black;
+}
+
+.ui-helper-hidden-accessible{
+  display: none;
+}

@@ -1,0 +1,103 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+       <!--3- Are you named on a Medical Exemption certificate-->
+    <h2 class="heading-large">Do you have any of the following medical conditions?</h2>
+
+      <form action="eligibility-handler" method="get" class="form">
+
+          <div class="form-item-wrapper">
+      <div class="form-group">
+        <input type="radio" id="cancer" name="eligibility-medex">
+        <label class="form-control-radio" for="cancer">
+          Cancer and are undergoing treatment <br><span class="text-small">This includes treatment for the effects of cancer or the effects of cancer treatment.</span>
+        </label>
+
+      </div>
+      <div class="form-group">
+        <input type="radio" id="epilepsy" name="eligibility-medex">
+        <label class="form-control-radio" for="epilepsy">
+          Epilepsy which needs continuous anticonvulsive therapy
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="radio" id="disability" name="eligibility-medex">
+        <label class="form-control-radio" for="disability">
+        A continuing physical disability which means you cannot go out without the help of another person
+        </label>
+      </div>
+        <div class="form-group">
+        <input type="radio" id="diabetes-insipidus" name="eligibility-medex">
+        <label class="form-control-radio" for="diabetes-insipidus">
+        Diabetes insipidus and other forms of hypopituitarism
+        </label>
+      </div>
+              <div class="form-group">
+        <input type="radio" id="diabetes-mellitus" name="eligibility-medex">
+        <label class="form-control-radio" for="diabetes-mellitus">
+        Diabetes mellitus, except where treatment is by diet alone
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="radio" id="fistula" name="eligibility-medex">
+        <label class="form-control-radio" for="fistula">
+        A permanent fistula which needs continuous surgical dressing or an appliance<br><span class="text-small">For example, caecostomy, colostomy, laryngos-tomy or ileostomy.</span>
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="radio" id="hypoadrenalism" name="eligibility-medex">
+        <label class="form-control-radio" for="hypoadrenalism">
+        A form of hypoadrenalism for which specific substitution therapy is essential<br><span class="text-small">For example, Addison’s Disease.</span>
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="radio" id="hypoparathyroidism" name="eligibility-medex">
+        <label class="form-control-radio" for="hypoparathyroidism">
+        Hypoparathyroidism
+        </label>
+      </div>
+       <div class="form-group">
+        <input type="radio" id="myasthenia-gravis" name="eligibility-medex">
+        <label class="form-control-radio" for="myasthenia-gravis">
+        Myasthenia gravis
+        </label>
+      </div>
+                    <div class="form-group">
+        <input type="radio" id="myxoedema" name="eligibility-medex">
+        <label class="form-control-radio" for="myxoedema">
+        Myxoedema <br><span class="text-small">For example hypothyroidism which needs thyroid hormone replacement</span>
+        </label>
+      </div>
+      </div>
+    {{
+      form_macros.button({
+        label: 'Next'
+      })
+    }}
+
+  </form>
+      </div>
+        </div>
+</main>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+

@@ -1,0 +1,87 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+
+       <!--3- Are you named on a Tax Credits Exemption certificate-->
+    <h2 class="heading-large">Are you named on a valid NHS Tax Credit Exemption Certificate?</h2>
+         <form action="medical-handler" method="get" class="form">
+
+<details>
+  <summary role="button" aria-controls="details-content-0" tabindex="0" aria-expanded="true"><span class="summary">What is a NHS Tax Credit Exemption Certificate?</span></summary>
+
+  <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="false" style="display: block;">
+
+    <p>
+      If you get tax credits you, your partner and any young people included on your claim may be entitled to help with NHS health costs.
+    </p>
+
+    <p class="intro-to-list">
+    To qualify you must receive one of the following types of tax credits and have a family income of less than £15,276.</p>
+
+        <ul class="list list-bullet">
+          <li>Working Tax Credit and Child Tax Credit together</li>
+          <li>Working Tax credit on its own, including a disability element</li>
+          <li>Child Tax Credit on its own.</li>
+        </ul>
+
+     <p>
+      It tells you the valid from and end dates on the bottom of the certificate.
+    </p>
+
+        <img src="/public/images/tax-cert.png" alt="NHS Tax Credit Exemption Certificate">
+  </div>
+</details>
+
+
+      <div class="form-item-wrapper">
+        <fieldset>
+          <div class="inline-form-groups">
+            <div class="form-group">
+              <input type="radio" id="yes" name="tax-credits" value="yes">
+              <label class="form-control-radio" for="yes">
+                Yes
+              </label>
+            </div>
+            <div class="form-group">
+              <input type="radio" id="no" name="tax-credits" value="no">
+              <label class="form-control-radio" for="no">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+    {{
+      form_macros.button({
+        label: 'Next'
+      })
+    }}
+
+  </form>
+      </div>
+        </div>
+
+</main>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+

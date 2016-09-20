@@ -1,0 +1,22 @@
+{% extends 'templates/nhs_question_template.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block pageTitle %}
+  What is your date of birth?
+{% endblock %}
+
+{% block questionNumber %}3{% endblock %}
+{% block prevURL %}address{% endblock %}
+{% block nextURL %}gender{% endblock %}
+
+{% block questionContent %}
+
+	{{ form_macros.date({
+
+		id:	'dob',
+		hint: 'For example, 6 March 1976'
+
+	})}}
+
+{% endblock %}
+

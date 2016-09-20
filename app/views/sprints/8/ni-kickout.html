@@ -1,0 +1,31 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+        <h1 class="heading-large">Help with health costs in Northern Ireland</h1>
+
+        <p class="lede">
+          Most Health Service treatment is free if you live in Northern Ireland, although there may be charges for some things.
+        </p>
+
+          <p>If you live in Northern Ireland you can find more detailed information at <a href="https://www.nidirect.gov.uk/articles/help-with-health-costs">NIdirect.gov.uk</a>.</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="text">
+
+        <h1 class="heading-large">You are already exempt</h1>
+
+        <p class="intro-to-list">
+          You don't need to apply for this scheme as you are already exempt with:
+        </p>
+
+        <ul class="list list-bullet">
+          <li>income support</li>
+          <li>pension credit guarantee credit</li>
+          <li>universal credit</li>
+          <li>named on, or entitled to, an NHS Tax Credit Exemption certificate</li>
+        </ul>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

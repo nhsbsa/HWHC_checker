@@ -1,0 +1,110 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
+{% endblock %}
+
+{% block content %}
+
+<style>
+
+    .right-col-details{
+        }
+
+    .right-col-details div:first-child {
+    border-bottom: 7px solid #0072C6;
+        padding-bottom: 0px;}
+    .success {
+  background-image: url("/public/images/tick-green.svg");
+  background-repeat: no-repeat;
+  background-position: 95% 55%; }
+
+.callout {
+	padding:16px;
+	background-color:#fff
+}
+@media (min-width: 925px) {
+	.callout {
+		padding:32px
+	}
+}
+.callout__info {
+	border:1em solid #40add7
+}
+
+
+</style>
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+   <!--1B- lives in the UK-->
+    <h2 class="heading-large">Which country do you live in?</h2>
+
+  <form action="region-handler" method="get" class="form">
+
+    <div class="form-item-wrapper">
+      <div class="form-group">
+        <input type="radio" id="england" name="eligibility">
+        <label class="form-control-radio" for="england">
+          England
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="radio" id="Scotland" name="eligibility">
+        <label class="form-control-radio" for="Scotland">
+          Scotland
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="radio" id="wales" name="eligibility">
+        <label class="form-control-radio" for="wales">
+          Wales
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="radio" id="northern-ireland" name="eligibility">
+        <label class="form-control-radio" for="northern-ireland">
+          Northern Ireland
+        </label>
+        <!--if selected send to "ni-kickout"-->
+      </div>
+      </div>
+
+
+    {{
+      form_macros.button({
+        label: 'Next'
+      })
+    }}
+
+  </form>
+      </div>
+    <div class="column-two-thirds">
+     <section class="callout callout__info">
+<h2 class="heading-medium">You get free</h2>
+<ul>
+<li>Prescriptions</li>
+<li>NHS dental exam</li>
+<li>NHS dental treatment</li>
+<li>Sight test</li>
+<li>Glasses or contact lenses</li>
+<li>NHS wigs</li>
+<li>Travel for treatment</li>
+</ul>
+</section>
+      </div>
+    </div>
+</main>
+
+
+{% endblock %}
+
+
+
+
+
+
+

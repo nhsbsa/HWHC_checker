@@ -1,0 +1,33 @@
+{% extends 'templates/planner_card.html' %}
+
+{% block id %}repeat-prescription-card{% endblock %}
+
+{% block heading %}
+  Pick up your next prescription<br>
+  <span style="font-weight: normal;">
+    19 November 2015
+  </span>
+{% endblock %}
+
+{% block body %}
+  <div class="item-body-content">
+    <p class="lede">30x500mg of metformin tablets</p>
+
+    <p>Pick up from:</p>
+
+    <p>
+      Essentials Pharmacy<br>
+      169 Drury Lane<br>
+      London<br>
+      WC2B 5QA<br>
+      <a href="javascript:void(0)">Show a map</a>
+    </p>
+
+    <ul class="list-bullet">
+      <li><a href="javascript:void(0)">Send me a text reminder 2 days before</a></li>
+      <li><a href="javascript:void(0)" class="danger">Change pharmacy</a></li>
+    </ul>
+
+    <p>You don't have to see your GP for this prescription.</p>
+  </div>
+{% endblock %}

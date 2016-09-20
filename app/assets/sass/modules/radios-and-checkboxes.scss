@@ -1,0 +1,95 @@
+@import '../typography/variables';
+@import '../typography/mixins';
+
+// Styling for radios and checkboxes
+
+// Hide native controls - (!!!)
+input[type='checkbox'],
+input[type='radio']{
+  display: none;
+}
+
+
+.form-control-checkbox,
+.form-control-radio {
+  @include box-sizing(border-box);
+  position: relative;
+  display: block;
+  width: auto;
+  float: left;
+  min-height: 4rem;
+  line-height: 2rem;
+  margin: 0;
+  padding: 1rem 2rem 1rem 4rem;
+  background-color: $nhs-grey-4;
+
+  // Show click area on hover
+  &:hover {
+    cursor: pointer;
+    outline: 1px solid $nhs-black;
+  }
+
+  &:focus {
+    outline: 3px solid $nhs-yellow;
+  }
+
+  &.minor {
+    padding-left: 3rem;
+    background-color: transparent;
+
+    &:hover {
+      outline: none;
+      text-decoration: underline;
+    }
+  }
+
+}
+
+// Create box style for checkbox and radio
+.form-control-checkbox:before,
+.form-control-radio:before {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  top: 0.9rem;
+  @include box-sizing(border-box);
+  width: 2.2rem;
+  height: 2.2rem;
+  background-color: #fff;
+  border: 1px solid $nhs-black;
+  -webkit-box-shadow: inset 0px 0px 0px 2px $nhs-grey-2;
+  -moz-box-shadow: inset 0px 0px 0px 2px $nhs-grey-2;
+  box-shadow: inset 0px 0px 0px 2px $nhs-grey-2;
+}
+
+// Make radios circles not boxes
+.form-control-radio:before{
+  border-radius: 100%;
+  outline: 0;
+  border: 1px solid $nhs-black;
+  box-shadow: inset 0px 0px 0px 2px $nhs-grey-2;
+}
+
+// "Minor" styles
+.form-control-checkbox.minor:before,
+.form-control-radio.minor:before {
+  left: 0rem;
+}
+
+// Checked style
+input[type='checkbox']:checked + .form-control-checkbox:before{
+  content: "";
+  background: $white url(/public/images/tick.png) no-repeat 1px 1px;
+  background-size: 91%;
+}
+
+input[type='radio']:checked + .form-control-radio:before{
+  content: "●";
+  line-height: 2rem;
+  font-size: 30px;
+  text-indent:2px;
+  @include breakpoint(break-1) {
+    font-size: 32px;
+    text-indent: 3px;
+  }
+}
