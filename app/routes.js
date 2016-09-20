@@ -119,7 +119,34 @@ module.exports = {
       if (req.query.taxcredits === 'yes') {
         res.redirect('../full-exemption-benefits');
       } else {
-        res.redirect('../savings');
+        res.redirect('../care-home');
+      }
+    });
+    
+    // carehome-handler
+      app.get(/carehome-handler/, function (req, res) {
+      if (req.query.carehome === 'yes') {
+        res.redirect('../savings2');
+      } else {
+        res.redirect('../savings1');
+      }
+    });
+    
+      // saving-handler
+      app.get(/saving-handler/, function (req, res) {
+      if (req.query.savings === 'yes') {
+        res.redirect('../ppc');
+      } else {
+        res.redirect('../guarantee-credit');
+      }
+    });
+      
+      // guarantee-credit-handler
+      app.get(/guarantee-credit-handler/, function (req, res) {
+      if (req.query.gcredit === 'yes') {
+        res.redirect('../ppc');
+      } else {
+        res.redirect('../lis');
       }
     });
       

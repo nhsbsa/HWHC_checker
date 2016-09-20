@@ -1,0 +1,51 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+  <h1 class="heading-large">
+    Do you or your partner receive Pension Credit Guarantee Credit?
+    <span class="form-hint">This is a pension top up payment of up to £155.60 (for single people) or £237.55 (for couples).</span>
+  </h1>  
+      
+  <form action="guarantee-credit-handler" method="get" class="form">
+      <div class="form-item-wrapper">
+        <fieldset>
+          <div class="inline-form-groups">
+            <div class="form-group">
+              <input type="radio" id="yes" name="gcredit" value="yes">
+              <label class="form-control-radio" for="yes">
+                Yes
+              </label>
+            </div>
+            <div class="form-group">
+              <input type="radio" id="no" name="gcredit" value="no">
+              <label class="form-control-radio" for="no">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    
+    {{
+      form_macros.button({
+        label: 'Next'
+      })
+    }}
+
+  </form>
+    </div>
+    </div>
+</main>
+
+{% endblock %}
