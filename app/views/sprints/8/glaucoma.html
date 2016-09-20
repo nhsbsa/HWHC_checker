@@ -13,7 +13,7 @@
     <div class="column-two-thirds">
 
        <!--3- Are you named on a Medical Exemption certificate-->
-    <h2 class="heading-large">Do you already have a Medical exemption card?</h2>
+    <h2 class="heading-large">Do you have glaucoma? //(over 40) or have a parent, sibling or child with glaucoma?//</h2>
 
       <form action="eligibility-handler" method="get" class="form">
 
@@ -36,20 +36,21 @@
         </fieldset>
       </div>
 
-      {{
-        form_macros.button({
-          href: 'diabetes',
-          label: 'Next'
-        })
-      }}
+
+    {{
+      form_macros.button({
+        label: 'Next',
+        href:""
+      })
+    }}
 
   </form>
       </div>
  <div class="column-third " id="lists">
 
       <div class="right-col-details">
-          
-          
+
+
 
           <h3 class="heading-medium">What you get free </h3>
 
@@ -67,28 +68,28 @@
         </span>
          NHS Sight test
     </li>
-       
+
     <li class="form-hint-list-item form-hint-list-item--valid hidden" id="all">
         <span class="form-hint-list-item__primary">
             <span class="form-hint-list-item__indicator"></span>
         </span>
         Glasses or contact lenses
     </li>
-           
+
             <li class="form-hint-list-item form-hint-list-item--valid hidden" id="all1">
         <span class="form-hint-list-item__primary">
             <span class="form-hint-list-item__indicator"></span>
         </span>
         NHS wigs
     </li>
-    
+
     <li class="form-hint-list-item form-hint-list-item--valid hidden" id="all2">
         <span class="form-hint-list-item__primary">
             <span class="form-hint-list-item__indicator"></span>
         </span>
         Travel for treatment
     </li>
-    
+
     <li class="form-hint-list-item form-hint-list-item--valid hidden" id="all3" >
         <span class="form-hint-list-item__primary">
             <span class="form-hint-list-item__indicator"></span>

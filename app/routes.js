@@ -99,29 +99,57 @@ module.exports = {
     // passported benefits router
       app.get(/benefitsv2-handler/, function (req, res) {
       if (req.query.kickout === 'continue') {
-        res.redirect('../do-you-have-a-medical-exemption');
+        res.redirect('../tax-credits');
       } else {
         res.redirect('../full-exemption-benefits');
       }
     });
       
-          // medical benefits router
+    // tax credits handler
+      app.get(/taxcredits-handler/, function (req, res) {
+      if (req.query.taxcredits === 'yes') {
+        res.redirect('../tax-credits-income');
+      } else {
+        res.redirect('../do-you-have-a-medical-exemption');
+      }
+    });
+      
+
+    // tax credits income handler
+      app.get(/taxcredit-income-handler/, function (req, res) {
+      if (req.query.taxcreditsIncome === 'yes') {
+        res.redirect('../tax-credits-claim-type');
+      } else {
+        res.redirect('../do-you-have-a-medical-exemption');
+      }
+    });
+
+     // tax credit type handler
+      app.get(/taxcredit-type-handler/, function (req, res) {
+      if (req.query.taxcreditsType === 'wtc') {
+        res.redirect('../do-you-have-a-medical-exemption');
+      } else {
+        res.redirect('../taxcredit-info');
+      }
+    });
+
+          // eligibility benefits router
       app.get(/eligibility-handler/, function (req, res) {
       if (req.query.medex === 'medexYes') {
-        res.redirect('../full-exemption-benefits');
+        res.redirect('../diabetes');
       } else {
         res.redirect('../tax-credits-exemption');
       }
     });
-      
-      // medical-handler
-      app.get(/medical-handler/, function (req, res) {
-      if (req.query.taxcredits === 'yes') {
-        res.redirect('../full-exemption-benefits');
-      } else {
-        res.redirect('../savings');
-      }
-    });
+
+//      // medical-handler
+//      app.get(/medical-handler/, function (req, res) {
+//      if (req.query.taxcredits === 'yes') {
+//        res.redirect('../full-exemption-benefits');
+//      } else {
+//        res.redirect('../savings');
+//      }
+//    });
 
       
       

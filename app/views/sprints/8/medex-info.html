@@ -1,0 +1,39 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="text">
+
+        <h1 class="heading-large">You can get full help with health costs</h1>
+
+        <p class="intro-to-list">
+You can claim health costs if you are named on a NHS Tax Credit Exemption Certificate or get any of these benefits:        </p>
+
+        <ul class="list list-bullet">
+          <li>Income Support</li>
+          <li>Pension Credit Guarantee Credit</li>
+          <li>Universal Credit</li>
+        </ul>
+           <button class="button-secondary-cta" href="age">What you need to do to get help
+</button>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}
