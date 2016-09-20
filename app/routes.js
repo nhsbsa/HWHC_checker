@@ -114,6 +114,15 @@ module.exports = {
       }
     });
       
+      // medical-handler
+      app.get(/medical-handler/, function (req, res) {
+      if (req.query.taxcredits === 'yes') {
+        res.redirect('../full-exemption-benefits');
+      } else {
+        res.redirect('../savings');
+      }
+    });
+      
       
       
       

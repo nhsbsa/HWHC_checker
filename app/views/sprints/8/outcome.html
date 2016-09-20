@@ -1,0 +1,169 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<main id="content" role="main">
+  
+  
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+   
+    <h2 class="heading-large">Outcome</h2>
+      
+      
+      
+      <p>If you need to apply for help</p>
+
+<p></p>You could get help with your health costs if, after your housing costs, you, your partner, or you both have less than:</p>
+  <ul>
+    <li>£16,000 in savings, investments or properties – not including where you live</li>
+    <li>£23,250 in savings, investments or properties if you permanently live in a care home</li>
+  </ul>
+    <p>You could get help towards your, your partner’s and your children’s:</p>
+  <ul>
+    <li>NHS dental treatment
+    <li>NHS prescriptions</li>
+    <li>NHS wigs and fabric supports</li>
+    <li>sight tests, glasses and contact lenses</li>
+    <li>travel to receive NHS treatment if you were referred by a GP, hospital doctor, dentist or optician</li>
+    </ul>
+    <p>You can apply at any time. Do not wait until you need treatment.</p>
+
+    <p>Start a new application</p>
+    <p>I've used this service before - view my application</p>
+
+      
+
+  <form action="age-handler" method="get" class="form">
+
+    <div class="form-item-wrapper">
+      <div class="form-group">
+        <input type="radio" id="15" name="age" value="15">
+        <label class="form-control-radio" for="england">
+          Under 16
+        </label>
+      </div>
+      
+      <div class="form-group">
+        <input type="radio" id="16" name="age" value="16">
+        <label class="form-control-radio" for="16">
+          16 or 17
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="radio" id="18" name="age" value="18">
+        <label class="form-control-radio" for="18">
+          18
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="radio" id="19" name="age" value="19">
+        <label class="form-control-radio" for="19">
+          19
+        </label>
+      </div>
+    <div class="form-group">
+        <input type="radio" id="20" name="age" value="20">
+        <label class="form-control-radio" for="20">
+          20 to 59
+        </label>
+      </div>
+          <div class="form-group">
+        <input type="radio" id="60" name="age" value="60">
+        <label class="form-control-radio" for="60">
+          60 and over
+        </label>
+      </div>
+      </div>
+
+
+    {{
+      form_macros.button({
+        label: 'Next'
+      })
+    }}
+
+  </form>
+      </div>
+
+          <div class="column-third hidden" id="lists">
+
+      <div class="right-col-details hidden">
+          
+          
+
+          <h3 class="heading-medium">What you get free </h3>
+
+<ul class="form-hint-list">
+    <li class="form-hint-list-item  form-hint-list-item--valid">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        Prescriptions
+    </li>
+    <li class="form-hint-list-item form-hint-list-item--valid" >
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        NHS dental exam
+    </li>
+
+<!--
+    <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+         NHS dental treatment
+    </li>
+    <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+         Sight test
+    </li>
+        <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        Glasses or contact lenses
+    </li>
+            <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        NHS wigs
+    </li>
+    <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        Travel for treatment
+    </li>
+-->
+</ul>
+
+
+
+      </div>
+
+    </div>
+    </div>
+
+</main>
+
+
+{% endblock %}
+
+
+
+
+
+
+
