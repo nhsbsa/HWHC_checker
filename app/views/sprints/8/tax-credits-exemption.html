@@ -14,15 +14,17 @@
 
 
        <!--3- Are you named on a Tax Credits Exemption certificate-->
+
+         <form action="medical-handler" method="get" class="form">
+
     <h2 class="heading-large">Are you named on a valid NHS Tax Credit Exemption Certificate?</h2>
-    
-      
-      
+
+
 
 <details>
   <summary role="button" aria-controls="details-content-0" tabindex="0" aria-expanded="true"><span class="summary">What is a NHS Tax Credit Exemption Certificate?</span></summary>
 
-  <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="false" style="display: block;">
+  <div class="panel-indent" id="details-content-0" aria-hidden="false" style="display: block;">
 
     <p>
       If you get tax credits you, your partner and any young people included on your claim may be entitled to help with NHS health costs.
@@ -44,8 +46,8 @@
         <img src="/public/images/tax-cert.png" alt="NHS Tax Credit Exemption Certificate">
   </div>
 </details>
-      
-      
+
+
     <form action="medical-handler" method="get" class="form">
       <div class="form-item-wrapper">
         <fieldset>
@@ -74,12 +76,94 @@
 
   </form>
       </div>
-        </div>
+ <div class="column-third " id="lists">
+
+      <div class="right-col-details">
+          
+          
+
+          <h3 class="heading-medium">What you get free </h3>
+
+<ul class="form-hint-list">
+    <li class="form-hint-list-item  form-hint-list-item--valid">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        Prescriptions
+    </li>
+
+    <li class="form-hint-list-item form-hint-list-item--valid">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+         NHS Sight test
+    </li>
+       
+    <li class="form-hint-list-item form-hint-list-item--valid hidden" id="all">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        Glasses or contact lenses
+    </li>
+           
+            <li class="form-hint-list-item form-hint-list-item--valid hidden" id="all1">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        NHS wigs
+    </li>
+    
+    <li class="form-hint-list-item form-hint-list-item--valid hidden" id="all2">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        Travel for treatment
+    </li>
+    
+    <li class="form-hint-list-item form-hint-list-item--valid hidden" id="all3" >
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        NHS dental exam
+    </li>
+
+    <li class="form-hint-list-item form-hint-list-item--valid hidden" id="all4">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+         NHS dental treatment
+    </li>
+</ul>
+
+
+
+      </div>
+
+    </div>
+    </div>
 
 </main>
 
+<script>
+$("#yes").click(function(){
+    $("#all").removeClass("hidden");
+    $("#all1").removeClass("hidden");
+    $("#all2").removeClass("hidden");
+    $("#all3").removeClass("hidden");
+    $("#all4").removeClass("hidden");
+}); </script>
+<script>
+$("#no").click(function(){
+    $("#all").addClass("hidden");
+    $("#all1").addClass("hidden");
+    $("#all2").addClass("hidden");
+    $("#all3").addClass("hidden");
+    $("#all4").addClass("hidden");
+}); </script>
+<script>
 
 {% endblock %}
+
 
 
 

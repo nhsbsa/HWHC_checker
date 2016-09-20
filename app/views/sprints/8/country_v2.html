@@ -58,7 +58,7 @@
   </form>
       </div>
 
-          <div class="column-third hidden" id="lists">
+          <div class="column-third" >
 
       <div class="right-col-details">
           
@@ -73,14 +73,20 @@
         </span>
         Prescriptions
     </li>
-<!--
-    <li class="form-hint-list-item form-hint-list-item--valid" >
+       
+        <li class="form-hint-list-item form-hint-list-item--valid">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+         NHS Sight test
+    </li>
+    
+    <li class="form-hint-list-item form-hint-list-item--valid hidden" id="lists">
         <span class="form-hint-list-item__primary">
             <span class="form-hint-list-item__indicator"></span>
         </span>
         NHS dental exam
     </li>
--->
 
 <!--
     <li class="form-hint-list-item form-hint-list-item--false">
@@ -90,12 +96,7 @@
          NHS dental treatment
     </li>
 -->
-    <li class="form-hint-list-item form-hint-list-item--valid">
-        <span class="form-hint-list-item__primary">
-            <span class="form-hint-list-item__indicator"></span>
-        </span>
-         NHS Sight test
-    </li>
+
 <!--
         <li class="form-hint-list-item form-hint-list-item--false">
         <span class="form-hint-list-item__primary">
@@ -133,15 +134,15 @@
 
 <script>
 $("#england").click(function(){
-    $("#lists").removeClass("hidden");
+    $("#lists").addClass("hidden");
 }); </script>
 <script>
 $("#scotland").click(function(){
-    $("#lists").addClass("hidden");
+    $("#lists").removeClass("hidden");
 }); </script>
 <script>
 $("#northernIreland").click(function(){
-    $("#lists").addClass("hidden");
+    $("#lists").removeClass("hidden");
 }); </script>
 
 {% endblock %}
