@@ -142,9 +142,9 @@ module.exports = {
       }
     });
 
-            app.get(/carehome-handler/, function (req, res) {
+    app.get(/carehome-handler/, function (req, res) {
       if (req.query.carehome === 'yes') {
-        res.redirect('../sc/authority-assessed');
+        res.redirect('../diabetes');
       } else {
         res.redirect('../savings);
       }
@@ -159,15 +159,15 @@ module.exports = {
 //        res.redirect('../savings');
 //      }
 //    });
-
-    app.get('/lis/7/sc/authority-assessed-handler', function (req, res) {
-      console.log(req.query);
-      if (req.query.authority === 'yes') {
-        res.redirect('/lis/7/sc/about-you');
-      } else {
-        res.redirect('/lis/7/sc/savings');
-      }
-    });
+//
+//    app.get('/lis/7/sc/authority-assessed-handler', function (req, res) {
+//      console.log(req.query);
+//      if (req.query.authority === 'yes') {
+//        res.redirect('/lis/7/sc/about-you');
+//      } else {
+//        res.redirect('/lis/7/sc/savings');
+//      }
+//    });
 
       
       
