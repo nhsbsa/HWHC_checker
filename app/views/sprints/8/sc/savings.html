@@ -1,0 +1,64 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/low-income.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+  <h1 class="heading-large">
+    Do you or your partner have more than £23,250?
+  </h1>
+  <p>Include savings, investments &amp; properties (but not place where you live)</p>
+      <details>
+
+  <summary><span class="summary">What we mean by partner</span></summary>
+
+  <div class="panel panel-border-narrow">
+
+    <p>
+      We use the term partner to mean a person you live with as part of a couple of the same or opposite sex, whether or not you are married or in a civil partnership.
+    </p>
+
+  </div>
+
+</details>
+      <br>
+  <form action="carehome-savings-handler" method="get" class="form">
+      <div class="form-item-wrapper">
+        <fieldset>
+          <div class="inline-form-groups">
+            <div class="form-group">
+              <input type="radio" id="yes" name="savings" value="yes">
+              <label class="form-control-radio" for="yes">
+                Yes
+              </label>
+            </div>
+            <div class="form-group">
+              <input type="radio" id="no" name="savings" value="no">
+              <label class="form-control-radio" for="no">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+    {{
+      form_macros.button({
+        label: 'Next'
+      })
+    }}
+
+  </form>
+    </div>
+    </div>
+</main>
+
+{% endblock %}

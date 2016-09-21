@@ -1,0 +1,68 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/low-income.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+  <h1 class="heading-large">
+      Your address
+  </h1>
+
+  <form action="" method="get" class="form">
+
+    {{
+      form_macros.text_field({
+        id: 'address-line-one',
+        label: 'Building and street'
+      })
+    }}
+
+    {{
+      form_macros.text_field({
+        id: 'address-line-two'
+      })
+    }}
+
+    {{
+      form_macros.text_field({
+        id: 'first-name',
+        label: 'Town or city'
+      })
+    }}
+
+    {{
+      form_macros.text_field({
+        id: 'county',
+        label: 'County (optional)'
+      })
+    }}
+
+    {{
+      form_macros.text_field({
+        id: 'postcode',
+        label: 'Postcode'
+      })
+    }}
+
+    {{
+      form_macros.button({
+        href: 'summary',
+        label: 'Save and continue'
+      })
+    }}
+    <p class="navigation"><a class="cancel" href="../lis-home">Save and come back later</a></p>
+
+  </form>
+    </div>
+    </div>
+</main>
+
+{% endblock %}

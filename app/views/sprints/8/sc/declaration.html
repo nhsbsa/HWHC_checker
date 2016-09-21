@@ -1,0 +1,40 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/low-income.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="text">
+
+        <h1 class="heading-xlarge">Declare &amp; submit</h1>
+
+        <div class="notice">
+          <i class="icon icon-important">
+            <span class="visuallyhidden">Warning</span>
+          </i>
+          <strong class="bold-small">
+            I confirm that the information I have given in this form is correct and complete, and I understand that if it not, appropriate action may be taken.
+          </strong>
+        </div>
+        <br>
+        <p>
+          <a class="button" href="../full-help" id="next">Agree and submit my application</a>
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

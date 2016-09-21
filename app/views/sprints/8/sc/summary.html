@@ -1,0 +1,90 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/low-income.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+  <div class="text">
+    <h1 class="heading-large">
+      Check your answers
+    </h1>
+
+    <table class="data-table you-summary">
+      <td>Do you or your partner receive any of the following?</td>
+        <td>I do not receive any <br>of these</td>
+        <td><a href="../ko">Change this</a></td>
+      <tr>
+        <td>Are you living permanently in a care home?</td>
+        <td>Yes</td>
+        <td><a href="../care-home">Change this</a></td>
+      </tr>
+      <tr>
+        <td>Has the local authority assessed your resources, and as a result, you get help with the cost of your care home accommodation?</td>
+        <td>Yes</td>
+        <td><a href="authority-assessed">Change this</a></td>
+      </tr>
+      <tr>
+        <td>Which local authority helps you?</td>
+        <td>Gateshead Council</td>
+        <td><a href="authority-assessed">Change this</a></td>
+      </tr>
+      <tr>
+        <td>Name</td>
+        <td>Priya Mattu</td>
+        <td><a href="about-you">Change this</a></td>
+      </tr>
+      <tr>
+        <td>Date of birth</td>
+        <td>2 June 1986</td>
+        <td><a href="about-you">Change this</a></td>
+      </tr>
+      <tr>
+        <td>Email address</td>
+        <td>test@inter.net</td>
+        <td><a href="contact">Change this</a></td>
+      </tr>
+      <tr>
+        <td>
+          Landline telephone number
+        </td>
+        <td>
+          01911234567
+        </td>
+        <td><a href="contact">Change this</a></td>
+      </tr>
+      <tr>
+        <td>Mobile telephone number</td>
+        <td>07123456789</td>
+        <td><a href="contact">Change this</a></td>
+      </tr>
+      <tr>
+        <td>Your address</td>
+        <td>1 Street, <br>Place, <br>County, <br>NE1234</td>
+        <td><a href="address">Change this</a></td>
+      </tr>
+    </table>
+
+    <form action="sc-done" method="get" class="form">
+      {{
+      form_macros.button({
+        href: 'declaration',
+        label: 'Save and continue'
+      })
+    }}
+    </form>
+
+  </div>
+  </div>
+  </div>
+
+</main>
+
+{% endblock %}
