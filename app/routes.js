@@ -149,12 +149,12 @@ module.exports = {
       }
     });
 
-
     // uk router
       app.get(/uk-handler/, function (req, res) {
-      console.log(req.query.nationality);
+      applicant.country = req.query.nationality;
+      console.log(applicant.country);
       var sprint = req.url.charAt(9);
-      if (req.query.nationality === 'uk') {
+      if (applicant.country === 'uk') {
         res.render('sprints/'+ sprint +'/country_v2');
       } else {
         res.render('sprints/'+ sprint +'/country-info');
