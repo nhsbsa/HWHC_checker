@@ -151,10 +151,8 @@ module.exports = {
 
     // uk router
       app.get(/uk-handler/, function (req, res) {
-      applicant.country = req.query.nationality;
-      console.log(applicant.country);
       var sprint = req.url.charAt(9);
-      if (applicant.country === 'uk') {
+      if (req.query.nationality === 'uk') {
         res.render('sprints/'+ sprint +'/country_v2');
       } else {
         res.render('sprints/'+ sprint +'/country-info');
@@ -163,7 +161,8 @@ module.exports = {
       
     // country router
       app.get(/country-handler/, function (req, res) {
-      if (req.query.eligibility === 'northernIreland') {
+      applicant.country = req.query.country;
+      if (applicant.country === 'northernIreland') {
         res.redirect('../ni-kickout');
       } else {
         res.redirect('../guarantee-credit');
@@ -178,7 +177,6 @@ module.exports = {
         res.redirect('../passported-benefits');
       }
     });
-      
       
     // passported benefits router
       app.get(/benefitsv2-handler/, function (req, res) {
