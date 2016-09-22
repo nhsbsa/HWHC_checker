@@ -21,28 +21,28 @@
       <form action="treatment-handler" method="get" class="form">
         <div class="form-item-wrapper">
           <div class="form-group">
-            <input type="checkbox" id="prescription" name="condition">
+            <input type="checkbox" id="prescription" value="prescription" name="condition">
             <label class="form-control-checkbox" for="prescription">
               Prescriptions
             </label>
           </div>
           
          <div class="form-group">
-            <input type="checkbox" id="dentalExam" name="condition">
+            <input type="checkbox" id="dentalExam" value="dentalexam" name="condition">
             <label class="form-control-checkbox" for="dentalExam">
               Dental
             </label>
           </div>
 
           <div class="form-group">
-            <input type="checkbox" id="sightTest" name="condition">
+            <input type="checkbox" id="sightTest" value="sighttest" name="condition">
             <label class="form-control-checkbox" for="sightTest">
               Sight tests
             </label>
           </div>
         
           <div class="form-group">
-            <input type="checkbox" id="glasses" name="condition">
+            <input type="checkbox" id="glasses" value="glasses" name="condition">
             <label class="form-control-checkbox" for="glasses">
               The cost of glasses and contact lenses
             </label>
@@ -81,8 +81,7 @@
           </div>
         {{
           form_macros.button({
-            label: 'Next',
-            href : "date-of-birth"
+            label: 'Next'
           })  
         }}
         </div>

@@ -1,19 +1,62 @@
 function Person(
   dobYear,
+  need,
+  country, 
+  education,
+  namedOnTaxCredits,
+  claimsTaxCredits,
+  incomeSupport,
+  isPregnant,
+  hasMatexCard,
+  hasMedexCard,
+  hasHealthCondition
+  // LIS questions
+  // ppc
 ) {
   this.dobYear = dobYear,
+  this.need = need,
+  this.country = country, 
+  this.education = education,
+  this.namedOnTaxCredits = namedOnTaxCredits,
+  this.claimsTaxCredits = claimsTaxCredits,
+  this.incomeSupport = incomeSupport,
+  this.isPregnant = isPregnant,
+  this.hasMatexCard = hasMatexCard,
+  this.hasMedexCard = hasMedexCard,
+  this.hasHealthCondition = hasHealthCondition
 }
+// work out age
 
 
 Person.prototype.printPerson = function () {
   console.log(
-    this.dobYear + "\n" +
-      "dob Year = " + this.dobYear + " \n" //+
+    "dob Year = " + this.dobYear + " \n" +
+    "need = " + this.need = need +
+    "country = " + this.country = country + 
+    "education = " + this.education = education +
+    "named on tax credits = " + this.namedOnTaxCredits = namedOnTaxCredits +
+    "claimsTaxCredits = " + this.claimsTaxCredits = claimsTaxCredits +
+    "income support = " + this.incomeSupport = incomeSupport +
+    "pregnant = " + this.isPregnant = isPregnant +
+    "matex card = " + this.hasMatexCard = hasMatexCard +
+    "medex card = " + this.hasMedexCard = hasMedexCard +
+    "Health Condition = " + this.hasHealthCondition = hasHealthCondition
   );
 };
 
 Person.prototype.resetPerson = function () {
   this.dobYear = null;
+  this.dobYear = null;
+  this.need = null;
+  this.country = null; 
+  this.education = null;
+  this.namedOnTaxCredits = null;
+  this.claimsTaxCredits = null;
+  this.incomeSupport = null;
+  this.isPregnant = null;
+  this.hasMatexCard = null;
+  this.hasMedexCard = null;
+  this.hasHealthCondition = null;
   console.log('resetting person...');
 };
 

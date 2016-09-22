@@ -1,5 +1,41 @@
 var querystring = require('querystring');
 
+//import the person constructor
+var person = require("./person.js");
+
+//create an applicant
+var applicant = person.createPerson(
+  this.dobDay = null
+);
+
+
+      // do they want prescriptions
+      //  need
+      // where they live  
+      //  country 
+      // enter year
+      //  dobYear
+      // work out age
+      // ft education
+      //   education
+      // 20 < are they named on tax credits...
+      //  namedOnTaxCredits
+      // 20 > do you get tax credits?
+      //  claimTaxCredits
+      // are they on income support
+      //  incomeSupport
+      // 60 < are they pregnant
+      //  isPregnant
+      // are they named on a matex card
+      //  matexCard
+      // medex card?
+      //  medexCard
+      // health condition
+      //  hasHealthCondition
+      // LIS questions
+      // ppc
+
+
 module.exports = {
   bind : function (app) {
     function find_gp_practice(slug) {
@@ -72,17 +108,16 @@ module.exports = {
     });
 
     // add your routes here
-      
-    //my crap
 
-      // treatment type router
-//      app.get(/treatment-handler/, function (req, res) {
-//      if (req.query.condition === 'yes') {
-//        res.redirect('../full-exemption-benefits');
-//      } else {
-//        res.redirect('../passported-benefits');
-//      }
-//    });
+    //treatment type router
+    app.get(/treatment-handler/, function (req, res) {
+      applicant.need = req.query.condition;
+      if (applicant.need === 'prescription') {
+        res.redirect('../date-of-birth');
+      } else {
+        res.redirect('../passported-benefits');
+      }
+    });
 
 
       
@@ -106,7 +141,7 @@ module.exports = {
       }
     });
 
-          // pension-guarantee router
+    // pension-guarantee router
       app.get(/guacredit-kickout-handler/, function (req, res) {
       if (req.query.guacredit === 'yes') {
         res.redirect('../full-exemption-benefits');
@@ -154,7 +189,7 @@ module.exports = {
     });
 
 
-          // eligibility benefits router
+      // eligibility benefits router
       app.get(/eligibility-handler/, function (req, res) {
       if (req.query.medex === 'medexYes') {
         res.redirect('../diabetes');
@@ -163,7 +198,7 @@ module.exports = {
       }
     });
 
-          // carehome
+      // carehome
       app.get(/carehome-handler/, function (req, res) {
       if (req.query.carehome === 'yes') {
         res.redirect('../sc/authority-assessed');
@@ -172,7 +207,7 @@ module.exports = {
       }
     });
     
-    // carehome-handler
+      // carehome-handler
       app.get(/carehome-handler/, function (req, res) {
       if (req.query.carehome === 'yes') {
         res.redirect('../savings2');
@@ -219,6 +254,15 @@ module.exports = {
 
     // carehome savings kickout handler
     app.get(/carehome-savings-handler/, function (req, res) {
+      if (req.query.savings === 'yes') {
+        res.redirect('../../savings-kickout');
+      } else {
+        res.redirect('../../guarantee-credit');
+      }
+    });
+      
+    // dob-handler
+    app.get(/carehome-savings-handler/, function (req, res) {      
       if (req.query.savings === 'yes') {
         res.redirect('../../savings-kickout');
       } else {
