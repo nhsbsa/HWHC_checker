@@ -1,0 +1,43 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">You can get full help with health costs</h1>
+
+        <p class="intro-to-list">Because you get help from the local authority to pay for your carehome, you acn get the help towards: </p>
+
+     <ul class="list list-bullet">
+          <li>NHS Prescriptions;</li>
+          <li>NHS Dental treatment;</li>
+          <li>sight tests, glasses and contact lenses;</li>
+          <li>NHS wigs and fabric supports;</li>
+          <li>travel to receive NHS treatment (when referred by a GP or hospital doctor, dentist or optician)</li>
+     </ul>
+
+      {{
+        form_macros.button({
+          classes: 'button-get-started',
+          href: '#',
+          label: 'What you need to do to get help'
+        })
+      }}
+
+    </div>
+
+    </div>
+    </div>
+
+</main>
+
+
+{% endblock %}

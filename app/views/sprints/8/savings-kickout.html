@@ -1,10 +1,32 @@
 {% extends 'templates/nhs_transaction_layout.html' %}
 
 {% block afterHeader %}
-  {% include "includes/service-headers/low-income.html" %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
 {% endblock %}
 
 {% block content %}
+
+<style>
+table, {
+    border-collapse: collapse;
+border-spacing: 5px;
+margin: 1em 0 2em;
+    width: 100%;}
+    th, article th {
+    line-height: 1.25em;
+    text-align: left;
+    font-weight: 700;
+        border-bottom: solid 1px #bfc1c3;
+    }
+
+    td {
+        border-bottom: solid 1px #bfc1c3;}
+        td,th {
+    font-size: 16px;
+            line-height: 1.25;
+    padding: .75em .5em .75em 0;}
+
+</style>
 
 <main id="content" role="main">
 
@@ -12,16 +34,46 @@
 
     <div class="column-two-thirds">
 
-      <div class="text">
 
-        <h1 class="heading-xlarge">Savings</h1>
-        <p>
-          <a class="button" href="/">Exit this service</a>
-        </p>
+        <h1 class="heading-large">You can't get free help, but could still save money on your precriptions</h1>
+        <p>If you get 2 or more prescriptions each month, for 3 months or more, you could save money with a prescription prepayment cerificate.</p>
 
-      </div>
+        <h2 class="heading-medium">How much could you save</h2>
+         <table>
+         <thread>
+          <tr>
+            <th>Number of prescriptions per month</th>
+            <th>Savings with a 12 month certificate</th>
+            <th>Savings with a 3 month certificate</th>
+          </tr>
+          </thread>
+          <tbody>
+          <tr>
+            <td class="td">2</td>
+            <td>£95 a year</td>
+            <td>£20 in 3 months</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>£195 a year</td>
+            <td>£45 in 3 months</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>£295 a year</td>
+            <td>£70 in 3 months</td>
+          </tr>
+          </tbody>
+        </table>
+
+
+        <p><a class="button button-get-started" href="date-of-birth" id="next">Buy a certificate</a></p>
+
+
+
 
     </div>
+
 
   </div>
 

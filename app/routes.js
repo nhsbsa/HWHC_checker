@@ -74,6 +74,17 @@ module.exports = {
     // add your routes here
       
     //my crap
+
+      // treatment type router
+//      app.get(/treatment-handler/, function (req, res) {
+//      if (req.query.condition === 'yes') {
+//        res.redirect('../full-exemption-benefits');
+//      } else {
+//        res.redirect('../passported-benefits');
+//      }
+//    });
+
+
       
     // uk router
       app.get(/uk-handler/, function (req, res) {
@@ -90,6 +101,15 @@ module.exports = {
       app.get(/country-handler/, function (req, res) {
       if (req.query.eligibility === 'northernIreland') {
         res.redirect('../ni-kickout');
+      } else {
+        res.redirect('../guarantee-credit');
+      }
+    });
+
+          // pension-guarantee router
+      app.get(/guacredit-kickout-handler/, function (req, res) {
+      if (req.query.guacredit === 'yes') {
+        res.redirect('../full-exemption-benefits');
       } else {
         res.redirect('../passported-benefits');
       }
@@ -124,14 +144,15 @@ module.exports = {
       }
     });
 
-     // tax credit type handler
+    // tax credits type handler
       app.get(/taxcredit-type-handler/, function (req, res) {
       if (req.query.taxcreditsType === 'wtc') {
-        res.redirect('../do-you-have-a-medical-exemption');
-      } else {
         res.redirect('../taxcredit-info');
+      } else {
+        res.redirect('../do-you-have-a-medical-exemption');
       }
     });
+
 
           // eligibility benefits router
       app.get(/eligibility-handler/, function (req, res) {
@@ -142,38 +163,41 @@ module.exports = {
       }
     });
 
-    app.get(/carehome-handler/, function (req, res) {
+          // carehome
+      app.get(/carehome-handler/, function (req, res) {
       if (req.query.carehome === 'yes') {
-        res.redirect('../diabetes');
+        res.redirect('../sc/authority-assessed');
       } else {
-        res.redirect('../savings);
+        res.redirect('../savings');
+      }
+    });
+      
+          // authority assessment handler
+    app.get(/authority-assessed-handler/, function (req, res) {
+      if (req.query.authority === 'yes') {
+        res.redirect('../lis-application');
+      } else {
+        res.redirect('../savings');
+      }
+    });
+      
+          // savings kickout handler
+    app.get(/savings-ko-handler/, function (req, res) {
+      if (req.query.savings === 'yes') {
+        res.redirect('../savings-kickout');
+      } else {
+        res.redirect('../guarantee-credit');
       }
     });
 
-
-//      // medical-handler
-//      app.get(/medical-handler/, function (req, res) {
-//      if (req.query.taxcredits === 'yes') {
-//        res.redirect('../full-exemption-benefits');
-//      } else {
-//        res.redirect('../savings');
-//      }
-//    });
-//
-//    app.get('/lis/7/sc/authority-assessed-handler', function (req, res) {
-//      console.log(req.query);
-//      if (req.query.authority === 'yes') {
-//        res.redirect('/lis/7/sc/about-you');
-//      } else {
-//        res.redirect('/lis/7/sc/savings');
-//      }
-//    });
-
-      
-      
-      
-      
-      
+    // carehome savings kickout handler
+    app.get(/carehome-savings-handler/, function (req, res) {
+      if (req.query.savings === 'yes') {
+        res.redirect('../../savings-kickout');
+      } else {
+        res.redirect('../../guarantee-credit');
+      }
+    });
       
       
 

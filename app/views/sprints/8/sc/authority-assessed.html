@@ -2,7 +2,7 @@
 {% import 'includes/form_macros.html' as form_macros %}
 
 {% block afterHeader %}
-  {% include "includes/service-headers/low-income.html" %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
 {% endblock %}
 
 {% block content %}
@@ -22,28 +22,18 @@
           <div class="inline-form-groups">
             <div class="form-group">
               <input type="radio" id="yes" name="authority" value="yes">
-              <label class="form-control-radio js-toggle" for="yes" data-show="#local-authority">
+              <label class="form-control-radio js-toggle" for="yes">
                 Yes
               </label>
             </div>
             <div class="form-group">
               <input type="radio" id="no" name="authority" value="no">
-              <label class="form-control-radio js-toggle" for="no" data-hide="#local-authority">
+              <label class="form-control-radio js-toggle" for="no" >
                 No
               </label>
             </div>
           </div>
-                  <div class="js-hidden panel-indent" id="local-authority">
 
-          {{
-            form_macros.text_field({
-              id: 'local-authority',
-              hint: 'Local authority',
-              label: 'Please tell us which local authority helps you'
-            })
-          }}
-
-        </div>
         </fieldset>
       </div>
 
@@ -55,7 +45,88 @@
 
   </form>
     </div>
+ <div class="column-third " id="lists">
+
+      <div class="right-col-details">
+
+
+
+          <h3 class="heading-medium">What you get free </h3>
+
+<ul class="form-hint-list">
+    <li class="form-hint-list-item  form-hint-list-item--valid">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        Prescriptions
+    </li>
+
+    <li class="form-hint-list-item form-hint-list-item--valid">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+         NHS Sight test
+    </li>
+
+    <li class="form-hint-list-item form-hint-list-item--valid hidden" id="all">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        Glasses or contact lenses
+    </li>
+
+            <li class="form-hint-list-item form-hint-list-item--valid hidden" id="all1">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        NHS wigs
+    </li>
+
+    <li class="form-hint-list-item form-hint-list-item--valid hidden" id="all2">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        Travel for treatment
+    </li>
+
+    <li class="form-hint-list-item form-hint-list-item--valid hidden" id="all3" >
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        NHS dental exam
+    </li>
+
+    <li class="form-hint-list-item form-hint-list-item--valid hidden" id="all4">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+         NHS dental treatment
+    </li>
+</ul>
+
+
+
+      </div>
+
     </div>
+    </div>
+
 </main>
 
-{% endblock %}
+<!--<script>
+$("#medexYes").click(function(){
+    $("#all").removeClass("hidden");
+    $("#all1").removeClass("hidden");
+    $("#all2").removeClass("hidden");
+    $("#all3").removeClass("hidden");
+    $("#all4").removeClass("hidden");
+}); </script>
+<script>
+$("#medexNo").click(function(){
+    $("#all").addClass("hidden");
+    $("#all1").addClass("hidden");
+    $("#all2").addClass("hidden");
+    $("#all3").addClass("hidden");
+    $("#all4").addClass("hidden");
+}); </script>
+<script>-->
