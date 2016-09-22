@@ -12,23 +12,37 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-       <!--3- Are you named on a Medical Exemption certificate-->
-    <h2 class="heading-large">Do you already have a Medical exemption card?</h2>
+  <h1 class="heading-large">
+    Do you or your partner have more than £23,250?
+  </h1>
+  <p>Include savings, investments &amp; properties (but not place where you live)</p>
+      <details>
 
-      <form action="eligibility-handler" method="get" class="form">
+  <summary><span class="summary">What we mean by partner</span></summary>
 
-          <div class="form-item-wrapper">
+  <div class="panel panel-border-narrow">
+
+    <p>
+      We use the term partner to mean a person you live with as part of a couple of the same or opposite sex, whether or not you are married or in a civil partnership.
+    </p>
+
+  </div>
+
+</details>
+      <br>
+  <form action="carehome-savings-handler" method="get" class="form">
+      <div class="form-item-wrapper">
         <fieldset>
           <div class="inline-form-groups">
             <div class="form-group">
-              <input id="medexYes" name="medex" type="radio" value="medexYes">
-              <label class="form-control-radio" for="medexYes">
+              <input type="radio" id="yes" name="savings" value="yes">
+              <label class="form-control-radio" for="yes">
                 Yes
               </label>
             </div>
             <div class="form-group">
-              <input id="medexNo" name="medex" type="radio" value="medexNo">
-              <label class="form-control-radio" for="medexNo">
+              <input type="radio" id="no" name="savings" value="no">
+              <label class="form-control-radio" for="no">
                 No
               </label>
             </div>
@@ -36,20 +50,19 @@
         </fieldset>
       </div>
 
-      {{
-        form_macros.button({
-          href: 'diabetes',
-          label: 'Next'
-        })
-      }}
+    {{
+      form_macros.button({
+        label: 'Next'
+      })
+    }}
 
   </form>
-      </div>
+    </div>
  <div class="column-third " id="lists">
 
       <div class="right-col-details">
-          
-          
+
+
 
           <h3 class="heading-medium">What you get free </h3>
 
@@ -67,28 +80,28 @@
         </span>
          NHS Sight test
     </li>
-       
+
     <li class="form-hint-list-item form-hint-list-item--valid hidden" id="all">
         <span class="form-hint-list-item__primary">
             <span class="form-hint-list-item__indicator"></span>
         </span>
         Glasses or contact lenses
     </li>
-           
+
             <li class="form-hint-list-item form-hint-list-item--valid hidden" id="all1">
         <span class="form-hint-list-item__primary">
             <span class="form-hint-list-item__indicator"></span>
         </span>
         NHS wigs
     </li>
-    
+
     <li class="form-hint-list-item form-hint-list-item--valid hidden" id="all2">
         <span class="form-hint-list-item__primary">
             <span class="form-hint-list-item__indicator"></span>
         </span>
         Travel for treatment
     </li>
-    
+
     <li class="form-hint-list-item form-hint-list-item--valid hidden" id="all3" >
         <span class="form-hint-list-item__primary">
             <span class="form-hint-list-item__indicator"></span>
@@ -129,12 +142,3 @@ $("#medexNo").click(function(){
     $("#all3").addClass("hidden");
     $("#all4").addClass("hidden");
 }); </script>
-<script>-->
-
-{% endblock %}
-
-
-
-
-
-

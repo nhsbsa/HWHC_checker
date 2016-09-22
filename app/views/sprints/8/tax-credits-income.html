@@ -12,23 +12,39 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-       <!--3- Are you named on a Medical Exemption certificate-->
-    <h2 class="heading-large">Do you already have a Medical exemption card?</h2>
 
-      <form action="eligibility-handler" method="get" class="form">
+       <!--3- Are you named on a Tax Credits Exemption certificate-->
 
-          <div class="form-item-wrapper">
+         <form action="taxcredit-income-handler" method="get" class="form">
+
+    <h2 class="heading-large">Do you have a family income of less than £15,276?</h2>
+
+
+<details>
+  <summary role="button" aria-controls="details-content-0" tabindex="0" aria-expanded="true"><span class="summary">What is a family income?</span></summary>
+
+  <div class="panel-indent" id="details-content-0" aria-hidden="false" style="display: block;">
+
+    <p>This is the income that HMRC used to work out your Tax Credit award.<br>It is made up of your and your partners income for the last tax year.</p>
+    <p>If you are unsure, you can check it on your tax credit award notice.</p>
+  </div>
+</details>
+
+
+
+    <form action="taxcredits-handler" method="get" class="form">
+      <div class="form-item-wrapper">
         <fieldset>
           <div class="inline-form-groups">
             <div class="form-group">
-              <input id="medexYes" name="medex" type="radio" value="medexYes">
-              <label class="form-control-radio" for="medexYes">
+              <input type="radio" id="yes" name="taxcreditsIncome" value="yes">
+              <label class="form-control-radio" for="yes">
                 Yes
               </label>
             </div>
             <div class="form-group">
-              <input id="medexNo" name="medex" type="radio" value="medexNo">
-              <label class="form-control-radio" for="medexNo">
+              <input type="radio" id="no" name="taxcreditsIncome" value="no">
+              <label class="form-control-radio" for="no">
                 No
               </label>
             </div>
@@ -36,20 +52,19 @@
         </fieldset>
       </div>
 
-      {{
-        form_macros.button({
-          href: 'diabetes',
-          label: 'Next'
-        })
-      }}
+    {{
+      form_macros.button({
+        label: 'Next'
+      })
+    }}
 
   </form>
       </div>
  <div class="column-third " id="lists">
 
       <div class="right-col-details">
-          
-          
+
+
 
           <h3 class="heading-medium">What you get free </h3>
 
@@ -67,28 +82,28 @@
         </span>
          NHS Sight test
     </li>
-       
+
     <li class="form-hint-list-item form-hint-list-item--valid hidden" id="all">
         <span class="form-hint-list-item__primary">
             <span class="form-hint-list-item__indicator"></span>
         </span>
         Glasses or contact lenses
     </li>
-           
+
             <li class="form-hint-list-item form-hint-list-item--valid hidden" id="all1">
         <span class="form-hint-list-item__primary">
             <span class="form-hint-list-item__indicator"></span>
         </span>
         NHS wigs
     </li>
-    
+
     <li class="form-hint-list-item form-hint-list-item--valid hidden" id="all2">
         <span class="form-hint-list-item__primary">
             <span class="form-hint-list-item__indicator"></span>
         </span>
         Travel for treatment
     </li>
-    
+
     <li class="form-hint-list-item form-hint-list-item--valid hidden" id="all3" >
         <span class="form-hint-list-item__primary">
             <span class="form-hint-list-item__indicator"></span>
@@ -114,7 +129,7 @@
 </main>
 
 <!--<script>
-$("#medexYes").click(function(){
+$("#yes").click(function(){
     $("#all").removeClass("hidden");
     $("#all1").removeClass("hidden");
     $("#all2").removeClass("hidden");
@@ -122,7 +137,7 @@ $("#medexYes").click(function(){
     $("#all4").removeClass("hidden");
 }); </script>
 <script>
-$("#medexNo").click(function(){
+$("#no").click(function(){
     $("#all").addClass("hidden");
     $("#all1").addClass("hidden");
     $("#all2").addClass("hidden");
@@ -132,6 +147,9 @@ $("#medexNo").click(function(){
 <script>-->
 
 {% endblock %}
+
+
+
 
 
 

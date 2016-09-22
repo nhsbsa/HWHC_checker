@@ -18,7 +18,7 @@
       
       <p>Tick all that apply</p>
             
-      <form action="" method="get" class="form">
+      <form action="treatment-handler" method="get" class="form">
         <div class="form-item-wrapper">
           <div class="form-group">
             <input type="checkbox" id="prescription" name="condition">
@@ -27,6 +27,13 @@
             </label>
           </div>
           
+         <div class="form-group">
+            <input type="checkbox" id="dentalExam" name="condition">
+            <label class="form-control-checkbox" for="dentalExam">
+              Dental
+            </label>
+          </div>
+
           <div class="form-group">
             <input type="checkbox" id="sightTest" name="condition">
             <label class="form-control-checkbox" for="sightTest">
@@ -41,19 +48,16 @@
             </label>
           </div>
           
-          <div class="form-group">
-            <input type="checkbox" id="dentalExam" name="condition">
-            <label class="form-control-checkbox" for="dentalExam">
-              Dental check-up
-            </label>
-          </div>
+
           
+<!--
           <div class="form-group">
             <input type="checkbox" id="dentalTreatment" name="condition">
             <label class="form-control-checkbox" for="dentalTreatment">
               Dental treatment
             </label>
           </div>
+-->
           
          <div class="form-group">
             <input type="checkbox" id="travel" name="condition">
@@ -66,15 +70,19 @@
             <input type="checkbox" id="wigs" name="condition">
             <label class="form-control-checkbox" for="wigs">
              The cost of wigs and fabric supports
-
-
             </label>
           </div>
-
+<p>or</p>
+            <div class="form-group">
+            <input type="checkbox" id="all" name="condition">
+            <label class="form-control-checkbox" for="all">
+             all of the above
+            </label>
+          </div>
         {{
           form_macros.button({
             label: 'Next',
-            href : "where-do-you-live"
+            href : "date-of-birth"
           })  
         }}
         </div>

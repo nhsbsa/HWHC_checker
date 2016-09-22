@@ -74,6 +74,17 @@ module.exports = {
     // add your routes here
       
     //my crap
+
+      // treatment type router
+//      app.get(/treatment-handler/, function (req, res) {
+//      if (req.query.condition === 'yes') {
+//        res.redirect('../full-exemption-benefits');
+//      } else {
+//        res.redirect('../passported-benefits');
+//      }
+//    });
+
+
       
     // uk router
       app.get(/uk-handler/, function (req, res) {
@@ -91,6 +102,15 @@ module.exports = {
       if (req.query.eligibility === 'northernIreland') {
         res.redirect('../ni-kickout');
       } else {
+        res.redirect('../guarantee-credit');
+      }
+    });
+
+          // pension-guarantee router
+      app.get(/guacredit-kickout-handler/, function (req, res) {
+      if (req.query.guacredit === 'yes') {
+        res.redirect('../full-exemption-benefits');
+      } else {
         res.redirect('../passported-benefits');
       }
     });
@@ -99,25 +119,54 @@ module.exports = {
     // passported benefits router
       app.get(/benefitsv2-handler/, function (req, res) {
       if (req.query.kickout === 'continue') {
-        res.redirect('../do-you-have-a-medical-exemption');
+        res.redirect('../tax-credits');
       } else {
         res.redirect('../full-exemption-benefits');
       }
     });
       
-          // medical benefits router
+    // tax credits handler
+      app.get(/taxcredits-handler/, function (req, res) {
+      if (req.query.taxcredits === 'yes') {
+        res.redirect('../tax-credits-income');
+      } else {
+        res.redirect('../do-you-have-a-medical-exemption');
+      }
+    });
+      
+
+    // tax credits income handler
+      app.get(/taxcredit-income-handler/, function (req, res) {
+      if (req.query.taxcreditsIncome === 'yes') {
+        res.redirect('../tax-credits-claim-type');
+      } else {
+        res.redirect('../do-you-have-a-medical-exemption');
+      }
+    });
+
+    // tax credits type handler
+      app.get(/taxcredit-type-handler/, function (req, res) {
+      if (req.query.taxcreditsType === 'wtc') {
+        res.redirect('../taxcredit-info');
+      } else {
+        res.redirect('../do-you-have-a-medical-exemption');
+      }
+    });
+
+
+          // eligibility benefits router
       app.get(/eligibility-handler/, function (req, res) {
       if (req.query.medex === 'medexYes') {
-        res.redirect('../full-exemption-benefits');
+        res.redirect('../diabetes');
       } else {
         res.redirect('../tax-credits-exemption');
       }
     });
-      
-      // medical-handler
-      app.get(/medical-handler/, function (req, res) {
-      if (req.query.taxcredits === 'yes') {
-        res.redirect('../full-exemption-benefits');
+
+          // carehome
+      app.get(/carehome-handler/, function (req, res) {
+      if (req.query.carehome === 'yes') {
+        res.redirect('../sc/authority-assessed');
       } else {
         res.redirect('../care-home');
       }
@@ -149,12 +198,33 @@ module.exports = {
         res.redirect('../lis');
       }
     });
+      
+          // authority assessment handler
+    app.get(/authority-assessed-handler/, function (req, res) {
+      if (req.query.authority === 'yes') {
+        res.redirect('../lis-application');
+      } else {
+        res.redirect('../savings');
+      }
+    });
+      
+          // savings kickout handler
+    app.get(/savings-ko-handler/, function (req, res) {
+      if (req.query.savings === 'yes') {
+        res.redirect('../savings-kickout');
+      } else {
+        res.redirect('../guarantee-credit');
+      }
+    });
 
-      
-      
-      
-      
-      
+    // carehome savings kickout handler
+    app.get(/carehome-savings-handler/, function (req, res) {
+      if (req.query.savings === 'yes') {
+        res.redirect('../../savings-kickout');
+      } else {
+        res.redirect('../../guarantee-credit');
+      }
+    });
       
       
 

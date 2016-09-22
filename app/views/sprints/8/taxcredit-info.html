@@ -1,0 +1,41 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="text">
+
+        <h1 class="heading-large">You get full help with health costs</h1>
+
+        <p class="intro-to-list">Because you get {{}} tax credits you, your partner and any young people included on your claim can get help with NHS health costs.</p>
+
+        <img src="/public/images/tax-cert.png" alt="what a NHS Tax Credit Exemption Certificate looks like">
+
+        <p>You should have been sent an NHS Tax Credit Exemption Certificate automatically, but if not, you can show your tax credit award notice as evidence to your health care provider.</p>
+
+
+  </div>
+</details>
+
+           <button class="button-secondary-cta" href="age">What you need to do to get help
+</button>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}
