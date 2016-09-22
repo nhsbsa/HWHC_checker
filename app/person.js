@@ -1,5 +1,5 @@
 function Person(
-  dobYear,
+  age,
   need,
   country, 
   education,
@@ -13,7 +13,7 @@ function Person(
   // LIS questions
   // ppc
 ) {
-  this.dobYear = dobYear,
+  this.age = age,
   this.need = need,
   this.country = country, 
   this.education = education,
@@ -30,7 +30,7 @@ function Person(
 
 Person.prototype.printPerson = function () {
   console.log(
-    "dob Year = " + this.dobYear + " \n" +
+    "dob Year = " + this.age + " \n" +
     "need = " + this.need = need +
     "country = " + this.country = country + 
     "education = " + this.education = education +
@@ -45,8 +45,8 @@ Person.prototype.printPerson = function () {
 };
 
 Person.prototype.resetPerson = function () {
-  this.dobYear = null;
-  this.dobYear = null;
+  this.age = null;
+  this.age = null;
   this.need = null;
   this.country = null; 
   this.education = null;

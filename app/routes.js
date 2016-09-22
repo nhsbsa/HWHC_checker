@@ -5,8 +5,20 @@ var person = require("./person.js");
 
 //create an applicant
 var applicant = person.createPerson(
-  this.dobDay = null
+  this.age = undefined,
+  this.need = undefined,
+  this.country = undefined, 
+  this.education = undefined,
+  this.namedOnTaxCredits = false,
+  this.claimsTaxCredits = false,
+  this.incomeSupport = false,
+  this.isPregnant = false,
+  this.hasMatexCard = false,
+  this.hasMedexCard = false,
+  this.hasHealthCondition = false
 );
+
+var thisYear = 2016;
 
 
       // do they want prescriptions
@@ -14,7 +26,7 @@ var applicant = person.createPerson(
       // where they live  
       //  country 
       // enter year
-      //  dobYear
+      //  age
       // work out age
       // ft education
       //   education
@@ -109,6 +121,13 @@ module.exports = {
 
     // add your routes here
 
+    
+    
+    //********
+    //sprint 8
+    //********
+    
+    
     //treatment type router
     app.get(/treatment-handler/, function (req, res) {
       applicant.need = req.query.condition;
@@ -118,9 +137,19 @@ module.exports = {
         res.redirect('../passported-benefits');
       }
     });
+    
+    // dob-handler
+    app.get(/dob-handler/, function (req, res) { 
+      applicant.age = (thisYear - req.query.dobyear);
+      console.log(applicant.age);
+      if (applicant.age < 20) {
+        res.redirect('..where-do-you-live');
+      } else if (applicant.age > 20) {
+        res.redirect('../where-do-you-live');
+      }
+    });
 
 
-      
     // uk router
       app.get(/uk-handler/, function (req, res) {
       console.log(req.query.nationality);
