@@ -132,24 +132,13 @@ module.exports = {
     app.get(/treatment-handler/, function (req, res) {
       applicant.need = req.query.condition;
       if (applicant.need === 'prescription') {
-        res.redirect('../date-of-birth');
+        res.redirect('../country_v2');
       } else {
         res.redirect('../passported-benefits');
       }
     });
     
-    // dob-handler
-    app.get(/dob-handler/, function (req, res) { 
-      applicant.age = (thisYear - req.query.dobyear);
-      console.log(applicant.age);
-      if (applicant.age < 20) {
-        res.redirect('..where-do-you-live');
-      } else if (applicant.age > 20) {
-        res.redirect('../where-do-you-live');
-      }
-    });
-
-    // uk router
+    // eu handler
       app.get(/uk-handler/, function (req, res) {
       var sprint = req.url.charAt(9);
       if (req.query.nationality === 'uk') {
@@ -162,13 +151,39 @@ module.exports = {
     // country router
       app.get(/country-handler/, function (req, res) {
       applicant.country = req.query.country;
-      if (applicant.country === 'northernIreland') {
+      if (applicant.country === 'england') {
+        res.redirect('../date-of-birth');
+      } else if (applicant.country === 'northernIreland') {
         res.redirect('../ni-kickout');
       } else {
-        res.redirect('../guarantee-credit');
+        res.redirect('../full-exemption-benefits');
       }
     });
-
+    
+    // dob-handler
+    app.get(/dob-handler/, function (req, res) { 
+      applicant.age = (thisYear - req.query.dobyear);
+      console.log(applicant.age);
+      if (applicant.age >= 60) {
+        res.redirect('../full-exemption-under-16');
+      } else if (applicant.age >= 19) { 
+        res.redirect('../tax-credits');
+      } else if (applicant.age  > 15) {
+        res.redirect('../full-time-education');
+      } else {
+        res.redirect('../full-exemption-under-16');
+      }
+    });
+/*      if (applicant.age < 16) {
+        res.redirect('../full-exemption-under-16');
+      } else if (applicant.age > 16 && < 19) { //2000
+        res.redirect('../full-time-education');
+      } else if (applicant.age  > 19 && < 60) {  //1997
+        res.redirect('../tax-credits');
+      } else (applicant.age  > 60) { //1956
+        res.redirect('../full-exemption-under-16');
+      }
+*/
     // pension-guarantee router
       app.get(/guacredit-kickout-handler/, function (req, res) {
       if (req.query.guacredit === 'yes') {
@@ -183,16 +198,16 @@ module.exports = {
       if (req.query.kickout === 'continue') {
         res.redirect('../tax-credits');
       } else {
-        res.redirect('../full-exemption-benefits');
+        res.redirect('../pregnancy');
       }
     });
       
-    // tax credits handler
+    // tax credits yes or no handler
       app.get(/taxcredits-handler/, function (req, res) {
       if (req.query.taxcredits === 'yes') {
         res.redirect('../tax-credits-income');
       } else {
-        res.redirect('../do-you-have-a-medical-exemption');
+        res.redirect('../passported-benefits');
       }
     });
       
@@ -202,47 +217,68 @@ module.exports = {
       if (req.query.taxcreditsIncome === 'yes') {
         res.redirect('../tax-credits-claim-type');
       } else {
-        res.redirect('../do-you-have-a-medical-exemption');
+        res.redirect('../passported-benefits');
       }
     });
 
     // tax credits type handler
       app.get(/taxcredit-type-handler/, function (req, res) {
       if (req.query.taxcreditsType === 'wtc') {
+        res.redirect('../passported-benefits');
+      } else {
         res.redirect('../taxcredit-info');
+      }
+    });
+
+
+      // full time education handler
+      app.get(/fe-handler/, function (req, res) {
+      applicant.education = req.query.eligibilityfte;  
+      if (applicant.education === 'fte' || applicant.education === 'apprenticeship' ) {
+        res.redirect('../full-exemption-under-16');
+      } else {
+        res.redirect('../tax-credits');
+      }
+    });
+    
+    // passported benefits router
+      app.get(/passportedBen-handler/, function (req, res) {
+      if (req.query.benefits === 'continue') {
+        res.redirect('../pregnancy');
+      } else {
+        res.redirect('../passported-benefits-info');
+      }
+    });
+      
+    // pregnancy router
+      app.get(/preg-handler/, function (req, res) {
+      if (req.query.pregnancy === 'yes') {
+      applicant.isPregnant = true;
+      res.redirect('../full-exemption-benefits');
       } else {
         res.redirect('../do-you-have-a-medical-exemption');
       }
     });
 
-
-      // eligibility benefits router
-      app.get(/eligibility-handler/, function (req, res) {
-      if (req.query.medex === 'medexYes') {
-        res.redirect('../diabetes');
+    // pregnancy router
+      app.get(/medex-handler/, function (req, res) {
+      if (req.query.medex === 'yes') {
+      applicant.hasMedexCard = true;
+      res.redirect('../full-exemption-benefits');
       } else {
-        res.redirect('../tax-credits-exemption');
+        res.redirect('../diabetes');
       }
     });
-
+  
       // carehome
       app.get(/carehome-handler/, function (req, res) {
       if (req.query.carehome === 'yes') {
         res.redirect('../sc/authority-assessed');
       } else {
-        res.redirect('../care-home');
-      }
-    });
-    
-      // carehome-handler
-      app.get(/carehome-handler/, function (req, res) {
-      if (req.query.carehome === 'yes') {
-        res.redirect('../savings2');
-      } else {
         res.redirect('../savings1');
       }
     });
-    
+        
       // saving-handler
       app.get(/saving-handler/, function (req, res) {
       if (req.query.savings === 'yes') {
@@ -261,7 +297,7 @@ module.exports = {
       }
     });
       
-          // authority assessment handler
+    // authority assessment handler
     app.get(/authority-assessed-handler/, function (req, res) {
       if (req.query.authority === 'yes') {
         res.redirect('../lis-application');
@@ -270,7 +306,7 @@ module.exports = {
       }
     });
       
-          // savings kickout handler
+    // savings kickout handler
     app.get(/savings-ko-handler/, function (req, res) {
       if (req.query.savings === 'yes') {
         res.redirect('../savings-kickout');
