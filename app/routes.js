@@ -149,10 +149,8 @@ module.exports = {
       }
     });
 
-
     // uk router
       app.get(/uk-handler/, function (req, res) {
-      console.log(req.query.nationality);
       var sprint = req.url.charAt(9);
       if (req.query.nationality === 'uk') {
         res.render('sprints/'+ sprint +'/country_v2');
@@ -163,7 +161,8 @@ module.exports = {
       
     // country router
       app.get(/country-handler/, function (req, res) {
-      if (req.query.eligibility === 'northernIreland') {
+      applicant.country = req.query.country;
+      if (applicant.country === 'northernIreland') {
         res.redirect('../ni-kickout');
       } else {
         res.redirect('../guarantee-credit');
@@ -178,8 +177,7 @@ module.exports = {
         res.redirect('../passported-benefits');
       }
     });
-      
-      
+
     // passported benefits router
       app.get(/benefitsv2-handler/, function (req, res) {
       if (req.query.kickout === 'continue') {
