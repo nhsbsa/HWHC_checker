@@ -192,7 +192,7 @@ module.exports = {
         res.redirect('../passported-benefits');
       }
     });
-      
+
     // passported benefits router
       app.get(/benefitsv2-handler/, function (req, res) {
       if (req.query.kickout === 'continue') {

@@ -8,49 +8,56 @@
 {% block content %}
 
 <main id="content" role="main">
-  
+
   <div class="grid-row">
-    
+
     <div class="column-two-thirds">
 
-      <h1 class="heading-large">
-        Do you or your partner receive Pension Credit Guarantee Credit?
-        <span class="form-hint">
-          This is a pension top up payment of up to £155.60 (for single people) or £237.55 (for couples
-        </span>
-      </h1>
+  <h1 class="heading-large">
+    Do you or your partner receive Pension Credit Guarantee Credit?
+    <span class="form-hint">This is a pension top up payment of up to £155.60 (for single people) or £237.55 (for couples).</span>
+  </h1>
 
-        <form action="guarantee-credit-handler" method="get" class="form">
-          <div class="form-item-wrapper">
-            <fieldset>
-              <div class="inline-form-groups">
-                <div class="form-group">
-                  <input type="radio" id="yes" name="gcredit" value="yes">
-                  <label class="form-control-radio" for="yes">
-                    Yes
-                  </label>
-                </div>
-                <div class="form-group">
-                  <input type="radio" id="no" name="gcredit" value="no">
-                  <label class="form-control-radio" for="no">
-                    No
-                  </label>
-                </div>
-              </div>
-            </fieldset>
+
+      <div class="form-item-wrapper">
+        <fieldset>
+          <div class="inline-form-groups">
+            <div class="form-group">
+
+              <input type="radio" id="yes" name="gcredit" value="yes">
+
+              <label class="form-control-radio" for="yes">
+                Yes
+              </label>
+            </div>
+            <div class="form-group">
+
+              <input type="radio" id="no" name="gcredit" value="no">
+
+              <label class="form-control-radio" for="no">
+                No
+              </label>
+            </div>
           </div>
-            {{
-              form_macros.button({
-                label: 'Next'
-              })
-            }}
-        </form>
+        </fieldset>
+      </div>
+
+
+    {{
+      form_macros.button({
+        label: 'Next'
+      })
+    }}
+
+  </form>
     </div>
-    
+
+
     <div class="column-third " id="lists">
 
+
       <div class="right-col-details">
-        
+
         <h3 class="heading-medium">What you get free </h3>
 
         <ul class="form-hint-list">
@@ -103,14 +110,14 @@
                  NHS dental treatment
             </li>
         </ul>
-  
+
     </div>
-      
+
   </div>
   </div>
 </main>
-{% endblock %}
-  
+
+
 <script>
 $("#no").click(function(){
     $("#all").addClass("hidden");
@@ -126,4 +133,7 @@ $("#yes").click(function(){
     $("#all2").removeClass("hidden");
     $("#all3").removeClass("hidden");
     $("#all4").removeClass("hidden");
+
 }); </script>
+{% endblock %}
+
