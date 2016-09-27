@@ -1,0 +1,119 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
+{% endblock %}
+
+{% block content %}
+<style>
+  hr
+    {background-image: linear-gradient(to bottom, transparent 50%, #B1B1B1 50%);
+    background-position: 0 50%;
+    background-repeat: repeat-x;
+    background-size: 100% 0.15rem;
+    border: 0;
+    margin: 0;
+    padding-bottom: 2em;}
+</style>
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">
+        What costs do you need help with?
+      </h1>
+      
+      <p>Tick all that apply</p>
+            
+      <form action="treatment-handler" method="get" class="form">
+        <div class="form-item-wrapper">
+          
+         <div class="form-group">
+            <input type="checkbox" id="dentalExam" value="dentalexam" name="condition">
+            <label class="form-control-checkbox" for="dentalExam">
+              Dental
+            </label>
+          </div>
+
+          <div class="form-group">
+            <input type="checkbox" id="sightTest" value="sighttest" name="condition">
+            <label class="form-control-checkbox" for="sightTest">
+              Sight tests
+            </label>
+          </div>
+        
+          <div class="form-group">
+            <input type="checkbox" id="glasses" value="glasses" name="condition">
+            <label class="form-control-checkbox" for="glasses">
+              The cost of glasses and contact lenses
+            </label>
+          </div>
+          
+
+          
+<!--
+          <div class="form-group">
+            <input type="checkbox" id="dentalTreatment" name="condition">
+            <label class="form-control-checkbox" for="dentalTreatment">
+              Dental treatment
+            </label>
+          </div>
+-->
+          
+         <div class="form-group">
+            <input type="checkbox" id="travel" name="condition">
+            <label class="form-control-checkbox" for="travel">
+             Travel costs for NHS treatment 
+            </label>
+          </div>
+          
+          <div class="form-group">
+            <input type="checkbox" id="wigs" name="condition">
+            <label class="form-control-checkbox" for="wigs">
+             The cost of wigs and fabric supports
+            </label>
+          </div>
+<p>or</p>
+            <div class="form-group">
+            <input type="checkbox" id="all" name="condition">
+            <label class="form-control-checkbox" for="all">
+             all of the above
+            </label>
+          </div>
+
+        {{
+          form_macros.button({
+            label: 'Next'
+          })  
+        }}
+        </div>
+
+      </form>
+      <hr>
+      <h2 class="heading-small">What you get free</h2>
+      <ul class="form-hint-list">
+        <li class="form-hint-list-item  form-hint-list-item--valid">
+            <span class="form-hint-list-item__primary">
+              <span class="form-hint-list-item__indicator"></span>
+            </span>
+            Prescriptions
+        </li>
+      </ul>
+      
+    </div>
+    </div>
+
+</main>
+
+
+{% endblock %}
+
+
+
+
+
+
+

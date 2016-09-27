@@ -1,0 +1,43 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
+{% endblock %}
+
+{% block content %}
+<style>
+ address {
+    display: block;
+    font-style: normal;
+}
+</style>
+
+<main id="content" role="main">
+  <a class="back-link" href="../country_v2">Back </a>
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+        <h1 class="heading-large">You get free prescriptions</h1>
+          
+          <p>NHS prescriptions are free of charge, as long as you have:</p>
+          <ul class="list-bullet">
+              <li>a GP in Scotland or Wales and</li>
+              <li>the prescription is dispensed by a pharmacist in Scotland or Wales.</li>
+          </ul>
+      </div>
+    </div>
+
+    {{
+        form_macros.button({
+        classes: 'button-secondary-cta',
+        href: '../condition-prescriptions',
+        label: 'Find out about help for other costs'
+      })
+    }}
+
+</main>
+
+
+{% endblock %}
