@@ -9,7 +9,7 @@ var applicant = person.createPerson(
   this.need = undefined,
   this.country = undefined, 
   this.education = undefined,
-  this.namedOnTaxCredits = false,
+  this.namedOnTaxCredits = undefined,
   this.claimsTaxCredits = false,
   this.incomeSupport = false,
   this.isPregnant = false,
@@ -154,11 +154,58 @@ module.exports = {
       if (applicant.age >= 60) {
         res.redirect('../full-exemption-under-16');
       } else if (applicant.age >= 19) { 
-        res.redirect('../tax-credits');
+        res.redirect('../tax-credits-19yo');
       } else if (applicant.age  > 15) {
         res.redirect('../full-time-education');
       } else {
         res.redirect('../full-exemption-under-16');
+      }
+    });
+
+    // full time education handler
+      app.get(/fe-handler/, function (req, res) {
+      applicant.education = req.query.eligibilityfte;
+      if (applicant.education === 'fte' || applicant.education === 'apprenticeship' ) {
+        res.redirect('../full-exemption-under-16');
+      } else {
+        res.redirect('../tax-credits-19yo');
+      }
+    });
+
+    // full time education handler
+      app.get(/taxcredits-handler/, function (req, res) {
+      applicant.namedOnTaxCredits = req.query.taxcredits;
+      if (applicant.namedOnTaxCredits === 'yes' || applicant.namedOnTaxCredits === 'nk' ) {
+        res.redirect('../tax-credits-income');
+      } else {
+        res.redirect('../passported-benefits');
+      }
+    });
+
+    // // tax credits yes or no handler
+    //   app.get(/taxcredits-handler/, function (req, res) {
+    //   if (req.query.taxcredits === 'no') {
+    //     res.redirect('../passported-benefits');
+    //   } else {
+    //     res.redirect('../tax-credits-income');
+    //   }
+    // });
+
+    // tax credits income handler
+      app.get(/taxcredit-income-handler/, function (req, res) {
+      if (req.query.taxcreditsIncome === 'yes') {
+        res.redirect('../tax-credits-claim-type');
+      } else {
+        res.redirect('../passported-benefits');
+      }
+    });
+
+    // tax credits type handler
+      app.get(/taxcredit-type-handler/, function (req, res) {
+      if (req.query.taxcreditsType === 'wtc') {
+        res.redirect('../passported-benefits');
+      } else {
+        res.redirect('../taxcredit-info');
       }
     });
 
@@ -179,46 +226,7 @@ module.exports = {
         res.redirect('../pregnancy');
       }
     });
-      
-    // tax credits yes or no handler
-      app.get(/taxcredits-handler/, function (req, res) {
-      if (req.query.taxcredits === 'yes') {
-        res.redirect('../tax-credits-income');
-      } else {
-        res.redirect('../passported-benefits');
-      }
-    });
-      
 
-    // tax credits income handler
-      app.get(/taxcredit-income-handler/, function (req, res) {
-      if (req.query.taxcreditsIncome === 'yes') {
-        res.redirect('../tax-credits-claim-type');
-      } else {
-        res.redirect('../passported-benefits');
-      }
-    });
-
-    // tax credits type handler
-      app.get(/taxcredit-type-handler/, function (req, res) {
-      if (req.query.taxcreditsType === 'wtc') {
-        res.redirect('../passported-benefits');
-      } else {
-        res.redirect('../taxcredit-info');
-      }
-    });
-
-
-      // full time education handler
-      app.get(/fe-handler/, function (req, res) {
-      applicant.education = req.query.eligibilityfte;  
-      if (applicant.education === 'fte' || applicant.education === 'apprenticeship' ) {
-        res.redirect('../full-exemption-under-16');
-      } else {
-        res.redirect('../tax-credits');
-      }
-    });
-    
     // passported benefits router
       app.get(/passportedBen-handler/, function (req, res) {
       if (req.query.benefits === 'continue') {
