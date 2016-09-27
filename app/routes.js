@@ -21,31 +21,7 @@ var applicant = person.createPerson(
 var thisYear = 2016;
 
 
-      // do they want prescriptions
-      //  need
-      // where they live  
-      //  country 
-      // enter year
-      //  age
-      // work out age
-      // ft education
-      //   education
-      // 20 < are they named on tax credits...
-      //  namedOnTaxCredits
-      // 20 > do you get tax credits?
-      //  claimTaxCredits
-      // are they on income support
-      //  incomeSupport
-      // 60 < are they pregnant
-      //  isPregnant
-      // are they named on a matex card
-      //  matexCard
-      // medex card?
-      //  medexCard
-      // health condition
-      //  hasHealthCondition
-      // LIS questions
-      // ppc
+
 
 
 module.exports = {
@@ -72,9 +48,9 @@ module.exports = {
       }, app.locals.appointments);
     }
 
-    function find_matching_appointment(filter_functions) {
-      return find_matching_appointments(filter_functions)[0]
-    }
+//    function find_matching_appointment(filter_functions) {
+//      return find_matching_appointments(filter_functions)[0]
+//    }
 
     function getServiceFromSlug(service_slug_param) {
       var service_slug = service_slug_param || 'general-practice',
@@ -152,11 +128,22 @@ module.exports = {
       app.get(/country-handler/, function (req, res) {
       applicant.country = req.query.country;
       if (applicant.country === 'england') {
-        res.redirect('../date-of-birth');
+        res.redirect('../border-gp');
       } else if (applicant.country === 'northernIreland') {
         res.redirect('../ni-kickout');
+      } else if (applicant.country === 'scotland') {
+        res.redirect('../entitlements/prescription-scot');
       } else {
-        res.redirect('../full-exemption-benefits');
+        res.redirect('../entitlements/prescription-wales');
+      }
+    });
+
+    // gp router
+      app.get(/gp-handler/, function (req, res) {
+      if (req.query.gp === 'yes') {
+        res.redirect('../entitlements/prescription-eng');
+      } else {
+        res.redirect('../date-of-birth');
       }
     });
     
@@ -174,16 +161,7 @@ module.exports = {
         res.redirect('../full-exemption-under-16');
       }
     });
-/*      if (applicant.age < 16) {
-        res.redirect('../full-exemption-under-16');
-      } else if (applicant.age > 16 && < 19) { //2000
-        res.redirect('../full-time-education');
-      } else if (applicant.age  > 19 && < 60) {  //1997
-        res.redirect('../tax-credits');
-      } else (applicant.age  > 60) { //1956
-        res.redirect('../full-exemption-under-16');
-      }
-*/
+
     // pension-guarantee router
       app.get(/guacredit-kickout-handler/, function (req, res) {
       if (req.query.guacredit === 'yes') {
