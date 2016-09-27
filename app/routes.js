@@ -152,7 +152,7 @@ module.exports = {
       applicant.age = (thisYear - req.query.dobyear);
       console.log(applicant.age);
       if (applicant.age >= 60) {
-        res.redirect('../full-exemption-under-16');
+        res.redirect('../entitlements/prescription-over60');
       } else if (applicant.age >= 19) { 
         res.redirect('../tax-credits-19yo');
       } else if (applicant.age  > 15) {
@@ -166,7 +166,7 @@ module.exports = {
       app.get(/fe-handler/, function (req, res) {
       applicant.education = req.query.eligibilityfte;
       if (applicant.education === 'fte' || applicant.education === 'apprenticeship' ) {
-        res.redirect('../full-exemption-under-16');
+        res.redirect('../full-exemption-fte');
       } else {
         res.redirect('../tax-credits-19yo');
       }
@@ -182,14 +182,6 @@ module.exports = {
       }
     });
 
-    // // tax credits yes or no handler
-    //   app.get(/taxcredits-handler/, function (req, res) {
-    //   if (req.query.taxcredits === 'no') {
-    //     res.redirect('../passported-benefits');
-    //   } else {
-    //     res.redirect('../tax-credits-income');
-    //   }
-    // });
 
     // tax credits income handler
       app.get(/taxcredit-income-handler/, function (req, res) {
@@ -209,30 +201,13 @@ module.exports = {
       }
     });
 
-    // pension-guarantee router
-      app.get(/guacredit-kickout-handler/, function (req, res) {
-      if (req.query.guacredit === 'yes') {
-        res.redirect('../full-exemption-benefits');
-      } else {
-        res.redirect('../passported-benefits');
-      }
-    });
-
-    // passported benefits router
-      app.get(/benefitsv2-handler/, function (req, res) {
-      if (req.query.kickout === 'continue') {
-        res.redirect('../tax-credits');
-      } else {
-        res.redirect('../pregnancy');
-      }
-    });
 
     // passported benefits router
       app.get(/passportedBen-handler/, function (req, res) {
       if (req.query.benefits === 'continue') {
         res.redirect('../pregnancy');
       } else {
-        res.redirect('../passported-benefits-info');
+        res.redirect('../full-exemption-benefits');
       }
     });
       
@@ -240,19 +215,28 @@ module.exports = {
       app.get(/preg-handler/, function (req, res) {
       if (req.query.pregnancy === 'yes') {
       applicant.isPregnant = true;
-      res.redirect('../full-exemption-benefits');
+      res.redirect('../entitlements/prescription-preg');
       } else {
         res.redirect('../do-you-have-a-medical-exemption');
       }
     });
 
-    // pregnancy router
+    // medex router
       app.get(/medex-handler/, function (req, res) {
       if (req.query.medex === 'yes') {
       applicant.hasMedexCard = true;
       res.redirect('../full-exemption-benefits');
       } else {
         res.redirect('../diabetes');
+      }
+    });
+
+    // pension-guarantee router
+      app.get(/guacredit-kickout-handler/, function (req, res) {
+      if (req.query.guacredit === 'yes') {
+        res.redirect('../full-exemption-benefits');
+      } else {
+        res.redirect('../passported-benefits');
       }
     });
   
@@ -692,6 +676,7 @@ var filterByPractitionerUuid = function(uuid) {
     return appointment.practitioner_uuid === uuid;
   }
 }
+
  
     
    

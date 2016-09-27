@@ -7,29 +7,54 @@
 
 {% block content %}
 
+<style>
+.import-panel {
+    font-weight: bold;
+    padding: 20px 0px 10px 40px;
+    background: url("/public/images/icon-information.png") no-repeat scroll 0px center;
+
+}</style>
+
+
+
 <main id="content" role="main">
+<a href="javascript:history.go(-1)" class="link-back">Back</a>
 
   <div class="grid-row">
     <div class="column-two-thirds">
 
       <h1 class="heading-large">You get full help with health costs</h1>
 
-        <p class="intro-to-list">Because you get {{}} you, your partner and any young people under 20, included on your claim can get help with NHS health costs.</p>
+      <div class="import-panel">You may have to show your health care professional proof that you are in receipt of {{}}</div>
 
-      {{
-        form_macros.button({
-          classes: 'button-secondary-cta',
-          href: '#',
-          label: 'What you need to do to get help'
-        })
-      }}
+        <p class="intro-to-list">Because you get {{}} you, your partner and any young people under 20, included on your claim get free:</p>
 
-    </div>
+        <ul class="list list-bullet">
+          <li>NHS prescriptions </li>
+          <li>NHS dental treatment for any course of treatment that starts before your 18th birthday</li>
+          <li>NHS sight tests</li>
+          <li>NHS wigs and fabric supports</li>
+        </ul>
 
-    </div>
+        <p class="intro-to-list">
+          You'll also:
+        </p>
+        <ul class="list list-bullet">
+          <li>Get help towards the cost of glasses or contact lenses</li>
+          <li>May get help towards the cost of repair or replacement of glasses or contact lenses</li>
+          <li>May get help with travel costs for NHS treatment</li>
+        </ul>
+
+      </div>
+
+      
     </div>
 
 </main>
 
 
 {% endblock %}
+
+
+
+        
