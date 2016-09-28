@@ -253,7 +253,7 @@ module.exports = {
       app.get(/medex-handler/, function (req, res) {
       if (req.query.medex === 'yes') {
       applicant.hasMedexCard = true;
-      res.redirect('../full-exemption-benefits');
+      res.redirect('../entitlements/prescription-medex');
       } else {
         res.redirect('../diabetes');
       }
