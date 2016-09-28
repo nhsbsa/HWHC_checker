@@ -239,6 +239,24 @@ module.exports = {
     });
 
     // pregnancy router
+      app.get(/diabetes-handler/, function (req, res) {
+      if (req.query.diabetes === 'yes') {
+      res.redirect('../medex-info');
+      } else {
+        res.redirect('../care-home');
+      }
+    });
+    
+    // carehome router
+      app.get(/care-home-handler/, function (req, res) {
+      if (req.query.carehome === 'yes') {
+      res.redirect('../sc/authority-assessed');
+      } else {
+        res.redirect('../savings1');
+      }
+    });
+
+    // pregnancy router
       app.get(/medex-handler/, function (req, res) {
       if (req.query.medex === 'yes') {
       applicant.hasMedexCard = true;
@@ -262,7 +280,7 @@ module.exports = {
       if (req.query.savings === 'yes') {
         res.redirect('../ppc');
       } else {
-        res.redirect('../guarantee-credit');
+        res.redirect('../lis');
       }
     });
       
@@ -298,20 +316,15 @@ module.exports = {
       if (req.query.savings === 'yes') {
         res.redirect('../../savings-kickout');
       } else {
-        res.redirect('../../guarantee-credit');
+        res.redirect('../../lis');
       }
     });
-      
-    // dob-handler
-    app.get(/carehome-savings-handler/, function (req, res) {      
-      if (req.query.savings === 'yes') {
-        res.redirect('../../savings-kickout');
-      } else {
-        res.redirect('../../guarantee-credit');
-      }
-    });
-      
-      
+    
+    
+    
+    
+    
+    
 
     // Change or cancel appointment fork:
     app.get('/change-or-cancel-an-appointment/path-handler', function(req, res) {

@@ -23,19 +23,19 @@
        <!--3- Are you named on a Medical Exemption certificate-->
     <h2 class="heading-large">Do you have diabetes?</h2>
 
-       <form action="eligibility-handler" method="get" class="form">
+       <form action="diabetes-handler" method="get" class="form">
       <div class="form-item-wrapper">
         <fieldset>
           <div class="inline-form-groups">
             <div class="form-group">
-              <input id="medexYes" name="medex" type="radio" value="medexYes">
-              <label class="form-control-radio js-toggle" for="medexYes" data-show="#local-authority">
+              <input id="yes" name="diabetes" type="radio" value="yes">
+              <label class="form-control-radio js-toggle" for="yes" data-show="#local-authority">
                 Yes
               </label>
             </div>
             <div class="form-group">
-              <input id="medexNo" name="medex" type="radio" value="medexNo">
-              <label class="form-control-radio js-toggle" for="medexNo" data-hide="#local-authority">
+              <input id="no" name="diabetes" type="radio" value="no">
+              <label class="form-control-radio js-toggle" for="no" data-hide="#local-authority">
                 No
               </label>
             </div>
@@ -54,8 +54,7 @@
 
     {{
       form_macros.button({
-        label: 'Next',
-        href:"glaucoma"
+        label: 'Next'
       })
     }}
 
