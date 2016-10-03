@@ -1,0 +1,43 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+<a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+        <h1 class="heading-large">You get free prescriptions, but need a valid War Pension Exemption Certificate</h1>
+
+        <p>If you do not have a War Pension Exemption Certificate, you are not automatically exempt from prescription charges.</p>
+
+          <p>You can get appy for a war pension exemption certificate:</p>
+          <h2 class="heading-small">Post</h2>
+             <address>The Veterans Agency, <br>
+             Norcross, <br>
+             Blackpool <br>
+             FY5 3WP</address>
+             <br>
+          <h2 class="heading-small">Phone</h2>
+        <a href="tel:08001692277">0800 169 2277</a>
+      </div>
+    </div>
+
+    {{
+        form_macros.button({
+        classes: 'button-secondary-cta',
+        href: '../condition-prescriptions',
+        label: 'Find out about help for other costs'
+      })
+    }}
+
+</main>
+
+
+{% endblock %}

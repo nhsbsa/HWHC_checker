@@ -172,7 +172,7 @@ module.exports = {
       }
     });
 
-    // full time education handler
+    // tax credits claim yes or no
       app.get(/taxcredits-handler/, function (req, res) {
       applicant.namedOnTaxCredits = req.query.taxcredits;
       if (applicant.namedOnTaxCredits === 'yes' || applicant.namedOnTaxCredits === 'nk' ) {
@@ -220,28 +220,40 @@ module.exports = {
     // passported benefits handler
       app.get(/passportedBen-handler/, function (req, res) {
         if (req.query.benefits ==="incomeSupport") {
-          var benType = 'Income Support,';
+          var benType = 'Income Support';
           res.render('sprints/8/full-exemption-benefits', {
             'bentype' : benType
           });
         } else if (req.query.benefits ==="uniCredit") {
-          var benType = 'Universal Credit,';
+          var benType = 'Universal Credit';
           res.render('sprints/8/full-exemption-benefits', {
             'bentype' : benType
           });
         } else if (req.query.benefits ==="jsa") {
-          var benType = 'Income based Job Seekers Allowance,';
+          var benType = 'Income based Job Seekers Allowance';
           res.render('sprints/8/full-exemption-benefits', {
             'bentype' : benType
           });
         } else if (req.query.benefits ==="esa") {
-          var benType = 'Income related Employment and Support Allowance,';
+          var benType = 'Income related Employment and Support Allowance';
           res.render('sprints/8/full-exemption-benefits', {
             'bentype' : benType
           });
         } else if (req.query.benefits === 'continue') {
-        res.redirect('../pregnancy');
-        } else {
+            if (applicant.age > 60) {
+                res.redirect('../guarantee-credit');
+            } else {
+                res.redirect('../pregnancy');
+            }
+      }
+    });
+
+    // pension guarantee-credit-handler
+      app.get(/guarantee-credit-handler/, function (req, res) {
+      if (req.query.gcredit === 'yes') {
+        res.redirect('../ppc');
+      } else {
+        res.redirect('../lis');
       }
     });
       
@@ -251,52 +263,42 @@ module.exports = {
       applicant.isPregnant = true;
       res.redirect('../entitlements/prescription-preg');
       } else {
+        res.redirect('../war-pension');
+      }
+    });
+
+    // war pensioner handler
+      app.get(/war-pension-handler/, function (req, res) {
+      if (req.query.warPension === 'yes') {
+        res.redirect('../entitlements/prescription-war-pension');
+      } else {
         res.redirect('../do-you-have-a-medical-exemption');
       }
     });
 
-      app.get(/diabetes-handler/, function (req, res) {
-      if (req.query.diabetes === 'yes') {
-      res.redirect('../medex-info');
-      } else {
-        res.redirect('../care-home');
-      }
-    });
-    
-    // carehome router
-      app.get(/care-home-handler/, function (req, res) {
-      if (req.query.carehome === 'yes') {
-      res.redirect('../sc/authority-assessed');
-      } else {
-        res.redirect('../savings1');
-      }
-    });
-
-    // pregnancy router
-
-    // medex router
+    // medex card yes or no router
       app.get(/medex-handler/, function (req, res) {
       if (req.query.medex === 'yes') {
       applicant.hasMedexCard = true;
       res.redirect('../entitlements/prescription-medex');
       } else {
-        res.redirect('../diabetes');
+        res.redirect('../medical-exemption-list');
       }
     });
 
-    // pension-guarantee router
-      app.get(/guacredit-kickout-handler/, function (req, res) {
-      if (req.query.guacredit === 'yes') {
-        res.redirect('../full-exemption-benefits');
+    // long term condition
+      app.get(/longterm-illness-handler/, function (req, res) {
+      if (req.query.longtermIllness === 'yes') {
+      res.redirect('../entitlements/prescription-medex');
       } else {
-        res.redirect('../passported-benefits');
+        res.redirect('../care-home');
       }
     });
-  
-      // carehome
-      app.get(/carehome-handler/, function (req, res) {
+
+    // carehome router
+      app.get(/care-home-handler/, function (req, res) {
       if (req.query.carehome === 'yes') {
-        res.redirect('../sc/authority-assessed');
+      res.redirect('../sc/authority-assessed');
       } else {
         res.redirect('../savings1');
       }
@@ -310,16 +312,7 @@ module.exports = {
         res.redirect('../lis');
       }
     });
-      
-      // guarantee-credit-handler
-      app.get(/guarantee-credit-handler/, function (req, res) {
-      if (req.query.gcredit === 'yes') {
-        res.redirect('../ppc');
-      } else {
-        res.redirect('../lis');
-      }
-    });
-      
+
     // authority assessment handler
     app.get(/authority-assessed-handler/, function (req, res) {
       if (req.query.authority === 'yes') {
@@ -341,9 +334,9 @@ module.exports = {
     // carehome savings kickout handler
     app.get(/carehome-savings-handler/, function (req, res) {
       if (req.query.savings === 'yes') {
-        res.redirect('../../savings-kickout');
-      } else {
         res.redirect('../../lis');
+      } else {
+        res.redirect('../../savings-kickout');
       }
     });
     

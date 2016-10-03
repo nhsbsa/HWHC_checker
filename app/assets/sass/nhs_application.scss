@@ -215,11 +215,55 @@ color: #7a7a7a;
 	background-image:url("/public/images/cross-red.svg")
 }
 .form-hint-list-item__primary {
-	display:table-cell
+	display:table-cell;
+    padding-right: 0.25em;
 }
     
 .hidden {
   display: none;
 }
 
+.link-back {
+  display: inline-block;
+  position: relative;
+  font-weight: 400;
+  text-transform: none;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-left: 14px;
+  text-decoration: none;
+  border-bottom: 1px solid #0072C6;
+}
+
+@media (min-width: 641px) {
+  .link-back {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+.link-back:link, .link-back:visited, .link-back:hover, .link-back:active {
+  color: #0072C6;
+}
+    a.link-back{
+        text-decoration: none
+    }
+.link-back::before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-right: 6px solid #0072C6;
+  border-bottom: 5px solid transparent;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -6px;
+}
+
+.additional-info{
+        padding: 1rem 2rem 1rem 4rem;
+        background: rgba(0, 114, 198, 0.1) url("/public/images/icon-information.png") 1rem no-repeat;
+}
 
