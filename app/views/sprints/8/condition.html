@@ -9,7 +9,6 @@
 
 <main id="content" role="main">
 
-  <div class="grid-row">
     <div class="column-two-thirds">
 
       <h1 class="heading-large">
@@ -28,8 +27,8 @@
           </div>
           
          <div class="form-group">
-            <input type="checkbox" id="dentalExam" value="dentalexam" name="condition">
-            <label class="form-control-checkbox" for="dentalExam">
+            <input type="checkbox" id="dental" value="dental" name="condition">
+            <label class="form-control-checkbox" for="dental">
               Dental
             </label>
           </div>
@@ -81,7 +80,7 @@
           </div>
 <p>or</p>
             <div class="form-group">
-            <input type="checkbox" id="all" name="condition">
+            <input type="checkbox"  id="all" name="condition">
             <label class="form-control-checkbox" for="all">
              all of the above
             </label>
@@ -99,6 +98,19 @@
     </div>
 
 </main>
+
+<script>// Listen for click on toggle checkbox
+$('#select-all').click(function(event) {
+    if(this.checked) {
+        // Iterate each checkbox
+        $(':checkbox').each(function() {
+            this.checked = true;
+        });
+    }
+});</script>
+
+
+
 
 
 {% endblock %}

@@ -109,34 +109,48 @@ module.exports = {
       applicant.need = req.query.condition;
       if (applicant.need === 'prescription') {
         res.redirect('../country_v2');
-      } else {
-        res.redirect('../passported-benefits');
+      } else if (applicant.need === 'dental') {
+        res.redirect('../country_v2');
       }
     });
     
-    // eu handler
-      app.get(/uk-handler/, function (req, res) {
-      var sprint = req.url.charAt(9);
-      if (req.query.nationality === 'uk') {
-        res.render('sprints/'+ sprint +'/country_v2');
-      } else {
-        res.render('sprints/'+ sprint +'/country-info');
-      }
-    });
+//    // eu handler
+//      app.get(/uk-handler/, function (req, res) {
+//      var sprint = req.url.charAt(9);
+//      if (req.query.nationality === 'uk') {
+//        res.render('sprints/'+ sprint +'/country_v2');
+//      } else {
+//        res.render('sprints/'+ sprint +'/country-info');
+//      }
+//    });
       
-    // country router
+    // country router- prescription
       app.get(/country-handler/, function (req, res) {
       applicant.country = req.query.country;
-      if (applicant.country === 'england') {
+      if (applicant.country === 'england' && applicant.need === 'prescription') {
         res.redirect('../border-gp');
-      } else if (applicant.country === 'northernIreland') {
+      } else if (applicant.country === 'northernIreland' && applicant.need === 'prescription') {
         res.redirect('../ni-kickout');
-      } else if (applicant.country === 'scotland') {
+      } else if (applicant.country === 'scotland' && applicant.need === 'prescription') {
         res.redirect('../entitlements/prescription-scot');
       } else {
         res.redirect('../entitlements/prescription-wales');
       }
     });
+
+    // country router-dental
+//      app.get(/country-handler/, function (req, res) {
+//      applicant.country = req.query.country;
+//      if (applicant.country === 'england' && applicant.need === 'dental') {
+//        res.redirect('../date-of-birth');
+//      } else if (applicant.country === 'northernIreland' && applicant.need === 'dental') {
+//        res.redirect('../ni-kickout');
+//      } else if (applicant.country === 'scotland' && applicant.need === 'dental') {
+//        res.redirect('../entitlements/prescription-scot');
+//      } else {
+//        res.redirect('../entitlements/prescription-wales');
+//      }
+//    });
 
     // gp router
       app.get(/gp-handler/, function (req, res) {
@@ -341,10 +355,7 @@ module.exports = {
     });
     
     
-    
-    
-    
-    
+
 
     // Change or cancel appointment fork:
     app.get('/change-or-cancel-an-appointment/path-handler', function(req, res) {
