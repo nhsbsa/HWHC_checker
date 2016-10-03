@@ -192,15 +192,21 @@ module.exports = {
       }
     });
 
+
     // tax credits type handler
       app.get(/taxcredit-type-handler/, function (req, res) {
         if (req.query.taxcreditsType ==="wtcctc") {
-          var tcType = 'Working Tax Credit and Child Tax Credit together';
+          var tcType = 'Working Tax Credit and Child Tax Credit together, or is named on the claim,';
           res.render('sprints/8/taxcredit-info', {
             'tctype' : tcType
           });
-        } else if (req.query.taxcreditsType ===" v v v") {
-          var tcType = 'Working Tax Credit and Child Tax Credit together';
+        } else if (req.query.taxcreditsType ==="ctcdis") {
+          var tcType = 'Working Tax Credit including a disability element, or is named on the claim,';
+          res.render('sprints/8/taxcredit-info', {
+            'tctype' : tcType
+          });
+        } else if (req.query.taxcreditsType ==="ctc") {
+          var tcType = 'Child Tax Credit or is named on the claim,';
           res.render('sprints/8/taxcredit-info', {
             'tctype' : tcType
           });
@@ -211,12 +217,31 @@ module.exports = {
     });
 
 
-    // passported benefits router
+    // passported benefits handler
       app.get(/passportedBen-handler/, function (req, res) {
-      if (req.query.benefits === 'continue') {
+        if (req.query.benefits ==="incomeSupport") {
+          var benType = 'Income Support,';
+          res.render('sprints/8/full-exemption-benefits', {
+            'bentype' : benType
+          });
+        } else if (req.query.benefits ==="uniCredit") {
+          var benType = 'Universal Credit,';
+          res.render('sprints/8/full-exemption-benefits', {
+            'bentype' : benType
+          });
+        } else if (req.query.benefits ==="jsa") {
+          var benType = 'Income based Job Seekers Allowance,';
+          res.render('sprints/8/full-exemption-benefits', {
+            'bentype' : benType
+          });
+        } else if (req.query.benefits ==="esa") {
+          var benType = 'Income related Employment and Support Allowance,';
+          res.render('sprints/8/full-exemption-benefits', {
+            'bentype' : benType
+          });
+        } else if (req.query.benefits === 'continue') {
         res.redirect('../pregnancy');
-      } else {
-        res.redirect('../full-exemption-benefits');
+        } else {
       }
     });
       
