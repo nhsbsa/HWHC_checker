@@ -1,0 +1,44 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
+{% endblock %}
+
+{% block content %}
+<style>
+ address {
+    display: block;
+    font-style: normal;
+}
+</style>
+
+<main id="content" role="main">
+<a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">You get free dental check ups</h1>
+        <form action="dental-wales-handler" method="get" class="form">
+
+        <p>NHS Dental examinations are free in Wales if:</p>
+        <ul class="list-bullet">
+            <li>You are under 25 years of age</li>
+            <li>You are aged 60 or over.</li>
+       </ul>
+
+    {{
+      form_macros.button({
+        label: 'Next'
+      })
+    }}
+
+  </form>
+    </div>
+    </div>
+
+</main>
+
+
+{% endblock %}

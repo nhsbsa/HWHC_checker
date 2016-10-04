@@ -104,6 +104,13 @@ module.exports = {
     //********
     
     
+
+    //condition clearer
+    app.get('sprints/8/condition', function (req, res) {
+        applicant.need = null;
+        console.log(applicant.condition);
+    });
+
     //treatment type router
     app.get(/treatment-handler/, function (req, res) {
       applicant.need = req.query.condition;
@@ -113,44 +120,64 @@ module.exports = {
         res.redirect('../country_v2');
       }
     });
+
     
-//    // eu handler
-//      app.get(/uk-handler/, function (req, res) {
-//      var sprint = req.url.charAt(9);
-//      if (req.query.nationality === 'uk') {
-//        res.render('sprints/'+ sprint +'/country_v2');
-//      } else {
-//        res.render('sprints/'+ sprint +'/country-info');
-//      }
-//    });
+    // eu handler
+      app.get(/uk-handler/, function (req, res) {
+      var sprint = req.url.charAt(9);
+      if (req.query.nationality === 'uk') {
+        res.render('sprints/'+ sprint +'/country_v2');
+      } else {
+        res.render('sprints/'+ sprint +'/country-info');
+      }
+    });
       
     // country router- prescription
       app.get(/country-handler/, function (req, res) {
       applicant.country = req.query.country;
       if (applicant.country === 'england' && applicant.need === 'prescription') {
         res.redirect('../border-gp');
-      } else if (applicant.country === 'northernIreland' && applicant.need === 'prescription') {
+      } else if (applicant.country === 'northernIreland') {
         res.redirect('../ni-kickout');
       } else if (applicant.country === 'scotland' && applicant.need === 'prescription') {
         res.redirect('../entitlements/prescription-scot');
+      } else if (applicant.country === 'england' && applicant.need === 'dental') {
+        res.redirect('../date-of-birth');
       } else {
         res.redirect('../entitlements/prescription-wales');
       }
     });
 
-    // country router-dental
-//      app.get(/country-handler/, function (req, res) {
-//      applicant.country = req.query.country;
-//      if (applicant.country === 'england' && applicant.need === 'dental') {
-//        res.redirect('../date-of-birth');
-//      } else if (applicant.country === 'northernIreland' && applicant.need === 'dental') {
-//        res.redirect('../ni-kickout');
-//      } else if (applicant.country === 'scotland' && applicant.need === 'dental') {
-//        res.redirect('../entitlements/prescription-scot');
-//      } else {
-//        res.redirect('../entitlements/prescription-wales');
-//      }
-//    });
+      // country- scotland && dental: /entitlements/dental-scot
+      // england or wales && 'dental': date-of-birth
+      // 'northernIreland'- (any need): ni-kickout
+      //
+      // age- <16: full-exemption-under-16
+      // age- 16-17: /entitlements/dental-16-17
+      // age- 18: full-time-education
+      // age- <25 && wales: /entitlements/dental-wales
+      // age- 19: tax-credits-19yo
+      // age- 20-60>: tax-credits
+      //
+      // full-time-education- yes: full-exemption-fte
+      // full-time-education- no: tax-credits-19yo
+      //
+      // taxcredits- yes: tax-credits-income
+      // taxcredits- no: passported-benefits
+      //
+      //passported-benefits- yes: full-exemption-benefits
+      //passported-benefits- no: guarantee-credit
+      //
+      //guarantee-credit- yes: full-exemption-benefits
+      //guarantee-credit- no: care-home
+      //
+      //care-home- yes: savings-2
+      //care-home- no: savings-1
+      //
+      //savings-2:
+
+
+
 
     // gp router
       app.get(/gp-handler/, function (req, res) {
@@ -175,6 +202,16 @@ module.exports = {
         res.redirect('../full-exemption-under-16');
       }
     });
+
+//    //wales dental
+//      app.get(/dental-wales-handler/, function (req, res) {
+//        if (applicant.age = 60 && applicant.need === 'dental') {
+//        res.redirect('../tax-');
+//      } else if (applicant.country === 'northernIreland') {
+//
+//    });
+
+
 
     // full time education handler
       app.get(/fe-handler/, function (req, res) {
@@ -262,15 +299,19 @@ module.exports = {
       }
     });
 
-    // pension guarantee-credit-handler
+
+
       app.get(/guarantee-credit-handler/, function (req, res) {
-      if (req.query.gcredit === 'yes') {
-        res.redirect('../ppc');
-      } else {
-        res.redirect('../lis');
+        if (req.query.gcredit ==="yes") {
+          var benType = 'Pension Credit Guarantee Credit';
+          res.render('sprints/8/full-exemption-benefits', {
+            'bentype' : benType
+          });
+        } else {
+        res.redirect('../care-home');
       }
     });
-      
+
     // pregnancy router
       app.get(/preg-handler/, function (req, res) {
       if (req.query.pregnancy === 'yes') {
@@ -321,7 +362,7 @@ module.exports = {
       // saving-handler
       app.get(/saving-handler/, function (req, res) {
       if (req.query.savings === 'yes') {
-        res.redirect('../ppc');
+        res.redirect('../savings-kickout');
       } else {
         res.redirect('../lis');
       }
@@ -354,7 +395,15 @@ module.exports = {
       }
     });
     
-    
+
+
+
+
+
+
+
+
+
 
 
     // Change or cancel appointment fork:
