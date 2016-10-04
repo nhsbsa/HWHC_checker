@@ -137,20 +137,26 @@ module.exports = {
       applicant.country = req.query.country;
       if (applicant.country === 'england' && applicant.need === 'prescription') {
         res.redirect('../border-gp');
-      } else if (applicant.country === 'northernIreland') {
-        res.redirect('../ni-kickout');
+      } else if (applicant.country === 'england' && applicant.need === 'dental') { 
+        res.redirect('../date-of-birth');
+      } else if (applicant.country === 'wales' && applicant.need === 'prescription') {
+        res.redirect('../entitlements/prescriptions-scot');
+      } else if (applicant.country === 'wales' && applicant.need === 'dental') {
+        res.redirect('../date-of-birth');
       } else if (applicant.country === 'scotland' && applicant.need === 'prescription') {
         res.redirect('../entitlements/prescription-scot');
-      } else if (applicant.country === 'england' && applicant.need === 'dental') {
-        res.redirect('../date-of-birth');
-      } else {
-        res.redirect('../entitlements/prescription-wales');
+      } else if (applicant.country === 'scotland' && applicant.need === 'dental') {
+        res.redirect('../entitlements/dental-scot');
+      } else if (applicant.country === 'northernIreland') {
+        res.redirect('../ni-kickout');
       }
     });
-
+     
+      //done
       // country- scotland && dental: /entitlements/dental-scot
       // england or wales && 'dental': date-of-birth
       // 'northernIreland'- (any need): ni-kickout
+      
       //
       // age- <16: full-exemption-under-16
       // age- 16-17: /entitlements/dental-16-17
