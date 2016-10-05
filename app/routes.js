@@ -160,11 +160,28 @@ module.exports = {
       } else if (applicant.age > 15) {
         res.redirect('../full-time-education');
       } else {
-        res.redirect('../full-exemption-under-16');
+        res.redirect('../../date-of-birth');
       }
     });
 
-      
+//      Journeys
+//      18 year old dental scotland
+//      added a HREF to the dental-scot check if I pay button
+//      start  >  what costs = Dental  >  country = scotland  >  you get free check ups  >  DOB = 1998
+//      >  are you in full time education  > common journey...
+    
+//      18 year old dental wales
+//      start  >  what costs = Dental  >  country = wales  >  DOB = 1998
+//      >  are you in full time education  > common journey...
+    
+//      18 year old dental england
+//      start  >  what costs = Dental  >  country = england  >  DOB = 1998
+//      >  are you in full time education  > common journey...
+    
+//       why is wales 18 year old dental different to england 18 year old?
+
+    
+    
       // if 60 englad one way, wales wales hander
     
       // DONE
@@ -230,7 +247,7 @@ module.exports = {
       } else if (applicant.age  > 15) {
         res.redirect('../full-time-education');
       } else {
-        res.redirect('../full-exemption-under-16');
+        res.redirect('../../full-exemption-under-16');
       }
     });
 
