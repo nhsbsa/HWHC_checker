@@ -13,23 +13,19 @@
     <div class="grid-row">
       <div class="column-two-thirds">
 
-        <h1 class="heading-large">You get free prescriptions</h1>
+      <h1 class="heading-large">You get free dental check ups</h1>
+        <form action="dental-wales-handler" method="get" class="form">
 
-          <p>NHS prescriptions are free of charge, as long as you have:</p>
-          <ul class="list-bullet">
-              <li>a GP in Scotland or Wales and</li>
-              <li>the prescription is dispensed by a pharmacist in Scotland or Wales.</li>
-          </ul>
-      </div>
-    </div>
+        <p>NHS Dental examinations are free in Scotland, however any treatment as a result of the free examination may not be free. </p>
 
     {{
-        form_macros.button({
+      form_macros.button({
         classes: 'button-secondary-cta',
-        href: '../condition-prescriptions',
-        label: 'Find out about help for other costs'
+        label: 'Check if I pay for my dental treatment'
       })
     }}
+
+  </form>
 
 </main>
 

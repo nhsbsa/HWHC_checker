@@ -6,12 +6,7 @@
 {% endblock %}
 
 {% block content %}
-<style>
- address {
-    display: block;
-    font-style: normal;
-}
-</style>
+
 
 <main id="content" role="main">
 <a href="javascript:history.go(-1)" class="link-back">Back</a>
@@ -28,9 +23,12 @@
             <li>You are aged 60 or over.</li>
        </ul>
 
+       <p class="import-info">Any treatment that is needed as a result of the free examination may not be free. </p>
+
     {{
-      form_macros.button({
-        label: 'Next'
+        form_macros.button({
+        classes: 'button-secondary-cta',
+        label: 'Find out about help for other costs'
       })
     }}
 
