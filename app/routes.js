@@ -151,26 +151,45 @@ module.exports = {
         res.redirect('../ni-kickout');
       }
     });
-     
-      //done
-      // country- scotland && dental: /entitlements/dental-scot
-      // england or wales && 'dental': date-of-birth
-      // 'northernIreland'- (any need): ni-kickout
+    
+    
+     //wales dental
+    app.get(/dental-wales-handler/, function (req, res) {
+      if (applicant.age >= 19) { 
+        res.redirect('../tax-credits');
+      } else if (applicant.age > 15) {
+        res.redirect('../full-time-education');
+      } else {
+        res.redirect('../full-exemption-under-16');
+      }
+    });
+
       
-      //
+      // if 60 englad one way, wales wales hander
+    
+      // DONE
       // age- <16: full-exemption-under-16
-      // age- 16-17: /entitlements/dental-16-17
       // age- 18: full-time-education
-      // age- <25 && wales: /entitlements/dental-wales
       // age- 19: tax-credits-19yo
-      // age- 20-60>: tax-credits
-      //
+      // age- 20-60>: tax-credits 
+    
+      // TO DO
+      // dental-wales-handler & DENTAL-SCOTLAND HANDLER / if 18 go to FTE
+      // IF TAX CREDITS
+      // 20 - 60 TAX CREDITS 
+    
+      // 
+      // age- 16-17: /entitlements/dental-16-17 *fix
+      // age- <25 && wales: /entitlements/dental-wales *fix
+    
+    
+    
+    
       // full-time-education- yes: full-exemption-fte
       // full-time-education- no: tax-credits-19yo
-      //
       // taxcredits- yes: tax-credits-income
       // taxcredits- no: passported-benefits
-      //
+
       //passported-benefits- yes: full-exemption-benefits
       //passported-benefits- no: guarantee-credit
       //
@@ -198,8 +217,14 @@ module.exports = {
     app.get(/dob-handler/, function (req, res) { 
       applicant.age = (thisYear - req.query.dobyear);
       console.log(applicant.age);
-      if (applicant.age >= 60) {
+      if (applicant.age >= 60 && applicant.need === 'prescription') {
         res.redirect('../entitlements/prescription-over60');
+      } if (applicant.age >= 60 && applicant.need === 'dental' && applicant.country === 'england') {
+        res.redirect('../tax-credits');
+      } if (applicant.age >= 60 && applicant.need === 'dental' && applicant.country === 'wales') {
+        res.redirect('../entitlement/dental-wales');
+      } if (applicant.age >= 60 && applicant.need === 'dental' && applicant.country === 'scotland') {
+        res.redirect('../entitlement/dental-scot');
       } else if (applicant.age >= 19) { 
         res.redirect('../tax-credits-19yo');
       } else if (applicant.age  > 15) {
@@ -208,15 +233,6 @@ module.exports = {
         res.redirect('../full-exemption-under-16');
       }
     });
-
-//    //wales dental
-//      app.get(/dental-wales-handler/, function (req, res) {
-//        if (applicant.age = 60 && applicant.need === 'dental') {
-//        res.redirect('../tax-');
-//      } else if (applicant.country === 'northernIreland') {
-//
-//    });
-
 
 
     // full time education handler
