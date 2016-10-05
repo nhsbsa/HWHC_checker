@@ -140,7 +140,7 @@ module.exports = {
       } else if (applicant.country === 'england' && applicant.need === 'dental') { 
         res.redirect('../date-of-birth');
       } else if (applicant.country === 'wales' && applicant.need === 'prescription') {
-        res.redirect('../entitlements/prescriptions-scot');
+        res.redirect('../entitlements/prescription-wales');
       } else if (applicant.country === 'wales' && applicant.need === 'dental') {
         res.redirect('../date-of-birth');
       } else if (applicant.country === 'scotland' && applicant.need === 'prescription') {
