@@ -1,0 +1,150 @@
+//GDS Style
+
+.pagination_gds {
+	display:block;
+    margin: 48px 0;
+    padding-top: 18px;
+    border-top: 2px solid #b9d2dc; }
+
+@media (max-width: 640px) {
+	.pagination_gds {
+		margin:2em 0 0 0
+	}
+}
+.pagination_gds ul {
+	margin:0;
+	padding:0
+}
+.pagination_gds li {
+	font-family:"nta", Arial, sans-serif;
+	font-size:14px;
+	line-height:1.14286;
+	font-weight:400;
+	text-transform:none;
+	font-size-adjust:0.5;
+	float:left;
+	list-style:none;
+	text-align:right;
+	margin:0;
+	padding:0;
+	width:49%
+}
+@media (min-width: 641px) {
+	.pagination_gds li {
+		font-size:16px;
+		line-height:1.25
+	}
+}
+.pagination_gds li a {
+	background-color:transparent;
+	display:block;
+	color:#005ea5;
+	text-decoration:none
+}
+.pagination_gds li a:hover,.pagination_gds li a:active {
+	background-color:#f8f8f8
+}
+.pagination_gds li a .pagination-label {
+	font-family:"nta", Arial, sans-serif;
+	font-size:20px;
+	line-height:1.11111;
+	font-weight:400;
+	text-transform:none;
+	font-size-adjust:0.5;
+	margin-bottom:0.1em;
+	display:block
+}
+@media (min-width: 641px) {
+	.pagination_gds li a .pagination-label {
+		font-size:27px;
+		line-height:1.25
+	}
+}
+.pagination_gds li a .pagination-part-title {
+	text-decoration:underline
+}
+.pagination_gds li.next {
+	float:right;
+	text-align:right
+}
+.pagination_gds li.next a:before {
+	background:transparent url(/public/images/arrow.png) no-repeat -102px -11px;
+	margin:-4px -32px 0 0;
+	display:block;
+	float:right;
+	width:30px;
+	height:38px;
+	content:" "
+}
+.pagination_gds li.previous a:before {
+	background:transparent url(/public/images/arrow.png) no-repeat -20px -11px;
+	margin:-4px 0 0 -32px;
+	display:block;
+	float:left;
+	width:30px;
+	height:38px;
+	content:" "
+}
+.pagination_gds li.previous {
+	float:left;
+	text-align:left
+}
+.pagination_gds li.previous a {
+	padding:0.75em 0 0.75em 3em
+}
+.pagination_gds li.next a {
+	padding:0.75em 3em 0.75em 0
+}
+@media (max-width: 640px) {
+	.pagination_gds li.previous,.pagination_gds li.next {
+		float:none;
+		width:100%
+	}
+	.pagination_gds li.next a {
+		text-align:right
+	}
+}
+.pagination_gds .first,.pagination_gds .last {
+	min-height:4.5em
+}
+.pagination_gds .first span,.pagination_gds .last span {
+	display:block;
+	min-height:4.5em;
+	padding:0.75em 5%;
+	width:90%
+}
+.pagination_gds .first .pagination-label,.pagination_gds .last .pagination-label {
+	display:block;
+	margin-bottom:0.5em
+}
+
+//-----------------------------
+//NHS.UK Style
+
+.pagination {
+  margin: 48px 0;
+  padding-top: 18px;
+  border-top: 2px solid #b9d2dc; }
+  .pagination .previous-page {
+    margin-top: 12px; }
+  @media (min-width: 769px) {
+    .pagination .previous-page {
+      margin-top: 0;
+      float: left;
+      width: 50%; }
+    .pagination .next-page {
+      float: right;
+      text-align: right;
+      width: 50%; } }
+  .pagination a {
+    display: inline-block;
+    text-decoration: none !important; }
+  .pagination .prefix {
+    font-size: 13px;
+    color: #231f20; }
+    @media (min-width: 769px) {
+      .pagination .prefix {
+        font-size: 14px; } }
+  .pagination .title {
+    display: block;
+    text-decoration: underline; }
