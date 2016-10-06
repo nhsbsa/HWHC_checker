@@ -1,0 +1,118 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <link rel="stylesheet" href="/public/stylesheets/pagination.css">
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">Get help with health costs</h1>
+
+    </div>
+
+    <div class="column-one-half">
+
+      <ul class="navigation-links">
+        <li><a href="start">1. Introduction to help with health costs</a></li>
+        <li><a href="u16">2. people aged under 16</a></li>
+        <li><a href="18">3. people aged 16, 17 or 18</a></li>
+        <li><a href="19">4. people aged 19</a></li>
+        <li><a href="60">5. people aged 60 or over</a></li>
+      </ul>
+
+    </div>
+
+    <div class="column-one-half">
+
+      <ul class="navigation-links">
+        <li>6. people who get benefits or tax credits</li>
+        <li><a href="medex">7. people who have a long term medical condition</a></li>
+        <li><a href="matex">8. people who are pregnant or have had a baby in the last twelve months</a></li>
+        <li><a href="lis">9. people who have little money to live on</a></li>
+        <li><a href="ppc">10. people with regular prescriptions</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="text">
+
+        <div class="heading-group">
+          <h2 class="heading-medium">Help for people who get benefits</h2>
+        </div>
+
+        <p>You already get help with health costs if you  get any of these benefits:</p>
+<ul>
+    <li>Income Support,</li>
+    <li>Universal Credit,</li>
+    <li>Income based Job Seekers Allowance,</li>
+    <li>Income related Employment and Support Allowance,</li>
+    <li>Pension Credit Guarantee Credit.</li>
+</ul>
+<br>
+
+<h2 class="headin-small">Tax Credits</h2>
+<p>You can get a Tax Credit Exemption Certificate if you have a family income of less than £15,276 and get one of these types of tax credits: </p>
+<ul>
+    <li>Working Tax Credit and Child Tax Credit together,</li>
+    <li>Working Tax Credit on its own, including a disability element,</li>
+    <li>Child Tax Credit on its own.</li>
+</ul>
+<p>If you qualify, you should have been sent an NHS Tax Credit Exemption Certificate automatically, but if not, you can show the tax credit award notice as evidence to your health care provider.</p>
+<br>
+
+<h2 class="headin-small">Benefits that do not automatically get you help with health costs </h2>
+<p>You do not get automatic help if you get any of these benefits:</p>
+<ul>
+
+    <li>Working Tax Credit on its own,</li>
+    <li>Contribution based Job Seekers Allowance</li>
+    <li>contribution based Employment and Support Allowance</li>
+    <li>Pension Credit savings credit on its own</li>
+    <li>Incapacity benefit</li>
+    <li>Personal Independence Payment</li>
+    <li>Armed Forces Independence Payment</li>
+    <li>Disability Living Allowance</li>
+</ul>
+
+<a href="lis">Help for people who have little money to live on</a>
+
+
+
+
+<br><br>
+        <p><a class="button button-get-started" href="#">Help me work out if I can get help with health costs</a></p>
+
+      </div>
+
+        <nav class="pagination_gds" role="navigation" aria-label="Pagination">
+            <ul class="group">
+                  <li class="previous">
+                    <a title="Navigate to previous part" rel="prev" href="60">
+                      <span class="pagination-label">Previous</span>
+                      <span class="pagination-part-title">Help for people aged 60 or over</span>
+                    </a>
+                  </li>
+                  <li class="next">
+                    <a title="Navigate to next part" rel="next" href="medex">
+                      <span class="pagination-label">Next</span> <span class="pagination-part-title">Help for people who have a long-term medical condition</span>
+                    </a>
+                  </li>
+            </ul>
+          </nav>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

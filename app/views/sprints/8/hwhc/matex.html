@@ -1,0 +1,87 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <link rel="stylesheet" href="/public/stylesheets/pagination.css">
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">Get help with health costs</h1>
+
+    </div>
+
+    <div class="column-one-half">
+
+      <ul class="navigation-links">
+        <li><a href="start">1. Introduction to help with health costs</a></li>
+        <li><a href="u16">2. people aged under 16</a></li>
+        <li><a href="18">3. people aged 16, 17 or 18</a></li>
+        <li><a href="19">4. people aged 19</a></li>
+        <li><a href="60">5. people aged 60 or over</a></li>
+      </ul>
+
+    </div>
+
+    <div class="column-one-half">
+
+      <ul class="navigation-links">
+        <li><a href="benefits">6. people who get benefits or tax credits</a></li>
+        <li><a href="medex">7. people who have a long term medical condition</a></li>
+        <li>8. people who are pregnant or have had a baby in the last twelve months</li>
+        <li><a href="lis">9. people who have little money to live on</a></li>
+        <li><a href="ppc">10. people with regular prescriptions</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="text">
+
+        <div class="heading-group">
+          <h2 class="heading-medium">Help for people who are pregnant or have had a baby in the last twelve months</h2>
+        </div>
+
+        <p>Pregnant women and those who have had a baby in the last 12 months qualify for a Maternity Exemption Certificate. </p>
+        <p>You must have a valid maternity exemption certificate to get free:</p>
+<ul>
+<li>NHS prescriptions</li>
+<li>NHS dental treatment if, when you are accepted for a course of treatment, you are pregnant or have had a baby in the previous 12 months.</li>
+       </ul>
+
+        <p>You can get an application form for a Maternity Exemption Certificate from your doctor, midwife or health visitor.</p>
+
+        <p><a class="button button-get-started" href="#">Help me work out if I can get help with health costs</a></p>
+
+      </div>
+
+        <nav class="pagination_gds" role="navigation" aria-label="Pagination">
+            <ul class="group">
+                  <li class="previous">
+                    <a title="Navigate to previous part" rel="prev" href="medex">
+                      <span class="pagination-label">Previous</span>
+                      <span class="pagination-part-title">Help for people whohave a long-term medical condition</span>
+                    </a>
+                  </li>
+                  <li class="next">
+                    <a title="Navigate to next part" rel="next" href="lis">
+                      <span class="pagination-label">Next</span> <span class="pagination-part-title">Help for people who have litle money to live on</span>
+                    </a>
+                  </li>
+            </ul>
+          </nav>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

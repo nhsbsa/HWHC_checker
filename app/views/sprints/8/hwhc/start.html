@@ -1,0 +1,91 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+
+{% block content %}
+
+<main id="content" role="main">
+   <link rel="stylesheet" href="/public/stylesheets/pagination.css">
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">Get help with health costs</h1>
+
+    </div>
+
+    <div class="column-one-half">
+
+      <ul class="navigation-links">
+        <li> 1. Introduction to help with health costs </li>
+        <li><a href="u16">2. people aged 16 and under</a></li>
+        <li><a href="18">3. people aged 16, 17 or 18</a></li>
+        <li><a href="19">4. people aged 19</a></li>
+        <li><a href="60">5. people aged 60 or over</a></li>
+      </ul>
+
+    </div>
+
+    <div class="column-one-half">
+
+      <ul class="navigation-links">
+        <li><a href="benefits">6. people who get benefits or tax credits</a></li>
+        <li><a href="medex">7. people who have a long term medical condition</a></li>
+        <li><a href="matex">8. people who are pregnant or have had a baby in the last twelve months</a></li>
+        <li><a href="lis">9. people who have little money to live on</a></li>
+        <li><a href="ppc">10. people with regular prescriptions</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="text">
+
+        <div class="heading-group">
+          <h2 class="heading-medium">Introduction to help with health costs</h1>
+        </div>
+
+        <p>If you receive treatment in an NHS hospital this is usually free but there are a number of things which there may be charges for.</p>
+
+        <p>You may be able to get help with:-</p>
+
+        <ul class="list list-bullet">
+
+          <li>prescription charges</li>
+          <li>NHS dental charges, including check-ups</li>
+          <li>sight tests</li>
+          <li>the cost of glasses and contact lenses</li>
+          <li>travel costs to and from hospital for NHS treatment</li>
+          <li>travel costs if travelling abroad for treatment</li>
+          <li>wigs</li>
+          <li>fabric supports, for example support tights.</li>
+
+        </ul>
+
+        <p>You will need to show evidence to prove you are entitled to help.</p>
+
+        <p><a class="button button-get-started" href="../start">Help me work out if I can get help with health costs</a></p>
+
+      </div>
+
+        <nav class="pagination_gds" role="navigation" aria-label="Pagination">
+            <ul class="group">
+                  <li class="next">
+                    <a title="Navigate to next part" rel="next" href="u16">
+                      <span class="pagination-label">Next</span> <span class="pagination-part-title">People aged 16 and under</span>
+                    </a>
+                  </li>
+            </ul>
+          </nav>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}
