@@ -292,3 +292,95 @@ margin: 1em 0 2em;
     font-size: 16px;
             line-height: 1.25;
     padding: .75em .5em .75em 0;}
+
+
+
+.hidden {
+  display: none;
+}
+
+.column-half, .column-one-half {
+  float: left;
+  width: 50%;
+}
+
+.navigation-links {
+  font-size: 90%;
+  padding: 0 11px;
+}
+
+.navigation-links > li {
+  list-style: none;
+}
+
+.pagination .pag-right {
+  text-align: right;
+  display: block;
+  float: right;
+  width: 50%;
+}
+
+.pagination .pag-right .pag-graphic {
+  width: 52px;
+  margin-top: -20px;
+  height: 75px;
+  float: right;
+  background-image: url(https://assets.publishing.service.gov.uk/static/arrow-sprite-0fa429eadf557102b8e1ca6bf7220f7e61812efbc4f52ed40e5aedd11474635f.png);
+  background-position: right;
+  background-repeat: none;
+  display: block;
+}
+
+.pagination a .pag-title {
+  font-size: 150%;
+  display: block;
+  width: 80%;
+  float: left;
+}
+
+.pagination a .pag-title {
+  float: right;
+  padding-bottom: 3px;
+  width: 80%;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 5px;
+  margin: 1em 0 2em;
+  width: 100%;
+}
+
+th, article th {
+  line-height: 1.25em;
+  text-align: left;
+  font-weight: 700;
+  border-bottom: solid 1px #bfc1c3;
+}
+
+td {
+  border-bottom: solid 1px #bfc1c3;
+}
+
+td, th {
+  font-size: 16px;
+  line-height: 1.25;
+  padding: .75em .5em .75em 0;
+}
+
+.additional-info {
+  padding: 1rem 2rem 1rem 4rem;
+  background: rgba(0, 114, 198, 0.1) url("/public/images/icon-information.png") 1rem no-repeat;
+}
+
+.additional-info-no-image {
+  padding: 1rem 2rem 1rem 1.5rem;
+  background: rgba(0, 114, 198, 0.1);
+}
+
+.panel-indent-body {
+  clear: both;
+  border-left: 6px solid #eff3f5;
+  padding: 0.3rem 1rem 0.8rem 1rem;
+  line-height: 2.5rem;
+}
