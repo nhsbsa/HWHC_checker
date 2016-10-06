@@ -237,10 +237,10 @@ module.exports = {
         res.redirect('../entitlements/prescription-over60');
       } if (applicant.age >= 60 && applicant.need === 'dental' && applicant.country === 'england') {
         res.redirect('../tax-credits');
-      } if (applicant.age >= 60 && applicant.need === 'dental' && applicant.country === 'wales') {
-        res.redirect('../tax-credits');
-      } if (applicant.age >= 60 && applicant.need === 'dental' && applicant.country === 'scotland') {
-        res.redirect('../tax-credits');
+      //} if (applicant.age >= 60 && applicant.need === 'dental' && applicant.country === 'wales') {
+      //  res.redirect('../tax-credits');
+      //} if (applicant.age >= 60 && applicant.need === 'dental' && applicant.country === 'scotland') {
+      //  res.redirect('../tax-credits');
       } else if (applicant.age >= 19) { 
         res.redirect('../tax-credits-19yo');
       } else if (applicant.age  > 15) {
