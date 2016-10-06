@@ -152,7 +152,6 @@ module.exports = {
       }
     });
     
-    
      //wales dental
     app.get(/dental-wales-handler/, function (req, res) {
       if (applicant.age >= 19) { 
