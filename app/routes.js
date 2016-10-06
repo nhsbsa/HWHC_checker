@@ -238,15 +238,15 @@ module.exports = {
       } if (applicant.age >= 60 && applicant.need === 'dental' && applicant.country === 'england') {
         res.redirect('../tax-credits');
       } if (applicant.age >= 60 && applicant.need === 'dental' && applicant.country === 'wales') {
-        res.redirect('../entitlement/dental-wales');
+        res.redirect('../tax-credits');
       } if (applicant.age >= 60 && applicant.need === 'dental' && applicant.country === 'scotland') {
-        res.redirect('../entitlement/dental-scot');
+        res.redirect('../tax-credits');
       } else if (applicant.age >= 19) { 
         res.redirect('../tax-credits-19yo');
       } else if (applicant.age  > 15) {
         res.redirect('../full-time-education');
       } else {
-        res.redirect('../../full-exemption-under-16');
+        res.redirect('../full-exemption-under-16');
       }
     });
 
