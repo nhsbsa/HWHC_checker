@@ -1,0 +1,106 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <link rel="stylesheet" href="/public/stylesheets/pagination.css">
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">Get help with health costs</h1>
+
+    </div>
+
+    <div class="column-one-half">
+
+      <ul class="navigation-links">
+        <li><a href="start">1. Introduction to help with health costs</a></li>
+        <li><a href="u16">2. people aged under 16</a></li>
+        <li><a href="18">3. people aged 16, 17 or 18</a></li>
+        <li><a href="19">4. people aged 19</a></li>
+        <li><a href="60">5. people aged 60 or over</a></li>
+      </ul>
+
+    </div>
+
+    <div class="column-one-half">
+
+      <ul class="navigation-links">
+        <li><a href="benefits">6. people who get benefits or tax credits</a></li>
+        <li>7. people who have a long term medical condition</li>
+        <li><a href="matex">8. people who are pregnant or have had a baby in the last twelve months</a></li>
+        <li><a href="lis">9. people who have little money to live on</a></li>
+        <li><a href="ppc">10. people with regular prescriptions</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="text">
+
+        <div class="heading-group">
+          <h2 class="heading-medium">Help for people with a long term medical condition</h2>
+        </div>
+
+        <p>
+          People with certain medical conditions may give free NHS prescriptions.
+        </p>
+
+              <ul class="list-bullet">
+                 <li><strong>Diabetes</strong>
+                    <br>Where treatment is not by diet alone
+                 </li>
+                 <li><strong>Cancer and are undergoing treatment</strong>
+                     <br>Including treatment for the effects of cancer or the effects of cancer treatment.</li>
+
+                 <li><strong>Epilepsy</strong> <br>Which needs anti-epileptic drugs (AEDs)</li>
+
+                 <li><strong>A continuing physical disability</strong>
+                     <br>Which means you cannot go out without the help of another person</li>
+
+                 <li><strong>You need a continuous surgical dressing or an appliance</strong>
+                     <br>Like a tracheotomy or need to use a stoma</li>
+
+                 <li><strong>An underactive thyroid (hypothyroidism)</strong>
+                     <br>Which needs hormone replacement</li>
+              </ul>
+
+
+          <div class="additional-info">If you have a illness that is not listed or you unsure about the name of your condition, check with your doctor, who can advice you about free prescriptions. </div>
+          <br>
+
+
+        <p><a class="button button-get-started" href="#">Help me work out if I can get help with health costs</a></p>
+
+      </div>
+
+        <nav class="pagination_gds" role="navigation" aria-label="Pagination">
+            <ul class="group">
+                  <li class="previous">
+                    <a title="Navigate to previous part" rel="prev" href="benefits">
+                      <span class="pagination-label">Previous</span>
+                      <span class="pagination-part-title">Help for people who get benefits or tax credits</span>
+                    </a>
+                  </li>
+                  <li class="next">
+                    <a title="Navigate to next part" rel="next" href="matex">
+                      <span class="pagination-label">Next</span> <span class="pagination-part-title">Help for people who are pregnant or had a baby in the last 12 months</span>
+                    </a>
+                  </li>
+            </ul>
+          </nav>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

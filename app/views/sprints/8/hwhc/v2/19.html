@@ -1,0 +1,111 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <link rel="stylesheet" href="/public/stylesheets/pagination.css">
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">Get help with health costs</h1>
+
+    </div>
+
+    <div class="column-one-half">
+
+      <ul class="navigation-links">
+        <li><a href="start">1. Introduction to help with health costs</a></li>
+        <li><a href="u16">2. people aged under 16</a></li>
+        <li><a href="18">3. people aged 16, 17 or 18</a></li>
+        <li>4. people aged 19</li>
+        <li><a href="60">5. people aged 60 or over</a></li>
+      </ul>
+
+    </div>
+
+    <div class="column-one-half">
+
+      <ul class="navigation-links">
+        <li><a href="benefits">6. people who get benefits or tax credits</a></li>
+        <li><a href="medex">7. people who have a long term medical condition</a></li>
+        <li><a href="matex">8. people who are pregnant or have had a baby in the last twelve months</a></li>
+        <li><a href="lis">9. people who have little money to live on</a></li>
+        <li><a href="ppc">10. people with regular prescriptions</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="text">
+
+        <div class="heading-group">
+          <h2 class="heading-medium">Help for people aged 19</h2>
+        </div>
+
+         <h3 class="heading-small">If you live in Scotland</h3>
+
+        <p>If you are aged 19 and you live in Scotland, you are entitled to:</p>
+        <ul class="list list-bullet">
+          <li>Free NHS prescriptions</li>
+          <li>Free sight test</li>
+          <li>Free NHS dental check ups</li>
+        </ul>
+
+        <h3 class="heading-small">If you live in Wales</h3>
+
+        <p>If you are aged 19 and you live in Wales, you are entitled to:</p>
+        <ul class="list list-bullet">
+          <li>Free NHS prescriptions</li>
+          <li>Free NHS dental check ups</li>
+        </ul>
+
+
+        <h3 class="heading-small">Those in full time education</h3>
+
+
+        <p>If you are aged 19 and in full time education, you <strong>do not</strong> get help with health costs, unless:</p>
+        <ul class="list list-bullet">
+            <li>Your parents or guardian have a Tax Credits Exemption Certificate and are receiving a Child Tax Credit payment for you.</li>
+             <li>Your parents or guardian are in receipt of:</li>
+            <p class="panel-indent-body">
+   Income Support,<br>
+    Universal Credit,<br>
+    Income based Job Seekers Allowance,<br>
+    Income related Employment and Support Allowance, or<br>
+    Pension Credit Guarantee Credit.
+       </p>
+
+        </ul>
+                       <p><a class="button button-get-started" href="../../start">Help me work out if I can get help with health costs</a></p>
+        </div>
+
+        <nav class="pagination_gds" role="navigation" aria-label="Pagination">
+            <ul class="group">
+                  <li class="previous">
+                    <a title="Navigate to previous part" rel="prev" href="18">
+                      <span class="pagination-label">Previous</span>
+                      <span class="pagination-part-title">Help for people aged 16, 17 or 18</span>
+                    </a>
+                  </li>
+                  <li class="next">
+                    <a title="Navigate to next part" rel="next" href="60">
+                      <span class="pagination-label">Next</span> <span class="pagination-part-title">Help for people aged over 60</span>
+                    </a>
+                  </li>
+            </ul>
+          </nav>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

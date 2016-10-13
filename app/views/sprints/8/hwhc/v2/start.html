@@ -1,0 +1,88 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+
+{% block content %}
+
+<main id="content" role="main">
+   <link rel="stylesheet" href="/public/stylesheets/pagination.css">
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">Get help with health costs</h1>
+
+    </div>
+
+    <div class="column-one-half">
+
+      <ul class="navigation-links">
+        <li>Help with health costs overview </li>
+        <li><a href="u16">Children and young people</a></li>
+        <li><a href="60">Pensioners</a></li>
+        <li><a href="benefits">Getting benefits or tax credits</a></li>
+        <li><a href="60">Employed or self employed</a></li>
+      </ul>
+
+    </div>
+
+    <div class="column-one-half">
+
+      <ul class="navigation-links">
+        <li><a href="matex">Pregnant or have had a baby recently</a></li>
+        <li><a href="medex">Long term illness</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="text">
+
+        <div class="heading-group">
+          <h2 class="heading-medium">Introduction to help with health costs</h1>
+        </div>
+
+        <p>If you receive treatment in an NHS hospital this is usually free but there are a number of things which there may be charges for.</p>
+
+        <p>You may be able to get help with:-</p>
+
+        <ul class="list list-bullet">
+
+          <li>prescription charges</li>
+          <li>NHS dental charges, including check-ups</li>
+          <li>sight tests</li>
+          <li>the cost of glasses and contact lenses</li>
+          <li>travel costs to and from hospital for NHS treatment</li>
+          <li>travel costs if travelling abroad for treatment</li>
+          <li>wigs</li>
+          <li>fabric supports, for example support tights.</li>
+
+        </ul>
+
+        <p>You will need to show evidence to prove you are entitled to help.</p>
+
+        <p><a class="button button-get-started" href="../../start">Help me work out if I can get help with health costs</a></p>
+
+      </div>
+
+        <nav class="pagination_gds" role="navigation" aria-label="Pagination">
+            <ul class="group">
+                  <li class="next">
+                    <a title="Navigate to next part" rel="next" href="u16">
+                      <span class="pagination-label">Next</span> <span class="pagination-part-title">People aged 16 and under</span>
+                    </a>
+                  </li>
+            </ul>
+          </nav>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}
