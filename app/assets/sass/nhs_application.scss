@@ -118,7 +118,7 @@ color: #7a7a7a;
 .info-panel-negative {
   padding: 20px 20px 20px 60px;
   font-weight: bold;
-  background: #eff3f5;
+  background: #dee0e2;
   text-align: left;
   color: gray;
   margin-bottom: 5px;}
@@ -269,7 +269,7 @@ color: #7a7a7a;
 
 .panel-indent-body{
       clear: both;
-      border-left: 6px solid #eff3f5;
+      border-left: 6px solid #dee0e2;
       padding:  0.3rem 1rem 0.8rem 1rem;
     line-height: 2.5rem;
 }
@@ -306,12 +306,13 @@ margin: 1em 0 2em;
 
 .navigation-links {
   font-size: 90%;
-  padding: 0 11px;
+  z-index: 10;
 }
 
 .navigation-links > li {
   list-style: none;
 }
+
 
 .pagination .pag-right {
   text-align: right;
@@ -380,7 +381,7 @@ td, th {
 
 .panel-indent-body {
   clear: both;
-  border-left: 6px solid #eff3f5;
+  border-left: 6px solid #dee0e2;
   padding: 0.3rem 1rem 0.8rem 1rem;
   line-height: 2.5rem;
 }
