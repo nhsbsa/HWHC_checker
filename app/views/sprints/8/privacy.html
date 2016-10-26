@@ -1,0 +1,31 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+<!--<a href="javascript:history.go(-1)" class="link-back">Back</a>-->
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+        <h1 class="heading-large">Privacy policy</h1>
+
+
+          <p>After you send your application,... blah blah</p>
+          <h2 class="heading-medium">How the NHS Business Service Authority will handle your information</h2>
+          <p> We may share information with the police to help prevent or detect fraud or other crime. blahhhhh. </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}
