@@ -3,14 +3,20 @@
 .pagination_gds {
 	display:block;
     margin: 48px 0;
-    padding-top: 18px;
-    border-top: 2px solid #b9d2dc; }
+    border-top: 2px solid #b9d2dc;
+    padding-top: 1em;
+    }
+
 
 @media (max-width: 640px) {
 	.pagination_gds {
-		margin:2em 0 0 0
+		margin: 0 0 1em 0em;
+        padding-bottom: 1em;
+        padding-top: none;
+        border-top: none;
+        border-bottom: 2px solid #b9d2dc; }
 	}
-}
+
 .pagination_gds ul {
 	margin:0;
 	padding:0

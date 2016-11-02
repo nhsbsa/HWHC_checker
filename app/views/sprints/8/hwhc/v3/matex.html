@@ -1,0 +1,124 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+
+{% block content %}
+<style>.aside {
+	z-index:10;
+	border-bottom:1px solid #bbb;
+	margin-bottom:1em;
+	padding-bottom:1em;
+	overflow:hidden
+}
+@media (min-width: 641px) {
+	.aside {
+		margin:0 0 2.5em
+	}
+}
+@media (max-width: 640px) {
+	.aside {
+		width:auto;
+		overflow:hidden;
+		border-bottom:none;
+		padding-bottom:0;
+		margin-left:0
+	}
+}
+ a.back-to-top {
+	display: none;
+	width: 60px;
+	height: 60px;
+	text-indent: -9999px;
+	position: fixed;
+	z-index: 999;
+	right: 20px;
+	bottom: 20px;
+	background: #27AE61 url("/public/images/up-arrow.png") no-repeat center 43%;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+}
+    a.back-to-top:hover {
+    background-color: #000;
+ </style>
+
+<main id="content" role="main">
+   <link rel="stylesheet" href="/public/stylesheets/pagination.css">
+   <link rel=”stylesheet” id=”font-awesome-css” href=”//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css” type=”text/css” media=”screen”>
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">Get help with health costs</h1>
+
+<div class="aside">
+
+    <div class="column-one-half">
+
+      <ul class="navigation-links">
+        <li>1. <a href="start">Overview </a></li>
+        <li>2. <a href="u16">Children and young people</a></li>
+        <li>3. <a href="60">Pensioners</a></li>
+        <li>4. <a href="benefits">Getting benefits or tax credits</a></li>
+      </ul>
+
+    </div>
+
+    <div class="column-one-half">
+
+      <ul class="navigation-links">
+        <li>5. <a href="lis">Employed or self employed</a></li>
+        <li>6. Pregnant or had a baby recently</li>
+        <li>7. <a href="medex">Long term illness</a></li>
+      </ul>
+    </div>
+  </div>
+    </div>
+    </div>
+
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="text">
+
+        <div class="heading-group">
+          <h2 class="heading-medium">Help for people who are pregnant or have had a baby in the last twelve months</h2>
+        </div>
+
+        <p>Pregnant women and those who have had a baby in the last 12 months qualify for a Maternity Exemption Certificate. </p>
+        <p>You must have a valid maternity exemption certificate to get free:</p>
+<ul>
+<li>NHS prescriptions</li>
+<li>NHS dental treatment if, when you are accepted for a course of treatment, you are pregnant or have had a baby in the previous 12 months.</li>
+       </ul>
+
+        <p>You can get an application form for a Maternity Exemption Certificate from your doctor, midwife or health visitor.</p>
+
+        <p><a class="button button-get-started" href="#">Help me work out if I can get help with health costs</a></p>
+
+      </div>
+
+        <nav class="pagination_gds" role="navigation" aria-label="Pagination">
+            <ul class="group">
+                  <li class="previous">
+                    <a title="Navigate to previous part" rel="prev" href="medex">
+                      <span class="pagination-label">Previous</span>
+                      <span class="pagination-part-title">Help for people whohave a long-term medical condition</span>
+                    </a>
+                  </li>
+                  <li class="next">
+                    <a title="Navigate to next part" rel="next" href="lis">
+                      <span class="pagination-label">Next</span> <span class="pagination-part-title">Help for people who have litle money to live on</span>
+                    </a>
+                  </li>
+            </ul>
+          </nav>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

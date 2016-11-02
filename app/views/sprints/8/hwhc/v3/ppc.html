@@ -1,0 +1,153 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+
+{% block content %}
+<style>.aside {
+	z-index:10;
+	border-bottom:1px solid #bbb;
+	margin-bottom:1em;
+	padding-bottom:1em;
+	overflow:hidden
+}
+@media (min-width: 641px) {
+	.aside {
+		margin:0 0 2.5em
+	}
+}
+@media (max-width: 640px) {
+	.aside {
+		width:auto;
+		overflow:hidden;
+		border-bottom:none;
+		padding-bottom:0;
+		margin-left:0
+	}
+}
+ a.back-to-top {
+	display: none;
+	width: 60px;
+	height: 60px;
+	text-indent: -9999px;
+	position: fixed;
+	z-index: 999;
+	right: 20px;
+	bottom: 20px;
+	background: #27AE61 url("/public/images/up-arrow.png") no-repeat center 43%;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+}
+    a.back-to-top:hover {
+    background-color: #000;
+ </style>
+
+<main id="content" role="main">
+   <link rel="stylesheet" href="/public/stylesheets/pagination.css">
+   <link rel=”stylesheet” id=”font-awesome-css” href=”//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css” type=”text/css” media=”screen”>
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">Get help with health costs</h1>
+
+<div class="aside">
+
+    <div class="column-one-half">
+
+      <ul class="navigation-links">
+        <li>1. Overview </li>
+        <li>2. <a href="u16">Children and young people</a></li>
+        <li>3. <a href="60">Pensioners</a></li>
+        <li>4. <a href="benefits">Getting benefits or tax credits</a></li>
+      </ul>
+
+    </div>
+
+    <div class="column-one-half">
+
+      <ul class="navigation-links">
+        <li>5. <a href="lis">Employed or self employed</a></li>
+        <li>6. <a href="matex">Pregnant or had a baby recently</a></li>
+        <li>7. <a href="medex">Long term illness</a></li>
+      </ul>
+    </div>
+  </div>
+    </div>
+    </div>
+
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <div class="text">
+
+        <div class="heading-group">
+          <h2 class="heading-medium">Save money on multiple prescriptons</h2>
+        </div>
+<!--        <p>The current cost of a prescription in England is <strong>£8.40</strong>.<br>-->
+           If you often get more than one prescription a month, you could save money with a Prescription Prepayment Certificate.
+        </p>
+        <ul>
+           <li>A three month certificate is £29.10<br>
+           <span class="hint-text">It could save you money if you need more than 3 prescribed items in 3 months.</span></li>
+           <li>A yearly certificate is £104.00<br>
+           <span class="hint-text">It could save you money if you need more than 12 prescribed items in a year.</span></li>
+
+           <p class="panel-indent-body">To spread the cost, yearly Prescription Prepayment Certificates can be paid for by 10 monthly direct debit instalments of £10.40.</p>
+        </ul>
+
+
+        <h2 class="heading-medium">How much could you save</h2>
+         <table>
+         <thread>
+          <tr>
+            <th>Number of prescriptions per month</th>
+            <th>Savings with a 12 month certificate</th>
+            <th>Savings with a 3 month certificate</th>
+          </tr>
+          </thread>
+          <tbody>
+          <tr>
+            <td class="td">2</td>
+            <td>£95 a year</td>
+            <td>£20 in 3 months</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>£195 a year</td>
+            <td>£45 in 3 months</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>£295 a year</td>
+            <td>£70 in 3 months</td>
+          </tr>
+          </tbody>
+        </table>
+
+<br>
+        <p><a class="button button-get-started" href="https://apps.nhsbsa.nhs.uk/ppcwebsales/patient.do" id="next">Buy a certificate</a></p>
+
+
+
+      </div>
+
+        <nav class="pagination_gds" role="navigation" aria-label="Pagination">
+            <ul class="group">
+                  <li class="previous">
+                    <a title="Navigate to previous part" rel="prev" href="lis">
+                      <span class="pagination-label">Previous</span>
+                      <span class="pagination-part-title">Help for people who have little money to live on</span>
+                    </a>
+                  </li>
+            </ul>
+          </nav>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

@@ -1,0 +1,208 @@
+.group::before,{
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+
+#content.multi-page aside {
+	z-index:10;
+	border-bottom:1px solid #bbb;
+	margin-bottom:1em;
+	padding-bottom:1em;
+	overflow:hidden
+}
+@media (min-width: 641px) {
+	#content.multi-page aside {
+		margin:0 0 2.5em
+	}
+}
+@media (max-width: 640px) {
+	#content.multi-page aside {
+		width:auto;
+		overflow:hidden;
+		border-bottom:none;
+		padding-bottom:0;
+		margin-left:0
+	}
+}
+
+aside .show-all-parts {
+	font-family:"nta", Arial, sans-serif;
+	font-weight:400;
+	text-transform:none;
+	font-size:16px;
+	line-height:3.46154;
+	border:solid 1px #bfc1c3;
+	border-width:1px 0;
+	padding:0 16px;
+	display:none
+}
+@media (min-width: 641px) {
+	aside .show-all-parts {
+		font-size:19px;
+		line-height:2.36842
+	}
+}
+@media (max-width: 640px) {
+	aside .show-all-parts {
+		display:block;
+		background:transparent url(https://assets.publishing.service.gov.uk/static/accordian-arrow-0753eda0cd8d71b5d9b5053abf172100c03b94b49e7f24d82e0f6551302a0aca.png) 100% 6px no-repeat
+	}
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+	aside .show-all-parts {
+		background-image:url(https://assets.publishing.service.gov.uk/static/accordian-arrow-2x-2b998c05ceb1dadeb373b9aff059470cd6ae4557f5d768020531e1616c0e170d.png);
+		background-size:45px 90px
+	}
+}
+aside .show-all-parts,aside .show-all-parts:hover,aside .show-all-parts:focus {
+	text-decoration:none
+}
+aside .show-all-parts.show-all-parts-open {
+	background-position:100% -40px;
+	border-bottom:none
+}
+@media (max-width: 640px) {
+	aside .page-navigation {
+		margin-top:0
+	}
+}
+aside .page-navigation ol {
+	margin:0;
+	padding:0;
+	float:left;
+	display:inline;
+	overflow:hidden;
+	width:50%
+}
+@media (max-width: 640px) {
+	aside .page-navigation ol {
+		float:none;
+		display:block;
+		width:auto
+	}
+}
+aside .page-navigation li {
+	list-style:decimal;
+	list-style-position:outside;
+	margin-right:0.75em;
+	margin-left:1.5em;
+	clear:left;
+	font-family:"nta", Arial, sans-serif;
+	font-weight:400;
+	text-transform:none;
+	font-size:14px;
+	line-height:1.14286
+}
+@media (min-width: 641px) {
+	aside .page-navigation li {
+		font-size:16px;
+		line-height:1.25
+	}
+}
+@media (max-width: 640px) {
+	aside .page-navigation li {
+		float:none;
+		margin:0 1em 0 2.25em
+	}
+}
+aside .page-navigation li a {
+	display:block;
+	padding:0.25em 1em 0.25em 0
+}
+aside .page-navigation li a span {
+	cursor:pointer
+}
+aside .page-navigation li a:hover span.part-title,aside .page-navigation li a:focus span.part-title,aside .page-navigation li a:hover span.part-description,aside .page-navigation li a:focus span.part-description {
+	color:#2b8cc4
+}
+aside .page-navigation li span.part-number {
+	display:none;
+	width:1.75em
+}
+aside .page-navigation li span.part-label,aside .page-navigation li span.part-title {
+	line-height:1.5;
+	display:inline
+}
+aside .page-navigation li span.part-label {
+	color:#0b0c0c;
+	padding:0 0.5em 0 0
+}
+aside .page-navigation li span.part-description {
+	line-height:1.25;
+	display:block;
+	clear:left
+}
+aside .page-navigation li span.part-title {
+	color:#2E3191;
+	text-decoration:underline;
+	line-height:1.5
+}
+aside .page-navigation li.active {
+	padding:0.25em 0.25em 0.25em 0
+}
+aside .page-navigation li.active span.part-number {
+	padding:0
+}
+aside .page-navigation li.active span.part-title {
+	color:#0b0c0c;
+	text-decoration:none
+}
+@media (max-width: 640px) {
+	aside .page-navigation li {
+		font-family:"nta", Arial, sans-serif;
+		font-weight:400;
+		text-transform:none;
+		font-size:16px;
+		line-height:1.25
+	}
+	aside .page-navigation li.active {
+		padding:0
+	}
+}
+@media (max-width: 640px) and (min-width: 641px) {
+	aside .page-navigation li {
+		font-size:19px;
+		line-height:2.36842
+	}
+}
+@media (max-width: 640px) {
+	aside .page-navigation li span,aside .page-navigation li a {
+		margin:0 -1em 0 -2.25em;
+		padding:0em 1em 0.75em 2.75em
+	}
+	aside .page-navigation li span {
+		display:block
+	}
+	aside .page-navigation li span.part-title,aside .page-navigation li span.part-label {
+		display:inline
+	}
+	aside .page-navigation li span.part-label {
+		padding-right:1em
+	}
+}
+aside .page-navigation ol[start] li {
+	margin-left:1.8em
+}
+@media (max-width: 640px) {
+	aside .page-navigation ol[start] li {
+		margin-left:2.25em
+	}
+}
+
+aside .page-navigation-open ol {
+	position:static;
+	left:auto
+}
+aside .page-navigation-closed {
+	border-bottom:none
+}
+@media (max-width: 640px) {
+	aside .page-navigation-closed ol {
+		position:absolute;
+		left:-9999em
+	}
+}

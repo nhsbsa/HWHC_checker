@@ -1,0 +1,162 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+
+{% block content %}
+
+<link rel="stylesheet" href="/public/stylesheets/pagination.css">
+<link rel="stylesheet" href="/public/stylesheets/parent-navigation.css">
+
+
+<main id="content" role="main" class="multi-page">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">Get help with health costs</h1>
+
+      <div class="article-container group">
+
+
+        <div class="content-block">
+          <div class="inner">
+
+            <aside>
+              <div class="inner">
+                <a href="#" id="showBtn" class="show-all-parts">Show all parts of this guide</a>
+
+                  <a href="#" id="hideBtn" class="show-all-parts show-all-parts-open">Hide all parts of this guide</a>
+                  <nav id="na" role="navigation" class="page-navigation page-navigation-closed" aria-label="parts to this guide">
+
+                    <ol>
+                      <li class="active">
+                        <span class="part-number">1.</span>
+                        <span>Overview</span>
+                      </li>
+                      <li>
+                        <span class="part-number">2.</span>
+                        <a title="Part 2: Children and young people" href="u16">Children and young people</a>
+                      </li>
+                      <li>
+                        <span class="part-number">3.</span>
+                        <a title="Part 3: Pensioners" href="60">Pensioners</a>
+                      </li>
+                      <li>
+                        <span class="part-number">4.</span>
+                        <a title="Part 4: Getting benefits or tax credits" href="benefits">Getting benefits or tax credits</a>
+                      </li>
+                    </ol>
+
+                    <ol start="4">
+                      <li class="active">
+                        <span class="part-number">5.</span>
+                        <a title="Part 5: Employed or self employed" href="lis">Employed or self employed</a>
+                      </li>
+                      <li>
+                        <span class="part-number">6.</span>
+                        <a title="Part 6: Pregnant or had a baby recently" href="matex">Pregnant or had a baby recently</a>
+                      </li>
+                      <li>
+                        <span class="part-number">7.</span>
+                        <a title="Part 7: Long term illness" href="medex">Long term illness</a>
+                      </li>
+
+                    </ol>
+                  </nav>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <div class="text">
+
+        <div class="heading-group">
+          <h2 class="heading-medium">Introduction to help with health costs</h1>
+        </div>
+
+        <p>If you receive treatment in an NHS hospital this is usually free but there are a number of things which there may be charges for.</p>
+
+        <p>You may be able to get help with:-</p>
+
+        <ul class="list list-bullet">
+
+          <li>prescription charges</li>
+          <li>NHS dental charges, including check-ups</li>
+          <li>sight tests</li>
+          <li>the cost of glasses and contact lenses</li>
+          <li>travel costs to and from hospital for NHS treatment</li>
+          <li>travel costs if travelling abroad for treatment</li>
+          <li>wigs</li>
+          <li>fabric supports, for example support tights.</li>
+
+        </ul>
+
+        <p>You will need to show evidence to prove you are entitled to help.</p>
+
+        <p><a class="button button-get-started" href="../../start">Help me work out if I can get help with health costs</a></p>
+
+      </div>
+
+        <nav class="pagination_gds" role="navigation" aria-label="Pagination">
+            <ul class="group">
+                  <li class="next">
+                    <a title="Navigate to next part" rel="next" href="u16">
+                      <span class="pagination-label">Next</span> <span class="pagination-part-title">People aged 16 and under</span>
+                    </a>
+                  </li>
+            </ul>
+          </nav>
+
+    </div>
+      </div>
+
+        <div class="inner group">
+        <a class="return-to-top" href="#content">Return to top ↑</a>
+      </div>
+
+</main>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+
+$(document).ready(function(){
+    var showBtn = $('#showBtn');
+    var hideBtn = $('#hideBtn');
+    var nav = $('#na');
+    $(hideBtn).hide();
+
+    $(hideBtn).click(function(){
+        $(hideBtn).hide();
+        $(showBtn).show();
+        $(nav).toggleClass('page-navigation-closed');
+    });
+
+    $(showBtn).click(function(){
+        $(showBtn).hide();
+        $(hideBtn).show();
+        $(nav).toggleClass('page-navigation-closed');
+    });
+});
+/*
+hide the hide all parts button
+click the link and SHOW all parts
+click the link and HIDE all parts
+
+*/
+
+
+//$(document).ready(function(){
+//    $("#hide").click(function(){
+//        $("p").hide();
+//    });
+//    $("#show").click(function(){
+//        $("p").show();
+//    });
+//});
+</script>
+
+{% endblock %}

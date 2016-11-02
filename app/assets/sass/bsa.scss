@@ -1,0 +1,39 @@
+.bsa-logo p {
+  margin: 0;
+  padding: 1em 0;
+  font-size: 15px;
+  border-bottom: 1px solid #b9d2dc;
+}
+
+.bsa-logo b {
+font: bold 20px Arial, serif;
+}
+@media (max-width: 641px) {
+  .bsa-logo b {
+font: bold 15px Arial, serif;
+}
+  }
+
+.bsa-logo-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (min-width: 641px) {
+  .bsa-logo-container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+.bsa-header-logo{
+    width:28%;
+}
+
+@media (max-width: 641px) {
+  .bsa-header-logo {
+width: 100%;
+}
+  }
