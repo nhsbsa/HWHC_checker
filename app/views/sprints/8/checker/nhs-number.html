@@ -1,0 +1,64 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+ <h1 class="heading-large">
+What is your NHS number?
+  </h1>
+
+  <form action="nhs-number" method="get" class="form">
+    This will help us to make sure we don't mistake you for another person.
+
+    {{
+      form_macros.text_field({
+        id: 'firstname',
+        label: 'NHS number'
+      })
+    }}
+
+  <details aria-hidden="true">
+
+  <summary><span class="summary">Where to find your NHS number</span></summary>
+  <div class="panel-indent">
+      <p>If you're registered with a GP, you will have a 10 digit NHS number.<br>
+      It is split into 3 blocks of 3 or 4 numbers, like 123 456 7891.</p>
+      <p>Your NHS number is on any letter or document you have received from the NHS, such as:</p>
+      <ul class="list-bullet">
+
+      <li>prescriptions</li>
+      <li>test results</li>
+          <li>appointment letters</li>
+      <li>maternity notes</li>
+      <li>on your NHS medical card</li>
+      </ul>
+      <p>Otherwise, contact your GP practice and ask them to look it up for you. They may ask to see your ID, such as a passport or drivers licence.</p>
+
+  </div>
+
+</details>
+
+    {{
+      form_macros.button({
+        label: 'Continue',
+        href: 'exemptions-mat',
+      })
+    }}
+
+  </form>
+    </div>
+    </div>
+</main>
+
+{% endblock %}

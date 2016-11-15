@@ -236,13 +236,13 @@ module.exports = {
       if (applicant.age >= 60 && applicant.need === 'prescription') {
         res.redirect('../entitlements/prescription-over60');
       } if (applicant.age >= 60 && applicant.need === 'dental' && applicant.country === 'england') {
-        res.redirect('../tax-credits');
+        res.redirect('../tax-credits-exemption');
       //} if (applicant.age >= 60 && applicant.need === 'dental' && applicant.country === 'wales') {
       //  res.redirect('../tax-credits');
       //} if (applicant.age >= 60 && applicant.need === 'dental' && applicant.country === 'scotland') {
       //  res.redirect('../tax-credits');
       } else if (applicant.age >= 19) { 
-        res.redirect('../tax-credits-19yo');
+        res.redirect('../tax-credits-exemption-19yo');
       } else if (applicant.age  > 15) {
         res.redirect('../full-time-education');
       } else {
@@ -260,6 +260,30 @@ module.exports = {
         res.redirect('../tax-credits-19yo');
       }
     });
+
+                      // tax credits exemption card 19yo
+      app.get(/tc-card-19yo-handler/, function (req, res) {
+      if (req.query.tc19Card  === 'yes'){
+        res.redirect('../taxcredit-info-shortcut');
+      } else if (req.query.tc19Card  === 'nk') {
+        res.redirect('../tax-credits-19yo');
+      } else {
+        res.redirect('../passported-benefits');
+      }
+    });
+
+            // tax credits exemption card
+      app.get(/tc-card-handler/, function (req, res) {
+      if (req.query.tcCard  === 'yes'){
+        res.redirect('../taxcredit-info-shortcut');
+      } else if (req.query.tcCard  === 'nk') {
+        res.redirect('../tax-credits');
+      } else {
+        res.redirect('../passported-benefits');
+      }
+    });
+
+
 
     // tax credits claim yes or no
       app.get(/taxcredits-handler/, function (req, res) {
@@ -315,7 +339,7 @@ module.exports = {
           });
         } else if (req.query.benefits ==="uniCredit") {
           var benType = 'Universal Credit';
-          res.render('sprints/8/full-exemption-benefits', {
+          res.render('sprints/8/uc-claim-type', {
             'bentype' : benType
           });
         } else if (req.query.benefits ==="jsa") {
@@ -334,6 +358,32 @@ module.exports = {
             } else {
                 res.redirect('../pregnancy');
             }
+      }
+    });
+
+          // universal credits income handler
+      app.get(/uc-type-handler/, function (req, res) {
+      if (req.query.ucElement === 'yes') {
+        res.redirect('../uc-income-with-element');
+      } else {
+        res.redirect('../uc-income-without-element');
+      }
+    });
+                // universal credits without element handler (£435)
+      app.get(/uc-element-income-handle/, function (req, res) {
+      if (req.query.ucelementIncome === 'yes') {
+        res.redirect('../full-exemption-uc');
+            } else {
+                res.redirect('../pregnancy');
+      }
+    });
+
+                      // universal credits with element handler(£935)
+            app.get(/uc-without-elements-handler/, function (req, res) {
+      if (req.query.ucIncome === 'yes') {
+        res.redirect('../full-exemption-uc');
+      } else {
+        res.redirect('../pregnancy');
       }
     });
 

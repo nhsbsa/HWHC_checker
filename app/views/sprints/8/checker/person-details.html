@@ -1,0 +1,70 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+ <h1 class="heading-large">
+    About you
+  </h1>
+
+  <form action="others-details" method="get" class="form">
+
+    {{
+      form_macros.text_field({
+        id: 'firstname',
+        label: 'First name'
+      })
+    }}
+
+    {{
+      form_macros.text_field({
+        id: 'lastname',
+        label: 'Last name'
+      })
+    }}
+
+    <div class="form-item-wrapper">
+        <fieldset>
+          <legend class="form-label-bold">
+            Date of birth
+          </legend>
+          <p class="form-hint">For example 31 7 1961</p>
+          <div class="inline-form-groups">
+            <div class="form-group">
+              <label class="form-label" for="day">Day</label>
+              <input class="form-control form-control-2-chars" id="day" value="day" type="number" min="0" max="31">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="month">Month</label>
+              <input class="form-control form-control-2-chars" id="month" value="month" type="number" min="0" max="12">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="year">Year</label>
+              <input class="form-control form-control-4-chars" id="year" value="year" name="dob" type="number" min="0">
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+    {{
+      form_macros.button({
+        label: 'Continue',
+        href: 'nhs-number',
+      })
+    }}
+
+  </form>
+    </div>
+    </div>
+</main>
+
+{% endblock %}

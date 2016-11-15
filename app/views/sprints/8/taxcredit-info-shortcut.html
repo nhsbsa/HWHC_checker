@@ -1,0 +1,103 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
+{% endblock %}
+
+{% block content %}
+
+<style>
+.import-panel {
+    font-weight: bold;
+    padding: 20px 0px 10px 40px;
+    background: url("/public/images/icon-information.png") no-repeat scroll 0px center;
+    }
+    .form-hint-list-item--valid{
+    color:black;
+    }
+</style>
+
+
+
+<main id="content" role="main">
+<a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">You get full help with health costs</h1>
+
+        <p class="intro-to-list">Because you are named on a NHS Tax Credit Exemption Certificate you, your partner and any young people under 20 included on your Tax Credit claim get free:</p>
+
+       <ul class="form-hint-list">
+    <li class="form-hint-list-item form-hint-list-item--valid">
+        <span class="form-hint-list-item__indicator"></span>
+        NHS Prescriptions,
+    </li>
+    <li class="form-hint-list-item form-hint-list-item--valid">
+        <span class="form-hint-list-item__indicator"></span>
+        NHS Dental treatment,
+    </li>
+    <li class="form-hint-list-item form-hint-list-item--valid">
+        <span class="form-hint-list-item__indicator"></span>
+        Sight tests,
+    </li>
+    <li class="form-hint-list-item form-hint-list-item--valid">
+        <span class="form-hint-list-item__indicator"></span>
+        NHS wigs and fabric supports.
+    </li>
+        </ul>
+
+         <p class="intro-to-list">
+          You'll also:
+        <ul>
+                <li class="form-hint-list-item form-hint-list-item--valid">
+        <span class="form-hint-list-item__indicator"></span>
+        Get help towards the cost of glasses or contact lenses,
+    </li>
+        </ul>
+            <li class="form-hint-list-item form-hint-list-item--valid">
+        <span class="form-hint-list-item__indicator"></span>
+        May get help towards the cost of repair or replacement of glasses or contact lenses,
+    </li>
+        </ul>
+
+    <li class="form-hint-list-item form-hint-list-item--valid">
+        <span class="form-hint-list-item__indicator"></span>
+        May get help with travel costs for NHS treatment.
+    </li>
+        </ul>
+        <br>
+
+                     <div class="additional-info">You may have to show your health care professional your NHS Tax Credit Exemption Certificate. </div>
+
+          <br>
+<details aria-hidden="true">
+
+  <summary><span class="summary">What does a NHS Tax Credit Exemption Certificate look like?</span></summary>
+  <div class="panel-indent">
+<br>
+<img src="/public/images/tax-cert.png" alt="what a NHS Tax Credit Exemption Certificate looks like">
+
+  </div>
+
+</details>
+
+      </div>
+
+
+    </div>
+
+</main>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
