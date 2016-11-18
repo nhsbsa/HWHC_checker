@@ -403,8 +403,8 @@ module.exports = {
     // pregnancy router
       app.get(/preg-handler/, function (req, res) {
       if (req.query.pregnancy === 'yes') {
-      applicant.isPregnant = true;
-      res.redirect('../entitlements/prescription-preg');
+      applicant.isPregnant = true && applicant.need === 'dental';
+      res.redirect('../entitlements/dental-preg');
       } else {
         res.redirect('../war-pension');
       }
