@@ -2,42 +2,95 @@
 
 {% block content %}
 
-<main id="content" role="main">
-  <link rel="stylesheet" href="/public/stylesheets/pagination.css">
+<link rel="stylesheet" href="/public/stylesheets/pagination.css">
+<link rel="stylesheet" href="/public/stylesheets/parent-navigation.css">
+<style>
+    .column-full {
+    float: left;
+    width: 100%;
+    padding: 0 15px;
+}
 
+    </style>
+
+
+<main id="content" role="main" class="multi-page">
   <div class="grid-row">
-
     <div class="column-two-thirds">
 
       <h1 class="heading-xlarge">Get help with health costs</h1>
-
+      </div>
     </div>
+<div class="grid-row">
 
-    <div class="column-one-half">
+  <div class="column-full">
+      <div class="article-container group">
 
-      <ul class="navigation-links">
-        <li><a href="start">1. Introduction to help with health costs</a></li>
-        <li><a href="u16">2. people aged under 16</a></li>
-        <li><a href="18">3. people aged 16, 17 or 18</a></li>
-        <li>4. people aged 19</li>
-        <li><a href="60">5. people aged 60 or over</a></li>
-      </ul>
 
+        <div class="content-block">
+          <div class="inner">
+
+            <aside>
+              <div class="inner">
+                <a href="#" id="showBtn" class="show-all-parts">Show all parts of this guide</a>
+
+                  <a href="#" id="hideBtn" class="show-all-parts show-all-parts-open">Hide all parts of this guide</a>
+                  <nav id="na" role="navigation" class="page-navigation page-navigation-closed" aria-label="parts to this guide">
+
+                    <ol>
+                      <li>
+                        <span class="part-number">1.</span>
+                        <a title="Part 1: Introduction to help with health costs" href="start">Introduction to help with health costs</a>
+                      </li>
+                      <li>
+                        <span class="part-number">2.</span>
+                        <a title="Part 2: People aged 16 and under" href="u16">People aged 16 and under</a>
+                      </li>
+                      <li>
+                        <span class="part-number">3.</span>
+                        <a title="Part 3: People aged 16, 17 or 18" href="18">People aged 16, 17 or 18</a>
+                      </li>
+                      <li class="active">
+                        <span class="part-number">4.</span>
+                        <span>People aged 19</span>
+                      </li>
+                      <li>
+                        <span class="part-number">5.</span>
+                        <a title="Part 5: People aged 60 or over" href="60">People aged 60 or over</a>
+                      </li>
+
+                      </ol>
+                      <ol start="6">
+                      <li class="active">
+                        <span class="part-number">6.</span>
+                        <a title="Part 6: People who get benefits or tax credits" href="benefits">People who get benefits or tax credits</a>
+                      </li>
+                      <li>
+                        <span class="part-number">7.</span>
+                        <a title="Part 7: People who have a long term medical condition" href="medex">People who have a long term medical condition</a>
+                      </li>
+                      <li>
+                        <span class="part-number">8.</span>
+                        <a title="Part 8: people who are pregnant or have had a baby in the last twelve months" href="matex">people who are pregnant or have had a baby in the last twelve months</a>
+                      </li>
+                      <li>
+                        <span class="part-number">9.</span>
+                        <a title="Part 8: people who have little money to live on" href="lis">people who have little money to live on</a>
+                      </li>
+                    <li>
+                        <span class="part-number">10.</span>
+                        <a title="Part 8: people with regular prescriptions" href="ppc">people with regular prescriptions</a>
+                      </li>
+
+                    </ol>
+                  </nav>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div class="column-one-half">
-
-      <ul class="navigation-links">
-        <li><a href="benefits">6. people who get benefits or tax credits</a></li>
-        <li><a href="medex">7. people who have a long term medical condition</a></li>
-        <li><a href="matex">8. people who are pregnant or have had a baby in the last twelve months</a></li>
-        <li><a href="lis">9. people who have little money to live on</a></li>
-        <li><a href="ppc">10. people with regular prescriptions</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <hr>
+        </div>
 
   <div class="grid-row">
 
@@ -107,5 +160,26 @@
   </div>
 
 </main>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
 
+$(document).ready(function(){
+    var showBtn = $('#showBtn');
+    var hideBtn = $('#hideBtn');
+    var nav = $('#na');
+    $(hideBtn).hide();
+
+    $(hideBtn).click(function(){
+        $(hideBtn).hide();
+        $(showBtn).show();
+        $(nav).toggleClass('page-navigation-closed');
+    });
+
+    $(showBtn).click(function(){
+        $(showBtn).hide();
+        $(hideBtn).show();
+        $(nav).toggleClass('page-navigation-closed');
+    });
+});
+</script>
 {% endblock %}
