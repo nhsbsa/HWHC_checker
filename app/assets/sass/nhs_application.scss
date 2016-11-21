@@ -408,3 +408,15 @@ td, th {
 		left:-9999em
 	}
 }
+
+list-bullet {
+    margin-bottom: 45px;
+}
+.list-bullet {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+.list {
+    padding: 0;
+    margin-top: 5px;
+    margin-bottom: 20px;

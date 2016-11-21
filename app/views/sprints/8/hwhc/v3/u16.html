@@ -1,79 +1,76 @@
 {% extends 'templates/nhs_transaction_layout.html' %}
 
 {% block content %}
-<style>.aside {
-	z-index:10;
-	border-bottom:1px solid #bbb;
-	margin-bottom:1em;
-	padding-bottom:1em;
-	overflow:hidden
-}
-@media (min-width: 641px) {
-	.aside {
-		margin:0 0 2.5em
-	}
-}
-@media (max-width: 640px) {
-	.aside {
-		width:auto;
-		overflow:hidden;
-		border-bottom:none;
-		padding-bottom:0;
-		margin-left:0
-	}
-}
- a.back-to-top {
-	display: none;
-	width: 60px;
-	height: 60px;
-	text-indent: -9999px;
-	position: fixed;
-	z-index: 999;
-	right: 20px;
-	bottom: 20px;
-	background: #27AE61 url("/public/images/up-arrow.png") no-repeat center 43%;
-	-webkit-border-radius: 30px;
-	-moz-border-radius: 30px;
-	border-radius: 30px;
-}
-    a.back-to-top:hover {
-    background-color: #000;
- </style>
 
-<main id="content" role="main">
-   <link rel="stylesheet" href="/public/stylesheets/pagination.css">
-   <link rel=”stylesheet” id=”font-awesome-css” href=”//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css” type=”text/css” media=”screen”>
+<link rel="stylesheet" href="/public/stylesheets/pagination.css">
+<link rel="stylesheet" href="/public/stylesheets/parent-navigation.css">
 
+
+<main id="content" role="main" class="multi-page">
   <div class="grid-row">
-
     <div class="column-two-thirds">
 
       <h1 class="heading-xlarge">Get help with health costs</h1>
 
-<div class="aside">
+      <div class="article-container group">
 
-    <div class="column-one-half">
 
-      <ul class="navigation-links">
-        <li>1. Overview </li>
-        <li>2. <a href="u16">Children and young people</a></li>
-        <li>3. <a href="60">Pensioners</a></li>
-        <li>4. <a href="benefits">Getting benefits or tax credits</a></li>
-      </ul>
+        <div class="content-block">
+          <div class="inner">
 
-    </div>
+            <aside>
+              <div class="inner">
+                <a href="#" id="showBtn" class="show-all-parts">Show all parts of this guide</a>
 
-    <div class="column-one-half">
+                  <a href="#" id="hideBtn" class="show-all-parts show-all-parts-open">Hide all parts of this guide</a>
+                  <nav id="na" role="navigation" class="page-navigation page-navigation-closed" aria-label="parts to this guide">
 
-      <ul class="navigation-links">
-        <li>5. <a href="lis">Employed or self employed</a></li>
-        <li>6. <a href="matex">Pregnant or had a baby recently</a></li>
-        <li>7. <a href="medex">Long term illness</a></li>
-      </ul>
+                    <ol>
+                      <li>
+                        <span class="part-number">1.</span>
+                        <a title="Part 1: Overview" href="start">Overview</a>
+                      </li>
+                      <li class="active">
+                        <span class="part-number">2.</span>
+                        <span>Children and young people</span>
+                      </li>
+                      <li>
+                        <span class="part-number">3.</span>
+                        <a title="Part 3: Pensioners" href="60">Pensioners</a>
+                      </li>
+                      <li>
+                        <span class="part-number">4.</span>
+                        <a title="Part 4: Getting benefits or tax credits" href="benefits">Getting benefits or tax credits</a>
+                      </li>
+                    </ol>
+
+                    <ol start="5">
+                      <li class="active">
+                        <span class="part-number">5.</span>
+                        <a title="Part 5: Employed or self employed" href="lis">Employed or self employed</a>
+                      </li>
+                      <li>
+                        <span class="part-number">6.</span>
+                        <a title="Part 6: Pregnant or had a baby recently" href="matex">Pregnant or had a baby recently</a>
+                      </li>
+                      <li>
+                        <span class="part-number">7.</span>
+                        <a title="Part 7: Loss of a baby" href="medex">Loss of a baby</a>
+                      </li>
+                      <li>
+                        <span class="part-number">8.</span>
+                        <a title="Part 8: Long term illness" href="medex">Long term illness</a>
+                      </li>
+
+                    </ol>
+                  </nav>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-    </div>
-    </div>
 
 
   <div class="grid-row">
@@ -125,5 +122,27 @@
   </div>
 
 </main>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+
+$(document).ready(function(){
+    var showBtn = $('#showBtn');
+    var hideBtn = $('#hideBtn');
+    var nav = $('#na');
+    $(hideBtn).hide();
+
+    $(hideBtn).click(function(){
+        $(hideBtn).hide();
+        $(showBtn).show();
+        $(nav).toggleClass('page-navigation-closed');
+    });
+
+    $(showBtn).click(function(){
+        $(showBtn).hide();
+        $(hideBtn).show();
+        $(nav).toggleClass('page-navigation-closed');
+    });
+});
+</script>
 
 {% endblock %}
