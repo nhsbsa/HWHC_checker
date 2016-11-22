@@ -1,0 +1,339 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
+{% endblock %}
+
+{% block content %}
+
+<style>
+    .panel__column{
+        background-color: #F8F8F8;
+border-left-width: 3px;
+box-sizing: border-box;
+clear: both;
+border-left-style: solid;
+border-color: #bfc1c3;
+padding: 0.7894736842em;
+margin-bottom: 0.7894736842em;
+    }
+    .left{
+        padding-left:0px;
+    }
+    .dodont{
+background-color: #F8F8F8;
+border-left: 3px solid #bfc1c3;
+    }
+
+.column-half {
+  padding: 0 15px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@media (max-width: 641px) {
+  .column-half {
+    float: left;
+    width: 100%;
+    margin-top:1em;
+      border: 3px solid #bfc1c3;
+  }
+}
+    }</style>
+
+
+<main id="content" role="main">
+   <link rel="stylesheet" href="/public/stylesheets/questions-and-answers.css">
+<a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+  <h1 class="heading-large">
+    Is your GP practice in either Scotland or Wales?
+  </h1>
+
+  <form action="" method="get" class="form">
+
+      <div class="form-item-wrapper" >
+        <fieldset>
+          <div class="inline-form-groups">
+            <div class="form-group">
+
+              <input type="radio" id="yes" name="gp" value="yes">
+
+              <label class="form-control-radio" for="yes">
+                Yes
+              </label>
+            </div>
+            <div class="form-group">
+
+              <input type="radio" id="no" name="gp" value="no">
+
+              <label class="form-control-radio" for="no">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+
+    {{
+      form_macros.button({
+        label: 'Next',
+        href:"date-of-birth"
+
+      })
+    }}
+        </form>
+
+
+<br>
+
+        <article class="panel panel--binary" style="border-top: 2px solid #b9d2dc; padding:1.2em 0 1.2em 0">
+
+  <div class="column-half dodont hidden" id="get">
+    <div class="panel__content">
+        <h2 class="heading-medium">You get free:</h2>
+<ul class="form-hint-list">
+    <li class="form-hint-list-item  form-hint-list-item--valid hidden" id="pres">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        Prescriptions
+    </li>
+
+    <li class="form-hint-list-item  form-hint-list-item--valid hidden" id="presScot">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        Prescriptions<br>
+        <span style="color:black">As long as you have:
+          <ul class="list-bullet" style="padding-left:0px">
+              <li>a GP in Scotland or Wales and</li>
+              <li>the prescription is dispensed by a pharmacist in Scotland or Wales.</li>
+          </ul>
+    </span>
+    </li>
+
+
+    <li class="form-hint-list-item form-hint-list-item--valid hidden" id="stest">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+         NHS Sight test
+    </li>
+
+    <li class="form-hint-list-item form-hint-list-item--valid hidden" id="specs">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        Glasses or contact lenses
+    </li>
+
+            <li class="form-hint-list-item form-hint-list-item--valid hidden" id="wigs">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        NHS wigs
+    </li>
+
+    <li class="form-hint-list-item form-hint-list-item--valid hidden" id="trav">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        Travel for treatment
+    </li>
+
+    <li class="form-hint-list-item form-hint-list-item--valid hidden" id="dexam" >
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        NHS dental exam
+    </li>
+
+    <li class="form-hint-list-item form-hint-list-item--valid hidden" id="dtreat">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+         NHS dental treatment
+    </li>
+
+</ul>
+    </div>
+  </div>
+
+
+
+  <div class="column-half dodont">
+    <div class="panel__content">
+        <h2 class="heading-medium">You do not get free:</h2>
+        <ul class="form-hint-list">
+    <li class="form-hint-list-item  form-hint-list-item--valid hidden" id="pres">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        Prescriptions
+    </li>
+    <li class="form-hint-list-item  form-hint-list-item--false" id="presNeg">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        Prescriptions
+    </li>
+    <li class="form-hint-list-item  form-hint-list-item--valid hidden" id="presScot">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        Prescriptions<br>
+        <span style="color:black">As long as you have:
+          <ul class="list-bullet" style="padding-left:0px">
+              <li>a GP in Scotland or Wales and</li>
+              <li>the prescription is dispensed by a pharmacist in Scotland or Wales.</li>
+          </ul>
+    </span>
+    </li>
+
+
+    <li class="form-hint-list-item form-hint-list-item--valid hidden" id="stest">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+         NHS Sight test
+    </li>
+        <li class="form-hint-list-item form-hint-list-item--false" id="stestNeg">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+         NHS Sight test
+    </li>
+
+    <li class="form-hint-list-item form-hint-list-item--valid hidden" id="specs">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        Glasses or contact lenses
+    </li>
+    <li class="form-hint-list-item form-hint-list-item--false" id="specsNeg">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        Glasses or contact lenses
+    </li>
+
+            <li class="form-hint-list-item form-hint-list-item--valid hidden" id="wigs">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        NHS wigs
+    </li>
+                <li class="form-hint-list-item form-hint-list-item--false" id="wigsNeg">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        NHS wigs
+    </li>
+
+    <li class="form-hint-list-item form-hint-list-item--valid hidden" id="trav">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        Travel for treatment
+    </li>
+        <li class="form-hint-list-item form-hint-list-item--false" id="travNeg">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        Travel for treatment
+    </li>
+
+    <li class="form-hint-list-item form-hint-list-item--valid hidden" id="dexam" >
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        NHS dental exam
+    </li>
+        <li class="form-hint-list-item form-hint-list-item--false" id="dexamNeg" >
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        NHS dental exam
+    </li>
+
+    <li class="form-hint-list-item form-hint-list-item--valid hidden" id="dtreat">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+         NHS dental treatment
+    </li>
+        <li class="form-hint-list-item form-hint-list-item--false" id="dtreatNeg">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+         NHS dental treatment
+    </li>
+</ul>
+    </div>
+  </div>
+</article>
+     </div>
+
+      </div>
+
+    </div>
+    </div>
+
+</main>
+
+<script>
+$("#yes").click(function(){
+    $("#get").removeClass("hidden");
+}); </script>
+<script>
+$("#no").click(function(){
+    $("#get").addClass("hidden");
+}); </script>
+<script>
+$("#yes").click(function(){
+    $("#presScot").removeClass("hidden");
+    $("#donot").removeClass("hidden");
+    $("#pres").addClass("hidden");
+    $("#presNeg").addClass("hidden");
+    $("#stestNeg").removeClass("hidden");
+    $("#specsNeg").removeClass("hidden");
+    $("#wigsNeg").removeClass("hidden");
+    $("#travNeg").removeClass("hidden");
+    $("#dexamNeg").removeClass("hidden");
+    $("#dtreatNeg").removeClass("hidden");
+}); </script>
+<script>
+$("#no").click(function(){
+    $("#pres").addClass("hidden");
+    $("#presScot").addClass("hidden");
+    $("#presNeg").removeClass("hidden");
+    $("#stestNeg").removeClass("hidden");
+    $("#specsNeg").removeClass("hidden");
+    $("#wigsNeg").removeClass("hidden");
+    $("#travNeg").removeClass("hidden");
+    $("#dexamNeg").removeClass("hidden");
+    $("#dtreatNeg").removeClass("hidden");
+}); </script>
+<script>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
