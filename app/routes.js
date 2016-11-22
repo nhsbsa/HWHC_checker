@@ -228,7 +228,7 @@ module.exports = {
         res.redirect('../date-of-birth');
       }
     });
-    
+
     // dob-handler
     app.get(/dob-handler/, function (req, res) { 
       applicant.age = (thisYear - req.query.dobyear);
@@ -249,6 +249,17 @@ module.exports = {
         res.redirect('../full-exemption-under-16');
       }
     });
+
+    // dob-2-handler
+// if (applicant.age <= 16) show id 'pres', 'stest', 'specs', 'dtreat' 'dexam', 'wigs', 'trav'.
+// if (applicant.age >= 60) show id 'pres', 'stest', 'specsNeg', 'dtreatNeg', 'wigsNeg', 'travNeg'.
+ //    hide id 'specs', 'dtreat', 'wigs', 'trav'.
+// if (applicant.age >= 60 && applicant.country === 'scotland' || 'wales') show 'dexam'
+// if (applicant.age >= 60 && applicant.country === 'england') show 'dexamNeg'
+// if (applicant.age <= 16) show id 'pres', 'stest', 'specs', 'dtreat' 'dexam', 'wigs', 'trav'.
+// if (applicant.age >= 60) show id 'pres', 'stest', 'specsNeg', 'dtreatNeg', 'wigsNeg', 'travNeg'.
+ //    hide id 'specs', 'dtreat', 'wigs', 'trav'.
+
 
 
     // full time education handler

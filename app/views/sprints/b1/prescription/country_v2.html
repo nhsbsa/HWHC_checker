@@ -1,0 +1,223 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<main id="content" role="main">
+<a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+
+  <div class="grid-row">
+    <div class="column-two-thirds order-top">
+   <!--1B- lives in the UK-->
+    <h2 class="heading-large">Which country do you live in?</h2>
+
+  <form action="" method="get" class="form">
+
+    <div class="form-item-wrapper">
+      <div class="form-group">
+        <input type="radio" id="england" name="country" value="england">
+        <label class="form-control-radio" for="england">
+          England
+        </label>
+      </div>
+
+      <div class="form-group">
+        <input type="radio" id="scotland" name="country" value="scotland">
+        <label class="form-control-radio" for="scotland">
+          Scotland
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="radio" id="wales" name="country" value="wales">
+        <label class="form-control-radio" for="wales">
+          Wales
+        </label>
+      </div>
+      </div>
+
+    {{
+      form_macros.button({
+        label: 'Next',
+        href:"border-gp"
+      })
+    }}
+
+  </form>
+      </div>
+
+          <div class="column-third" >
+
+      <div class="right-col-details">
+
+
+
+          <h3 class="heading-medium hidden" id="header">What you get free<br>
+           </h3>
+
+<ul class="form-hint-list">
+    <li class="form-hint-list-item  form-hint-list-item--valid hidden" id="pres">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        Prescriptions
+    </li>
+    <li class="form-hint-list-item  form-hint-list-item--false hidden" id="presNeg">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        Prescriptions
+    </li>
+
+    <li class="form-hint-list-item form-hint-list-item--valid hidden" id="stest">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+         NHS Sight test
+    </li>
+        <li class="form-hint-list-item form-hint-list-item--false hidden" id="stestNeg">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+         NHS Sight test
+    </li>
+
+    <li class="form-hint-list-item form-hint-list-item--valid hidden" id="specs">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        Glasses or contact lenses
+    </li>
+    <li class="form-hint-list-item form-hint-list-item--false hidden" id="specsNeg">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        Glasses or contact lenses
+    </li>
+
+            <li class="form-hint-list-item form-hint-list-item--valid hidden" id="wigs">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        NHS wigs
+    </li>
+                <li class="form-hint-list-item form-hint-list-item--false hidden" id="wigsNeg">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        NHS wigs
+    </li>
+
+    <li class="form-hint-list-item form-hint-list-item--valid hidden" id="trav">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        Travel for treatment
+    </li>
+        <li class="form-hint-list-item form-hint-list-item--false hidden" id="travNeg">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        Travel for treatment
+    </li>
+
+    <li class="form-hint-list-item form-hint-list-item--valid hidden" id="dexam" >
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        NHS dental exam
+    </li>
+        <li class="form-hint-list-item form-hint-list-item--false hidden" id="dexamNeg" >
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        NHS dental exam
+    </li>
+
+    <li class="form-hint-list-item form-hint-list-item--valid hidden" id="dtreat">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+         NHS dental treatment
+    </li>
+        <li class="form-hint-list-item form-hint-list-item--false hidden" id="dtreatNeg">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+         NHS dental treatment
+    </li>
+</ul>
+
+
+
+
+      </div>
+
+    </div>
+    </div>
+
+</main>
+<script>
+$("#scotland").click(function(){
+    $("#header").removeClass("hidden");
+}); </script>
+<script>
+$("#england").click(function(){
+    $("#header").removeClass("hidden");
+}); </script>
+<script>
+$("#wales").click(function(){
+    $("#header").removeClass("hidden");
+}); </script>
+
+<script>
+$("#scotland").click(function(){
+    $("#pres").removeClass("hidden");
+    $("#presNeg").addClass("hidden");
+    $("#stestNeg").removeClass("hidden");
+    $("#specsNeg").removeClass("hidden");
+    $("#wigsNeg").removeClass("hidden");
+    $("#travNeg").removeClass("hidden");
+    $("#dexamNeg").removeClass("hidden");
+    $("#dtreatNeg").removeClass("hidden");
+}); </script>
+<script>
+$("#england").click(function(){
+    $("#pres").addClass("hidden");
+    $("#presNeg").removeClass("hidden");
+    $("#stestNeg").removeClass("hidden");
+    $("#specsNeg").removeClass("hidden");
+    $("#wigsNeg").removeClass("hidden");
+    $("#travNeg").removeClass("hidden");
+    $("#dexamNeg").removeClass("hidden");
+    $("#dtreatNeg").removeClass("hidden");
+}); </script>
+<script>
+$("#wales").click(function(){
+    $("#pres").removeClass("hidden");
+    $("#presNeg").addClass("hidden");
+    $("#stestNeg").removeClass("hidden");
+    $("#specsNeg").removeClass("hidden");
+    $("#wigsNeg").removeClass("hidden");
+    $("#travNeg").removeClass("hidden");
+    $("#dexamNeg").removeClass("hidden");
+    $("#dtreatNeg").removeClass("hidden");
+}); </script>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
