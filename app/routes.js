@@ -235,7 +235,7 @@ module.exports = {
       console.log(applicant.age);
       if (applicant.age >= 60 && applicant.need === 'prescription') {
         res.redirect('../entitlements/prescription-over60');
-      } if (applicant.age >= 60 && applicant.need === 'dental' && applicant.country === 'england') {
+      } else if (applicant.age >= 60 && applicant.need === 'dental' && applicant.country === 'england') {
         res.redirect('../tax-credits-exemption');
       //} if (applicant.age >= 60 && applicant.need === 'dental' && applicant.country === 'wales') {
       //  res.redirect('../tax-credits');
