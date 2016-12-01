@@ -14,40 +14,41 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-
        <!--3- Are you named on a Tax Credits Exemption certificate-->
+         <form action="taxcredit-type-handler" method="get" class="form">
 
-         <form action="taxcredit-income-handler" method="get" class="form">
+    <h2 class="heading-large">What type of Tax Credits do you get?</h2>
 
-    <h2 class="heading-large">Do you have a family income of £15,276 or less?</h2>
-
-
-<details>
-  <summary role="button" aria-controls="details-content-0" tabindex="0" aria-expanded="true"><span class="summary">What is a family income?</span></summary>
-
-  <div class="panel-indent" id="details-content-0" aria-hidden="false" style="display: block;">
-
-    <p>This is the income that HMRC used to work out your Tax Credit award.<br>It is made up of your and your partners income for the last tax year.</p>
-    <p>If you are unsure, you can check it on your tax credit award notice.</p>
-  </div>
-</details>
-
-
-
-    <form action="taxcredits-handler" method="get" class="form">
       <div class="form-item-wrapper">
         <fieldset>
-          <div class="inline-form-groups">
+          <div class="form-group">
+
             <div class="form-group">
-              <input type="radio" id="yes" name="taxcreditsIncome" value="yes">
-              <label class="form-control-radio" for="yes">
-                Yes
+              <input type="radio" id="wtcctc" name="taxcreditsType" value="wtcctc">
+              <label class="form-control-radio" for="wtcctc">
+                Working Tax Credit and Child Tax Credit together
               </label>
             </div>
+
             <div class="form-group">
-              <input type="radio" id="no" name="taxcreditsIncome" value="no">
-              <label class="form-control-radio" for="no">
-                No
+              <input type="radio" id="ctcdis" name="taxcreditsType" value="ctcdis">
+              <label class="form-control-radio" for="ctcdis">
+                Working Tax credit on its own, including a disability element
+              </label>
+            </div>
+
+            <div class="form-group">
+              <input type="radio" id="ctc" name="taxcreditsType" value="ctc">
+              <label class="form-control-radio" for="ctc">
+                Child Tax Credit on its own
+              </label>
+            </div>
+
+            <p class="form-block">or</p>
+            <div class="form-group">
+              <input type="radio" id="wtc" name="taxcreditsType" value="wtc">
+              <label class="form-control-radio" for="wtc">
+                  Working Tax Credits on its own
               </label>
             </div>
           </div>
@@ -129,9 +130,9 @@
     </div>
 
 </main>
-
-<!--<script>
-$("#yes").click(function(){
+<!--
+<script>
+$("#wtcctc").click(function(){
     $("#all").removeClass("hidden");
     $("#all1").removeClass("hidden");
     $("#all2").removeClass("hidden");
@@ -139,7 +140,23 @@ $("#yes").click(function(){
     $("#all4").removeClass("hidden");
 }); </script>
 <script>
-$("#no").click(function(){
+$("#ctcdis").click(function(){
+    $("#all").removeClass("hidden");
+    $("#all1").removeClass("hidden");
+    $("#all2").removeClass("hidden");
+    $("#all3").removeClass("hidden");
+    $("#all4").removeClass("hidden");
+}); </script>
+<script>
+$("#ctc").click(function(){
+    $("#all").removeClass("hidden");
+    $("#all1").removeClass("hidden");
+    $("#all2").removeClass("hidden");
+    $("#all3").removeClass("hidden");
+    $("#all4").removeClass("hidden");
+}); </script>
+<script>
+$("#wtc").click(function(){
     $("#all").addClass("hidden");
     $("#all1").addClass("hidden");
     $("#all2").addClass("hidden");

@@ -11,48 +11,71 @@
 
 <main id="content" role="main">
 <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
   <div class="grid-row">
     <div class="column-two-thirds">
 
 
        <!--3- Are you named on a Tax Credits Exemption certificate-->
 
-         <form action="taxcredit-income-handler" method="get" class="form">
+         <form action="tc-card-19yo-handler" method="get" class="form">
 
-    <h2 class="heading-large">Do you have a family income of £15,276 or less?</h2>
+    <h2 class="heading-large">Are you named on a valid NHS Tax Credit Exemption Certificate?</h2>
+
 
 
 <details>
-  <summary role="button" aria-controls="details-content-0" tabindex="0" aria-expanded="true"><span class="summary">What is a family income?</span></summary>
+  <summary role="button" aria-controls="details-content-0" tabindex="0" aria-expanded="true"><span class="summary">What is a NHS Tax Credit Exemption Certificate?</span></summary>
 
   <div class="panel-indent" id="details-content-0" aria-hidden="false" style="display: block;">
 
-    <p>This is the income that HMRC used to work out your Tax Credit award.<br>It is made up of your and your partners income for the last tax year.</p>
-    <p>If you are unsure, you can check it on your tax credit award notice.</p>
+    <p>
+      If you get tax credits you, your partner and any young people included on your claim may be entitled to help with NHS health costs.
+    </p>
+
+    <p class="intro-to-list">
+    To qualify you must receive one of the following types of tax credits and have a family income of less than £15,276.</p>
+
+        <ul class="list list-bullet">
+          <li>Working Tax Credit and Child Tax Credit together</li>
+          <li>Working Tax credit on its own, including a disability element</li>
+          <li>Child Tax Credit on its own.</li>
+        </ul>
+
+     <p>
+      It tells you the valid from and end dates on the bottom of the certificate.
+    </p>
+
+        <img src="/public/images/tax-cert.png" alt="NHS Tax Credit Exemption Certificate">
   </div>
 </details>
 
-
-
-    <form action="taxcredits-handler" method="get" class="form">
-      <div class="form-item-wrapper">
+            <div class="form-item-wrapper">
         <fieldset>
-          <div class="inline-form-groups">
+          <div class="form-groups">
             <div class="form-group">
-              <input type="radio" id="yes" name="taxcreditsIncome" value="yes">
+              <input type="radio" id="yes" name="tc19Card" value="yes">
               <label class="form-control-radio" for="yes">
                 Yes
               </label>
             </div>
             <div class="form-group">
-              <input type="radio" id="no" name="taxcreditsIncome" value="no">
+              <input type="radio" id="no" name="tc19Card" value="no">
               <label class="form-control-radio" for="no">
                 No
+              </label>
+            </div>
+            <p>or</p>
+            <div class="form-group">
+              <input type="radio" id="nk" name="tc19Card" value="nk">
+              <label class="form-control-radio" for="nk">
+                I don't know
               </label>
             </div>
           </div>
         </fieldset>
       </div>
+
 
     {{
       form_macros.button({
@@ -62,8 +85,9 @@
 
   </form>
       </div>
-<!--  <div class="column-third " id="lists">
+ <div class="column-third " id="lists">
 
+<!--
       <div class="right-col-details">
 
 
@@ -123,14 +147,15 @@
 
 
 
-      </div> -->
+      </div>
+-->
 
     </div>
     </div>
 
 </main>
-
-<!--<script>
+<!--
+<script>
 $("#yes").click(function(){
     $("#all").removeClass("hidden");
     $("#all1").removeClass("hidden");

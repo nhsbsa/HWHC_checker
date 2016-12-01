@@ -251,14 +251,19 @@ module.exports = {
     });
 
     // dob-2-handler
-// if (applicant.age <= 16) show id 'pres', 'stest', 'specs', 'dtreat' 'dexam', 'wigs', 'trav'.
-// if (applicant.age >= 60) show id 'pres', 'stest', 'specsNeg', 'dtreatNeg', 'wigsNeg', 'travNeg'.
- //    hide id 'specs', 'dtreat', 'wigs', 'trav'.
-// if (applicant.age >= 60 && applicant.country === 'scotland' || 'wales') show 'dexam'
-// if (applicant.age >= 60 && applicant.country === 'england') show 'dexamNeg'
-// if (applicant.age <= 16) show id 'pres', 'stest', 'specs', 'dtreat' 'dexam', 'wigs', 'trav'.
-// if (applicant.age >= 60) show id 'pres', 'stest', 'specsNeg', 'dtreatNeg', 'wigsNeg', 'travNeg'.
- //    hide id 'specs', 'dtreat', 'wigs', 'trav'.
+          app.get(/dob-2-handler/, function (req, res) {
+      applicant.age = (thisYear - req.query.dobyear);
+      console.log(applicant.age);
+      if (applicant.age >= 20) {
+        res.redirect('../tax-credits-exemption');
+      } else if (applicant.age >= 19) {
+        res.redirect('../tax-credits-exemption-19yo');
+      } else if (applicant.age  >=16) {
+        res.redirect('../full-time-education');
+      } else if (applicant.age  <=15) {
+        res.redirect('../../../8/full-exemption-under-16');
+      }
+    });
 
 
 

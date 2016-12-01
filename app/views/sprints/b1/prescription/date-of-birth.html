@@ -1,29 +1,14 @@
  {% extends 'templates/nhs_transaction_layout.html' %}
 {% import 'includes/form_macros.html' as form_macros %}
 
+<!--
 {% block afterHeader %}
   {% include "includes/service-headers/health-costs-checker.html" %}
 {% endblock %}
+-->
 
 {% block content %}
 
-<style>
-    .invalid {
-    background:url(../images/invalid.png) no-repeat 0 50%;
-    padding-left:22px;
-    line-height:24px;
-    color:#ec3f41;
-}
-.valid {
-    background:url(../images/valid.png) no-repeat 0 50%;
-    padding-left:22px;
-    line-height:24px;
-    color:#3a7d34;
-}
-#pswd_info {
-    display:none;
-}
-</style>
 
 <main id="content" role="main">
 <a href="javascript:history.go(-1)" class="link-back">Back</a>
@@ -38,6 +23,7 @@
      <div class="form-item-wrapper">
 <fieldset>
 
+
         <p class="form-hint">For example 31 7 1961</p>
 
       <div class="inline-form-groups">
@@ -51,7 +37,7 @@
         </div>
         <div class="form-group">
           <label class="form-label" for="dobyear">Year</label>
-          <input class="form-control form-control-4-chars" id="dobyear" name="dobyear" value="dobyear" min="0" type="number">
+          <input class="form-control form-control-4-chars" id="dobyear" name="dobyear" min="0" type="number">
         </div>
       </div>
     </fieldset>
@@ -69,7 +55,10 @@
 <br>
 
         <article class="panel panel--binary" style="border-top: 2px solid #b9d2dc; padding:1.2em 0 1.2em 0">
+<!--
 
+dos
+-->
   <div class="column-half dodont hidden" id="get">
     <div class="panel__content">
         <h2 class="heading-medium">You get free:</h2>
@@ -141,18 +130,12 @@
     </div>
   </div>
 
+<!--do nots-->
 
-
-  <div class="column-half dodont">
+  <div class="column-half dodont " id="not">
     <div class="panel__content">
         <h2 class="heading-medium">You do not get free:</h2>
         <ul class="form-hint-list">
-    <li class="form-hint-list-item  form-hint-list-item--valid hidden" id="pres">
-        <span class="form-hint-list-item__primary">
-            <span class="form-hint-list-item__indicator"></span>
-        </span>
-        Prescriptions
-    </li>
     <li class="form-hint-list-item  form-hint-list-item--false" id="presNeg">
         <span class="form-hint-list-item__primary">
             <span class="form-hint-list-item__indicator"></span>
@@ -172,13 +155,6 @@
     </span>
     </li>
 
-
-    <li class="form-hint-list-item form-hint-list-item--valid hidden" id="stest">
-        <span class="form-hint-list-item__primary">
-            <span class="form-hint-list-item__indicator"></span>
-        </span>
-         NHS Sight test
-    </li>
         <li class="form-hint-list-item form-hint-list-item--false" id="stestNeg">
         <span class="form-hint-list-item__primary">
             <span class="form-hint-list-item__indicator"></span>
@@ -186,12 +162,6 @@
          NHS Sight test
     </li>
 
-    <li class="form-hint-list-item form-hint-list-item--valid hidden" id="specs">
-        <span class="form-hint-list-item__primary">
-            <span class="form-hint-list-item__indicator"></span>
-        </span>
-        Glasses or contact lenses
-    </li>
     <li class="form-hint-list-item form-hint-list-item--false" id="specsNeg">
         <span class="form-hint-list-item__primary">
             <span class="form-hint-list-item__indicator"></span>
@@ -199,12 +169,7 @@
         Glasses or contact lenses
     </li>
 
-            <li class="form-hint-list-item form-hint-list-item--valid hidden" id="wigs">
-        <span class="form-hint-list-item__primary">
-            <span class="form-hint-list-item__indicator"></span>
-        </span>
-        NHS wigs
-    </li>
+
                 <li class="form-hint-list-item form-hint-list-item--false" id="wigsNeg">
         <span class="form-hint-list-item__primary">
             <span class="form-hint-list-item__indicator"></span>
@@ -212,12 +177,7 @@
         NHS wigs
     </li>
 
-    <li class="form-hint-list-item form-hint-list-item--valid hidden" id="trav">
-        <span class="form-hint-list-item__primary">
-            <span class="form-hint-list-item__indicator"></span>
-        </span>
-        Travel for treatment
-    </li>
+
         <li class="form-hint-list-item form-hint-list-item--false" id="travNeg">
         <span class="form-hint-list-item__primary">
             <span class="form-hint-list-item__indicator"></span>
@@ -225,12 +185,7 @@
         Travel for treatment
     </li>
 
-    <li class="form-hint-list-item form-hint-list-item--valid hidden" id="dexam" >
-        <span class="form-hint-list-item__primary">
-            <span class="form-hint-list-item__indicator"></span>
-        </span>
-        NHS dental exam
-    </li>
+
         <li class="form-hint-list-item form-hint-list-item--false" id="dexamNeg" >
         <span class="form-hint-list-item__primary">
             <span class="form-hint-list-item__indicator"></span>
@@ -238,12 +193,7 @@
         NHS dental exam
     </li>
 
-    <li class="form-hint-list-item form-hint-list-item--valid hidden" id="dtreat">
-        <span class="form-hint-list-item__primary">
-            <span class="form-hint-list-item__indicator"></span>
-        </span>
-         NHS dental treatment
-    </li>
+
         <li class="form-hint-list-item form-hint-list-item--false" id="dtreatNeg">
         <span class="form-hint-list-item__primary">
             <span class="form-hint-list-item__indicator"></span>
@@ -270,6 +220,60 @@
 
 
 </main>
+
+
+
+<script>
+
+$("#dobyear").keyup(function(){
+    // var age = $('#age');
+
+    if ( $("#dobyear").val().length === 4) { // if age
+      console.log('whoohoo!');
+        var age = (2016 - $("#dobyear").val() );
+      console.log( age) ;
+    if (age <= 15) {
+        $('#get, #pres, #stest, #specs, #dtreat, #dexam, #wigs, #trav').removeClass('hidden');
+        $('#not, #presNeg, #stestNeg, #specsNeg, #dtreatNeg, #dexamNeg, #wigsNeg, #travNeg').addClass('hidden');
+    } else if (age <= 17) {
+        $('#get, #not, #dexam, #dtreat, #presNeg, #stestNeg, specsNeg, #wigsNeg, #travNeg').removeClass('hidden');
+        $('#dexamNeg, #dtreatNeg').addClass('hidden');
+    } else if (age >= 60) {
+        //shows
+        $('#get, #not, #pres, #stest, #specsNeg, #dtreatNeg, #wigsNeg, #travNeg').removeClass('hidden');
+        //Hides
+        $('#presNeg, #stestNeg, #specs, #dtreat, #wigs, #trav').addClass('hidden');
+    }
+   }
+  });
+
+
+// tax credits
+// 18 - 60
+
+ //    hide id 'specs', 'dtreat', 'wigs', 'trav'.
+// if (applicant.age >= 60 && applicant.country === 'scotland' || 'wales') show 'dexam'
+// if (applicant.age >= 60 && applicant.country === 'england') show 'dexamNeg'
+// if (applicant.age <= 16) show id 'pres', 'stest', 'specs', 'dtreat' 'dexam', 'wigs', 'trav'.
+// if (applicant.age >= 60) show id 'pres', 'stest', 'specsNeg', 'dtreatNeg', 'wigsNeg', 'travNeg'.
+ //    hide id 'specs', 'dtreat', 'wigs', 'trav'.
+  // };
+</script>
+
+<!--
+    // dob-2-handler
+// if (age <= 16) show id 'pres', 'stest', 'specs', 'dtreat' 'dexam', 'wigs', 'trav'.
+// if (applicant.age >= 60) show id 'pres', 'stest', 'specsNeg', 'dtreatNeg', 'wigsNeg', 'travNeg'.
+ //    hide id 'specs', 'dtreat', 'wigs', 'trav'.
+// if (applicant.age >= 60 && applicant.country === 'scotland' || 'wales') show 'dexam'
+// if (applicant.age >= 60 && applicant.country === 'england') show 'dexamNeg'
+// if (applicant.age <= 16) show id 'pres', 'stest', 'specs', 'dtreat' 'dexam', 'wigs', 'trav'.
+// if (applicant.age >= 60) show id 'pres', 'stest', 'specsNeg', 'dtreatNeg', 'wigsNeg', 'travNeg'.
+ //    hide id 'specs', 'dtreat', 'wigs', 'trav'.
+-->
+
+
+<!--
 <script>
 $("#scotland").click(function(){
     $("#get").removeClass("hidden");
@@ -331,13 +335,10 @@ $("#wales").click(function(){
     $("#dtreatNeg").removeClass("hidden");
 }); </script>
 
-
-
-{% endblock %}
-
-
+-->
 
 {% endblock %}
+
 
 
 
