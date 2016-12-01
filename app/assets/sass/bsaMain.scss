@@ -1,0 +1,639 @@
+@charset "utf-8";
+
+/*baseline*/
+* { margin:0; padding:0; font-size:100%; }
+body { text-align:center; font-size:62.5%; font-family:Arial, Helvetica, sans-serif; background:url(../i/grdBG.gif) repeat-x #e1e4e7; line-height:1.6em; }
+html, body { height:100%; }
+html>body { font-size:10px; }
+a img, :link img, :visited img { border:0 none; }
+a { color:#555; text-decoration:underline; }
+a:hover { text-decoration:none; }
+a, a:link, a:visited, a:hover { outline: none; }
+
+/*generic*/
+h1 { font-size:1.2em; color:#444; line-height:1.6em; padding:0 0 0.4em; }
+h2 { font-size:1.1em; color:#555; padding:0 0 0.3em; }
+h3 { color:#666; }
+ul li { list-style:none; }
+a.arrow { padding:5px 0 0 25px; margin:0 0 0 5px; background:url(../i/arrow.gif) no-repeat 0 9px; }
+a.rss { padding:0px 0 5px 25px; margin:10px 0 0 5px; background:url(../i/rss.gif) no-repeat 0 0px;  }
+a.backArrow { background:url(../i/backArrowWhite.gif) no-repeat 0 4px; padding:0 0 7px 10px; margin:3px 0 0; }
+fieldset { border:none; }
+legend { text-indent:-9999px; line-height:0; }
+#content .pdf { background:url(../i/pdf.gif) no-repeat 0 0px; display:block; padding:0px 0px 20px 34px; }
+#content .word { background:url(../i/word.gif) no-repeat 0 0px; display:block; padding:0px 0px 20px 34px;  }
+#content .excel { background:url(../i/excel.gif) no-repeat 0 0px; display:block; padding:0px 0px 20px 34px;   }
+#content .powerpoint { background:url(../i/powerpoint.gif) no-repeat 0 0px; display:block; padding:0px 0px 10px 34px; }
+#content .jpeg { background:url(../i/jpeg.gif) no-repeat 0 0px; display:block; padding:0px 0px 20px 34px; }
+#content .tiff { background:url(../i/tiff.gif) no-repeat 0 0px; display:block; padding:0px 0px 20px 34px; }
+#content .gif { background:url(../i/gif.gif) no-repeat 0 0px; display:block; padding:0px 0px 20px 34px; }
+
+
+/*clearfix*/
+.clearfix:after { content:"."; display:block; height:0; clear:both; visibility:hidden; }
+.clearfix { display:inline-block; }
+/* Hide from IE Mac \*/
+.clearfix { display:block; }
+/* End hide from IE Mac */
+
+/*body*/
+#wrapper { margin:0 auto; padding:0 0 50px; text-align:left; width:965px; min-height:92%; font-size:1.2em; background:#fff; }
+#wrapper a { color:#0066cc; }
+.clear { clear:both; width:100%; font-size:0; line-height:0; height:0; }
+
+
+/*header*/
+#hdr { color:#666; }
+	#hdr a { color:#666666; text-decoration:none; }
+    #hdr a:hover {text-decoration: underline; }
+#hdr .mainLogo { float:right; padding:10px 5px 10px 0px; border: none; }
+#hdr #topNav { height: 26px;  }
+#hdr #topNav li { padding:0 11px 0px; }
+#hdr h2 { font-family: Arial, Helvetica, sans-serif; font-size:0.9em;  color:#999999;  width:300px; float:left; font-weight:normal; margin:44px 0 0 66px; display: none;}
+#hdr #topNav { margin:8px 15px 0; float:right; }
+body#bsaContact #hdr h1, body#bsaContent #hdr h1, body#bsaHub #hdr h1, body#bsaListing #hdr h1, body#bsanewsListing #hdr h1, body#errorPage #hdr h1, body#bsaSearch #hdr h1 {width: 300px; margin-top: 59px; }
+
+#hdr input#simplesearch_search { width: 200px; height: 18px; }
+
+body#bsaContact #hdr h2, body#bsaContent #hdr h2, body#bsaHub #hdr h2, body#bsaListing #hdr h2, body#bsanewsListing #hdr h2, body#errorPage #hdr h2, body#bsaSearch #hdr h2 {display:none; }
+
+#hdr input#searchButton, #hdr input#simplesearch_searchButton { background:url(../i/homeSearchBut.gif) no-repeat 0 0;  border:none; width:71px; padding:0px 0 5px; height:22px; text-indent:-9999em; }
+#hdr #login {background:url(../i/login-bg.gif) repeat-x top; height:22px; width:188px; float: right; padding-top:8px; margin-right: 10px; }
+#hdr #login span#loginLeft { background:url(../i/login-left.gif) no-repeat; height:30px; width: 6px; float:left; margin-top:-8px;  }
+#hdr #login span#loginRight { background:url(../i/login-right.gif) no-repeat; height:29px; width: 6px; float:right;  margin-top:-24px; }
+#hdr #login a {color: #0066cc; }
+
+#hdr #divider { border-bottom: 1px solid #ebebeb; float: left; width: 939px; margin-left: 15px; }
+
+
+/*nav*/
+#nav { clear:both; text-align:center; width:965px; margin:0 0 10px 0; position:relative; }
+#nav ul { float:left; background:url(../i/navTopShad.gif) repeat-x; padding:10px 0 0; clear:both; }
+#nav a { color:#555; text-decoration:none; display:block; padding:8px; background:url(../i/navItemBG.gif) repeat-x bottom #f3f3f3; border-left:1px solid #d3d3d3; font-weight:bold; }
+/*#nav li:last-child a { border-right:1px solid #d6d6d6; }*/
+#nav li { float:left; background:url(../i/navItemBtmB.gif) repeat-x bottom; display:block; padding:0 0 11px; }
+	#nav li:hover, #nav li.navHover { background:url(../i/navItemBtmG.gif) repeat-x bottom; }
+#nav li.selected { background:url(../i/navItemBtmG.gif) repeat-x bottom; }
+#nav li.selected a:hover { cursor:default; }
+
+/*toolbar*/
+#toolbar { text-align:left; font-size:1.2em; background:url(../i/toolbarBG.png) repeat-x; position:fixed; top:0; left:0; width:100%; height:83px; color:#b1b1b1; z-index:500; }
+	#toolbar a { color:#b1b1b1; text-decoration:none; }
+	#toolbar a:hover { text-decoration:underline; color:#fff; }
+	#toolbar a.backArrow { background:url(../i/backArrow.gif) no-repeat 0 4px; padding:0 0 7px 10px; float:left; text-decoration:none; margin:0; }
+#toolbarWrapper { width:950px; margin:0 auto; background:url(../i/bsaLogoService.gif) no-repeat 0 13px; height:66px; }
+a#logo { display:block; width:188px; height:46px; font-size:0; text-indent:-9999em; margin-top:10px; float:left; }
+ul#topNav { float:right; margin:3px 5px; }
+ul#topNav li { list-style:none; display:inline; padding:3px 8px 0 8px; }
+.BSALogo { clear:both; float:left; }
+
+#searchContainer fieldset { border:none; }
+#searchContainer legend, #searchContainer label { display:none; }
+body#bsaHub #searchContainer, body#bsaContent #searchContainer, body#bsaSearch #searchContainer{ float:left; clear:right;  margin:80px 0 0 15px;  }
+body#bsaHome #searchContainer {
+float:left; clear:right;  margin:80px 0 0 15px;
+}
+input#search { border:1px solid #adadaf; background:url(../i/searchBarBG.gif) repeat-x; height:20px; width:200px; display:block; float:left; margin:0 6px 0 0; }
+#toolbar input#simplesearch_search { width: 200px; height: 18px; }
+#toolbar input#simplesearch_searchButton, #toolbar input#searchButton { background:url(../i/searchButton.gif) no-repeat 0 0; border:none; width:71px; padding:0px 0 5px; height:22px; text-indent:-9999em; margin-left: 6px; }
+input#searchButton:hover { cursor:pointer; }
+
+	#toolbar #login{  background:url(../i/serviceLogin-bg.gif) repeat-x top; height:27px; width: auto; float: right; padding-top:3px; margin-right: 10px; width:108px;}
+	#toolbar #login span#loginLeft { background:url(../i/serviceLogin-left.gif) no-repeat; height:30px; width: 6px; float:left; margin-top:-3px;  }
+ #login span#loginRight { background:url(../i/serviceLogin-right.gif) no-repeat; height:30px; width: 6px; float:right; margin-top: -19px; }
+	#toolbar #login a {color: #ffffff;}
+
+	#toolbar #home{  background:url(../i/serviceLogin-bg.gif) repeat-x top; height:27px; width:150px; float: left; padding-top:3px; margin:10px 0 0 77px;  }
+	#toolbar span#homeLeft { background:url(../i/serviceLogin-left.gif) no-repeat; height:30px; width: 6px; float:left; margin-top: -3px;   }
+ #toolbar span#homeRight { background:url(../i/serviceLogin-right.gif) no-repeat; height:30px; width: 6px; float:right; margin-top: -3px; }
+
+/*BSA pages*/
+
+/*content pages*/
+#content { min-height:400px; height:auto!important; height:400px; }
+body#bsaHome, body#bsaContent, body#bsaContact, body#bsaSearch, body#errorPage, body#bsaHub, body#bsanewsListing, body#bsaListing { background:none; }
+body#bsaHome #contentL { width:482px; padding:0 0 0 15px; margin:0; }
+body#bsaHome #contentL a {font-weight: bold;}
+body#bsaHome #contentC { margin-top:29px; }
+body#bsaHome #contentR { width:284px; border:none; margin:0; padding:0; }
+body#bsaHome #contentR h1{ font-weight: bold; font-size: 1.2em;/*margin-top:3px;*/ }
+#content ul { padding-bottom: 15px }
+#content ul li { list-style:none; padding:5px 0 1px 17px; margin:0 0 0 5px; background:url(../i/arrow.gif) no-repeat 0 9px; }
+#content ol {padding-bottom: 10px; }
+/*#content ol li { padding: 0 0 5px 0px; margin: 0 0 0 22px; }*/
+.quickLinksHome { border-top:1px solid #d6d6d6; margin:0 15px 0 0; width:226px; float:left; padding:15px 0 20px; }
+.newsItems { border-top:1px solid #d6d6d6; padding:15px 0 0; margin:0 0 15px; }
+.newsItems h2 { color:#333; font-weight:normal; font-size:1em; }
+#bsaContent h3, #bsaHome  h3, #serviceNews h3  { padding: 8px 0 3px 0px; margin: 0px; }
+.newsItems p { padding:5px 0 15px; }
+.tag { background-color: #fde8dd; height:17px; float:right; font-size:0.8em; color:#f58d59; margin:0; padding: 0 5px 0 5px; }
+body#bsaContent .newsListing .tag {margin-bottom:0;}
+body#bsaContent .tag {margin-bottom: 20px;}
+.tag p, #content .tag p { float:left; padding:0; }
+body#bsaContent #content, body#bsaContact #content, body#serviceNews #content, body#bsaHub #content{ width:723px; }
+body#bsanewsListing #content { width: 720px; }
+body#bsanewsListing h3 {padding-bottom: 5px; margin-bottom: 15px; border-bottom: 1px solid #ebebeb; }
+
+body#bsaContent #nav, body#bsaContact #nav, body#serviceNews #nav { margin:0 0 5px; }
+
+.newsListing { border-bottom:1px solid #d6d6d6; margin:0 0 15px; }
+
+/*body#bsaContent #content img{ padding:2px; border:1px solid #999;  margin:0 0 5px 0;}*/
+
+#serviceHome #searchContainer, #serviceContent #searchContainer, #serviceNews #searchContainer, #serviceHomeTwo #searchContainer,  #Servicequiz #searchContainer{ float:right; margin:9px 11px 0 0 ;  }
+
+
+
+/*------------------------------
+contact page - Old forms START
+--------------------------------*/
+#ContentPanel, #LoginControl_LoginPanel, #CreateUserPanel  { width:595px; background:url(../i/contactBG.gif) repeat-y; margin:0 0 20px -1px; }
+#ContentPanel label, #LoginControl_LoginPanel label, #CreateUserPanel label { display:block; float:left; width:120px; /*clear:both;*/ padding:8px 10px 0 10px; }
+
+span#Label1 {display:block; margin-left:11px; width:320px; clear:both;}
+
+#ContentPanel input, #LoginControl_LoginPanel input, #CreateUserPanel input  { display:block; float:left; width:195px; height:25px; }
+
+#ContentPanel select, #CreateUserPanel select { display:block; float:left; width:200px; height:25px; }
+#ContentPanel textarea { display:block; float:left; width:195px; height:150px; }
+
+#DentalLit, #SightLit, #NHSTravelLit {clear:both;}
+
+
+#ContentPanel div.messageContainer, #ContentPanel div.emailContainer, #ContentPanel div.servicesContainer, #ContentPanel div.subjectContainer, #ContentPanel div.titleContainer, #CreateUserPanel div.messageContainer{ border-bottom:1px solid #fff; padding:10px 0; display:block; }
+#ContentPanel div:after, #CreateUserPanel div:after { content:"."; display:block; height:0; clear:both; visibility:hidden; }
+#ContentPanel div, #CreateUserPanel div { display:inline-block; }
+#ContentPanel div input#__VIEWSTATE,  #ContentPanel div input#__EVENTVALIDATION, #ContentPanel div input#__EVENTTARGET, #ContentPanel div input#__EVENTARGUMENT, #ContentPanel div input#__LASTFOCUS{display: none; }
+
+.messageContainer span {display:block; float:left; margin:0 0 0 42px; width:210px;}
+.messageContainer div {display:block!important;}
+
+#ContentPanel ContentPanel, #CreateUserPanel  { float: left;  }
+
+#ContentPanel #Button1, #ContentPanel #Submit, #ContentPanel #submitContact, #CreateUserPanel #CreateUserButton { clear:both; margin:10px 0 0 140px; background:url(../i/submitButBG.gif) no-repeat; border:none; width:71px; height:22px; text-indent:-9999em; }
+#ContentPanel #Button1:hover, #ContentPanel #Submit:hover, #ContentPanel #submitContact:hover { cursor:pointer; }
+
+#ContentPanel span.errMsg, #CreateUserPanel span.errMsg { margin-left: 40px }
+
+
+#ContentPanel span#AnyProblemsRBL, #ContentPanel span#RegisterOnDemandRBL, #ContentPanel span#GlossaryHelpRBL, #ContentPanel span#IDTrainingSessRBL, #ContentPanel span#CovTrainReqRBL, #ContentPanel span#BarriersIDRBL {float:left; width: 20px; }
+
+#ContentPanel input#AnyProblemsRBL_0, #ContentPanel input#AnyProblemsRBL_1 {width:20px; margin-left: 10px; }
+#ContentPanel input#RegisterOnDemandRBL_0, #ContentPanel input#RegisterOnDemandRBL_1 {width: 20px; margin-left: 10px; }
+#ContentPanel input#GlossaryHelpRBL_0, #ContentPanel input#GlossaryHelpRBL_1{width:20px;  margin-left: 10px; }
+#ContentPanel input#IDTrainingSessRBL_0, #ContentPanel input#IDTrainingSessRBL_1 {width:20px; margin-left: 10px;}
+#ContentPanel input#CovTrainReqRBL_0,  #ContentPanel input#CovTrainReqRBL_1 {width:20px;  margin-left: 10px; }
+#ContentPanel input#BarriersIDRBL_0,   #ContentPanel input#BarriersIDRBL_1 {width:20px;   margin-left: 10px;}
+
+#ContentPanel span#ClaimInfoLit, #ContentPanel span#Label1 {display:block; margin-left:11px; width:320px; clear:both; float:none;}
+#ContentPanel input#SightCB,  #ContentPanel input#NHSTravelCB, #ContentPanel input#DentalCB {width:10px; margin-top: 3px;}
+
+
+/*#ContentPanel input#AnyProblemsRBL_1, #ContentPanel input#RegisterOnDemandRBL_1, #ContentPanel input#GlossaryHelpRBL_1, #ContentPanel input#IDTrainingSessRBL_1, #ContentPanel input#CovTrainReqRBL_1, #ContentPanel input#CovTrainReqRBL_1, #ContentPanel input#BarriersIDRBL_1 {margin-top: 15px;}*/
+
+#ContentPanel input#ResponseCB {width: 15px; }
+/*------------------------------
+contact page - Old forms END
+--------------------------------*/
+
+
+/*------------------------------
+contact page - New forms START
+--------------------------------*/
+
+.ContentPanel, #LoginControl_LoginPanel, #CreateUserPanel  { width:595px; background:url(../i/contactBG.gif) repeat-y; margin:0 0 20px -1px; }
+.ContentPanel label, #LoginControl_LoginPanel label, #CreateUserPanel label { float:left; width:120px; /*clear:both;*/ padding:8px 10px 0 10px; clear: left; }
+
+span#Label1 {display:block; margin-left:11px; width:320px; clear:both;}
+
+.ContentPanel input, #LoginControl_LoginPanel input, #CreateUserPanel input  { float:left; width:195px; height:25px; }
+
+.ContentPanel select, #CreateUserPanel select { display:block; float:left; width:200px; height:25px; }
+.ContentPanel textarea { display:block; float:left; width:195px; height:150px; max-width:195px; max-height:150px;}
+
+#DentalLit, #SightLit, #NHSTravelLit {clear:both;}
+
+
+
+#HC1Claim1_ClaimInfoLit, #HC5Claim1_Label1 { margin-left: 10px; width: 340px;}
+
+
+
+.ContentPanel div.messageContainer, .ContentPanel div.emailContainer, .ContentPanel div.servicesContainer, .ContentPanel div.subjectContainer, .ContentPanel div.titleContainer, #CreateUserPanel div.messageContainer{ border-bottom:1px solid #fff; padding:10px 0; display:block; }
+.ContentPanel div:after, #CreateUserPanel div:after { content:"."; display:block; height:0; clear:both; visibility:hidden; }
+.ContentPanel div, #CreateUserPanel div { display:inline-block; }
+.ContentPanel div input#__VIEWSTATE,  .ContentPanel div input#__EVENTVALIDATION, .ContentPanel div input#__EVENTTARGET, .ContentPanel div input#__EVENTARGUMENT, .ContentPanel div input#__LASTFOCUS{display: none; }
+
+.messageContainer span {display:block; float:left; margin:0 0 0 42px; width:210px;}
+.messageContainer div {display:block!important;}
+.messageContainer #HC1Claim1_ClaimInfoLit, .messageContainer #HC5Claim1_Label1 {float:none;}
+
+.ContentPanel ContentPanel, #CreateUserPanel  { float: left;  }
+
+.ContentPanel #Button1, .ContentPanel .Submit, .ContentPanel #submitContact, #CreateUserPanel #CreateUserButton, .ContentPanel #HC5Claim1_Submit { clear:both; margin:10px 0 0 140px; background:url(../i/submitButBG.gif) no-repeat; border:none; width:71px; height:22px; text-indent:-9999em; }
+.ContentPanel #Button1:hover, .ContentPanel .Submit:hover, .ContentPanel #submitContact:hover, .ContentPanel #HC5Claim1_Submit:hover  { cursor:pointer; }
+
+.ContentPanel span.errMsg, #CreateUserPanel span.errMsg { margin-left: 40px }
+
+
+.ContentPanel span#AnyProblemsRBL, .ContentPanel span#RegisterOnDemandRBL, .ContentPanel span#GlossaryHelpRBL, .ContentPanel span#IDTrainingSessRBL, .ContentPanel span#CovTrainReqRBL, .ContentPanel span#BarriersIDRBL {float:left; width: 20px; }
+
+.ContentPanel input#AnyProblemsRBL_0, .ContentPanel input#AnyProblemsRBL_1 {width:20px; margin-left: 10px; }
+.ContentPanel input#RegisterOnDemandRBL_0, .ContentPanel input#RegisterOnDemandRBL_1 {width: 20px; margin-left: 10px; }
+.ContentPanel input#GlossaryHelpRBL_0, .ContentPanel input#GlossaryHelpRBL_1{width:20px;  margin-left: 10px; }
+.ContentPanel input#IDTrainingSessRBL_0, .ContentPanel input#IDTrainingSessRBL_1 {width:20px; margin-left: 10px;}
+.ContentPanel input#CovTrainReqRBL_0,  .ContentPanel input#CovTrainReqRBL_1 {width:20px;  margin-left: 10px; }
+.ContentPanel input#BarriersIDRBL_0,   .ContentPanel input#BarriersIDRBL_1 {width:20px;   margin-left: 10px;}
+
+.ContentPanel span#ClaimInfoLit, .ContentPanel span#Label1 {display:block; margin-left:11px; width:320px; clear:both; float:none;}
+.ContentPanel input#SightCB,  .ContentPanel input#NHSTravelCB, .ContentPanel input#DentalCB {width:10px; margin-top: 3px;}
+
+
+/*.ContentPanel input#AnyProblemsRBL_1, .ContentPanel input#RegisterOnDemandRBL_1, .ContentPanel input#GlossaryHelpRBL_1, .ContentPanel input#IDTrainingSessRBL_1, .ContentPanel input#CovTrainReqRBL_1, .ContentPanel input#CovTrainReqRBL_1, .ContentPanel input#BarriersIDRBL_1 {margin-top: 15px;}*/
+
+.ContentPanel input#ResponseCB {width: 15px; }
+/*------------------------------
+contact page - New forms END
+--------------------------------*/
+
+
+/*Quiz*/
+
+/*body#Servicequiz form#form1 #Button1 { clear:both;  background:url(../i/submitButBG.gif) no-repeat; border:none; width:71px; height:22px; }
+body#Servicequiz form#form1 label { display: block; margin: 5px 0 0 10px; }
+body#Servicequiz form#form1 input { margin: -3px 12px 0 20px; display:block; float:left;   height: 30px;}
+body#Servicequiz form div div div {  margin-top: 20px; }
+body#Servicequiz form div div div  span{ margin-top: 20px; display:block; }*/
+
+body#Servicequiz #Button1 { clear:both;  background:url(../i/submitButBG.gif) no-repeat; border:none; width:71px; height:22px; text-indent:-9999em; margin-bottom: 15px; }
+body#Servicequiz #questionC label { display: block; margin: 15px 0 0 5px; }
+body#Servicequiz #questionC input { margin: 8px 12px 0 10px; display:block; float:left;   height: 30px;}
+body#Servicequiz img.quiz {float: left; border: none;  margin: 0 12px 0 10px; }
+
+body#Servicequiz #content img {border:medium none;
+float:left;
+margin:5px 15px 0 1px; }
+
+body#Servicequiz .quizImage input {
+margin:-6px 12px 0 4px !important;
+}
+
+body#Servicequiz .quizImage label {
+margin:1px 0 0 5px !important;
+}
+
+body#Servicequiz #Submit {
+float:left;
+/*margin: 20px 0;*/
+padding: 0;
+clear:left;
+}
+
+
+body#Servicequiz .quizImage span {
+display:block;
+margin-top:60px;
+}
+
+
+
+/*body#Servicequiz #content{
+width:722px;
+}*/
+
+
+#noRed {color:#000;}
+
+/*search listing, error page*/
+.searchListing { border-bottom:1px solid #d6d6d6; margin:0 0 15px; }
+body#errorPage #content, body#bsaSearch #content { width:925px; margin-top:0; }
+
+input#HC5Claim1_DentalCB, input#HC1Claim1_DentalCB, input#HC5Claim1_SightCB, input#HC1Claim1_SightCB, input#HC5Claim1_NHSTravelCB, input#HC1Claim1_NHSTravelCB {
+width: 13px!important;
+height: 13px!important;
+margin-top: 6px!important;}
+
+
+/*Services pages*/
+
+/*news links*/
+.serviceNewsItem h1 {font-weight:normal; font-size:1em;}
+.serviceNewsItem h2 {font-size:1em;}
+
+#contentL a {font-weight:bold;}
+
+/*if theres no top nav*/
+body.noTopNav #nav {font-size:0; line-height:0; height:0; margin:0;}
+body.noTopNav #lNavContainer {margin-top:0;}
+body.noTopNav #content {margin-top:10px; padding-top:10px; border-top:1px solid #D6D6D6;}
+
+
+/*Header*/
+.servicesLogo { float:right; margin:84px 20px 10px 0; display:block; }
+#contentHeader { border-top:2px solid #7fb2e5; padding:10px 0 20px; clear:both;  }
+body#serviceHomeTwo #contentHeader { border:none; padding-bottom: 10px; height:139px; }
+	#contentHeader h1 { font-family:Georgia, "Times New Roman", Times, serif; font-size:1.8em; color:#0066cc; font-weight:bold; font-style:italic; padding:20px; line-height:1.2em; float:left; width:573px; }
+	#contentHeader img { float:right; border:1px solid #a1a1a1; margin-right:15px; }
+
+
+/*services home*/
+#contentL { float:left; width:362px; margin:10px 25px 0; }
+body#serviceHomeTwo #contentL { width: 410px; }
+.quickLinksContainer { border-top:1px solid #d6d6d6; padding:10px 0 20px; }
+	.quickLinksContainer ul li, .quickLinksHome ul li, .newsItems ul li { list-style:none; padding:5px 0 0 13px; margin:0 0 0 5px; background:url(../i/arrow.gif) no-repeat 0 9px; }
+	.quickLinks { width:185px; float:left; }
+.usergroupInfo { float:left; width:160px; padding:0 0 0 15px; }
+body#serviceHomeTwo .usergroupInfo {width: 200px}
+#contentC { float:left; width:139px; margin:10px 15px 0 0; }
+.serviceNewsImg { padding:10px 0 0; margin:0 0 15px; border-top:1px solid #d6d6d6; }
+.serviceNewsImgContainer { padding:3px 0; border-top:2px solid #ff6600; border-bottom:2px solid #ff6600; }
+	.serviceNewsImgContainer img { float:left; }
+.serviceNewsImgContainernone { padding:3px 0; /*background-color:#f26722; */background-color: #66cc33;  }
+.blueBox { border-top:2px solid #66cc33; border-bottom:2px solid #66cc33; }
+.newsImgLink { background:#ccc; padding:2px 5px; clear:both; }
+ .serviceNewsImgContainernone .newsImgLink { background:none; padding:2px 5px; clear:both; }
+	.newsImgLink h1 { font-size:1.1em; }
+	.newsImgLink h2 { font-size:1.1em; }
+		#wrapper .newsImgLink h2 a { color:#222; font-weight:normal; }
+		#wrapper .serviceNewsImgContainernone .newsImgLink h1, #wrapper .serviceNewsImgContainernone .newsImgLink h2 a{ color:#fff; }
+
+#contentR { float:left; width:184px; margin:10px 0 0; padding:10px 0 0; border-top:1px solid #d6d6d6; }
+#serviceHomeTwo #contentR { width: 336px; }
+.serviceNewsItem { padding:0 0 20px; }
+
+
+/* n3 link*/
+a.n3 { background: url( ../i/n3.gif) 2px 13px no-repeat; padding:10px 0px 0px 22px; }
+
+
+/*services content*/
+#content { width:500px; float:left; margin:0 20px 0; }
+#content h1 { font-family:Georgia, "Times New Roman", Times, serif; font-size:1.8em; color:#0066cc; font-weight:bold; font-style:italic; line-height:1.2em; border-bottom:1px solid #d6d6d6; margin:0 0 15px; }
+#content p { padding:0 0 15px; }
+
+#relatedLinks { float:left; width:200px; border-bottom:1px solid #ff6600; padding-bottom: 16px; }
+	#relatedLinks h1 { border-bottom:1px solid #ff6600; padding:0 0 12px; }
+	#relatedLinks li { padding:15px 0 0 5px; }
+	#relatedLinks .arrow { padding-left:15px; }
+	#relatedLinks a { color:#ff6600; }
+.back { border-top:1px solid #d6d6d6; padding:15px 0 0; clear:both; }
+#content .hubLinks { float:left; width: 500px;}
+#content .hubLinks li { padding:0 0 3px 13px; background:url(../i/arrow.gif) no-repeat 0 4px; }
+#content .hubLinks h2 { font-size:1em; }
+#content .hubLinks p { padding-top:0; }
+.articleImg { padding:2px; border:1px solid #999; float:right; margin:0 0 15px 15px; clear:right; }
+body#serviceContent #content img { padding:2px;  float:right; margin:0 0 15px 15px; clear:right; }
+
+
+/*Left hand navigation*/
+
+#lNavContainer { width:187px; padding:10px 0; margin:25px 0 0 15px; clear:both; float:left; }
+body#serviceHome #lNavContainer, body#serviceHomeTwo #lNavContainer, body#serviceContent #lNavContainer {margin-top: 0px;}
+ul#lNav { border-left:1px solid #e3e3e3; border-bottom:1px solid #e3e3e3; background:#e3e3e3;}
+	ul#lNav li { list-style:none; border-top:1px solid #e3e3e3; }
+		ul#lNav li a { display:block; padding:10px 10px 10px 19px; text-decoration:none; background:#fff; border-right:2px solid #9fc5ec; color:#555; }
+		ul#lNav li a:hover { background-color:#eee!important; background-image:none!important; }
+			ul#lNav li ul li a { padding-left:28px; }
+			ul#lNav li ul li ul li a { padding-left:35px; }
+			ul#lNav li ul li ul li ul li a { padding-left:42px; }
+		ul#lNav li#lNavCurrentSection a { background-color:#fff; border-right:2px solid #b2e599; }
+			ul#lNav span { background:url(../i/lNavCurrentSectionBullet.gif) no-repeat 0 3px; padding:0 0 0 13px; display:block; }
+ul#lNav li.lNavSelected a { font-weight:bold; border-right:none!important;  }
+/*ul#lNav li.lNavSelected span {background: none; padding:0;}*/
+
+
+ul#lNav li.lNavSelected a:hover { background-color:#ffffff!important; }
+ul#lNav li.lNavSelected ul a { font-weight:normal; }
+ul#lNav li.lNavSelected ul li {border-right:2px solid #b2e599;}
+
+ul#lNav li.lNavSelected ul li a:hover {background-color:#eee!important; background-image:none!important;}
+
+ul#lNav li.lNavSelected {background:none;}
+
+
+
+/*ul#lNav li.lNavSelected a:hover { background-color:#ffffff!important; }
+ul#lNav li.lNavSelected ul a { font-weight:normal; }
+ul#lNav li.lNavSelected ul li {border-right:2px solid #b2e599; }
+ul#lNav li.lNavSelected ul li a {background:url(../i/lNavCurrentSectionBullet.gif) no-repeat 28px 13px;  display:block; padding:10px 10px 10px 28px;}
+ul#lNav li.lNavSelected ul li a:hover {background:url(../i/lNavCurrentSectionBullet.gif) no-repeat 28px 13px #eee!important; }
+body#serviceContent ul#lNav li.lNavSelected ul li a {padding-left: 40px;}
+body#serviceContent ul#lNav li#lNavCurrentSection ul li a {background:url(../i/lNavCurrentSectionBullet.gif) no-repeat 28px 13px #fff;  display:block; padding:10px 10px 10px 40px;}
+body#serviceContent ul#lNav li#lNavCurrentSection ul li a:hover {background:url(../i/lNavCurrentSectionBullet.gif) no-repeat 28px 13px #eee!important; }
+
+ul#lNav li.lNavSelected, body#serviceContent ul#lNav li#lNavCurrentSection li.lNavSelected a {background:none; background:#fff;}
+ul#lNav li.lNavSelected, body#serviceContent ul#lNav li#lNavCurrentSection li.lNavSelected a:hover {background:none!important; }*/
+
+
+
+
+ul#lNav li a.below { background:#fff url(../i/lNavBBG.gif) no-repeat; }
+ul#lNav li a.above { background:#fff url(../i/lNavTBG.gif) no-repeat bottom; }
+.top { background:#fff url(../i/lNavTBG.gif) no-repeat top; }
+.bottom { background:#fff url(../i/lNavBBG.gif) no-repeat bottom; }
+
+/*#lNavContainer { width:187px; padding:10px 0; margin:25px 0 0 15px; clear:both; float:left; }
+body#serviceHome #lNavContainer, body#serviceHomeTwo #lNavContainer  { margin-top: 0px;   }
+ul#lNav { border-left:1px solid #e3e3e3; border-bottom:1px solid #e3e3e3; background:#e3e3e3;}
+	ul#lNav li { list-style:none; border-top:1px solid #e3e3e3; }
+		ul#lNav li a { display:block; padding:10px 10px 10px 19px; text-decoration:none; background:#fff; border-right:2px solid #9fc5ec; color:#555; }
+		ul#lNav li a:hover { background-color:#eee!important; background-image:none!important; }
+			ul#lNav li ul li a { padding-left:28px; }
+			ul#lNav li ul li ul li a { padding-left:35px; }
+			ul#lNav li ul li ul li ul li a { padding-left:42px; }
+		ul#lNav li#lNavCurrentSection a { background-color:#fff; border-right:2px solid #b2e599; }
+
+ul#lNav li.lNavSelected a { font-weight:bold; border-right:none!important;  }
+
+ul#lNav li.lNavSelected a:hover { background-color:#ffffff!important; }
+ul#lNav li.lNavSelected ul a { font-weight:normal; }
+ul#lNav li.lNavSelected ul li {border-right:2px solid #b2e599;}
+
+ul#lNav li.lNavSelected ul li a:hover {background-color:#eee!important; background-image:none!important;}
+
+ul#lNav li.lNavSelected {background:none;}
+
+
+
+ul#lNav li a.below { background:#fff url(../i/lNavBBG.gif) no-repeat; }
+ul#lNav li a.above { background:#fff url(../i/lNavTBG.gif) no-repeat bottom; }
+.top { background:#fff url(../i/lNavTBG.gif) no-repeat top; }
+.bottom { background:#fff url(../i/lNavBBG.gif) no-repeat bottom; }*/
+
+/*Footer*/
+#footer { text-align:left; background:url(../i/ftrBG.png) repeat-x; height:40px; position:fixed; width:100%; bottom:0; left:0; font-size:1.2em; }
+#footerWrapper { width:950px; margin:0 auto; padding:20px 0 0; }
+p#ftrTxtL { float:left; }
+ul#btmLinks { float:right; list-style:none; }
+	ul#btmLinks li { display:block; float:left; margin:0 0 0 10px; }
+	ul#btmLinks a { text-decoration:none; }
+	ul#btmLinks a:hover { text-decoration:underline; }
+
+
+body#Servicequiz .blueHeader{	border-top:2px solid #7FB2E5;
+clear:both;
+padding:10px 0 20px;
+}
+
+
+/*-- Search Pages July 2009 --*/
+
+body.DentalSearch div#content {
+margin-left:12px;
+width:731px;
+display: inline;
+}
+
+body.DentalSearch div#search {
+float: left;
+padding-bottom: 20px;
+}
+
+a.BackToSearchLink {
+display:block;
+margin: 15px 0 0 0!important;
+background:transparent url(../i/backArrowWhite.gif) no-repeat scroll 0 4px;
+padding:0 0 7px 10px;
+}
+
+body.DentalSearch div#HeadlineControl_SearchPanel {
+float: left;
+padding-bottom: 15px;
+}
+
+
+body.DentalSearch div#search div.searchSelection {
+float: left;
+padding: 10px 0;
+width: 500px;
+}
+
+body.DentalSearch div#search div.searchSelection label {
+width: 160px;
+float: left;
+clear: left;
+}
+
+body.DentalSearch div#search div.searchSelection select {
+width: 340px;
+float: left;
+}
+
+body.DentalSearch div#search div.searchSelection input#InDepthControl_AuthorityTextBox, body.DentalSearch div#search div.searchSelection input#HeadlineControl_AuthorityTextBox, body.DentalSearch div#search div.searchSelection input#HeadlineControl_TotalsCheckBox {
+clear: none;
+margin: 0px;
+float: left!important;
+}
+
+body.DentalSearch div#search input {
+clear: both;
+font-size: 1.1em;
+padding: 1px 3px;
+margin: 0;
+float: left;
+}
+
+body.DentalSearch div#search ul li {
+line-height: 1;
+margin-top: 5px;
+}
+
+body.DentalSearch div#InDepthControl_ResultsPanel ul {
+clear: both;
+border-top:1px solid #a7a6aa;
+padding-top:20px;
+}
+
+body.DentalSearch div#InDepthControl_ResultsPanel ul li {
+padding-top: 6px;
+}
+
+body.DentalSearch div#InDepthControl_ResultsPanel ul li a {
+margin: 0;
+float: none;
+}
+
+body.DentalSearch table /*#DigestControl_ResultsGridView, div#InDepthControl_ResultsPanel table, table#HeadlineControl_ctl00_DetailsGridView */{
+float: left;
+clear: both;
+margin: 10px 0;
+border-color: #a7a6aa;
+width: 100%;
+}
+
+body.DentalSearch table#DigestControl_ResultsGridView {
+font-size: 1.1em;
+}
+
+body.DentalSearch table tr.even td /*#DigestControl_ResultsGridView tr.even td, div#InDepthControl_ResultsPanel table tr.even td, table#HeadlineControl_ctl00_DetailsGridView tr.even td*/ {
+background-color: #d6d6d6;
+}
+
+body.DentalSearch table th, body.DentalSearch table td /*div#InDepthControl_ResultsPanel table th, div#InDepthControl_ResultsPanel table td, table#HeadlineControl_ctl00_DetailsGridView th, table#HeadlineControl_ctl00_DetailsGridView td, table#DigestControl_ResultsGridView th, table#DigestControl_ResultsGridView td*/ {
+font-size:0.9em !important;
+padding: 1px;
+border-color:#A7A6AA;
+}
+
+body.DentalSearch table#DigestControl_ResultsGridView th, body.DentalSearch table#DigestControl_ResultsGridView td {
+padding: 4px;
+}
+
+body.DentalSearch div#HeadlineControl_ResultsPanel {
+clear: both;
+}
+
+body.DentalSearch div#HeadlineControl_ResultsPanel ul {
+border-top: 1px solid #A7A6AA;
+padding-top: 20px;
+}
+
+body.DentalSearch div#HeadlineControl_ResultsPanel a {
+margin: 5px 0;
+}
+
+body.DentalSearch table th /*div#InDepthControl_ResultsPanel table th, table#HeadlineControl_ctl00_DetailsGridView th, table#DigestControl_ResultsGridView th */{
+background-color: #0066cc;
+color: #fff;
+font-weight: bold;
+}
+
+body.DentalSearch div#InDepthControl_ResultsPanel a {
+clear: both;
+float: left;
+margin: 10px 0;
+}
+
+body.DentalSearch div#InDepthControl_ResultsPanel, body.DentalSearch div#HeadlineControl_ResultsPanel, body.DentalSearch #DigestControl_ResultsGridView {
+clear: both;
+color: #ff0000;
+padding-top: 20px;
+}
+
+body.DentalSearch div#InDepthControl_ResultsPanel span, body.DentalSearch div#InDepthControl_ResultsPanel table, body.DentalSearch div#HeadlineControl_ResultsPanel span, body.DentalSearch div#HeadlineControl_ResultsPanel table, body.DentalSearch #DigestControl_ResultsGridView span, body.DentalSearch #DigestControl_ResultsGridView table {
+color: #000!important;
+}
+
+
+
+input#InDepthControl_SubmitButton {
+margin-top: 10px!important;
+}
+
+/*-search result-*/
+
+span.TimeframeLabel {
+display: block;
+font-size: 1.2em;
+font-weight: bold;
+margin: 10px 0;
+}
+
+
+/*- Fix poor Select menu behaviour in IE6/IE7 -*/
+
+select {
+#behavior:expression(window.dropdown_menu_hack!=null?window.dropdown_menu_hack(this):0);
+}
+
+
