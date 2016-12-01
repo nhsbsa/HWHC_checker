@@ -1,0 +1,59 @@
+@charset "utf-8";
+/* CSS Document */
+
+body { font-family:Arial, Helvetica, sans-serif; font-size: 0.9em;}
+
+#login, #topNav,  #divider, #searchContainer, #btmLinks, #home, #nav, #lNavContainer, div.back, #content .pdf, #content .word, #content .excel, #content .powerpoint, #content .jpeg, #content .tiff, #content .gif, #contentHeader img, #contentC   {display: none; }
+
+a.n3 {background: none; }
+
+#Submit {display:none;}
+
+body#bsaContact #hdr h2, body#bsaContent #hdr h2, body#bsaHub #hdr h2, body#bsaListing #hdr h2, body#bsanewsListing #hdr h2, body#errorPage #hdr h2, body#bsaSearch #hdr h2, #logo {display:none; }
+
+.servicesLogo  {float: right; padding:0 10px 0 600px; }
+
+#content h1{ font-size: 1.3em; }
+
+#relatedLinks .arrow {background: none; margin-left: 0px; padding-left: 0px; }
+
+.serviceNewsItem h1 {font-size:1.2em;}
+
+.hubLinks h2, .newsListing h2, #content h2 {font-size:1em;}
+
+
+body#serviceContent #relatedLinks {width: 180px;}
+
+
+body#serviceHomeTwo .quickLinksContainer, body#serviceHome .quickLinksContainer  { width: 350px;}
+.quickLinksContainer ul li, a.arrow, a.rss, .newsItems ul li, body#serviceNews #content ul li, #content .hubLinks li, body#serviceContent
+body#serviceHomeTwo .usergroupInfo, body#serviceHome .usergroupInfo { width:150px; }
+body#serviceHomeTwo #contentL, body#serviceHome #contentL{width: 350px; margin-top:10px;}
+body#serviceHomeTwo #contentR, body#serviceHome #contentR{width: 250px; }
+
+ body#serviceHome #contentL h1, body#bsaHome #contentL h1, body#bsaHome #contentR h1 {  font-size: 1.2em;}
+  body#serviceHome #contentL  h2,  body#bsaHome #contentL h2, body#bsaHome #contentR h2  {font-size: 1em; }
+ body#serviceHome .usergroupInfo {padding-bottom:10px;}
+
+.mainLogo { border:none; }
+body#bsaHome #contentL { clear:both; width: 400px;}
+
+body#bsaHome .quickLinksHome {width: 185px; }
+body#bsaHome #contentR {}
+
+body#bsaHome .newsItems  {width:230px;}
+
+#ContentPanel label, #LoginControl_LoginPanel label, #CreateUserPanel label { display:block; float:left; width:120px; clear:both; padding:8px 10px 0 10px; }
+
+span#Label1 {display:block; margin-left:11px; width:320px; clear:both;}
+
+#ContentPanel input, #LoginControl_LoginPanel input, #CreateUserPanel input  { display:block; float:left; width:195px; height:25px; }
+
+#ContentPanel select, #CreateUserPanel select { display:block; float:left; width:200px; height:25px; }
+#ContentPanel textarea { display:block; float:left; width:195px; height:150px; }
+
+div.messageContainer {margin-bottom: 10px; clear:left; }
+
+#ContentPanel #Button1, #ContentPanel #Submit, #ContentPanel #submitContact, #CreateUserPanel #CreateUserButton {clear:both; width: 200px;!important}
+
+#ftrTxtL {clear:left; }
