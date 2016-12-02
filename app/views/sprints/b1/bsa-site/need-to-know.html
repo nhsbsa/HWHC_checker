@@ -1,4 +1,11 @@
-@charset "utf-8";
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head id="head">
+	<title>
+		Help with Health Costs Help with Health Costs NHS Business Services Authority
+	</title>
+	<style>
+        @charset "utf-8";
 
 /*baseline*/
 * { margin:0; padding:0; font-size:100%; }
@@ -15,18 +22,18 @@ h1 { font-size:1.2em; color:#444; line-height:1.6em; padding:0 0 0.4em; }
 h2 { font-size:1.1em; color:#555; padding:0 0 0.3em; }
 h3 { color:#666; }
 ul li { list-style:none; }
-a.arrow { padding:5px 0 0 25px; margin:0 0 0 5px; background:url(../i/arrow.gif) no-repeat 0 9px; }
-a.rss { padding:0px 0 5px 25px; margin:10px 0 0 5px; background:url(../i/rss.gif) no-repeat 0 0px;  }
-a.backArrow { background:url(../i/backArrowWhite.gif) no-repeat 0 4px; padding:0 0 7px 10px; margin:3px 0 0; }
+a.arrow { padding:5px 0 0 25px; margin:0 0 0 5px; background:url(http://www.nhsbsa.nhs.uk/i/arrow.gif) no-repeat 0 9px; }
+a.rss { padding:0px 0 5px 25px; margin:10px 0 0 5px; background:url(http://www.nhsbsa.nhs.uk/i/rss.gif) no-repeat 0 0px;  }
+a.backArrow { background:url(http://www.nhsbsa.nhs.uk/i/backArrowWhite.gif) no-repeat 0 4px; padding:0 0 7px 10px; margin:3px 0 0; }
 fieldset { border:none; }
 legend { text-indent:-9999px; line-height:0; }
-#content .pdf { background:url(../i/pdf.gif) no-repeat 0 0px; display:block; padding:0px 0px 20px 34px; }
-#content .word { background:url(../i/word.gif) no-repeat 0 0px; display:block; padding:0px 0px 20px 34px;  }
-#content .excel { background:url(../i/excel.gif) no-repeat 0 0px; display:block; padding:0px 0px 20px 34px;   }
-#content .powerpoint { background:url(../i/powerpoint.gif) no-repeat 0 0px; display:block; padding:0px 0px 10px 34px; }
-#content .jpeg { background:url(../i/jpeg.gif) no-repeat 0 0px; display:block; padding:0px 0px 20px 34px; }
-#content .tiff { background:url(../i/tiff.gif) no-repeat 0 0px; display:block; padding:0px 0px 20px 34px; }
-#content .gif { background:url(../i/gif.gif) no-repeat 0 0px; display:block; padding:0px 0px 20px 34px; }
+#content .pdf { background:url(http://www.nhsbsa.nhs.uk/i/pdf.gif) no-repeat 0 0px; display:block; padding:0px 0px 20px 34px; }
+#content .word { background:url(http://www.nhsbsa.nhs.uk/i/word.gif) no-repeat 0 0px; display:block; padding:0px 0px 20px 34px;  }
+#content .excel { background:url(http://www.nhsbsa.nhs.uk/i/excel.gif) no-repeat 0 0px; display:block; padding:0px 0px 20px 34px;   }
+#content .powerpoint { background:url(http://www.nhsbsa.nhs.uk/i/powerpoint.gif) no-repeat 0 0px; display:block; padding:0px 0px 10px 34px; }
+#content .jpeg { background:url(http://www.nhsbsa.nhs.uk/i/jpeg.gif) no-repeat 0 0px; display:block; padding:0px 0px 20px 34px; }
+#content .tiff { background:url(http://www.nhsbsa.nhs.uk/i/tiff.gif) no-repeat 0 0px; display:block; padding:0px 0px 20px 34px; }
+#content .gif { background:url(http://www.nhsbsa.nhs.uk/i/gif.gif) no-repeat 0 0px; display:block; padding:0px 0px 20px 34px; }
 
 
 /*clearfix*/
@@ -41,6 +48,16 @@ legend { text-indent:-9999px; line-height:0; }
 #wrapper a { color:#0066cc; }
 .clear { clear:both; width:100%; font-size:0; line-height:0; height:0; }
 
+/*logo*/
+a#logo {
+    display: block;
+    width: 188px;
+    height: 46px;
+    font-size: 0;
+    text-indent: -9999em;
+    margin-top: 10px;
+    float: left;
+}
 
 /*header*/
 #hdr { color:#666; }
@@ -77,11 +94,11 @@ body#bsaContact #hdr h2, body#bsaContent #hdr h2, body#bsaHub #hdr h2, body#bsaL
 #nav li.selected a:hover { cursor:default; }
 
 /*toolbar*/
-#toolbar { text-align:left; font-size:1.2em; background:url(../i/toolbarBG.png) repeat-x; position:fixed; top:0; left:0; width:100%; height:83px; color:#b1b1b1; z-index:500; }
+#toolbar { text-align:left; font-size:1.2em; background:url(http://www.nhsbsa.nhs.uk/i/toolbarBG.png) repeat-x; position:fixed; top:0; left:0; width:100%; height:83px; color:#b1b1b1; z-index:500; }
 	#toolbar a { color:#b1b1b1; text-decoration:none; }
 	#toolbar a:hover { text-decoration:underline; color:#fff; }
-	#toolbar a.backArrow { background:url(../i/backArrow.gif) no-repeat 0 4px; padding:0 0 7px 10px; float:left; text-decoration:none; margin:0; }
-#toolbarWrapper { width:950px; margin:0 auto; background:url(../i/bsaLogoService.gif) no-repeat 0 13px; height:66px; }
+	#toolbar a.backArrow { background:url(http://www.nhsbsa.nhs.uk/i/backArrow.gif) no-repeat 0 4px; padding:0 0 7px 10px; float:left; text-decoration:none; margin:0; }
+#toolbarWrapper { width:950px; margin:0 auto; background:url(http://www.nhsbsa.nhs.uk/i/bsaLogoService.gif) no-repeat 0 13px; height:66px; }
 a#logo { display:block; width:188px; height:46px; font-size:0; text-indent:-9999em; margin-top:10px; float:left; }
 ul#topNav { float:right; margin:3px 5px; }
 ul#topNav li { list-style:none; display:inline; padding:3px 8px 0 8px; }
@@ -118,7 +135,7 @@ body#bsaHome #contentC { margin-top:29px; }
 body#bsaHome #contentR { width:284px; border:none; margin:0; padding:0; }
 body#bsaHome #contentR h1{ font-weight: bold; font-size: 1.2em;/*margin-top:3px;*/ }
 #content ul { padding-bottom: 15px }
-#content ul li { list-style:none; padding:5px 0 1px 17px; margin:0 0 0 5px; background:url(../i/arrow.gif) no-repeat 0 9px; }
+#content ul li { list-style:none; padding:5px 0 1px 17px; margin:0 0 0 5px; background:url(http://www.nhsbsa.nhs.uk/i/arrow.gif) no-repeat 0 9px; }
 #content ol {padding-bottom: 10px; }
 /*#content ol li { padding: 0 0 5px 0px; margin: 0 0 0 22px; }*/
 .quickLinksHome { border-top:1px solid #d6d6d6; margin:0 15px 0 0; width:226px; float:left; padding:15px 0 20px; }
@@ -189,7 +206,6 @@ span#Label1 {display:block; margin-left:11px; width:320px; clear:both;}
 #ContentPanel input#SightCB,  #ContentPanel input#NHSTravelCB, #ContentPanel input#DentalCB {width:10px; margin-top: 3px;}
 
 
-/*#ContentPanel input#AnyProblemsRBL_1, #ContentPanel input#RegisterOnDemandRBL_1, #ContentPanel input#GlossaryHelpRBL_1, #ContentPanel input#IDTrainingSessRBL_1, #ContentPanel input#CovTrainReqRBL_1, #ContentPanel input#CovTrainReqRBL_1, #ContentPanel input#BarriersIDRBL_1 {margin-top: 15px;}*/
 
 #ContentPanel input#ResponseCB {width: 15px; }
 /*------------------------------
@@ -249,8 +265,6 @@ span#Label1 {display:block; margin-left:11px; width:320px; clear:both;}
 .ContentPanel input#SightCB,  .ContentPanel input#NHSTravelCB, .ContentPanel input#DentalCB {width:10px; margin-top: 3px;}
 
 
-/*.ContentPanel input#AnyProblemsRBL_1, .ContentPanel input#RegisterOnDemandRBL_1, .ContentPanel input#GlossaryHelpRBL_1, .ContentPanel input#IDTrainingSessRBL_1, .ContentPanel input#CovTrainReqRBL_1, .ContentPanel input#CovTrainReqRBL_1, .ContentPanel input#BarriersIDRBL_1 {margin-top: 15px;}*/
-
 .ContentPanel input#ResponseCB {width: 15px; }
 /*------------------------------
 contact page - New forms END
@@ -258,12 +272,6 @@ contact page - New forms END
 
 
 /*Quiz*/
-
-/*body#Servicequiz form#form1 #Button1 { clear:both;  background:url(../i/submitButBG.gif) no-repeat; border:none; width:71px; height:22px; }
-body#Servicequiz form#form1 label { display: block; margin: 5px 0 0 10px; }
-body#Servicequiz form#form1 input { margin: -3px 12px 0 20px; display:block; float:left;   height: 30px;}
-body#Servicequiz form div div div {  margin-top: 20px; }
-body#Servicequiz form div div div  span{ margin-top: 20px; display:block; }*/
 
 body#Servicequiz #Button1 { clear:both;  background:url(../i/submitButBG.gif) no-repeat; border:none; width:71px; height:22px; text-indent:-9999em; margin-bottom: 15px; }
 body#Servicequiz #questionC label { display: block; margin: 15px 0 0 5px; }
@@ -294,12 +302,6 @@ body#Servicequiz .quizImage span {
 display:block;
 margin-top:60px;
 }
-
-
-
-/*body#Servicequiz #content{
-width:722px;
-}*/
 
 
 #noRed {color:#000;}
@@ -340,7 +342,7 @@ body#serviceHomeTwo #contentHeader { border:none; padding-bottom: 10px; height:1
 #contentL { float:left; width:362px; margin:10px 25px 0; }
 body#serviceHomeTwo #contentL { width: 410px; }
 .quickLinksContainer { border-top:1px solid #d6d6d6; padding:10px 0 20px; }
-	.quickLinksContainer ul li, .quickLinksHome ul li, .newsItems ul li { list-style:none; padding:5px 0 0 13px; margin:0 0 0 5px; background:url(../i/arrow.gif) no-repeat 0 9px; }
+	.quickLinksContainer ul li, .quickLinksHome ul li, .newsItems ul li { list-style:none; padding:5px 0 0 13px; margin:0 0 0 5px; background:url(http://www.nhsbsa.nhs.uk/i/arrow.gif) no-repeat 0 9px; }
 	.quickLinks { width:185px; float:left; }
 .usergroupInfo { float:left; width:160px; padding:0 0 0 15px; }
 body#serviceHomeTwo .usergroupInfo {width: 200px}
@@ -378,7 +380,7 @@ a.n3 { background: url( ../i/n3.gif) 2px 13px no-repeat; padding:10px 0px 0px 22
 	#relatedLinks a { color:#ff6600; }
 .back { border-top:1px solid #d6d6d6; padding:15px 0 0; clear:both; }
 #content .hubLinks { float:left; width: 500px;}
-#content .hubLinks li { padding:0 0 3px 13px; background:url(../i/arrow.gif) no-repeat 0 4px; }
+#content .hubLinks li { padding:0 0 3px 13px; background:url(http://www.nhsbsa.nhs.uk/i/arrow.gif) no-repeat 0 4px; }
 #content .hubLinks h2 { font-size:1em; }
 #content .hubLinks p { padding-top:0; }
 .articleImg { padding:2px; border:1px solid #999; float:right; margin:0 0 15px 15px; clear:right; }
@@ -397,7 +399,7 @@ ul#lNav { border-left:1px solid #e3e3e3; border-bottom:1px solid #e3e3e3; backgr
 			ul#lNav li ul li ul li a { padding-left:35px; }
 			ul#lNav li ul li ul li ul li a { padding-left:42px; }
 		ul#lNav li#lNavCurrentSection a { background-color:#fff; border-right:2px solid #b2e599; }
-			ul#lNav span { background:url(../i/lNavCurrentSectionBullet.gif) no-repeat 0 3px; padding:0 0 0 13px; display:block; }
+			ul#lNav span { background:url(http://www.nhsbsa.nhs.uk/i/lNavCurrentSectionBullet.gif) no-repeat 0 3px; padding:0 0 0 13px; display:block; }
 ul#lNav li.lNavSelected a { font-weight:bold; border-right:none!important;  }
 /*ul#lNav li.lNavSelected span {background: none; padding:0;}*/
 
@@ -411,57 +413,14 @@ ul#lNav li.lNavSelected ul li a:hover {background-color:#eee!important; backgrou
 ul#lNav li.lNavSelected {background:none;}
 
 
+ul#lNav li a.below { background:#fff url(http://www.nhsbsa.nhs.uk/i/lNavBBG.gif) no-repeat; }
+ul#lNav li a.above { background:#fff url(http://www.nhsbsa.nhs.uk/i/lNavTBG.gif) no-repeat bottom; }
+.top { background:#fff url(http://www.nhsbsa.nhs.uk/i/lNavTBG.gif) no-repeat top; }
+.bottom { background:#fff url(http://www.nhsbsa.nhs.uk/i/lNavBBG.gif) no-repeat bottom; }
 
-/*ul#lNav li.lNavSelected a:hover { background-color:#ffffff!important; }
-ul#lNav li.lNavSelected ul a { font-weight:normal; }
-ul#lNav li.lNavSelected ul li {border-right:2px solid #b2e599; }
-ul#lNav li.lNavSelected ul li a {background:url(../i/lNavCurrentSectionBullet.gif) no-repeat 28px 13px;  display:block; padding:10px 10px 10px 28px;}
-ul#lNav li.lNavSelected ul li a:hover {background:url(../i/lNavCurrentSectionBullet.gif) no-repeat 28px 13px #eee!important; }
-body#serviceContent ul#lNav li.lNavSelected ul li a {padding-left: 40px;}
-body#serviceContent ul#lNav li#lNavCurrentSection ul li a {background:url(../i/lNavCurrentSectionBullet.gif) no-repeat 28px 13px #fff;  display:block; padding:10px 10px 10px 40px;}
-body#serviceContent ul#lNav li#lNavCurrentSection ul li a:hover {background:url(../i/lNavCurrentSectionBullet.gif) no-repeat 28px 13px #eee!important; }
-
-ul#lNav li.lNavSelected, body#serviceContent ul#lNav li#lNavCurrentSection li.lNavSelected a {background:none; background:#fff;}
-ul#lNav li.lNavSelected, body#serviceContent ul#lNav li#lNavCurrentSection li.lNavSelected a:hover {background:none!important; }*/
-
-
-
-
-ul#lNav li a.below { background:#fff url(../i/lNavBBG.gif) no-repeat; }
-ul#lNav li a.above { background:#fff url(../i/lNavTBG.gif) no-repeat bottom; }
-.top { background:#fff url(../i/lNavTBG.gif) no-repeat top; }
-.bottom { background:#fff url(../i/lNavBBG.gif) no-repeat bottom; }
-
-/*#lNavContainer { width:187px; padding:10px 0; margin:25px 0 0 15px; clear:both; float:left; }
-body#serviceHome #lNavContainer, body#serviceHomeTwo #lNavContainer  { margin-top: 0px;   }
-ul#lNav { border-left:1px solid #e3e3e3; border-bottom:1px solid #e3e3e3; background:#e3e3e3;}
-	ul#lNav li { list-style:none; border-top:1px solid #e3e3e3; }
-		ul#lNav li a { display:block; padding:10px 10px 10px 19px; text-decoration:none; background:#fff; border-right:2px solid #9fc5ec; color:#555; }
-		ul#lNav li a:hover { background-color:#eee!important; background-image:none!important; }
-			ul#lNav li ul li a { padding-left:28px; }
-			ul#lNav li ul li ul li a { padding-left:35px; }
-			ul#lNav li ul li ul li ul li a { padding-left:42px; }
-		ul#lNav li#lNavCurrentSection a { background-color:#fff; border-right:2px solid #b2e599; }
-
-ul#lNav li.lNavSelected a { font-weight:bold; border-right:none!important;  }
-
-ul#lNav li.lNavSelected a:hover { background-color:#ffffff!important; }
-ul#lNav li.lNavSelected ul a { font-weight:normal; }
-ul#lNav li.lNavSelected ul li {border-right:2px solid #b2e599;}
-
-ul#lNav li.lNavSelected ul li a:hover {background-color:#eee!important; background-image:none!important;}
-
-ul#lNav li.lNavSelected {background:none;}
-
-
-
-ul#lNav li a.below { background:#fff url(../i/lNavBBG.gif) no-repeat; }
-ul#lNav li a.above { background:#fff url(../i/lNavTBG.gif) no-repeat bottom; }
-.top { background:#fff url(../i/lNavTBG.gif) no-repeat top; }
-.bottom { background:#fff url(../i/lNavBBG.gif) no-repeat bottom; }*/
 
 /*Footer*/
-#footer { text-align:left; background:url(../i/ftrBG.png) repeat-x; height:40px; position:fixed; width:100%; bottom:0; left:0; font-size:1.2em; }
+#footer { text-align:left; background:url(http://www.nhsbsa.nhs.uk/i/ftrBG.png) repeat-x; height:40px; position:fixed; width:100%; bottom:0; left:0; font-size:1.2em; }
 #footerWrapper { width:950px; margin:0 auto; padding:20px 0 0; }
 p#ftrTxtL { float:left; }
 ul#btmLinks { float:right; list-style:none; }
@@ -492,7 +451,7 @@ padding-bottom: 20px;
 a.BackToSearchLink {
 display:block;
 margin: 15px 0 0 0!important;
-background:transparent url(../i/backArrowWhite.gif) no-repeat scroll 0 4px;
+background:transparent url(http://www.nhsbsa.nhs.uk/i/backArrowWhite.gif) no-repeat scroll 0 4px;
 padding:0 0 7px 10px;
 }
 
@@ -629,13 +588,196 @@ font-weight: bold;
 margin: 10px 0;
 }
 
+    </style>
+</head>
 
-/*- Fix poor Select menu behaviour in IE6/IE7 -*/
+<body id="serviceContent" class="noTopNav">
+	<form name="netform" method="post" action="1125.aspx" id="netform">
+		<div>
+			<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE2MzExNzg1MzdkZF2Ali4Z/QX+AowemPt8SpONQT6r" />
+		</div>
+		<div>
+			<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CD81B88A" />
+			<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+			<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+			<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWAwLggKrLAwLkp5+4BgLhhtS+BLFyDZqVMPNuz0yD8RiMbXIYLQRO" />
+		</div>
+		<div id="toolbar">
+			<div id="toolbarWrapper">
+				<ul id="topNav">
+					<li><a href="/About.aspx">About</a>
+					</li>
+					<li><a href="/Complaints.aspx">Complaints</a>
+					</li>
+					<li><a href="/Contact.aspx">Customer Enquiries</a>
+					</li>
+					<li></li>
+					<li><a href="/FreedomOfInformation.aspx">Freedom of Information</a>
+					</li>
+					<li><a href="/PortalNews.aspx">News</a>
+					</li>
+					<li><a href="/PressReleases.aspx">Press Centre</a>
+					</li>
+					<li><a href="/Recruitment.aspx">Recruitment</a>
+					</li>
+				</ul>
+				<a href="/Index.aspx" id="logo" title="Back to NHSBSA home">NHS Business Services Authority supporting, supplying, protecting</a>
+				<div id="home">
+					<span id="homeLeft"></span>
+					<a class="backArrow" href="/Index.aspx">Back to NHSBSA home</a>
+					<span id="homeRight"></span>
+				</div>
+				<div id="searchContainer">
+					<div onkeypress="javascript:return WebForm_FireDefaultButton(event, 'simplesearch_searchButton')">
+						<fieldset>
+							<legend>Search</legend>
+							<input name="simplesearch$search" type="text" id="simplesearch_search" />
+							<label for="search">Keywords</label>
+							<input type="submit" name="simplesearch$searchButton" value="search" id="simplesearch_searchButton" />
+						</fieldset>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="wrapper" class="clearfix">
+			<img src="http://www.nhsbsa.nhs.uk/i/logo_Help_with_Health_Costs.jpg" alt="Service Logo" class="servicesLogo" />
+			<div id="contentHeader">
+				<h1>NHS Low Income Scheme</h1>
+			</div>
+			<!-- Left Navigation -->
+			<div id="lNavContainer">
+				<ul id="lNav">
+					<li><a href="">Help with Health Costs Home</a>
+					</li>
+					<li id="lNavCurrentSection"><a href="">Help with Health Costs</a>
+						<ul>
+							<li><a href="/HealthCosts/3097.aspx"><span>Advice in other languages</span></a>
+							</li>
+							<li><a href=""><span>Age groups</span></a>
+							</li>
+							<li><a href="/HealthCosts/1976.aspx"><span>People in receipt of benefits</span></a>
+							</li>
+							<li><a href=""><span>Tax Credits</span></a>
+							</li>
+							<li><a href=""><span>Medical exemption certificates</span></a>
+							</li>
+							<li><a href=""><span>Pregnant women and those who have had a baby in the last 12 months</span></a>
+							</li>
+							<li id="lNavCurrentSection" class="lNavSelected" style=""> <a href="lis-home" ><span>NHS Low Income Scheme</span></a>
+								<ul>
+									<li><a href="need-to-know"><span>Low Income Scheme - what you need to know</span></a>
+									</li>
+									<li><a href="apply"><span>How to apply</span></a>
+									</li>
+									<li><a href="/HealthCosts/1129.aspx"><span>Low Income Scheme refunds</span></a>
+									</li>
+									<li><a href="/HealthCosts/1558.aspx"><span>HC11 Leaflet - Help with Health Costs</span></a>
+									</li>
+								</ul>
+							</li>
+							<li><a href="/1127.aspx"><span>Prescription prepayment certificates (PPCs)</span></a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- Left Navigation END -->
+			<div id="content">
 
-select {
-#behavior:expression(window.dropdown_menu_hack!=null?window.dropdown_menu_hack(this):0);
-}
+				<h2>Who can apply</h2>
+<ul>You are already entitled to full help with health costs and don&#39;t need to apply if you or your partner:
+    <li>get Income support</li>
+    <li>get Universal Credit (in some circumstances)</li>
+    <li>get Income-based Jobseeker&#39;s Allowance</li>
+    <li>get Income-related Employment and Support Allowance</li>
+    <li>get Pension Credit Guarantee Card</li>
+    <li>are named on, or entitled to a NHS Tax Credit Exemption Certificate</li>
+
+    </ul>
+<ul>You can&#39;t get help if you or your partner (or both) have more than:
+    <li>&#163;16&#44;000 in savings&#44; investments or property (not including the place you live)
+</li>
+    <li>&#163;23&#44;250 in savings&#44; investments or property if you live permanently in a care home (<nobr>&#163;24&#44;000</nobr> if you live in Wales)
+</li>
+
+</ul>
+
+<h2>How claims are worked out</h2>
+<p>To renew your certificate, you need to re-apply using an HC1 form.</p>
+
+<h2>What happens next</h2>
+<p>How much help you get depends on your weekly income and outgoings, plus any savings or investments you have at the time you apply. </p>
+<p>Your council tax and housing costs will be used during the assessment. This means that even if your income is too high for Income Support, you might still get help through the Low Income Scheme.</p>
+<p>If you have a partner, their income will also be taken into account as part of your assessment, as will the income of any other people who live with you (excluding children or dependent young people).</p>
 
 
 
 
+<P></P>
+<div>
+Any questions? Have a look at our <a href="http://contactcentreservices.nhsbsa.nhs.uk/selfnhsukokb/AskUs _HWHC/template-group.do">Ask Us</a> section.</div>
+                <P></P>
+
+				<div class="back">
+					<a href="javascript:history.go(-1)" class="backArrow">Back to previous page</a>
+				</div>
+			</div>
+			<div id="relatedLinks">
+				<h1>Related Links</h1>
+				<ul id="relatedLinksList">
+					<li>
+						<a href="" class="arrow">Contact Help with Health Costs</a>
+					</li>
+                    <li>
+						<a href="" class="arrow">Low Income Scheme FAQs</a>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+		<!-- Footer -->
+		<div id="footer">
+			<div id="footerWrapper">
+				<p id="ftrTxtL">Copyright &copy; 2012 NHSBSA</p>
+				<ul id="btmLinks">
+					<li><a href="/TermsConditions.aspx">Terms &amp; Conditions</a>
+					</li>
+					<li><a href="/PrivacyPolicy.aspx">Privacy Policy and Cookies</a>
+					</li>
+					<li><a href="/241.aspx">Accessibility</a>
+					</li>
+					<li><a href="/DataProtection.aspx">Data Protection</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<script type="text/javascript">
+			//<![CDATA[
+			var theForm = document.forms['netform'];
+			if (!theForm) {
+				theForm = document.netform;
+			}
+
+			function __doPostBack(eventTarget, eventArgument) {
+					if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+						theForm.__EVENTTARGET.value = eventTarget;
+						theForm.__EVENTARGUMENT.value = eventArgument;
+						theForm.submit();
+					}
+				}
+				//]]>
+		</script>
+		<script src="/WebResource.axd?d=1clDqtCDmb9rMarWiv7trWNKYOjZ4Qruw7S7grlBZsSFO7n8KAPi_kc3KkCYWg0TVGo8zhQZ2NttmOaVgjXhClBnlPI1&amp;t=635588624026805809" type="text/javascript"></script>
+	</form>
+	<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+		var pageTracker = _gat._getTracker("UA-6408051-1");
+		pageTracker._trackPageview();
+	</script>
+	<!-- Footer END -->
+</body>
+
+</html>
