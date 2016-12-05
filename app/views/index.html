@@ -5,7 +5,20 @@
 {% block content %}
 
 <style>
-
+    .tag.beta {
+    background-color: #f47738;
+}
+.tag {
+    color: white !important;
+    font-weight: 700;
+    padding: 0.25em;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+    .tag.alpha {
+    background-color: #d53880;
+    }
 </style>
 
 <main id="content" role="main">
@@ -24,15 +37,22 @@
   <hr>
 
   <h2 class="heading-large">Prototypes</h2>
-  <ul>
-      <li class="heading-medium"><a href="/sprint9">Current sprint- 9</a></li>
-    <li>Created 14 November 2016</li>
+<div class="tag alpha">Alpha</div>
+
+    <ul>
+      <li class="heading-medium"><a href="/sprintb2">Current- Sprint 2</a></li>
+    <li>29 November 2016 to 12 December 2016</li>
   </ul>
+  <ul>
+      <li class="heading-medium"><a href="/sprintb1">Sprint 1</a></li>
+    <li>15 November 2016 to 28 November</li>
+  </ul>
+
+  <div class="tag beta">Beta</div>
   <ul>
       <li class="heading-medium"><a href="/sprint8">Sprint 8</a></li>
     <li>Created 19 September 2016</li>
   </ul>
-  <hr>
 </main>
 
 {% endblock %}
