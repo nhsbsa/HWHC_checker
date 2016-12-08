@@ -1,0 +1,52 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+<a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">You get free prescriptions</h1>
+
+        <p>NHS prescriptions are free of charge, as long as you have:</p>
+        <ul class="list-bullet">
+            <li>a GP in Scotland, and</li>
+            <li>the prescription is dispensed by a pharmacist in Scotland.</li>
+        </ul>
+
+      <h2 class="heading-medium">If you have a GP in England</h2>
+
+        <p>If you live in Scotland but your GP practice is in England, you are still able to get free prescriptions.</p>
+        <p>You will need to show the pharmacist a valid Entitlement Card along with your prescription.</p>
+
+      <h3 class="heading-small">How to apply for an Entitlement Card</h3>
+        <ul class="list-bullet">
+            <li>Get an application form from your GP practice, or</li>
+            <li>contact your local <a href="http://www.psd.scot.nhs.uk/doctors/about-medical.html">Practitioner Services office</a></li>
+        </ul>
+
+
+      {{
+        form_macros.button({
+          classes: 'button',
+          href: '#',
+          label: 'Next'
+        })
+      }}
+
+    </div>
+
+    </div>
+    </div>
+
+</main>
+
+
+{% endblock %}

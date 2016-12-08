@@ -1,0 +1,61 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+<a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+    <h2 class="heading-large">Are you doing a course that is higher than A Level, Scottish Highers or equivalent?</h2>
+
+        <p><a href="https://www.gov.uk/what-different-qualification-levels-mean/list-of-qualification-levels">List of equivalent Level 3 qualifications</a></p>
+    <form action="fte-higher-handler" method="get" class="form">
+
+   <div class="form-item-wrapper">
+        <fieldset>
+          <div class="form-groups">
+            <div class="form-group">
+              <input type="radio" id="yes" name="ftehigher" value="yes">
+              <label class="form-control-radio" for="yes">
+                Yes
+              </label>
+            </div>
+            <div class="form-group">
+              <input type="radio" id="no" name="ftehigher" value="no">
+              <label class="form-control-radio" for="no">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+          {{
+      form_macros.button({
+        label: 'Next'
+      })
+    }}
+      </div>
+
+
+  </form>
+      </div>
+    </div>
+
+</main>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+

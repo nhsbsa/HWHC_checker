@@ -1,57 +1,36 @@
- {% extends 'templates/nhs_transaction_layout.html' %}
+{% extends 'templates/nhs_transaction_layout.html' %}
 {% import 'includes/form_macros.html' as form_macros %}
 
-<!--
 {% block afterHeader %}
   {% include "includes/service-headers/health-costs-checker.html" %}
 {% endblock %}
--->
 
 {% block content %}
 
+
 <main id="content" role="main">
 <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
   <div class="grid-row">
     <div class="column-two-thirds">
 
+  <h1 class="heading-large">
+    Do you or your partner have more than £16,000 in savings?
+      <span class="form-hint">Include investments and properties (but not place where you live)</span>
+  </h1>
 
-       <!--3- Are you named on a Tax Credits Exemption certificate-->
-
-         <form action="taxcredit-income-handler" method="get" class="form">
-
-    <h2 class="heading-large">Do you have a family income of £15,276 or less?</h2>
-
-
-<details>
-  <summary role="button" aria-controls="details-content-0" tabindex="0" aria-expanded="true"><span class="summary">What is a family income?</span></summary>
-
-  <div class="panel-indent" id="details-content-0" aria-hidden="false" style="display: block;">
-
-      <p>This is the income that HMRC used to work out your Tax Credit award for the last tax year.</p>
-      <p>It is made up of either:</p>
-    <ul class="list-bullet">
-        <li>you and your partner's income, or</li>
-        <li>your parent or guardian's income</li>
-      </ul>
-
-    <p>If you are unsure, you can check it on your current tax credit award notice.</p>
-  </div>
-</details>
-
-
-
-    <form action="taxcredits-handler" method="get" class="form">
+  <form action="saving-handler" method="get" class="form">
       <div class="form-item-wrapper">
         <fieldset>
           <div class="inline-form-groups">
             <div class="form-group">
-              <input type="radio" id="yes" name="taxcreditsIncome" value="yes">
+              <input type="radio" id="yes" name="savings" value="yes">
               <label class="form-control-radio" for="yes">
                 Yes
               </label>
             </div>
             <div class="form-group">
-              <input type="radio" id="no" name="taxcreditsIncome" value="no">
+              <input type="radio" id="no" name="savings" value="no">
               <label class="form-control-radio" for="no">
                 No
               </label>
@@ -67,8 +46,8 @@
     }}
 
   </form>
-      </div>
-<!--  <div class="column-third " id="lists">
+    </div>
+ <!--<div class="column-third " id="lists">
 
       <div class="right-col-details">
 
@@ -129,7 +108,7 @@
 
 
 
-      </div> -->
+      </div>-->
 
     </div>
     </div>
@@ -137,7 +116,7 @@
 </main>
 
 <!--<script>
-$("#yes").click(function(){
+$("#medexYes").click(function(){
     $("#all").removeClass("hidden");
     $("#all1").removeClass("hidden");
     $("#all2").removeClass("hidden");
@@ -145,7 +124,7 @@ $("#yes").click(function(){
     $("#all4").removeClass("hidden");
 }); </script>
 <script>
-$("#no").click(function(){
+$("#medexNo").click(function(){
     $("#all").addClass("hidden");
     $("#all1").addClass("hidden");
     $("#all2").addClass("hidden");
@@ -153,14 +132,3 @@ $("#no").click(function(){
     $("#all4").addClass("hidden");
 }); </script>
 <script>-->
-
-{% endblock %}
-
-
-
-
-
-
-
-
-

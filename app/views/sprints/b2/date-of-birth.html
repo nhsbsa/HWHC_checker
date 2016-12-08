@@ -1,0 +1,190 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+<a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+
+       <!--2- What's your DOB?-->
+
+<!--
+        <h1>Country is {{country}}</h1>
+        {% if country=="wales" %}
+        <p>wales only</p>
+        {% endif %}
+-->
+
+    <h2 class="heading-large">What is your date of birth?</h2>
+
+      <form action="dob-handler" method="get" class="form">
+
+     <div class="form-item-wrapper">
+<fieldset>
+
+        <p class="form-hint">For example 31 7 1961</p>
+
+      <div class="inline-form-groups">
+        <div class="form-group">
+          <label class="form-label" for="dob-day">Day</label>
+          <input class="form-control form-control-2-chars" id="dob-day" min="0" max="31" type="number">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="dob-month">Month</label>
+          <input class="form-control form-control-2-chars" id="dob-month" min="0" max="12" type="number">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="dobyear">Year</label>
+          <input class="form-control form-control-4-chars" id="dobyear" name="dobyear" value="dobyear" min="0" type="number">
+        </div>
+      </div>
+    </fieldset>
+     <!--under 16 "under16-eng-info"-->
+     <!--under 18 "3: full-time-education"-->
+     <!--under 19 "4: tax-credits-exemption"-->
+     <!--under 25 "4: tax-credits-exemption"-->
+     <!--20-25 "4: tax-credits-exemption"-->
+     <!--over 60 "4: tax-credits-exemption"-->
+      </div>
+
+
+    {{
+      form_macros.button({
+        label: 'Next'
+      })
+    }}
+
+  </form>
+      </div>
+
+
+<!-- help received-->
+<!--
+        <div class="column-third">
+         <div class="right-col-details">
+
+         <div>
+          <h3 class="heading-medium" style="margin-bottom:0em">You get free:</h3>
+         </div>
+
+          <div class="info-panel prescription" id="prescription" style="margin-top:1em">
+             <p class="lede" style="font-weight:bold; margin:0 0 0 0; padding-left:1.2em;">Prescriptions</p>
+          </div>
+
+          <div class="info-panel dental-exam" id="dental-exam">
+             <p class="lede" style="font-weight:bold; margin:0 0 0 0; padding-left:1.2em;">NHS dental exam</p>
+          </div>
+
+        <div>
+          <h3 class="heading-medium" style="margin-bottom:0em; border-bottom: 7px solid #0072C6;">You do not get free:</h3>
+         </div>
+
+           <div class="info-panel-negative dental" id="dental-treatment" style="margin-top:1em">
+             <p class="lede" style="font-weight:bold; margin:0 0 0 0; padding-left:1.2em;">NHS dental treatment</p>
+          </div>
+
+           <div class="info-panel-negative sight-test" id="sight-test">
+             <p class="lede" style="font-weight:bold; margin:0 0 0 0; padding-left:1.2em;">Sight tests</p>
+          </div>
+
+           <div class="info-panel-negative glasses" id="glasses">
+             <p class="lede" style="font-weight:bold; margin:0 0 0 0;padding-left:1.2em;">Glasses or contact lenses</p>
+          </div>
+
+           <div class="info-panel-negative wigs" id="wigs">
+             <p class="lede" style="font-weight:bold; margin:0 0 0 0; padding-left:1.2em;">NHS wigs</p>
+          </div>
+
+
+           <div class="info-panel-negative travel" id="travel">
+             <p class="lede" style="font-weight:bold; margin:0 0 0 0; padding-left:1.2em;">Travel costs</p>
+          </div>
+
+    </div>
+    </div>
+-->
+
+             <div class="column-third hidden " id="lists">
+
+      <div class="right-col-details">
+
+
+
+          <h3 class="heading-medium">What you get free </h3>
+
+<ul class="form-hint-list">
+    <li class="form-hint-list-item  form-hint-list-item--valid">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        Prescriptions
+    </li>
+    <li class="form-hint-list-item form-hint-list-item--valid" >
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        NHS dental exam
+    </li>
+
+<!--
+    <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+         NHS dental treatment
+    </li>
+    <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+         Sight test
+    </li>
+        <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        Glasses or contact lenses
+    </li>
+            <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        NHS wigs
+    </li>
+    <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        Travel for treatment
+    </li>
+-->
+</ul>
+
+
+
+      </div>
+
+    </div>
+    </div>
+
+</main>
+
+{% endblock %}
+
+    </div>
+
+
+
+
+
+
+
+

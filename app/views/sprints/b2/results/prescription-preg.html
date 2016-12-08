@@ -1,0 +1,38 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+<a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+        <h1 class="heading-large">You get free prescriptions, but need a valid maternity exemption certificate</h1>
+
+<!--         <p>NHS prescriptions are free of charge, as long as you have a valid maternity exemption card.</p> -->
+
+        <p>If you do not have a valid Maternity Exemption Card you are not automatically exempt from prescription charges.</p>
+
+        <p>You can get an application form from your doctor, midwife or health visitor.</p>
+          <p>If you did not get your Maternity Exemption Card while you were pregnant, you can still apply at any time during the 12 months after your baby is born, this includes stillborn babies.</p>
+      </div>
+    </div>
+
+    {{
+        form_macros.button({
+        classes: 'button-secondary-cta',
+        href: '../condition-prescriptions',
+        label: 'Find out about help for other costs'
+      })
+    }}
+
+</main>
+
+
+{% endblock %}

@@ -242,7 +242,7 @@ module.exports = {
       //} if (applicant.age >= 60 && applicant.need === 'dental' && applicant.country === 'scotland') {
       //  res.redirect('../tax-credits');
       } else if (applicant.age >= 19) { 
-        res.redirect('../tax-credits-exemption-19yo');
+        res.redirect('../tax-credits-19yo');
       } else if (applicant.age  > 15) {
         res.redirect('../full-time-education');
       } else {
@@ -274,6 +274,14 @@ module.exports = {
         res.redirect('../full-exemption-fte');
       } else {
         res.redirect('../tax-credits-19yo');
+      }
+    });
+          // full time higher education handler
+      app.get(/fte-higher-handler/, function (req, res) {
+      if (req.query.ftehigher  === 'no'){
+      res.redirect('../full-exemption-fte');
+      } else {
+        res.redirect('../blah');
       }
     });
 
@@ -419,8 +427,8 @@ module.exports = {
     // pregnancy router
       app.get(/preg-handler/, function (req, res) {
       if (req.query.pregnancy === 'yes') {
-      applicant.isPregnant = true && applicant.need === 'dental';
-      res.redirect('../entitlements/dental-preg');
+      applicant.isPregnant = true && applicant.need === 'prescription';
+      res.redirect('../entitlements/prescription-preg');
       } else {
         res.redirect('../war-pension');
       }

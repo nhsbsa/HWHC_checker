@@ -1,0 +1,123 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">
+        What costs do you need help with?
+      </h1>
+
+      <p>Tick all that apply</p>
+
+      <form action="treatment-handler" method="get" class="form">
+        <div class="form-item-wrapper">
+          <div class="form-group">
+            <input type="checkbox" id="prescription" value="prescription" name="condition">
+            <label class="form-control-checkbox" for="prescription">
+              Prescriptions
+            </label>
+          </div>
+
+         <div class="form-group">
+            <input type="checkbox" id="dental" value="dental" name="condition">
+            <label class="form-control-checkbox" for="dental">
+              Dental
+            </label>
+          </div>
+
+          <div class="form-group">
+            <input type="checkbox" id="sightTest" value="sighttest" name="condition">
+            <label class="form-control-checkbox" for="sightTest">
+              Sight tests
+            </label>
+          </div>
+
+         <div class="form-group">
+            <input type="checkbox" id="dentalExam" value="dentalexam" name="condition">
+            <label class="form-control-checkbox" for="dentalExam">
+              Hearing
+            </label>
+          </div>
+
+          <div class="form-group">
+            <input type="checkbox" id="glasses" value="glasses" name="condition">
+            <label class="form-control-checkbox" for="glasses">
+              The cost of glasses and contact lenses
+            </label>
+          </div>
+
+
+
+<!--
+          <div class="form-group">
+            <input type="checkbox" id="dentalTreatment" name="condition">
+            <label class="form-control-checkbox" for="dentalTreatment">
+              Dental treatment
+            </label>
+          </div>
+-->
+
+         <div class="form-group">
+            <input type="checkbox" id="travel" name="condition">
+            <label class="form-control-checkbox" for="travel">
+             Travel costs for NHS treatment
+            </label>
+          </div>
+
+          <div class="form-group">
+            <input type="checkbox" id="wigs" name="condition">
+            <label class="form-control-checkbox" for="wigs">
+             The cost of wigs and fabric supports
+            </label>
+          </div>
+<p>or</p>
+            <div class="form-group">
+            <input type="checkbox"  id="all" name="condition">
+            <label class="form-control-checkbox" for="all">
+             all of the above
+            </label>
+          </div>
+        {{
+          form_macros.button({
+            label: 'Next'
+          })
+        }}
+        </div>
+
+      </form>
+
+    </div>
+    </div>
+
+</main>
+
+<script>// Listen for click on toggle checkbox
+$('#select-all').click(function(event) {
+    if(this.checked) {
+        // Iterate each checkbox
+        $(':checkbox').each(function() {
+            this.checked = true;
+        });
+    }
+});</script>
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+

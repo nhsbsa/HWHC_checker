@@ -1,9 +1,11 @@
  {% extends 'templates/nhs_transaction_layout.html' %}
 {% import 'includes/form_macros.html' as form_macros %}
 
+<!--
 {% block afterHeader %}
   {% include "includes/service-headers/health-costs-checker.html" %}
 {% endblock %}
+-->
 
 {% block content %}
 
@@ -13,32 +15,55 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-        <h1 class="heading-large">You get full help with health costs</h1>
+      <h1 class="heading-large">You get full help with health costs</h1>
 
         <p class="intro-to-list">
-          Because you're under 16, you already get free:
+          Anyone who gets {{tctype}} gets free:
         </p>
         <ul class="list list-bullet">
           <li>NHS prescriptions </li>
-          <li>NHS dental treatment for any course of treatment that starts before your 18th birthday</li>
+          <li>NHS dental treatment</li>
           <li>NHS sight tests</li>
           <li>NHS wigs and fabric supports</li>
         </ul>
 
                 <p class="intro-to-list">
-          You'll also get help towards the cost of:
+          They'll also get help towards the cost of:
         </p>
         <ul class="list list-bullet">
           <li>new glasses or contact lenses</li>
           <li>repairing or replacing your glasses or contact lenses</li>
           <li>travelling for NHS treatment</li>
         </ul>
-      </div>
 
-    </div>
+
+          <h3 class="heading-medium">What you'll need as proof</h3>
+
+          <p>Your exemption card should have been sent automatically.
+          <br>If you've lost it, you can use the tax credit award notice as proof.</p>
+
+
+  <div class="fanny-on">
+<img src="/public/images/tax-cert.png" alt="what a NHS Tax Credit Exemption Certificate looks like">
 
   </div>
 
+
+
+<!--       {{
+        form_macros.button({
+          classes: 'button-secondary-cta',
+          href: '#',
+          label: 'What you need to do to get help'
+        })
+      }} -->
+
+    </div>
+
+    </div>
+    </div>
+
 </main>
+
 
 {% endblock %}

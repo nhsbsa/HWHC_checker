@@ -1,0 +1,151 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<main id="content" role="main">
+<a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+   <!--1B- lives in the UK-->
+    <h2 class="heading-large">Which country do you live in?</h2>
+
+  <form action="country-handler" method="get" class="form">
+
+    <div class="form-item-wrapper">
+      <div class="form-group">
+        <input type="radio" id="england" name="country" value="england">
+        <label class="form-control-radio" for="england">
+          England
+        </label>
+      </div>
+
+      <div class="form-group">
+        <input type="radio" id="scotland" name="country" value="scotland">
+        <label class="form-control-radio" for="scotland">
+          Scotland
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="radio" id="wales" name="country" value="wales">
+        <label class="form-control-radio" for="wales">
+          Wales
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="radio" id="northernIreland" name="country" value="northernIreland">
+        <label class="form-control-radio" for="northernIreland">
+          Northern Ireland
+        </label>
+        <!--if selected send to "ni-kickout"-->
+      </div>
+      </div>
+
+
+    {{
+      form_macros.button({
+        label: 'Next'
+      })
+    }}
+
+  </form>
+      </div>
+
+<!--
+          <div class="column-third" >
+
+      <div class="right-col-details">
+
+
+
+          <h3 class="heading-medium">What you get free </h3>
+
+<ul class="form-hint-list">
+    <li class="form-hint-list-item  form-hint-list-item--valid">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        Prescriptions
+    </li>
+
+        <li class="form-hint-list-item form-hint-list-item--valid">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+         NHS Sight test
+    </li>
+
+    <li class="form-hint-list-item form-hint-list-item--valid hidden" id="lists">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        NHS dental exam
+    </li>
+
+    <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+         NHS dental treatment
+    </li>
+
+        <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        Glasses or contact lenses
+    </li>
+            <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        NHS wigs
+    </li>
+    <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__primary">
+            <span class="form-hint-list-item__indicator"></span>
+        </span>
+        Travel for treatment
+    </li>
+</ul>
+
+
+
+      </div>
+
+    </div>
+-->
+    </div>
+
+</main>
+
+<!--
+<script>
+$("#england").click(function(){
+    $("#lists").addClass("hidden");
+}); </script>
+<script>
+$("#scotland").click(function(){
+    $("#lists").removeClass("hidden");
+}); </script>
+<script>
+$("#northernIreland").click(function(){
+    $("#lists").removeClass("hidden");
+}); </script>
+-->
+
+{% endblock %}
+
+
+
+
+
+
+
