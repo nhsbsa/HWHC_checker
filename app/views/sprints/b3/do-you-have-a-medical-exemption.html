@@ -1,0 +1,62 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+    <h2 class="heading-large">Do you have a medical exemption certificate?</h2>
+    <p>Your doctor would have given you the application form.
+
+      <form action="medex-handler" method="get" class="form">
+
+        <div class="form-item-wrapper">
+        <fieldset>
+            <div class="inline-form-groups">
+            <div class="form-group">
+              <input id="yes" name="medex" type="radio" value="yes">
+              <label class="form-control-radio" for="yes">
+                Yes
+              </label>
+            </div>
+
+            <div class="form-group">
+              <input id="no" name="medex" type="radio" value="no">
+              <label class="form-control-radio" for="no">
+                No
+              </label>
+            </div>
+
+       </div>
+        </fieldset>
+      </div>
+
+    {{
+      form_macros.button({
+        label: 'Next'
+      })
+    }}
+
+  </form>
+      </div>
+
+
+</main>
+
+
+{% endblock %}
+
+
+
+
+
+

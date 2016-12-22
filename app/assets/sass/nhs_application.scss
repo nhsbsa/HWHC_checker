@@ -384,7 +384,7 @@ td, th {
 }
 
 .return-to-top {
-	font-family:"nta", Arial, sans-serif;
+	font-family:"FS Me",Arial,sans-serif;
 	font-weight:400;
 	text-transform:none;
 	font-size:14px;
@@ -434,3 +434,29 @@ list-bullet {
 .callout__info {
 	border:1em solid #40add7
 }
+
+.import-panel {
+    font-weight: bold;
+    padding: 20px 0px 10px 40px;
+    background: url("/public/images/icon-information.png") no-repeat scroll 0px center;
+    }
+    .form-hint-list-item--valid{
+    color:black;
+    }
+
+    .heading-secondary{
+    font-size: 24px;
+    line-height: 1.25;
+    font-weight: 400;
+    text-transform: none;
+    color: #6f777b;
+    margin-bottom: 0;
+    padding-bottom: .167em;
+    }
+
+@media (max-width: 641px) {
+  .heading-secondary {
+font-size:19px;
+  }
+}
+

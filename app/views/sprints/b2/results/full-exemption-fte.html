@@ -7,57 +7,92 @@
 
 {% block content %}
 
+<style>
+    .form-hint-list-item--valid{
+    color:black;
+    }
+</style>
+
 <main id="content" role="main">
 <a href="javascript:history.go(-1)" class="link-back">Back</a>
 
-    <div class="grid-row">
-      <div class="column-two-thirds">
+  <div class="grid-row">
+    <div class="column-two-thirds">
 
-              <h1 class="heading-large">You get full help with health costs</h1>
+        <h1 class="heading-large">You get help with health costs</h1>
 
-        <p class="intro-to-list">Because you get {{bentype}}; you, your partner and any young people under 20 included on your claim get free:</p>
-
-       <ul class="form-hint-list">
+        <p class="intro-to-list">
+          Because you're 16 {{age}} and in full time education, you get free:
+        </p>
+        <ul class="form-hint-list">
     <li class="form-hint-list-item form-hint-list-item--valid">
         <span class="form-hint-list-item__indicator"></span>
-        NHS Prescriptions,
+        NHS prescriptions
     </li>
     <li class="form-hint-list-item form-hint-list-item--valid">
         <span class="form-hint-list-item__indicator"></span>
-        NHS Dental treatment,
+        NHS dental treatment
     </li>
     <li class="form-hint-list-item form-hint-list-item--valid">
         <span class="form-hint-list-item__indicator"></span>
-        Sight tests,
+        NHS Sight tests
     </li>
     <li class="form-hint-list-item form-hint-list-item--valid">
         <span class="form-hint-list-item__indicator"></span>
-        NHS wigs and fabric supports.
+        NHS wigs and fabric supports
     </li>
         </ul>
 
          <p class="intro-to-list">
-          You'll also:
+           You'll also get help towards the cost of:
         <ul>
                 <li class="form-hint-list-item form-hint-list-item--valid">
         <span class="form-hint-list-item__indicator"></span>
-        Get help towards the cost of glasses or contact lenses,
+       new glasses or contact lenses
     </li>
         </ul>
             <li class="form-hint-list-item form-hint-list-item--valid">
         <span class="form-hint-list-item__indicator"></span>
-        May get help towards the cost of repair or replacement of glasses or contact lenses,
+        repairing or replacing your glasses or contact lenses
     </li>
         </ul>
-
-    <li class="form-hint-list-item form-hint-list-item--valid">
+        <br>
+        <h3 class="heading-small">You don't automatically get help towards the cost of:</h3>
+        <ul>
+    <li class="form-hint-list-item form-hint-list-item--false">
         <span class="form-hint-list-item__indicator"></span>
-        May get help with travel costs for NHS treatment.
+        travelling for NHS treatment
     </li>
-        </ul>
-      </div>
-    </div>
-</main>
+      <details>
+  <summary><span class="summary">Who can get help with travel costs</span></summary>
 
+  <div class="panel panel-border-narrow">
+      <p>To get help you must:</p>
+       <ul class="list-bullet">
+           <li>have made an extra journey to receive NHS care after being referred by a doctor, optician or dentist, and</li>
+           <li>be named on your parent's qualifying benefit claim or certificate</li>
+      </ul>
+            <ul class="list-bullet">
+
+    <li>Income Support</li>
+    <li>Income-related Employment and Support Allowance</li>
+    <li>Income-based Jobseeker’s Allowance</li>
+    <li>Pension Credit guarantee credit</li>
+    <li>Universal Credit and meet the criteria</li>
+
+<p>or</p>
+
+    you are named on or entitled to a valid NHS tax credit exemption certificate
+    you are named on a valid Low Income Scheme HC2 (full help) or HC3 (limited help) certificate
+    </ul>
+    </div>
+
+
+</details>
+
+  </div>
+  </div>
+
+</main>
 
 {% endblock %}

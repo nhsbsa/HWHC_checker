@@ -1,0 +1,86 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+<a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+
+ <div class="grid-row">
+    <div class="column-two-thirds">
+
+  <h1 class="heading-large">
+      Do you, your partner or one of your parents get any of these benefits?
+  </h1>
+<!--
+
+  <details>
+
+  <summary><span class="summary">What we mean by partner</span></summary>
+
+  <div class="panel-indent">
+
+    <p>
+      We use the term partner to mean a person you live with as part of a couple of the same or opposite sex, whether or not you are married or in a civil partnership.
+    </p>
+
+  </div>
+
+</details>
+-->
+  <br>
+  <form action="passportedBen-handler" method="get" class="form">
+    <div class="form-item-wrapper">
+      <div class="form-group">
+        <input type="radio" id="incomeSupport" name="benefits" value="incomeSupport">
+        <label class="form-control-radio" for="incomeSupport">
+          Income Support
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="radio" id="uniCredit" name="benefits" value="uniCredit">
+        <label class="form-control-radio" for="uniCredit">
+          Universal Credit
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="radio" id="jsa" name="benefits" value="jsa">
+        <label class="form-control-radio" for="jsa">
+          income-based Job Seeker's Allowance
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="radio" id="esa" name="benefits" value="esa">
+        <label class="form-control-radio" for="esa">
+          income-related Employment &amp; Support Allowance
+        </label>
+      </div>
+      <p class="form-block">or</p>
+      <div class="form-group">
+        <input type="radio" id="continue" name="benefits" value="continue">
+        <label class="form-control-radio" for="continue">
+          I <strong>don't</strong> get any of these
+        </label>
+      </div>
+    {{
+      form_macros.button({
+        label: 'Next'
+      })
+    }}
+          </div>
+
+  </form>
+    </div>
+
+
+    </div>
+    </div>
+
+</main>
+{% endblock %}

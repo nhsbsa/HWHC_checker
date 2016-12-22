@@ -7,80 +7,90 @@
 
 {% block content %}
 
+
 <main id="content" role="main">
-<a href="javascript:history.go(-1)" class="link-back">Back</a>
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
 
   <div class="grid-row">
     <div class="column-two-thirds">
 
-       <!--3- Are you named on a Medical Exemption certificate-->
-    <h2 class="heading-large">Do you have any of the following medical conditions?</h2>
+    <h2 class="heading-large">Do you have any of these long-term illnesses?</h2>
 
-      <form action="eligibility-handler" method="get" class="form">
+                   <ul class="list-bullet">
 
-          <div class="form-item-wrapper">
-      <div class="form-group">
-        <input type="radio" id="cancer" name="eligibility-medex">
-        <label class="form-control-radio" for="cancer">
-          Cancer and are undergoing treatment <br><span class="text-small">This includes treatment for the effects of cancer or the effects of cancer treatment.</span>
-        </label>
+                 <li><strong>Cancer and are undergoing treatment</strong>
+                     <br>Including treatment for the effects of cancer or the effects of cancer treatment.</li>
 
+                 <li><strong>Diabetes insipidus and other forms of hypopituitarism</strong>
+                 </li>
+
+                <li><strong>Diabetes mellitus</strong>
+                    <br>Where treatment is not by diet alone
+                 </li>
+
+              <li><strong>Epilepsy</strong> <br>Which needs continuous anticonvulsive therapy<!--Which needs anti-epileptic drugs (AEDs)--></li>
+
+                 <li><strong>A continuing physical disability</strong>
+                     <br>Which means you can't go out without the help of another person</li>
+
+                     <li><strong>A permanent fistula which needs continuous surgical dressing or an appliance</strong>
+                     <br>For example, caecostomy, colostomy, laryngos-tomy or ileostomy.</li>
+
+<!--
+                 <li><strong>You need a continuous surgical dressing or an appliance</strong>
+                     <br>Like a tracheotomy or need to use a stoma</li> another DH vitto
+-->
+
+                                <li><strong>Myxoedema</strong>
+                     <br>For example, hypothyroidism which needs thyroid hormone replacement</li>
+
+<!--
+                 <li><strong>An underactive thyroid gland (Hypothyroidism)</strong>
+                     <br>Which needs hormone replacement</li> DH vitto
+-->
+
+                  <li><strong>Hypoparathyroidism</strong></li>
+<!--
+                 <li><strong>An underactive parathyroid gland (Hypoparathyroidism)</strong>
+                     <br>Which needs treatment to bring calcium and other minerals back to normal</li>
+-->
+
+                <li><strong>Hypoadrenalism, for which specific substitution therapy is essential</strong>
+                     <br>For example, Addison’s Disease</li>
+<!--
+                <li><strong>An underactive adrenal gland (Hypoadrenalism)</strong>
+                     <br>Like Addison’s Disease, which needs hormone replacement</li> DH vitto
+-->
+
+                <li><strong>Myasthenia gravis</strong></li>
+
+<!--                <li><strong>HIV</strong></li> because DH told us so-->
+
+               </ul>
+
+        <div class="additional-info">If you are unsure about the name of your condition or treatment, check with your doctor. </div><br>
+
+       <form action="illness-handler" method="get" class="form">
+      <div class="form-item-wrapper">
+        <fieldset>
+          <div class="inline-form-groups">
+            <div class="form-group">
+              <input id="yes" name="illness" type="radio" value="yes">
+              <label class="form-control-radio" for="yes">
+                Yes
+              </label>
+            </div>
+            <div class="form-group">
+              <input id="no" name="illness" type="radio" value="no">
+              <label class="form-control-radio" for="no">
+                No
+              </label>
+            </div>
+          </div>
+
+        </fieldset>
       </div>
-      <div class="form-group">
-        <input type="radio" id="epilepsy" name="eligibility-medex">
-        <label class="form-control-radio" for="epilepsy">
-          Epilepsy which needs continuous anticonvulsive therapy
-        </label>
-      </div>
-      <div class="form-group">
-        <input type="radio" id="disability" name="eligibility-medex">
-        <label class="form-control-radio" for="disability">
-        A continuing physical disability which means you cannot go out without the help of another person
-        </label>
-      </div>
-        <div class="form-group">
-        <input type="radio" id="diabetes-insipidus" name="eligibility-medex">
-        <label class="form-control-radio" for="diabetes-insipidus">
-        Diabetes insipidus and other forms of hypopituitarism
-        </label>
-      </div>
-              <div class="form-group">
-        <input type="radio" id="diabetes-mellitus" name="eligibility-medex">
-        <label class="form-control-radio" for="diabetes-mellitus">
-        Diabetes mellitus, except where treatment is by diet alone
-        </label>
-      </div>
-      <div class="form-group">
-        <input type="radio" id="fistula" name="eligibility-medex">
-        <label class="form-control-radio" for="fistula">
-        A permanent fistula which needs continuous surgical dressing or an appliance<br><span class="text-small">For example, caecostomy, colostomy, laryngos-tomy or ileostomy.</span>
-        </label>
-      </div>
-      <div class="form-group">
-        <input type="radio" id="hypoadrenalism" name="eligibility-medex">
-        <label class="form-control-radio" for="hypoadrenalism">
-        A form of hypoadrenalism for which specific substitution therapy is essential<br><span class="text-small">For example, Addison’s Disease.</span>
-        </label>
-      </div>
-      <div class="form-group">
-        <input type="radio" id="hypoparathyroidism" name="eligibility-medex">
-        <label class="form-control-radio" for="hypoparathyroidism">
-        Hypoparathyroidism
-        </label>
-      </div>
-       <div class="form-group">
-        <input type="radio" id="myasthenia-gravis" name="eligibility-medex">
-        <label class="form-control-radio" for="myasthenia-gravis">
-        Myasthenia gravis
-        </label>
-      </div>
-                    <div class="form-group">
-        <input type="radio" id="myxoedema" name="eligibility-medex">
-        <label class="form-control-radio" for="myxoedema">
-        Myxoedema <br><span class="text-small">For example hypothyroidism which needs thyroid hormone replacement</span>
-        </label>
-      </div>
-      </div>
+
     {{
       form_macros.button({
         label: 'Next'
@@ -89,11 +99,14 @@
 
   </form>
       </div>
-        </div>
+    </div>
+
+
 </main>
 
 
 {% endblock %}
+
 
 
 

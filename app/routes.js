@@ -122,17 +122,66 @@ module.exports = {
     });
 
     
-    // eu handler
-      app.get(/uk-handler/, function (req, res) {
-      var sprint = req.url.charAt(9);
-      if (req.query.nationality === 'uk') {
-        res.render('sprints/'+ sprint +'/country_v2');
+//    // eu handler
+//      app.get(/uk-handler/, function (req, res) {
+//      var sprint = req.url.charAt(9);
+//      if (req.query.nationality === 'uk') {
+//        res.render('sprints/'+ sprint +'/country_v2');
+//      } else {
+//        res.render('sprints/'+ sprint +'/country-info');
+//      }
+//    });
+
+          // dob-handler
+    app.get(/dob-handler/, function (req, res) {
+      applicant.age = (thisYear - req.query.dobyear);
+      console.log(applicant.age);
+      if (applicant.age >= 60 && applicant.need === 'prescription') {
+        res.redirect('../results/prescription-over60');
+      } else if (applicant.age >= 60 && applicant.need === 'dental' && applicant.country === 'england') {
+        res.redirect('../tax-credits-exemption');
+      //} if (applicant.age >= 60 && applicant.need === 'dental' && applicant.country === 'wales') {
+      //  res.redirect('../tax-credits');
+      //} if (applicant.age >= 60 && applicant.need === 'dental' && applicant.country === 'scotland') {
+      //  res.redirect('../tax-credits');
+      } else if (applicant.age >= 19) {
+        res.redirect('../tax-credits-19yo');
+      } else if (applicant.age  > 15) {
+        res.redirect('../full-time-education');
       } else {
-        res.render('sprints/'+ sprint +'/country-info');
+        res.redirect('../full-exemption-under-16');
+      }
+    });
+
+    // dob-2-handler
+          app.get(/dob-2-handler/, function (req, res) {
+      applicant.age = (thisYear - req.query.dobyearBeta);
+      console.log(applicant.age);
+      if (applicant.age >= 20) {
+        res.redirect('../tax-credits-over20');
+      } else if (applicant.age >= 19) {
+        res.redirect('../tax-credits-under20');
+      } else if (applicant.age  >=16) {
+        res.redirect('../full-time-education');
+      } else if (applicant.age  <=15) {
+        res.redirect('../results/full-exemption-under-16');
+      }
+    });
+
+      // country-handler in sprint B2
+      app.get(/country-2-handler/, function (req, res) {
+      if (req.query.countryBeta  === 'englandBeta'){
+        res.redirect('../border-gp');
+      } else if (req.query.countryBeta  === 'scotlandBeta') {
+        res.redirect('../results/prescription-scot');
+      } else if (req.query.countryBeta  === 'walesBeta') {
+        res.redirect('../results/prescription-wales');
+      } else {
+        res.redirect('../results/ni-kickout');
       }
     });
       
-    // country router- prescription
+    // country router sprint 8 and B1
       app.get(/country-handler/, function (req, res) {
       applicant.country = req.query.country;
       if (applicant.country === 'england' && applicant.need === 'prescription') {
@@ -140,18 +189,19 @@ module.exports = {
       } else if (applicant.country === 'england' && applicant.need === 'dental') { 
         res.redirect('../date-of-birth');
       } else if (applicant.country === 'wales' && applicant.need === 'prescription') {
-        res.redirect('../entitlements/prescription-wales');
+        res.redirect('../results/prescription-wales');
       } else if (applicant.country === 'wales' && applicant.need === 'dental') {
         res.redirect('../date-of-birth');
       } else if (applicant.country === 'scotland' && applicant.need === 'prescription') {
-        res.redirect('../entitlements/prescription-scot');
+        res.redirect('../results/prescription-scot');
       } else if (applicant.country === 'scotland' && applicant.need === 'dental') {
-        res.redirect('../entitlements/dental-scot');
+        res.redirect('../results/dental-scot');
       } else if (applicant.country === 'northernIreland') {
         res.redirect('../ni-kickout');
       }
     });
-    
+
+
      //wales dental
     app.get(/dental-wales-handler/, function (req, res) {
       if (applicant.age >= 19) { 
@@ -196,7 +246,7 @@ module.exports = {
     
       // 
       // age- 16-17: /entitlements/dental-16-17 *fix
-      // age- <25 && wales: /entitlements/dental-wales *fix
+      // age- <25 && wales: /results/dental-wales *fix
     
     
     
@@ -223,48 +273,11 @@ module.exports = {
     // gp router
       app.get(/gp-handler/, function (req, res) {
       if (req.query.gp === 'yes') {
-        res.redirect('../entitlements/prescription-eng');
+        res.redirect('../results/prescription-eng');
       } else {
         res.redirect('../date-of-birth');
       }
     });
-
-    // dob-handler
-    app.get(/dob-handler/, function (req, res) { 
-      applicant.age = (thisYear - req.query.dobyear);
-      console.log(applicant.age);
-      if (applicant.age >= 60 && applicant.need === 'prescription') {
-        res.redirect('../entitlements/prescription-over60');
-      } else if (applicant.age >= 60 && applicant.need === 'dental' && applicant.country === 'england') {
-        res.redirect('../tax-credits-exemption');
-      //} if (applicant.age >= 60 && applicant.need === 'dental' && applicant.country === 'wales') {
-      //  res.redirect('../tax-credits');
-      //} if (applicant.age >= 60 && applicant.need === 'dental' && applicant.country === 'scotland') {
-      //  res.redirect('../tax-credits');
-      } else if (applicant.age >= 19) { 
-        res.redirect('../tax-credits-19yo');
-      } else if (applicant.age  > 15) {
-        res.redirect('../full-time-education');
-      } else {
-        res.redirect('../full-exemption-under-16');
-      }
-    });
-
-    // dob-2-handler
-          app.get(/dob-2-handler/, function (req, res) {
-      applicant.age = (thisYear - req.query.dobyear);
-      console.log(applicant.age);
-      if (applicant.age >= 20) {
-        res.redirect('../tax-credits-exemption');
-      } else if (applicant.age >= 19) {
-        res.redirect('../tax-credits-exemption-19yo');
-      } else if (applicant.age  >=16) {
-        res.redirect('../full-time-education');
-      } else if (applicant.age  <=15) {
-        res.redirect('../../../8/full-exemption-under-16');
-      }
-    });
-
 
 
     // full time education handler
@@ -278,10 +291,10 @@ module.exports = {
     });
           // full time higher education handler
       app.get(/fte-higher-handler/, function (req, res) {
-      if (req.query.ftehigher  === 'no'){
-      res.redirect('../full-exemption-fte');
+      if (req.query.ftehigher  === 'yes'){
+      res.redirect('../results/full-exemption-fte');
       } else {
-        res.redirect('../blah');
+        res.redirect('../tax-credits-under20');
       }
     });
 
@@ -310,7 +323,17 @@ module.exports = {
 
 
     // tax credits claim yes or no
-      app.get(/taxcredits-handler/, function (req, res) {
+      app.get(/taxcredits-under20/, function (req, res) {
+      applicant.namedOnTaxCredits = req.query.taxcredits;
+      if (applicant.namedOnTaxCredits === 'yes' || applicant.namedOnTaxCredits === 'nk' ) {
+        res.redirect('../tax-credits-income');
+      } else {
+        res.redirect('../passported-benefits-under20');
+      }
+    });
+
+          // tax credits claim yes or no
+      app.get(/taxcredits-over20/, function (req, res) {
       applicant.namedOnTaxCredits = req.query.taxcredits;
       if (applicant.namedOnTaxCredits === 'yes' || applicant.namedOnTaxCredits === 'nk' ) {
         res.redirect('../tax-credits-income');
@@ -321,11 +344,20 @@ module.exports = {
 
 
     // tax credits income handler
-      app.get(/taxcredit-income-handler/, function (req, res) {
-      if (req.query.taxcreditsIncome === 'yes') {
-        res.redirect('../tax-credits-claim-type');
-      } else {
-        res.redirect('../passported-benefits');
+    app.get(/taxcredit-income-handler/, function (req, res) {
+    if (applicant.age < 20 ) {
+        if (req.query.taxcreditsIncome === 'no') {
+            console.log('here');
+            res.redirect('../passported-benefits-under20');
+        } else {
+            res.redirect('../tax-credits-claim-type');
+        };
+    } else {
+        if (req.query.taxcreditsIncome === 'no') {
+            res.redirect('../passported-benefits');
+        } else {
+            res.redirect('../tax-credits-claim-type');
+        }
       }
     });
 
@@ -333,18 +365,18 @@ module.exports = {
     // tax credits type handler
       app.get(/taxcredit-type-handler/, function (req, res) {
         if (req.query.taxcreditsType ==="wtcctc") {
-          var tcType = 'Working Tax Credit and Child Tax Credit together, or is named on the claim,';
-          res.render('sprints/8/taxcredit-info', {
+          var tcType = 'Working Tax Credit and Child Tax Credit together, or is named on your claim,';
+          res.render('sprints/b3/taxcredit-info', {
             'tctype' : tcType
           });
         } else if (req.query.taxcreditsType ==="ctcdis") {
-          var tcType = 'Working Tax Credit including a disability element, or is named on the claim,';
-          res.render('sprints/8/taxcredit-info', {
+          var tcType = 'Working Tax Credit including a disability element, or is named on your claim,';
+          res.render('sprints/b3/taxcredit-info', {
             'tctype' : tcType
           });
         } else if (req.query.taxcreditsType ==="ctc") {
-          var tcType = 'Child Tax Credit or is named on the claim,';
-          res.render('sprints/8/taxcredit-info', {
+          var tcType = 'Child Tax Credit or is named on your claim,';
+          res.render('sprints/b3/taxcredit-info', {
             'tctype' : tcType
           });
         } else if (req.query.taxcreditsType === 'wtc') {
@@ -358,22 +390,22 @@ module.exports = {
       app.get(/passportedBen-handler/, function (req, res) {
         if (req.query.benefits ==="incomeSupport") {
           var benType = 'Income Support';
-          res.render('sprints/8/full-exemption-benefits', {
+          res.render('sprints/b3/results/full-exemption-benefits', {
             'bentype' : benType
           });
         } else if (req.query.benefits ==="uniCredit") {
           var benType = 'Universal Credit';
-          res.render('sprints/8/uc-claim-type', {
+          res.render('sprints/b3/uc-claim-type', {
             'bentype' : benType
           });
         } else if (req.query.benefits ==="jsa") {
           var benType = 'Income based Job Seekers Allowance';
-          res.render('sprints/8/full-exemption-benefits', {
+          res.render('sprints/b3/results/full-exemption-benefits', {
             'bentype' : benType
           });
         } else if (req.query.benefits ==="esa") {
           var benType = 'Income related Employment and Support Allowance';
-          res.render('sprints/8/full-exemption-benefits', {
+          res.render('sprints/b3/results/full-exemption-benefits', {
             'bentype' : benType
           });
         } else if (req.query.benefits === 'continue') {
@@ -396,7 +428,7 @@ module.exports = {
                 // universal credits without element handler (£435)
       app.get(/uc-element-income-handle/, function (req, res) {
       if (req.query.ucelementIncome === 'yes') {
-        res.redirect('../full-exemption-uc');
+        res.redirect('../results/full-exemption-uc');
             } else {
                 res.redirect('../pregnancy');
       }
@@ -405,7 +437,7 @@ module.exports = {
                       // universal credits with element handler(£935)
             app.get(/uc-without-elements-handler/, function (req, res) {
       if (req.query.ucIncome === 'yes') {
-        res.redirect('../full-exemption-uc');
+        res.redirect('../results/full-exemption-uc');
       } else {
         res.redirect('../pregnancy');
       }
@@ -424,20 +456,39 @@ module.exports = {
       }
     });
 
-    // pregnancy router
-      app.get(/preg-handler/, function (req, res) {
+//                // pregnancy b3 router
+//      app.get(/preg-b3-handler/, function (req, res) {
+//      if (req.query.pregnancy === 'yes') {
+//      res.redirect('../results/all-preg');
+//      } else {
+//        res.redirect('../war-pension');
+//      }
+//    });
+
+          // pregnancy b2 router
+      app.get(/preg-all-handler/, function (req, res) {
       if (req.query.pregnancy === 'yes') {
-      applicant.isPregnant = true && applicant.need === 'prescription';
-      res.redirect('../entitlements/prescription-preg');
+      res.redirect('../results/all-preg');
       } else {
         res.redirect('../war-pension');
       }
     });
 
+    // pregnancy router
+      app.get(/preg-handler/, function (req, res) {
+      if (req.query.pregnancy === 'yes') {
+      applicant.isPregnant = true && applicant.need === 'prescription';
+      res.redirect('../results/prescription-preg');
+      } else {
+        res.redirect('../war-pension');
+      }
+    });
+
+
     // war pensioner handler
       app.get(/war-pension-handler/, function (req, res) {
       if (req.query.warPension === 'yes') {
-        res.redirect('../entitlements/prescription-war-pension');
+        res.redirect('../results/prescription-war-pension');
       } else {
         res.redirect('../do-you-have-a-medical-exemption');
       }
@@ -447,20 +498,31 @@ module.exports = {
       app.get(/medex-handler/, function (req, res) {
       if (req.query.medex === 'yes') {
       applicant.hasMedexCard = true;
-      res.redirect('../entitlements/prescription-medex');
+      res.redirect('../care-home');
       } else {
-        res.redirect('../medical-exemption-list');
+        res.redirect('../medical-exemption');
       }
     });
 
-    // long term condition
-      app.get(/longterm-illness-handler/, function (req, res) {
-      if (req.query.longtermIllness === 'yes') {
-      res.redirect('../entitlements/prescription-medex');
+
+    // long term illness
+      app.get(/illness-handler/, function (req, res) {
+      if (req.query.illness === 'yes') {
+        res.redirect('../results/medex-apply');
       } else {
         res.redirect('../care-home');
       }
     });
+
+
+//    // long term condition
+//      app.get(/longterm-illness-handler/, function (req, res) {
+//      if (req.query.longtermIllness === 'yes') {
+//      res.redirect('../results/prescription-medex');
+//      } else {
+//        res.redirect('../care-home');
+//      }
+//    });
 
     // carehome router
       app.get(/care-home-handler/, function (req, res) {
@@ -476,7 +538,7 @@ module.exports = {
       if (req.query.savings === 'yes') {
         res.redirect('../savings-kickout');
       } else {
-        res.redirect('../lis');
+        res.redirect('../answers2');
       }
     });
 
@@ -500,7 +562,7 @@ module.exports = {
 
     // carehome savings kickout handler
     app.get(/carehome-savings-handler/, function (req, res) {
-      if (req.query.savings === 'yes') {
+      if (req.query.savings === 'no') {
         res.redirect('../../lis');
       } else {
         res.redirect('../../savings-kickout');
@@ -509,7 +571,16 @@ module.exports = {
     
 
 
-
+//smart answers
+//      router.get('/sprints/b3/full-time-education', function (req, res) {
+//
+//var jugglingFeat = req.session.jugglingFeat;
+//var jugglingNo = req.query.jugglingNo;
+//
+//  res.render('training/check-your-answers-page', {'jugglingFeat' : jugglingFeat,
+//                                                 'jugglingNo': jugglingNo});
+//
+//});
 
 
 

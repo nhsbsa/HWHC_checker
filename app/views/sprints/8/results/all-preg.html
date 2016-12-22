@@ -1,0 +1,72 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+<a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+        <h1 class="heading-large">You get free prescriptions and dental care</h1>
+<!---->
+         <p>You get free prescriptions if you have a maternity exemption certificate while you're pregnant and up until a year after your child's birth.</h1></p>
+
+        <p>You also get free dental care, but don't have a maternity exemption certificate, as you can use other proof.</p>
+
+
+          <br>
+     <section class="callout callout__info">
+<h2 class="heading-medium">What you'll need as proof</h2>
+
+          <h3 class="heading-small">Prescriptions</h3>
+
+          <p>You may have to show your maternity exemption certificate.</p>
+          <p>You can get an application form from your midwife, doctor or health visitor.</p>
+          <p>If you didn't get your maternity exemption certificate while you were pregnant, you can still apply at any time during the 12 months after your baby was born.</p>
+
+
+  <div class="fanny-on">
+<img src="/public/images/tax-cert.png" alt="what a NHS Tax Credit Exemption Certificate looks like">
+
+  </div>
+
+          <br>
+
+          <h3 class="heading-small">Dental check ups and treatment </h3>
+          <p>You may need to show proof of your pregnancy, or that you have had a baby in the past 12 months. You can show things like:</p>
+
+        <ul class="list-bullet">
+        <li>a valid maternity exemption card</li>
+        <li>a MATB1 certificate issued by your midwife or GP</li>
+        <li>your childs birth certificate</li>
+        <li>a notification of birth form – the midwife who delivers your baby will give you this form</li>
+        <li>a stillbirth certificate- issued by your local registrar of births, marriages and deaths</li>
+<!--        <li>Your childs Personal Child Health Record (In england is is usually called the 'red book')</li>??? CLARIFY THIS ???-->
+        </ul>
+
+      </div>
+</section>
+
+      </div>
+    </div>
+
+<!--
+    {{
+        form_macros.button({
+        classes: 'button-secondary-cta',
+        href: '../condition-prescriptions',
+        label: 'Find out about help for other costs'
+      })
+    }}
+-->
+
+</main>
+
+
+{% endblock %}
