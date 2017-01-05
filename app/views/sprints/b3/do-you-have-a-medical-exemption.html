@@ -9,15 +9,17 @@
 
 
 <main id="content" role="main">
-  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+   <link rel="stylesheet" href="/public/stylesheets/smart_answers.css">
+<a href="javascript:history.go(-1)" class="link-back">Back</a>
 
+<div id="wrapper" class="answer smart_answer">
   <div class="grid-row">
     <div class="column-two-thirds">
 
-    <h2 class="heading-large">Do you have a medical exemption certificate?</h2>
+<h2 class="heading-large">Do you have a medical exemption certificate?</h2>
     <p>Your doctor would have given you the application form.
 
-      <form action="medex-handler" method="get" class="form">
+    <form action="medex-handler" method="get" class="form">
 
         <div class="form-item-wrapper">
         <fieldset>
@@ -35,25 +37,28 @@
                 No
               </label>
             </div>
-
        </div>
         </fieldset>
       </div>
-
-    {{
-      form_macros.button({
-        label: 'Next'
-      })
-    }}
+<br>
+      {{
+        form_macros.button({
+          label: 'Next'
+        })
+      }}
 
   </form>
-      </div>
 
+      </div>
+    </div>
+    </div>
 
 </main>
 
 
 {% endblock %}
+
+
 
 
 
