@@ -432,11 +432,11 @@ list-bullet {
 	}
 }
 .callout__info {
-	border:1em solid #40add7
+	border:0.6em solid #40add7
 }
 @media (max-width: 641px) {
 	.callout__info {
-		border:0.6em solid #40add7
+		border:0.4em solid #40add7
 	}
 }
 
@@ -464,4 +464,10 @@ list-bullet {
 font-size:19px;
   }
 }
+
+        .neg-heading{
+            padding-top: 1em;
+            border-top: 2px solid #b9d2dc;
+    }
+
 

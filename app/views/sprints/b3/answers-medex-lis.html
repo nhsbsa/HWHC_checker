@@ -125,6 +125,10 @@ font-size:19px;
     border: solid #768692;
     border-width: 0 0 0 4px;
 }
+    .top-space
+    {
+        margin-top:1.3em;
+    }
 
 
 </style>
@@ -151,16 +155,16 @@ You get free prescriptions</h1>
         NHS prescriptions<br>
     </li>
     </ul>
-     <section class="callout callout__info">
-<h2 class="heading-medium">What you'll need as proof</h2>
-<p>You need a medical exemption certificate. </p>
-        <p>You should speak to your doctor to see how to apply or if you are unsure about the name of your condition.</p>
+     <section class="top-space">
+<h2 class="heading-medium">What you should do next</h2>
+
+         <p style="line-height:2.5rem">To get free prescriptions you need a medical exemption certificate.<br>
+         You should speak to your doctor to see if you can apply.</p>
 
 </section>
 
-  <br>
-  <hr>
- <h2 class="heading-medium">You don't automatically get help towards the cost of:</h2>
+
+ <h2 class="heading-medium neg-heading">You don't automatically get help towards the cost of:</h2>
         <ul>
                        <li class="form-hint-list-item form-hint-list-item--false">
         <span class="form-hint-list-item__indicator"></span>
@@ -188,10 +192,13 @@ You get free prescriptions</h1>
 
     <h3 class="heading-small">If you find it hard to pay for any of these health costs, you could get help through the Low Income Scheme</h3>
 
-<section class="callout callout--info callout--compact">
-  <p><a href="http://www.nhsbsa.nhs.uk/HealthCosts/1128.aspx">Find out about the Low Income Scheme</a></p>
-
-</section>
+          {{
+        form_macros.button({
+          classes: 'button-secondary-cta',
+          href: 'http://www.nhsbsa.nhs.uk/HealthCosts/1128.aspx',
+          label: 'Find out about the Low Income Scheme'
+        })
+      }}
 
     </div>
     </div>
