@@ -423,16 +423,21 @@ list-bullet {
 }
 
 .callout {
-	padding:16px;
+	padding:0em 1em 1em 1em;
 	background-color:#fff
 }
 @media (min-width: 925px) {
 	.callout {
-		padding:32px
+		padding:0.5em 1em 1em 1em;
 	}
 }
 .callout__info {
 	border:1em solid #40add7
+}
+@media (max-width: 641px) {
+	.callout__info {
+		border:0.6em solid #40add7
+	}
 }
 
 .import-panel {

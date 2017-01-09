@@ -1,0 +1,172 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
+{% endblock %}
+
+{% block content %}
+
+<style>
+
+.column-quarter,
+.column-one-quarter {
+  padding: 0 15px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@media (min-width: 641px) {
+  .column-quarter,
+  .column-one-quarter {
+    float: left;
+    width: 25%;
+  }
+}
+
+.column-half,
+.column-one-half {
+  padding: 0 15px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@media (min-width: 641px) {
+  .column-half,
+  .column-one-half {
+    float: left;
+    width: 50%;
+  }
+}
+
+.column-third,
+.column-one-third {
+  padding: 0 15px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@media (min-width: 641px) {
+  .column-third,
+  .column-one-third {
+    float: left;
+    width: 33.3333333333%;
+  }
+}
+
+.column-two-thirds {
+  padding: 0 15px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@media (min-width: 641px) {
+  .column-two-thirds {
+    float: left;
+    width: 66.6666666667%;
+  }
+}
+
+.column-full {
+  padding: 0 15px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@media (min-width: 641px) {
+  .column-full {
+    float: left;
+    width: 100%;
+  }
+}
+.callout--compact {
+    display: inline-block;
+    padding: 16px 24px;
+}
+.callout--info {
+    background-color: #eff1f2;
+    border: solid #768692;
+    border-width: 0 0 0 4px;
+}</style>
+<main id="content" role="main" tabindex="-1">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+<h1 class="heading-large">
+      <span class="heading-secondary">Based on what you've told us:</span>
+      <br>
+You get help with some health costs</h1>
+      <div class="text">
+         <p class="intro-to-list">
+          Because you have a listed long-term medical condition:
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-one-third">
+      <h2 class="heading-medium">You get free:</h2>
+    </div>
+    <div class="column-one-third">
+      <h2 class="heading-medium">You don't get help towards the cost of:</h2>
+    </div>
+  </div>
+    <div class="grid-row">
+    <div class="column-one-third">
+          <li class="form-hint-list-item form-hint-list-item--valid">
+        <span class="form-hint-list-item__indicator"></span>
+        NHS prescriptions<br>
+    </li>
+                <section class="callout callout--info callout--compact">
+  <p><a href="/finders/find-help">What to do to next</a></p>
+
+</section>
+<!--
+                 <section class="callout callout__info">
+<h2 class="heading-medium">What you'll need as proof</h2>
+<p>You need a medical exemption certificate. </p>
+        <p>You should speak to your doctor to see how to apply or if you are unsure about the name of your condition.</p>
+        <section class="callout callout--info callout--compact">
+  <p><a href="http://www.nhsbsa.nhs.uk/HealthCosts/1128.aspx">Find out more about medical exemptions</a></p>
+
+</section>
+-->
+    </div>
+    <div class="column-one-third">
+      <ul class="form-hint-list">
+    <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__indicator"></span>
+        NHS dental check ups and treatment
+    </li>
+            <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__indicator"></span>
+        NHS sight tests
+    </li>
+    <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__indicator"></span>
+       New or replacement glasses or contact lenses
+    </li>
+    <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__indicator"></span>
+        NHS wigs and fabric supports
+    </li>
+
+    <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__indicator"></span>
+        Travel to receive NHS treatment
+    </li>
+        </ul>
+    </div>
+  </div>
+
+		</main>
+
+{% endblock %}

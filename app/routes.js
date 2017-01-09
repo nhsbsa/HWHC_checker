@@ -538,7 +538,7 @@ module.exports = {
       if (req.query.savings === 'yes') {
         res.redirect('../savings-kickout');
       } else {
-        res.redirect('../answers2');
+        res.redirect('../answers-preg-lis');
       }
     });
 

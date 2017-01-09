@@ -25,7 +25,6 @@ margin-bottom: 0.7894736842em;
     }
     .dodont{
 background-color: #F8F8F8;
-border-left: 3px solid #bfc1c3;
 width: 48%;
 float: left;
 margin-right: 2%;
@@ -33,6 +32,10 @@ margin-right: 2%;
 
     .panel--binary{
         padding: 1.2em 0 1.2em 0;
+     }
+    @media (max-width: 641px) {
+  .panel--binary {
+       padding: 0; }
     }
 
 .column-half {
@@ -116,13 +119,26 @@ margin-right: 2%;
         padding-top:0;
     }
     .big-bottompadding{
-        padding-bottom:2em
+        padding-bottom:2em;
+            height: 7.4em;
     }
     @media (max-width: 641px) {
   .big-bottompadding {
     padding-bottom:0;
+      height:auto;
   }
 }
+    .heading-half{
+        font-size:2rem;
+    }
+
+    .hidden-content
+{position:absolute;
+left:-10000px;
+top:auto;
+width:1px;
+height:1px;
+overflow:hidden;}
 </style>
 
 
@@ -135,12 +151,13 @@ margin-right: 2%;
   <h1 class="heading-large">
             <span class="heading-secondary">Based on what you've told us:</span>
       <br>
-You don't automatically get help towards the cost of:</h1>
+You don't automatically get help towards the cost of your health costs</h1>
+<!--
  <ul class="form-hint-list">
     <li class="form-hint-list-item form-hint-list-item--false">
         <span class="form-hint-list-item__indicator"></span>
         NHS prescriptions<br>
-<!--        <p>To get free prescriptions you need to have a valid maternity exemption certificate.</p>-->
+        <p>To get free prescriptions you need to have a valid maternity exemption certificate.</p>
     </li>
     <li class="form-hint-list-item form-hint-list-item--false">
         <span class="form-hint-list-item__indicator"></span>
@@ -164,9 +181,7 @@ You don't automatically get help towards the cost of:</h1>
         Travel to receive NHS treatment
     </li>
         </ul>
-
-
-        <hr>
+-->
 
         <h2 class="heading-medium">But if you find it hard to pay</h2>
 
@@ -179,15 +194,42 @@ You don't automatically get help towards the cost of:</h1>
 
   <div class="column-half dodont" id="get">
     <div class="panel__content">
-       <ol class="steps">
-<li>
-<h2 class="heading-medium box-heading">Apply for the Low Income Scheme</h2>
-           </li></ol>
+
+<h2 class="heading-medium heading-half">Apply for the Low Income Scheme</h2>
+<p class="hidden-content">You may get help towards the cost of:</p>
+ <ul class="form-hint-list">
+    <li class="form-hint-list-item form-hint-list-item--valid">
+        <span class="form-hint-list-item__indicator"></span>
+        NHS prescriptions<br>
+<!--        <p>To get free prescriptions you need to have a valid maternity exemption certificate.</p>-->
+    </li>
+    <li class="form-hint-list-item form-hint-list-item--valid">
+        <span class="form-hint-list-item__indicator"></span>
+        NHS dental treatment
+    </li>
+            <li class="form-hint-list-item form-hint-list-item--valid">
+        <span class="form-hint-list-item__indicator"></span>
+        NHS sight tests
+    </li>
+    <li class="form-hint-list-item form-hint-list-item--valid">
+        <span class="form-hint-list-item__indicator"></span>
+       New or replacement glasses or contact lenses
+    </li>
+    <li class="form-hint-list-item form-hint-list-item--valid">
+        <span class="form-hint-list-item__indicator"></span>
+        NHS wigs and fabric supports
+    </li>
+
+    <li class="form-hint-list-item form-hint-list-item--valid">
+        <span class="form-hint-list-item__indicator"></span>
+        Travel to receive NHS treatment
+    </li>
+        </ul>
 
             <p>You could get help with your health costs if you have less than £128 a week after your housing costs.</p>
 <p>This application should take around 15 minutes to complete.</p>
         <p>
-          <a class="button button-get-started" href="http://www.nhsbsa.nhs.uk/HealthCosts/1128.aspx" id="next">Get an application form</a>
+          <a class="button button-get-started" href="http://www.nhsbsa.nhs.uk/HealthCosts/1128.aspx" id="next">Find out more</a>
         </p>
     </div>
   </div>
@@ -195,10 +237,39 @@ You don't automatically get help towards the cost of:</h1>
 
   <div class="column-half dodont" id="not">
     <div class="panel__content">
-              <ol class="steps2">
-<li>
-        <h2 class="heading-medium box-heading">Buy a prescription prepayment certificate</h2>
-           </li></ol>
+
+        <h2 class="heading-medium heading-half">Buy a prescription prepayment certificate</h2>
+        <p class="hidden-content">It will help you save money on prescriptions</p>
+         <ul class="form-hint-list">
+    <li class="form-hint-list-item form-hint-list-item--valid">
+        <span class="form-hint-list-item__indicator"></span>
+        NHS prescriptions<br>
+<!--        <p>To get free prescriptions you need to have a valid maternity exemption certificate.</p>-->
+    </li>
+    <p class="hidden-content">This will not help with the cost of:</p>
+    <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__indicator"></span>
+        NHS dental treatment
+    </li>
+            <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__indicator"></span>
+        NHS sight tests
+    </li>
+    <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__indicator"></span>
+       New or replacement glasses or contact lenses
+    </li>
+    <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__indicator"></span>
+        NHS wigs and fabric supports
+    </li>
+
+    <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__indicator"></span>
+        Travel to receive NHS treatment
+    </li>
+        </ul>
+
 <p class="big-bottompadding">If you regularly buy more than 1 prescription a month, it may be cheaper to buy a prescription prepayment certificate.</p>
 
         <p><a class="button button-get-started" href="http://www.nhsbsa.nhs.uk/1127.aspx" id="next">Find out more</a></p>
@@ -207,7 +278,8 @@ You don't automatically get help towards the cost of:</h1>
 </article>
      </div>
     </div>
-    </div>
+
+
 </div>
 
 
