@@ -542,8 +542,26 @@ module.exports = {
       app.get(/saving-handler/, function (req, res) {
       if (req.query.savings === 'yes') {
         res.redirect('../savings-kickout');
+          //if 'yes' && pregnancy 'yes'
+          //res.redirect (../answers-preg-nolis)
+
+          //if 'yes' && warPension 'yes'
+          //res.redirect (../answers-warpension-nolis)
+
+          //if 'yes' && medex || illness 'yes'
+          //res.redirect (../answers-medex-nolis)
+
       } else {
+          //if 'no' && no preg, war pension or medex/illness
         res.redirect('../lis-v2');
+          //if 'no' && pregnancy 'yes'
+          //res.redirect (../answers-preg-lis)
+
+          //if 'no' && warPension 'yes'
+          //res.redirect (../answers-warpension-lis)
+
+          //if 'no' && medex || illness 'yes'
+          //res.redirect (../answers-medex-lis)
       }
     });
 
@@ -574,24 +592,6 @@ module.exports = {
       }
     });
     
-
-
-//smart answers
-//      router.get('/sprints/b3/full-time-education', function (req, res) {
-//
-//var jugglingFeat = req.session.jugglingFeat;
-//var jugglingNo = req.query.jugglingNo;
-//
-//  res.render('training/check-your-answers-page', {'jugglingFeat' : jugglingFeat,
-//                                                 'jugglingNo': jugglingNo});
-//
-//});
-
-
-
-
-
-
 
 
     // Change or cancel appointment fork:
