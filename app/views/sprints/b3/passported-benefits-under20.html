@@ -19,6 +19,8 @@
       Do you, your partner or one of your parents get any of these benefits?
   </h1>
 
+
+
   <br>
   <form action="passportedBen-handler" method="get" class="form">
     <div class="form-item-wrapper">
@@ -37,17 +39,17 @@
       <div class="form-group">
         <input type="radio" id="jsa" name="benefits" value="jsa">
         <label class="form-control-radio" for="jsa">
-          income-based Job Seeker's Allowance
+          Income-based Job Seeker's Allowance (JSA)
         </label>
       </div>
       <div class="form-group">
         <input type="radio" id="esa" name="benefits" value="esa">
         <label class="form-control-radio" for="esa">
-          income-related Employment &amp; Support Allowance
+          Income-related Employment &amp; Support Allowance (ESA)
         </label>
       </div>
     <div class="form-group">
-        <input type="radio" id="esa" name="benefits" value="penCredit">
+        <input type="radio" id="penCredit" name="benefits" value="penCredit">
         <label class="form-control-radio" for="penCredit">
           Pension Credit (Guarantee Credit)
         </label>
@@ -56,9 +58,23 @@
       <div class="form-group">
         <input type="radio" id="continue" name="benefits" value="continue">
         <label class="form-control-radio" for="continue">
-          I <strong>don't</strong> get any of these
+          No
         </label>
       </div>
+
+         <details>
+  <summary><span class="summary">Benefits with similar names</span></summary>
+<p>There are some benefits with similar names.  Select 'No' if you get one of these benefits:</p>
+           <ul class="list-bullet">
+           <li><span>Contribution-based Job Seekers Allowance</span><span class="hint">&nbsp;(JSA)</span></li>
+           <li><span>Contribution-based Employment Support Allowance</span><span class="hint">&nbsp;(ESA)</span></li>
+           <li><span>Pension Credit and Savings Credit</span></li>
+           </ul>
+           <p>If you're not sure what benefit you get contact <a href="https://www.gov.uk/contact-jobcentre-plus/existing-benefit-claims">Jobcentre Plus</a></p>
+           </div>
+           </p>
+            </details>
+
     {{
       form_macros.button({
         label: 'Next'

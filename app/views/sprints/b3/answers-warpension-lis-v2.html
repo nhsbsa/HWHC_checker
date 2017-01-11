@@ -153,11 +153,47 @@ font-size:19px;
         NHS prescriptions for your accepted disablement<br>
     </li>
     </ul>
+        <h2 class="heading-small">You don't get help towards the cost of:</h2>
+        <ul>
+                       <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__indicator"></span>
+        NHS dental check ups and treatment
+    </li>
+            <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__indicator"></span>
+        NHS sight tests
+    </li>
+    <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__indicator"></span>
+       New or replacement glasses or contact lenses
+    </li>
+    <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__indicator"></span>
+        NHS wigs and fabric supports
+    </li>
+
+    <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__indicator"></span>
+        Travel to receive NHS treatment
+    </li>
+        </ul>
+
+     <section class="top-space">
     <h2 class="heading-medium">What you should do next</h2>
         <p>You need a war pension prescription exemption certificate to get the free prescribed medication, aids, appliances or equipment you need.</p>
 
       <p>Contact <a href="https://www.gov.uk/government/publications/urgent-help-for-veterans-in-a-crisis/urgent-help-for-veterans-in-a-crisis">Veterans UK helpline</a> to apply.</p>
 
+
+    <h3 class="heading-small">If you find it hard to pay for your other health costs, you could get help through the Low Income Scheme.</h3>
+
+          {{
+        form_macros.button({
+          classes: 'button-secondary-cta',
+          href: 'http://www.nhsbsa.nhs.uk/HealthCosts/1128.aspx',
+          label: 'Find out about the Low Income Scheme'
+        })
+      }}
     </div>
     </div>
 

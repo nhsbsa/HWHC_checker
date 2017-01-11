@@ -399,18 +399,23 @@ module.exports = {
             'bentype' : benType
           });
         } else if (req.query.benefits ==="jsa") {
-          var benType = 'Income based Job Seekers Allowance';
+          var benType = 'income based Job Seekers Allowance (JSA)';
           res.render('sprints/b3/results/full-exemption-benefits', {
             'bentype' : benType
           });
         } else if (req.query.benefits ==="esa") {
-          var benType = 'Income related Employment and Support Allowance';
+          var benType = 'income related Employment and Support Allowance (ESA)';
+          res.render('sprints/b3/results/full-exemption-benefits', {
+            'bentype' : benType
+          });
+        } else if (req.query.benefits ==="penCredit") {
+          var benType = 'Pension Credit (Guarantee Credit)';
           res.render('sprints/b3/results/full-exemption-benefits', {
             'bentype' : benType
           });
         } else if (req.query.benefits === 'continue') {
             if (applicant.age > 60) {
-                res.redirect('../guarantee-credit');
+                res.redirect('../war-pension');
             } else {
                 res.redirect('../pregnancy');
             }
@@ -538,7 +543,7 @@ module.exports = {
       if (req.query.savings === 'yes') {
         res.redirect('../savings-kickout');
       } else {
-        res.redirect('../answers-preg-lis');
+        res.redirect('../lis-v2');
       }
     });
 
@@ -563,7 +568,7 @@ module.exports = {
     // carehome savings kickout handler
     app.get(/carehome-savings-handler/, function (req, res) {
       if (req.query.savings === 'no') {
-        res.redirect('../../lis');
+        res.redirect('../../lis-v2');
       } else {
         res.redirect('../../savings-kickout');
       }

@@ -16,23 +16,6 @@
     .form-hint-list-item--valid{
     color:black;
     }
-    .tax-cred-img{
-    float: left;
-    margin-right: 5px;
-     background: url("/public/images/tax-cert.png") -71px 0;
-    width: 21px;
-    height: 21px;
-}
-    .container {
-    width: 200px;
-    height: 120px;
-}
-
-/* resize images */
-.container img {
-    width: 100%;
-    height: auto;
-}
 </style>
 
 
@@ -42,12 +25,11 @@
 
   <div class="grid-row">
     <div class="column-two-thirds">
-
-      <h1 class="heading-large">
+<h1 class="heading-large">
       <span class="heading-secondary">Based on what you've told us:</span>
       <br>You get full help with health costs</h1>
 
-        <p class="intro-to-list">Anyone who gets {{tctype}} and has a family income of less than £15,276 or less gets free:</p>
+        <p class="intro-to-list">Anyone who gets {{bentype}}; or is named on the claim, gets free:</p>
 
        <ul class="form-hint-list">
     <li class="form-hint-list-item form-hint-list-item--valid">
@@ -89,20 +71,22 @@
         </ul>
 
 <br>
+     <section class="callout callout__info">
+<h2 class="heading-medium">What you'll need as proof</h2>
 
-<h2 class="heading-medium">What you should do next</h2>
+                     <p>You may have to show proof you get {{bentype}}.</p>
 
-    <p>A Tax Credit Exemption Certificate should be sent to you automatically and lasts up to 7 months.</p>
-          <p>If you've lost it, you can use your latest tax credit award notice as proof.</p>
-<h3 class="heading-small">What your certificate looks like</h2>
-<div class="container">
-
-<img src="/public/images/tc-excard.svg" alt="what the tax credit exemption certificate looks like" />
-</div>
+                    <p>You can use your Statement of Benefits as proof. You can get a copy of this letter by calling <strong>Jobcentre Plus</strong>.<br><br>
+                       Telephone: <a href="tel:03456088545">0345 608 8545</a><br>
+                       Textphone: <a href="tel:03456088551">0345 608 8551</a><br>
+                       Welsh Language: <a href="tel:03456003018">0345 600 3018</a><br><br>
+                       <a href="https://www.gov.uk/call-charges">Find out about call charges</a>
+                    </p>
           <br>
 
 
       </div>
+</section>
       </div>
 
 
@@ -114,4 +98,6 @@
 
 
 {% endblock %}
+
+
 
