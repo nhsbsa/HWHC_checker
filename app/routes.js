@@ -555,13 +555,13 @@ module.exports = {
           //if 'no' && no preg, war pension or medex/illness
         res.redirect('../lis-v2');
           //if 'no' && pregnancy 'yes'
-          //res.redirect (../answers-preg-lis)
+          //res.redirect (../answers-preg-lis-v2)
 
           //if 'no' && warPension 'yes'
-          //res.redirect (../answers-warpension-lis)
+          //res.redirect (../answers-warpension-lis-v2)
 
           //if 'no' && medex || illness 'yes'
-          //res.redirect (../answers-medex-lis)
+          //res.redirect (../answers-medex-lis-v3)
       }
     });
 
