@@ -28,7 +28,6 @@ background-color: #F8F8F8;
 width: 48%;
 float: left;
 margin-right: 2%;
-border: 10px solid #dee0e2;
     }
 
     .panel--binary{
@@ -130,8 +129,7 @@ border: 10px solid #dee0e2;
   }
 }
     .heading-half{
-        font-size:1.9rem;
-        line-height: 1.3em;
+        font-size:2rem;
     }
 
     .hidden-content
@@ -140,17 +138,7 @@ left:-10000px;
 top:auto;
 width:1px;
 height:1px;
-    overflow:hidden;
-    }
-
-    .box-height{
-        height:4.65em;
-    }
-      @media (max-width: 641px) {
-  .box-height {
-      height:auto;
-  }
-}
+overflow:hidden;}
 </style>
 
 
@@ -163,49 +151,93 @@ height:1px;
   <h1 class="heading-large">
             <span class="heading-secondary">Based on what you've told us:</span>
       <br>
-There are two ways you could get help with your health costs</h1>
-
-  <article class="panel panel--binary" role="alert">
-
-  <div class="column-half dodont" id="get">
-    <div class="panel__content">
-
-<h2 class="heading-medium heading-half">Apply for the low income scheme</h2>
-
-            <p>If you find it hard to pay for your health costs, you could get help through the low income scheme.</p>
-        <p>How much help you get depends on your household income and outgoings.</p>
-        <p>You don't have to be claiming benefits to apply.</p>
-
-<p class="box-height">Any help you're entitled to is also available to your partner.</p>
-            <p><a class="button button-get-started" href="http://www.nhsbsa.nhs.uk/1125.aspx" id="next">Find out more</a></p>
-    </div>
-  </div>
+You don't get help with your health costs</h1>
 
 
-  <div class="column-half dodont" id="not">
-    <div class="panel__content">
+        <h2 class="heading-medium">Other ways to get help</h2>
 
-        <h2 class="heading-medium heading-half">Buy a prescription prepayment certificate</h2>
-        <p>A prescription prepayment certificate (PPC) could save you money if you regularly get prescriptions.</p>
+        <ul class="list-bullet">
+        <li>If you find it hard to pay for your health costs, you could get help through the low income scheme</li>
+                <details>
+  <summary><span class="summary">More about the low income scheme</span></summary>
+                   <h2 class="heading-medium heading-half">Low Income Scheme</h2>
+                   <p>This gives you help towards the cost of:</p>
+         <ul class="form-hint-list">
+    <li class="form-hint-list-item form-hint-list-item--valid">
+        <span class="form-hint-list-item__indicator"></span>
+        NHS prescriptions<br>
+    </li>
+    <li class="form-hint-list-item form-hint-list-item--valid">
+        <span class="form-hint-list-item__indicator"></span>
+        NHS dental treatment
+    </li>
+            <li class="form-hint-list-item form-hint-list-item--valid">
+        <span class="form-hint-list-item__indicator"></span>
+        NHS sight tests
+    </li>
+    <li class="form-hint-list-item form-hint-list-item--valid">
+        <span class="form-hint-list-item__indicator"></span>
+       New or replacement glasses or contact lenses
+    </li>
+    <li class="form-hint-list-item form-hint-list-item--valid">
+        <span class="form-hint-list-item__indicator"></span>
+        NHS wigs and fabric supports
+    </li>
 
-<p>You can buy a PPC to cover the cost of all your prescriptions for 3 or 12 months.</p>
-<p>One prescription costs £8.40 but a PPC costs:</p>
-<ul class="list-bullet">
-    <li>£29.10 for 3 month
-</li>
-    <li>£104 for 12 months</li>
-</ul>
+    <li class="form-hint-list-item form-hint-list-item--valid">
+        <span class="form-hint-list-item__indicator"></span>
+        Travel to receive NHS treatment
+    </li>
+        </ul>
 
 
         <p><a class="button button-get-started" href="http://www.nhsbsa.nhs.uk/1127.aspx" id="next">Find out more</a></p>
-    </div>
-  </div>
-</article>
+            </details>
+            <p>or</p>
+        <li>You could save money on regular prescriptions by buying a prescription prepayment certificate.</li>
+                <details>
+  <summary><span class="summary">More about prescription prepayment certificates</span></summary>
+                   <h2 class="heading-medium heading-half">Buy a prescription prepayment certificate</h2>
+        <p class="hidden-content">It will help you save money on prescriptions</p>
+         <ul class="form-hint-list">
+    <li class="form-hint-list-item form-hint-list-item--valid">
+        <span class="form-hint-list-item__indicator"></span>
+        NHS prescriptions<br>
+<!--        <p>To get free prescriptions you need to have a valid maternity exemption certificate.</p>-->
+    </li>
+    <p class="hidden-content">This will not help with the cost of:</p>
+    <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__indicator"></span>
+        NHS dental treatment
+    </li>
+            <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__indicator"></span>
+        NHS sight tests
+    </li>
+    <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__indicator"></span>
+       New or replacement glasses or contact lenses
+    </li>
+    <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__indicator"></span>
+        NHS wigs and fabric supports
+    </li>
+
+    <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__indicator"></span>
+        Travel to receive NHS treatment
+    </li>
+        </ul>
+
+<p>If you regularly buy more than 1 prescription a month, it may be cheaper to buy a prescription prepayment certificate.</p>
+
+        <p><a class="button button-get-started" href="http://www.nhsbsa.nhs.uk/1127.aspx" id="next">Find out more</a></p>
+            </details>
+        </ul>
+
      </div>
     </div>
 
-
-</div>
 
 
 		</main>

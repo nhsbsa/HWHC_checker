@@ -1,0 +1,106 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
+{% endblock %}
+
+{% block content %}
+
+<style>
+    .form-hint-list-item--valid{
+    color:black;
+    }
+</style>
+
+<main id="content" role="main">
+<a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+        <h1 class="heading-large">You get help with health costs</h1>
+
+        <p class="intro-to-list">
+          Because you're under 16, you get free:
+        </p>
+        <ul class="form-hint-list">
+    <li class="form-hint-list-item form-hint-list-item--valid">
+        <span class="form-hint-list-item__indicator"></span>
+        NHS prescriptions
+    </li>
+    <li class="form-hint-list-item form-hint-list-item--valid">
+        <span class="form-hint-list-item__indicator"></span>
+        NHS dental treatment
+    </li>
+    <li class="form-hint-list-item form-hint-list-item--valid">
+        <span class="form-hint-list-item__indicator"></span>
+        NHS Sight tests
+    </li>
+    <li class="form-hint-list-item form-hint-list-item--valid">
+        <span class="form-hint-list-item__indicator"></span>
+        NHS wigs and fabric supports
+    </li>
+        </ul>
+
+         <p class="intro-to-list">
+           You'll also get help towards the cost of:
+        <ul>
+                <li class="form-hint-list-item form-hint-list-item--valid">
+        <span class="form-hint-list-item__indicator"></span>
+       new glasses or contact lenses
+    </li>
+        </ul>
+            <li class="form-hint-list-item form-hint-list-item--valid">
+        <span class="form-hint-list-item__indicator"></span>
+        repairing or replacing your glasses or contact lenses
+    </li>
+        </ul>
+        <br>
+        <h3 class="heading-small">You don't automatically get help towards the cost of:</h3>
+        <ul>
+    <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__indicator"></span>
+        travelling for NHS treatment
+    </li>
+      </ul>
+ <details>
+  <summary><span class="summary">Who can get help with travel costs</span></summary>
+
+  <div class="panel panel-border-narrow">
+      <p>To get help you must:</p>
+       <ul class="list-bullet">
+           <li>have made an extra journey to receive NHS care after being referred by a doctor, optician or dentist, and</li>
+           <li>be named on your parent's qualifying benefit claim or certificate</li>
+      </ul>
+            <ul class="list-bullet">
+
+    <li>Income Support</li>
+    <li>Income-related Employment and Support Allowance</li>
+    <li>Income-based Jobseeker’s Allowance</li>
+    <li>Pension Credit guarantee credit</li>
+    <li>Universal Credit and meet the criteria</li>
+
+<p>or</p>
+
+    <li>you are named on a valid NHS Tax Credit Exemption Certificate</li>
+    <li>you are named on a valid Low Income Scheme HC2 (full help) or HC3 (limited help) certificate</li>
+    </ul>
+    </div>
+
+
+</details>
+
+
+
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}
