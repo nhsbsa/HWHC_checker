@@ -1,4 +1,4 @@
- {% extends 'templates/nhs_transaction_layout.html' %}
+{% extends 'templates/nhs_transaction_layout.html' %}
 {% import 'includes/form_macros.html' as form_macros %}
 
 {% block afterHeader %}
@@ -7,31 +7,34 @@
 
 {% block content %}
 
+
 <main id="content" role="main">
 <a href="javascript:history.go(-1)" class="link-back">Back</a>
 
   <div class="grid-row">
     <div class="column-two-thirds">
 
-         <form action="taxcredits-under20" method="get" class="form">
+  <h1 class="heading-large">
+    Do you or your partner have more than £16,000 in savings?
+  </h1>
+  <p>Include investments and properties (but not place where you live)</p>
 
-    <h2 class="heading-large">Do you claim tax credits?</h2>
-
+  <form action="saving-handler" method="get" class="form">
       <div class="form-item-wrapper">
         <fieldset>
           <div class="inline-form-groups">
             <div class="form-group">
-              <input type="radio" id="yes" name="taxcredits" value="yes">
+              <input type="radio" id="yes" name="savings" value="yes">
               <label class="form-control-radio" for="yes">
                 Yes
               </label>
             </div>
             <div class="form-group">
-              <input type="radio" id="no" name="taxcredits" value="no">
+              <input type="radio" id="no" name="savings" value="no">
               <label class="form-control-radio" for="no">
                 No
               </label>
-              </div>
+            </div>
           </div>
         </fieldset>
       </div>
@@ -43,20 +46,10 @@
     }}
 
   </form>
-      </div>
+    </div>
 
     </div>
     </div>
 
 </main>
-
-{% endblock %}
-
-
-
-
-
-
-
-
 

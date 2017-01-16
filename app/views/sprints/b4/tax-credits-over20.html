@@ -9,30 +9,44 @@
 
 <main id="content" role="main">
 <a href="javascript:history.go(-1)" class="link-back">Back</a>
-
   <div class="grid-row">
     <div class="column-two-thirds">
 
-
        <!--3- Are you named on a Tax Credits Exemption certificate-->
+         <form action="taxcredit-type-handler" method="get" class="form">
 
-         <form action="taxcredits-over20" method="get" class="form">
-
-    <h2 class="heading-large">Do you or your partner get tax credits?</h2>
+    <h2 class="heading-large">Do you or your partner get any of these tax credits?</h2>
 
       <div class="form-item-wrapper">
         <fieldset>
-          <div class="inline-form-groups">
+          <div class="form-group">
+
             <div class="form-group">
-              <input type="radio" id="yes" name="taxcredits" value="yes">
-              <label class="form-control-radio" for="yes">
-                Yes
+              <input type="radio" id="wtcctc" name="taxcreditsType" value="wtcctc">
+              <label class="form-control-radio" for="wtcctc">
+                Working Tax Credit and Child Tax Credit together
               </label>
             </div>
+
             <div class="form-group">
-              <input type="radio" id="no" name="taxcredits" value="no">
-              <label class="form-control-radio" for="no">
-                No
+              <input type="radio" id="ctcdis" name="taxcreditsType" value="ctcdis">
+              <label class="form-control-radio" for="ctcdis">
+                Working Tax credit on its own, including a disability element
+              </label>
+            </div>
+
+            <div class="form-group">
+              <input type="radio" id="ctc" name="taxcreditsType" value="ctc">
+              <label class="form-control-radio" for="ctc">
+                Child Tax Credit on its own
+              </label>
+            </div>
+
+            <p class="form-block">or</p>
+            <div class="form-group">
+              <input type="radio" id="wtc" name="taxcreditsType" value="wtc">
+              <label class="form-control-radio" for="wtc">
+                  Working Tax Credits on its own
               </label>
             </div>
           </div>
@@ -114,9 +128,9 @@
     </div>
 
 </main>
-
-<!--<script>
-$("#yes").click(function(){
+<!--
+<script>
+$("#wtcctc").click(function(){
     $("#all").removeClass("hidden");
     $("#all1").removeClass("hidden");
     $("#all2").removeClass("hidden");
@@ -124,7 +138,23 @@ $("#yes").click(function(){
     $("#all4").removeClass("hidden");
 }); </script>
 <script>
-$("#no").click(function(){
+$("#ctcdis").click(function(){
+    $("#all").removeClass("hidden");
+    $("#all1").removeClass("hidden");
+    $("#all2").removeClass("hidden");
+    $("#all3").removeClass("hidden");
+    $("#all4").removeClass("hidden");
+}); </script>
+<script>
+$("#ctc").click(function(){
+    $("#all").removeClass("hidden");
+    $("#all1").removeClass("hidden");
+    $("#all2").removeClass("hidden");
+    $("#all3").removeClass("hidden");
+    $("#all4").removeClass("hidden");
+}); </script>
+<script>
+$("#wtc").click(function(){
     $("#all").addClass("hidden");
     $("#all1").addClass("hidden");
     $("#all2").addClass("hidden");

@@ -13,12 +13,48 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
+    <h2 class="heading-large">Do you or your partner get any of these tax credits?</h2>
 
-       <!--3- Are you named on a Tax Credits Exemption certificate-->
-
-         <form action="taxcredits-over20" method="get" class="form">
-
-    <h2 class="heading-large">Do you or your partner get tax credits?</h2>
+      <br>
+  <form action="taxcredits-over20" method="get" class="form">
+    <div class="form-item-wrapper">
+      <div class="form-group">
+        <input type="radio" id="incomeSupport" name="benefits" value="incomeSupport">
+        <label class="form-control-radio" for="incomeSupport">
+          Income Support
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="radio" id="uniCredit" name="benefits" value="uniCredit">
+        <label class="form-control-radio" for="uniCredit">
+          Universal Credit
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="radio" id="jsa" name="benefits" value="jsa">
+        <label class="form-control-radio" for="jsa">
+          Income-based Job Seeker's Allowance (JSA)
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="radio" id="esa" name="benefits" value="esa">
+        <label class="form-control-radio" for="esa">
+          Income-related Employment &amp; Support Allowance (ESA)
+        </label>
+      </div>
+    <div class="form-group">
+        <input type="radio" id="penCredit" name="benefits" value="penCredit">
+        <label class="form-control-radio" for="penCredit">
+          Pension Credit (Guarantee Credit)
+        </label>
+      </div>
+      <p class="form-block">or</p>
+      <div class="form-group">
+        <input type="radio" id="continue" name="benefits" value="continue">
+        <label class="form-control-radio" for="continue">
+          No
+        </label>
+      </div>
 
       <div class="form-item-wrapper">
         <fieldset>
@@ -47,91 +83,13 @@
 
   </form>
       </div>
-<!--  <div class="column-third " id="lists">
 
-      <div class="right-col-details">
-
-
-
-          <h3 class="heading-medium">What you get free </h3>
-
-<ul class="form-hint-list">
-    <li class="form-hint-list-item  form-hint-list-item--valid">
-        <span class="form-hint-list-item__primary">
-            <span class="form-hint-list-item__indicator"></span>
-        </span>
-        Prescriptions
-    </li>
-
-    <li class="form-hint-list-item form-hint-list-item--valid">
-        <span class="form-hint-list-item__primary">
-            <span class="form-hint-list-item__indicator"></span>
-        </span>
-         NHS Sight test
-    </li>
-
-    <li class="form-hint-list-item form-hint-list-item--valid hidden" id="all">
-        <span class="form-hint-list-item__primary">
-            <span class="form-hint-list-item__indicator"></span>
-        </span>
-        Glasses or contact lenses
-    </li>
-
-            <li class="form-hint-list-item form-hint-list-item--valid hidden" id="all1">
-        <span class="form-hint-list-item__primary">
-            <span class="form-hint-list-item__indicator"></span>
-        </span>
-        NHS wigs
-    </li>
-
-    <li class="form-hint-list-item form-hint-list-item--valid hidden" id="all2">
-        <span class="form-hint-list-item__primary">
-            <span class="form-hint-list-item__indicator"></span>
-        </span>
-        Travel for treatment
-    </li>
-
-    <li class="form-hint-list-item form-hint-list-item--valid hidden" id="all3" >
-        <span class="form-hint-list-item__primary">
-            <span class="form-hint-list-item__indicator"></span>
-        </span>
-        NHS dental exam
-    </li>
-
-    <li class="form-hint-list-item form-hint-list-item--valid hidden" id="all4">
-        <span class="form-hint-list-item__primary">
-            <span class="form-hint-list-item__indicator"></span>
-        </span>
-         NHS dental treatment
-    </li>
-</ul>
-
-
-
-      </div> -->
 
     </div>
     </div>
 
 </main>
 
-<!--<script>
-$("#yes").click(function(){
-    $("#all").removeClass("hidden");
-    $("#all1").removeClass("hidden");
-    $("#all2").removeClass("hidden");
-    $("#all3").removeClass("hidden");
-    $("#all4").removeClass("hidden");
-}); </script>
-<script>
-$("#no").click(function(){
-    $("#all").addClass("hidden");
-    $("#all1").addClass("hidden");
-    $("#all2").addClass("hidden");
-    $("#all3").addClass("hidden");
-    $("#all4").addClass("hidden");
-}); </script>
-<script>-->
 
 {% endblock %}
 

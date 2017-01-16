@@ -20,6 +20,7 @@ var applicant = person.createPerson(
 
 var thisYear = 2016;
 
+var parentTc = false;
 
 
 
@@ -322,11 +323,22 @@ module.exports = {
 
 
 
-    // tax credits claim yes or no
+    // tax credits claim yes or no under 20
       app.get(/taxcredits-under20/, function (req, res) {
       applicant.namedOnTaxCredits = req.query.taxcredits;
       if (applicant.namedOnTaxCredits === 'yes' || applicant.namedOnTaxCredits === 'nk' ) {
         res.redirect('../tax-credits-income');
+      } else {
+        res.redirect('../tax-credits-under20-parents');
+      }
+    });
+
+
+          // tax credits claim yes or no under 20
+      app.get(/taxcredits-parents/, function (req, res) {
+      if (req.query.taxcreditsParents  === 'yes'){
+      var parentTc = true;
+        res.render('sprints/b4/tax-credits-income');
       } else {
         res.redirect('../passported-benefits-under20');
       }
@@ -350,7 +362,12 @@ module.exports = {
             console.log('here');
             res.redirect('../passported-benefits-under20');
         } else {
-            res.redirect('../tax-credits-claim-type');
+            if (parentTc == true) {
+                res.redirect('../taxcredit-info');
+                //not working!
+            } else {
+                res.redirect('../tax-credits-claim-type');
+            }
         };
     } else {
         if (req.query.taxcreditsIncome === 'no') {
@@ -365,17 +382,17 @@ module.exports = {
     // tax credits type handler
       app.get(/taxcredit-type-handler/, function (req, res) {
         if (req.query.taxcreditsType ==="wtcctc") {
-          var tcType = 'Working Tax Credit and Child Tax Credit together, or is named on your claim,';
+          var tcType = 'Working Tax Credit and Child Tax Credit together';
           res.render('sprints/b3/taxcredit-info', {
             'tctype' : tcType
           });
         } else if (req.query.taxcreditsType ==="ctcdis") {
-          var tcType = 'Working Tax Credit including a disability element, or is named on your claim,';
+          var tcType = 'Working Tax Credit including a disability element';
           res.render('sprints/b3/taxcredit-info', {
             'tctype' : tcType
           });
         } else if (req.query.taxcreditsType ==="ctc") {
-          var tcType = 'Child Tax Credit or is named on your claim,';
+          var tcType = 'Child Tax Credit';
           res.render('sprints/b3/taxcredit-info', {
             'tctype' : tcType
           });
