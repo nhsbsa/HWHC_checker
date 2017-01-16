@@ -17,7 +17,7 @@
    <!--1B- lives in the UK-->
     <h2 class="heading-large">Which country do you live in?</h2>
 
-  <form action="country-2-handler" method="get" class="form">
+  <form action="country-eng-handler" method="get" class="form">
 
     <div class="form-item-wrapper">
       <div class="form-group">
@@ -47,6 +47,46 @@
 
       </div>
       </div>
+      <h1 class="heading-medium">
+  How do you want to be contacted?
+</h1>
+
+<form>
+  <div class="form-group">
+    <fieldset>
+
+      <legend class="visually-hidden">How do you want to be contacted?</legend>
+
+      <label class="block-label selection-button-radio" data-target="contact-by-email" for="example-contact-by-email">
+        <input id="example-contact-by-email" type="radio" name="radio-contact-group" value="Yes">
+        Email
+      </label>
+      <div class="panel panel-border-narrow js-hidden" id="contact-by-email">
+        <label class="form-label" for="contact-email">Email address</label>
+        <input class="form-control" name="contact-email" type="text" id="contact-email">
+      </div>
+
+      <label class="block-label selection-button-radio" data-target="contact-by-phone" for="example-contact-by-phone">
+        <input id="example-contact-by-phone" type="radio" name="radio-contact-group" value="No">
+        Phone
+      </label>
+      <div class="panel panel-border-narrow js-hidden" id="contact-by-phone">
+        <label class="form-label" for="contact-phone">Phone number</label>
+        <input class="form-control" name="contact-phone" type="text" id="contact-phone">
+      </div>
+
+      <label class="block-label selection-button-radio" data-target="contact-by-text" for="example-contact-by-text">
+        <input id="example-contact-by-text" type="radio" name="radio-contact-group" value="No">
+        Text message
+      </label>
+      <div class="panel panel-border-narrow js-hidden" id="contact-by-text">
+        <label class="form-label" for="contact-text-message">Mobile phone number</label>
+        <input class="form-control" name="contact-text-message" type="text" id="contact-text-message">
+      </div>
+
+    </fieldset>
+  </div>
+</form>
 
 
     {{

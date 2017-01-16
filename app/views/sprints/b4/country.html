@@ -7,6 +7,14 @@
 
 {% block content %}
 
+<style>
+.panel-indent {
+    clear: both;
+    border-left: 6px solid #dee0e2;
+    padding: 0 1rem 0.5rem 1rem;
+    margin-bottom: 2em;
+</style>
+
 
 <main id="content" role="main">
 <a href="javascript:history.go(-1)" class="link-back">Back</a>
@@ -16,37 +24,57 @@
     <div class="column-two-thirds">
    <!--1B- lives in the UK-->
     <h2 class="heading-large">Which country do you live in?</h2>
+ <form action="country-b4-handler" method="get" class="form">
 
-  <form action="country-2-handler" method="get" class="form">
 
-    <div class="form-item-wrapper">
+
+<div class="form-item-wrapper">
+  <fieldset>
       <div class="form-group">
         <input type="radio" id="englandBeta" name="countryBeta" value="englandBeta">
-        <label class="form-control-radio" for="englandBeta">
+        <label class="form-control-radio js-toggle" for="englandBeta" data-show="#gp-eng" data-hide="#contact-mobile-number">
           England
         </label>
       </div>
-
-      <div class="form-group">
+          <div class="js-hidden panel-indent" id="gp-eng">
+      <label class="form-label-bold" for="gp-england">
+        Is your GP practice in Scotland or Wales?
+      </label>
+      <div class="inline-form-groups" id="gp-england" class="form-control">
+            <div class="form-group">
+              <input type="radio" id="yes" name="gp" value="yes">
+              <label class="form-control-radio" for="yes">
+                Yes
+              </label>
+            </div>
+            <div class="form-group">
+              <input type="radio" id="no" name="gp" value="no">
+              <label class="form-control-radio" for="no">
+                No
+              </label>
+            </div>
+          </div>
+    </div>
+        <div class="form-group">
         <input type="radio" id="scotlandBeta" name="countryBeta" value="scotlandBeta">
-        <label class="form-control-radio" for="scotlandBeta">
+        <label class="form-control-radio js-toggle" for="scotlandBeta" data-hide="#gp-eng">
           Scotland
         </label>
       </div>
       <div class="form-group">
         <input type="radio" id="walesBeta" name="countryBeta" value="walesBeta">
-        <label class="form-control-radio" for="walesBeta">
+        <label class="form-control-radio js-toggle" for="walesBeta" data-hide="#gp-eng">
           Wales
         </label>
       </div>
       <div class="form-group">
         <input type="radio" id="northernIrelandBeta" name="countryBeta" value="northernIrelandBeta">
-        <label class="form-control-radio" for="northernIrelandBeta">
+        <label class="form-control-radio js-toggle" for="northernIrelandBeta" data-hide="#gp-eng">
           Northern Ireland
         </label>
-
-      </div>
-      </div>
+    </div>
+  </fieldset>
+</div>
 
 
     {{

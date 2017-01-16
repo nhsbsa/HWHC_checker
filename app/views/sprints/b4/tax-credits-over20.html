@@ -15,7 +15,7 @@
        <!--3- Are you named on a Tax Credits Exemption certificate-->
          <form action="taxcredit-type-handler" method="get" class="form">
 
-    <h2 class="heading-large">Do you or your partner get any of these tax credits?</h2>
+    <h2 class="heading-large">Do {{partnerandtext}} get any of these tax credits?</h2>
 
       <div class="form-item-wrapper">
         <fieldset>
@@ -42,11 +42,18 @@
               </label>
             </div>
 
-            <p class="form-block">or</p>
             <div class="form-group">
               <input type="radio" id="wtc" name="taxcreditsType" value="wtc">
               <label class="form-control-radio" for="wtc">
                   Working Tax Credits on its own
+              </label>
+            </div>
+
+            <p class="form-block">or</p>
+            <div class="form-group">
+              <input type="radio" id="no" name="taxcreditsType" value="no">
+              <label class="form-control-radio" for="no">
+                  No, {{iwe}} don't get tax credits
               </label>
             </div>
           </div>

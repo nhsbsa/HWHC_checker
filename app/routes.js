@@ -19,8 +19,29 @@ var applicant = person.createPerson(
 );
 
 var thisYear = 2016;
-
 var parentTc = false;
+
+//partner question variable
+ var setPartnerText = function (partner) {
+    if (applicant.partner === false) {
+      partnerBothText = 'you';
+      partnerCommaText = 'you';
+      partnerOrText = 'you';
+      partnerAndText = 'you';
+      partnersText = 'your';
+      iWe = 'I';
+    } else {
+      partnerBothText = 'you, your partner or both of you';
+      partnerCommaText = 'you, your partner';
+      partnerOrText = 'you or your partner';
+      partnerAndText = 'you and your partner';
+      partnersText = "your or your partner's";
+      parentText = "they"
+      iWe = 'we';
+
+    }
+  };
+
 
 
 
@@ -103,6 +124,25 @@ module.exports = {
     //********
     //sprint 8
     //********
+
+          // partner handler v2
+    app.get(/p2-handler/, function (req, res) {
+      sprint = req.url.charAt(5);
+      if (req.query.partner === 'yes') {
+        applicant.partner = true;
+        //aboutPartnerStatus = "Started";
+        //aboutPartnerLink = continueText;
+      } else if (req.query.partner === 'no') {
+        applicant.partner = false;
+        //aboutPartnerStatus = completedText;
+        //aboutPartnerLink = changeText;
+      }
+      setPartnerText(applicant.partner);
+      res.render('sprints/b4/tax-credits-under20', {
+        'partnerortext' : partnerOrText,
+        'iwe' : iWe
+      });
+    });
     
     
 
@@ -159,15 +199,34 @@ module.exports = {
       applicant.age = (thisYear - req.query.dobyearBeta);
       console.log(applicant.age);
       if (applicant.age >= 20) {
-        res.redirect('../tax-credits-over20');
+         setPartnerText(applicant.partner);
+        res.render('sprints/b4/tax-credits-over20', {
+        'iwe' : iWe
+      });
       } else if (applicant.age >= 19) {
-        res.redirect('../tax-credits-under20');
+        res.redirect('../partner');
       } else if (applicant.age  >=16) {
         res.redirect('../full-time-education');
       } else if (applicant.age  <=15) {
         res.redirect('../results/full-exemption-under-16');
       }
     });
+
+            // country-handler in sprint B4
+      app.get(/country-b4-handler/, function (req, res) {
+      if (req.query.countryBeta  === 'englandBeta'&& req.query.gp === 'no'){
+        res.redirect('../date-of-birth');
+      } else if (req.query.countryBeta  === 'englandBeta'&& req.query.gp === 'yes'){
+        res.redirect('../results/prescription-eng');
+      } else if (req.query.countryBeta  === 'scotlandBeta') {
+        res.redirect('../results/country-kickout-scot');
+      } else if (req.query.countryBeta  === 'walesBeta') {
+        res.redirect('../results/country-kickout-wales');
+      } else {
+        res.redirect('../results/country-kickout-ni');
+      }
+    });
+
 
       // country-handler in sprint B2
       app.get(/country-2-handler/, function (req, res) {
@@ -295,7 +354,7 @@ module.exports = {
       if (req.query.ftehigher  === 'yes'){
       res.redirect('../results/full-exemption-fte');
       } else {
-        res.redirect('../tax-credits-under20');
+        res.redirect('../partner');
       }
     });
 
@@ -327,7 +386,10 @@ module.exports = {
       app.get(/taxcredits-under20/, function (req, res) {
       applicant.namedOnTaxCredits = req.query.taxcredits;
       if (applicant.namedOnTaxCredits === 'yes' || applicant.namedOnTaxCredits === 'nk' ) {
-        res.redirect('../tax-credits-income');
+        setPartnerText(applicant.partner);
+        res.render('sprints/b4/tax-credits-income', {
+        'partnerandtext' : partnerAndText
+      });
       } else {
         res.redirect('../tax-credits-under20-parents');
       }
@@ -338,7 +400,10 @@ module.exports = {
       app.get(/taxcredits-parents/, function (req, res) {
       if (req.query.taxcreditsParents  === 'yes'){
       var parentTc = true;
-        res.render('sprints/b4/tax-credits-income');
+        setPartnerText(applicant.partner);
+        res.render('sprints/b4/tax-credits-income', {
+        'parenttext' : parentText
+      });
       } else {
         res.redirect('../passported-benefits-under20');
       }
@@ -359,16 +424,17 @@ module.exports = {
     app.get(/taxcredit-income-handler/, function (req, res) {
     if (applicant.age < 20 ) {
         if (req.query.taxcreditsIncome === 'no') {
-            console.log('here');
             res.redirect('../passported-benefits-under20');
-        } else {
-            if (parentTc == true) {
-                res.redirect('../taxcredit-info');
-                //not working!
+//        } else {
+//            if (parentTc == true) {
+//                res.redirect('../taxcredit-info');
+//                //not working!
             } else {
-                res.redirect('../tax-credits-claim-type');
+            setPartnerText(applicant.partner);
+            res.render('sprints/b3/tax-credits-claim-type', {
+            'partnerandtext' : partnerAndText,
+      });
             }
-        };
     } else {
         if (req.query.taxcreditsIncome === 'no') {
             res.redirect('../passported-benefits');
@@ -396,12 +462,53 @@ module.exports = {
           res.render('sprints/b3/taxcredit-info', {
             'tctype' : tcType
           });
-        } else if (req.query.taxcreditsType === 'wtc') {
-        res.redirect('../passported-benefits');
+        } else if (req.query.taxcreditsType === 'wtc' && applicant.age < 20 ) {
+        setPartnerText(applicant.partner);
+        res.render('sprints/b4/passported-benefits-under20', {
+        'partnercommatext' : partnerCommaText
+      });
         } else {
-      }
+            res.redirect('../passported-benefits');
+        }
     });
 
+// passported benefits under 20 handler
+      app.get(/passportedBen-u20/, function (req, res) {
+        if (req.query.benefits ==="incomeSupport") {
+          var benType = 'Income Support';
+          res.render('sprints/b3/results/full-exemption-benefits', {
+            'bentype' : benType
+          });
+        } else if (req.query.benefits ==="uniCredit") {
+          var benType = 'Universal Credit';
+          setPartnerText(applicant.partner);
+          res.render('sprints/b3/uc-claim-type', {
+            'bentype' : benType,
+            'partnerortext' : partnerOrText
+      });
+        } else if (req.query.benefits ==="jsa") {
+          var benType = 'income based Job Seekers Allowance (JSA)';
+          res.render('sprints/b3/results/full-exemption-benefits', {
+            'bentype' : benType
+          });
+        } else if (req.query.benefits ==="esa") {
+          var benType = 'income related Employment and Support Allowance (ESA)';
+          res.render('sprints/b3/results/full-exemption-benefits', {
+            'bentype' : benType
+          });
+        } else if (req.query.benefits ==="penCredit") {
+          var benType = 'Pension Credit (Guarantee Credit)';
+          res.render('sprints/b3/results/full-exemption-benefits', {
+            'bentype' : benType
+          });
+        } else if (req.query.benefits === 'continue') {
+            if (applicant.age > 60) {
+                res.redirect('../war-pension');
+            } else {
+                res.redirect('../pregnancy');
+            }
+      }
+    });
 
     // passported benefits handler
       app.get(/passportedBen-handler/, function (req, res) {
@@ -412,9 +519,11 @@ module.exports = {
           });
         } else if (req.query.benefits ==="uniCredit") {
           var benType = 'Universal Credit';
+          setPartnerText(applicant.partner);
           res.render('sprints/b3/uc-claim-type', {
-            'bentype' : benType
-          });
+            'bentype' : benType,
+            'partnerortext' : partnerOrText
+      });
         } else if (req.query.benefits ==="jsa") {
           var benType = 'income based Job Seekers Allowance (JSA)';
           res.render('sprints/b3/results/full-exemption-benefits', {
@@ -528,6 +637,18 @@ module.exports = {
 
 
     // long term illness
+      app.get(/illness-b4/, function (req, res) {
+      if (req.query.illness === 'yes' || 'no') {
+          setPartnerText(applicant.partner);
+          res.render('sprints/b4/care-home', {
+            'partnerortext' : partnerOrText
+      });
+      } else {
+        res.redirect('../care-home');
+      }
+    });
+
+    // long term illness
       app.get(/illness-handler/, function (req, res) {
       if (req.query.illness === 'yes') {
         res.redirect('../results/medex-apply');
@@ -549,7 +670,10 @@ module.exports = {
     // carehome router
       app.get(/care-home-handler/, function (req, res) {
       if (req.query.carehome === 'yes') {
-      res.redirect('../sc/authority-assessed');
+           setPartnerText(applicant.partner);
+          res.render('sprints/b4/sc/authority-assessed', {
+            'partnerortext' : partnerOrText
+      });
       } else {
         res.redirect('../savings1');
       }
@@ -585,9 +709,12 @@ module.exports = {
     // authority assessment handler
     app.get(/authority-assessed-handler/, function (req, res) {
       if (req.query.authority === 'yes') {
-        res.redirect('../lis-application');
+        res.redirect('../sc/lis-application');
       } else {
-        res.redirect('../savings');
+           setPartnerText(applicant.partner);
+          res.render('sprints/b4/sc/savings', {
+            'partnerortext' : partnerOrText,
+      });
       }
     });
       
