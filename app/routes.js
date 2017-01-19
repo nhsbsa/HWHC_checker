@@ -138,10 +138,17 @@ module.exports = {
         //aboutPartnerLink = changeText;
       }
       setPartnerText(applicant.partner);
-      res.render('sprints/b4/tax-credits-under20', {
-        'partnerortext' : partnerOrText,
-        'iwe' : iWe
-      });
+        if(applicant.age >= 20) {
+          res.render('sprints/b4/tax-credits-over20', {
+            'partnerortext' : partnerOrText,
+            'iwe' : iWe
+            });
+        } else {
+            res.render('sprints/b4/tax-credits-under20', {
+                'partnerortext' : partnerOrText,
+                'iwe' : iWe
+            });
+        }
     });
     
     
@@ -195,19 +202,19 @@ module.exports = {
     });
 
     // dob-2-handler
-          app.get(/dob-2-handler/, function (req, res) {
+    app.get(/dateofbirth-handler/, function (req, res) {
       applicant.age = (thisYear - req.query.dobyearBeta);
       console.log(applicant.age);
       if (applicant.age >= 20) {
-         setPartnerText(applicant.partner);
-        res.render('sprints/b4/tax-credits-over20', {
-        'iwe' : iWe
-      });
-      } else if (applicant.age >= 19) {
+        setPartnerText(applicant.partner);
+        res.render('sprints/b4/partner', {
+            'iwe' : iWe
+        });
+      } else if (applicant.age == 19) {
         res.redirect('../partner');
-      } else if (applicant.age  >=16) {
+      } else if (applicant.age >= 16) {
         res.redirect('../full-time-education');
-      } else if (applicant.age  <=15) {
+      } else if (applicant.age <= 15) {
         res.redirect('../results/full-exemption-under-16');
       }
     });
@@ -399,12 +406,13 @@ module.exports = {
           // tax credits claim yes or no under 20
       app.get(/taxcredits-parents/, function (req, res) {
       if (req.query.taxcreditsParents  === 'yes'){
-      var parentTc = true;
+        parentTc = true;
         setPartnerText(applicant.partner);
         res.render('sprints/b4/tax-credits-income', {
         'parenttext' : parentText
       });
       } else {
+        parentTc = false;
         res.redirect('../passported-benefits-under20');
       }
     });
@@ -422,55 +430,109 @@ module.exports = {
 
     // tax credits income handler
     app.get(/taxcredit-income-handler/, function (req, res) {
-    if (applicant.age < 20 ) {
-        if (req.query.taxcreditsIncome === 'no') {
-            res.redirect('../passported-benefits-under20');
-//        } else {
-//            if (parentTc == true) {
-//                res.redirect('../taxcredit-info');
-//                //not working!
-            } else {
-            setPartnerText(applicant.partner);
-            res.render('sprints/b3/tax-credits-claim-type', {
-            'partnerandtext' : partnerAndText,
-      });
+        if (applicant.age < 20 ) {
+            if (req.query.taxcreditsIncome === 'no') {
+                res.redirect('../passported-benefits-under20');
+    //        } else {
+    //            if (parentTc == true) {
+    //                res.redirect('../taxcredit-info');
+    //                //not working!
+            } else { //yes
+                if (parentTc == true) {
+                    res.redirect('../taxcredit-info');
+                } else {
+                    setPartnerText(applicant.partner);
+                    res.render('sprints/b4/tax-credits-claim-type', {
+                        'partnerandtext' : partnerAndText
+                    });
+                }
             }
-    } else {
-        if (req.query.taxcreditsIncome === 'no') {
-            res.redirect('../passported-benefits');
-        } else {
-            res.redirect('../tax-credits-claim-type');
-        }
-      }
+        } else { //over 20
+            if (req.query.taxcreditsIncome === 'no') {
+                res.redirect('../passported-benefits');
+            } else {
+                res.redirect('../taxcredit-info');
+            }
+          }
     });
 
 
     // tax credits type handler
       app.get(/taxcredit-type-handler/, function (req, res) {
-        if (req.query.taxcreditsType ==="wtcctc") {
-          var tcType = 'Working Tax Credit and Child Tax Credit together';
-          res.render('sprints/b3/taxcredit-info', {
-            'tctype' : tcType
-          });
-        } else if (req.query.taxcreditsType ==="ctcdis") {
-          var tcType = 'Working Tax Credit including a disability element';
-          res.render('sprints/b3/taxcredit-info', {
-            'tctype' : tcType
-          });
-        } else if (req.query.taxcreditsType ==="ctc") {
-          var tcType = 'Child Tax Credit';
-          res.render('sprints/b3/taxcredit-info', {
-            'tctype' : tcType
-          });
-        } else if (req.query.taxcreditsType === 'wtc' && applicant.age < 20 ) {
-        setPartnerText(applicant.partner);
-        res.render('sprints/b4/passported-benefits-under20', {
-        'partnercommatext' : partnerCommaText
-      });
-        } else {
-            res.redirect('../passported-benefits');
+        if (applicant.age >= 20) {
+            if (req.query.taxcreditsType ==="wtcctc") {
+              var tcType = 'Working Tax Credit and Child Tax Credit together';
+            } else if (req.query.taxcreditsType ==="ctcdis") {
+              var tcType = 'Working Tax Credit including a disability element';
+            } else if (req.query.taxcreditsType ==="ctc") {
+              var tcType = 'Child Tax Credit';
+            } else if (req.query.taxcreditsType === 'wtc' || req.query.taxcreditsType === 'no') {
+                setPartnerText(applicant.partner);
+                res.render('sprints/b4/passported-benefits', {
+                    'partnercommatext' : partnerCommaText
+                });
+            }
+            res.render('sprints/b4/tax-credits-income');
+        } else { //under 20
+            if (req.query.taxcreditsType ==="wtcctc") {
+              var tcType = 'Working Tax Credit and Child Tax Credit together';
+            } else if (req.query.taxcreditsType ==="ctcdis") {
+              var tcType = 'Working Tax Credit including a disability element';
+            } else if (req.query.taxcreditsType ==="ctc") {
+              var tcType = 'Child Tax Credit';
+            } else if (req.query.taxcreditsType === 'wtc' || req.query.taxcreditsType === 'no') {
+                setPartnerText(applicant.partner);
+                res.render('sprints/b4/passported-benefits-under20', {
+                    'partnercommatext' : partnerCommaText
+                });
+            }
+            res.render('sprints/b3/taxcredit-info', {
+                'tctype' : tcType
+            });
         }
-    });
+        });
+
+//
+//
+//
+//
+//
+//
+//        }
+//          else if (req.query.taxcreditsType === 'wtc') {
+//                setPartnerText(applicant.partner);
+//            }
+//        if (applicant.age >= 20) {
+//            res.render('sprints/b4/tax-credits-income');
+//        } else {
+//            res.render('sprints/b4/tax-credits-under20');
+//        }
+//
+//
+//        if (req.query.taxcreditsType ==="wtcctc") {
+//          var tcType = 'Working Tax Credit and Child Tax Credit together';
+//          res.render('sprints/b3/taxcredit-info', {
+//            'tctype' : tcType
+//          });
+//        } else if (req.query.taxcreditsType ==="ctcdis") {
+//          var tcType = 'Working Tax Credit including a disability element';
+//          res.render('sprints/b3/taxcredit-info', {
+//            'tctype' : tcType
+//          });
+//        } else if (req.query.taxcreditsType ==="ctc") {
+//          var tcType = 'Child Tax Credit';
+//          res.render('sprints/b3/taxcredit-info', {
+//            'tctype' : tcType
+//          });
+//        } else if (req.query.taxcreditsType === 'wtc' && applicant.age < 20 ) {
+//        setPartnerText(applicant.partner);
+//        res.render('sprints/b4/passported-benefits-under20', {
+//        'partnercommatext' : partnerCommaText
+//      });
+//        } else {
+//            res.redirect('../passported-benefits');
+//        }
+//    });
 
 // passported benefits under 20 handler
       app.get(/passportedBen-u20/, function (req, res) {
