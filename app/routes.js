@@ -36,7 +36,8 @@ var parentTc = false;
       partnerOrText = 'you or your partner';
       partnerAndText = 'you and your partner';
       partnersText = "your or your partner's";
-      parentText = "they"
+      parentText = "your parents"
+      parentOrText = "your or your parents"
       iWe = 'we';
 
     }
@@ -141,7 +142,7 @@ module.exports = {
         if(applicant.age >= 20) {
           res.render('sprints/b4/tax-credits-over20', {
             'partnerortext' : partnerOrText,
-            'iwe' : iWe
+              'iwe' : iWe
             });
         } else {
             res.render('sprints/b4/tax-credits-under20', {
@@ -433,17 +434,13 @@ module.exports = {
         if (applicant.age < 20 ) {
             if (req.query.taxcreditsIncome === 'no') {
                 res.redirect('../passported-benefits-under20');
-    //        } else {
-    //            if (parentTc == true) {
-    //                res.redirect('../taxcredit-info');
-    //                //not working!
             } else { //yes
                 if (parentTc == true) {
                     res.redirect('../taxcredit-info');
                 } else {
                     setPartnerText(applicant.partner);
                     res.render('sprints/b4/tax-credits-claim-type', {
-                        'partnerandtext' : partnerAndText
+                        'partnerortext' : partnerOrText
                     });
                 }
             }
@@ -469,7 +466,7 @@ module.exports = {
             } else if (req.query.taxcreditsType === 'wtc' || req.query.taxcreditsType === 'no') {
                 setPartnerText(applicant.partner);
                 res.render('sprints/b4/passported-benefits', {
-                    'partnercommatext' : partnerCommaText
+                    'partnerandtext' : partnerAndText
                 });
             }
             res.render('sprints/b4/tax-credits-income');
@@ -544,9 +541,9 @@ module.exports = {
         } else if (req.query.benefits ==="uniCredit") {
           var benType = 'Universal Credit';
           setPartnerText(applicant.partner);
-          res.render('sprints/b3/uc-claim-type', {
+          res.render('sprints/b4/uc-claim-type-v2', {
             'bentype' : benType,
-            'partnerortext' : partnerOrText
+            'parenttext' : parentText
       });
         } else if (req.query.benefits ==="jsa") {
           var benType = 'income based Job Seekers Allowance (JSA)';
@@ -613,9 +610,9 @@ module.exports = {
           // universal credits income handler
       app.get(/uc-type-handler/, function (req, res) {
       if (req.query.ucElement === 'yes') {
-        res.redirect('../uc-income-with-element');
+        res.redirect('../uc-income-with-element-v2');
       } else {
-        res.redirect('../uc-income-without-element');
+        res.redirect('../uc-income-without-element-v2');
       }
     });
                 // universal credits without element handler (£435)
