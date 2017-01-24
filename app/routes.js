@@ -20,6 +20,9 @@ var applicant = person.createPerson(
 
 var thisYear = 2016;
 var parentTc = false;
+var pregnancy = false;
+var medicalEx = false;
+var warPension = false;
 
 //partner question variable
  var setPartnerText = function (partner) {
@@ -280,63 +283,6 @@ module.exports = {
         res.redirect('../../date-of-birth');
       }
     });
-
-//      Journeys
-//      18 year old dental scotland
-//      added a HREF to the dental-scot check if I pay button
-//      start  >  what costs = Dental  >  country = scotland  >  you get free check ups  >  DOB = 1998
-//      >  are you in full time education  > common journey...
-    
-//      18 year old dental wales
-//      start  >  what costs = Dental  >  country = wales  >  DOB = 1998
-//      >  are you in full time education  > common journey...
-    
-//      18 year old dental england
-//      start  >  what costs = Dental  >  country = england  >  DOB = 1998
-//      >  are you in full time education  > common journey...
-    
-//       why is wales 18 year old dental different to england 18 year old?
-
-    
-    
-      // if 60 englad one way, wales wales hander
-    
-      // DONE
-      // age- <16: full-exemption-under-16
-      // age- 18: full-time-education
-      // age- 19: tax-credits-19yo
-      // age- 20-60>: tax-credits 
-    
-      // TO DO
-      // dental-wales-handler & DENTAL-SCOTLAND HANDLER / if 18 go to FTE
-      // IF TAX CREDITS
-      // 20 - 60 TAX CREDITS 
-    
-      // 
-      // age- 16-17: /entitlements/dental-16-17 *fix
-      // age- <25 && wales: /results/dental-wales *fix
-    
-    
-    
-    
-      // full-time-education- yes: full-exemption-fte
-      // full-time-education- no: tax-credits-19yo
-      // taxcredits- yes: tax-credits-income
-      // taxcredits- no: passported-benefits
-
-      //passported-benefits- yes: full-exemption-benefits
-      //passported-benefits- no: guarantee-credit
-      //
-      //guarantee-credit- yes: full-exemption-benefits
-      //guarantee-credit- no: care-home
-      //
-      //care-home- yes: savings-2
-      //care-home- no: savings-1
-      //
-      //savings-2:
-
-
-
 
     // gp router
       app.get(/gp-handler/, function (req, res) {
@@ -646,14 +592,16 @@ module.exports = {
       }
     });
 
-//                // pregnancy b3 router
-//      app.get(/preg-b3-handler/, function (req, res) {
-//      if (req.query.pregnancy === 'yes') {
-//      res.redirect('../results/all-preg');
-//      } else {
-//        res.redirect('../war-pension');
-//      }
-//    });
+                // pregnancy b4 router
+      app.get(/preg-b4handler/, function (req, res) {
+      if (req.query.pregnancy === 'yes') {
+          pregnancy = true;
+      res.redirect('../war-pension');
+      } else {
+          pregnancy = false;
+        res.redirect('../war-pension');
+      }
+    });
 
           // pregnancy b2 router
       app.get(/preg-all-handler/, function (req, res) {
@@ -674,6 +622,16 @@ module.exports = {
       }
     });
 
+          // war pensioner handler
+      app.get(/war-b4handler/, function (req, res) {
+      if (req.query.warPension === 'yes') {
+        medicalEx = true;
+        res.redirect('../medical-exemption');
+      } else {
+        medicalEx = false;
+        res.redirect('../medical-exemption');
+      }
+    });
 
     // war pensioner handler
       app.get(/war-pension-handler/, function (req, res) {
@@ -698,11 +656,13 @@ module.exports = {
     // long term illness
       app.get(/illness-b4/, function (req, res) {
       if (req.query.illness === 'yes' || 'no') {
+          warPension = true;
           setPartnerText(applicant.partner);
           res.render('sprints/b4/care-home', {
             'partnerortext' : partnerOrText
       });
       } else {
+          warPension = false;
         res.redirect('../care-home');
       }
     });
@@ -789,9 +749,9 @@ module.exports = {
     // carehome savings kickout handler
     app.get(/carehome-savings-handler/, function (req, res) {
       if (req.query.savings === 'no') {
-        res.redirect('../../lis-v2');
+        res.redirect('../lis-v2');
       } else {
-        res.redirect('../../savings-kickout');
+        res.redirect('../savings-kickout');
       }
     });
     
