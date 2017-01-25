@@ -400,82 +400,76 @@ module.exports = {
     });
 
 
-    // tax credits type handler
-      app.get(/taxcredit-type-handler/, function (req, res) {
-        if (applicant.age >= 20) {
-            if (req.query.taxcreditsType ==="wtcctc") {
-              var tcType = 'Working Tax Credit and Child Tax Credit together';
-            } else if (req.query.taxcreditsType ==="ctcdis") {
-              var tcType = 'Working Tax Credit including a disability element';
-            } else if (req.query.taxcreditsType ==="ctc") {
-              var tcType = 'Child Tax Credit';
-            } else if (req.query.taxcreditsType === 'wtc' || req.query.taxcreditsType === 'no') {
-                setPartnerText(applicant.partner);
-                res.render('sprints/b4/passported-benefits', {
-                    'partnerandtext' : partnerAndText
-                });
-            }
-            res.render('sprints/b4/tax-credits-income');
-        } else { //under 20
-            if (req.query.taxcreditsType ==="wtcctc") {
-              var tcType = 'Working Tax Credit and Child Tax Credit together';
-            } else if (req.query.taxcreditsType ==="ctcdis") {
-              var tcType = 'Working Tax Credit including a disability element';
-            } else if (req.query.taxcreditsType ==="ctc") {
-              var tcType = 'Child Tax Credit';
-            } else if (req.query.taxcreditsType === 'wtc' || req.query.taxcreditsType === 'no') {
-                setPartnerText(applicant.partner);
-                res.render('sprints/b4/passported-benefits-under20', {
-                    'partnercommatext' : partnerCommaText
-                });
-            }
-            res.render('sprints/b3/taxcredit-info', {
-                'tctype' : tcType
-            });
-        }
-        });
-
-//
-//
-//
-//
-//
-//
-//        }
-//          else if (req.query.taxcreditsType === 'wtc') {
-//                setPartnerText(applicant.partner);
-//            }
+//    // tax credits type handler
+//      app.get(/taxcredit-type-handler/, function (req, res) {
 //        if (applicant.age >= 20) {
+//            if (req.query.taxcreditsType ==="wtcctc") {
+//              var tcType = 'Working Tax Credit and Child Tax Credit together';
+//            } else if (req.query.taxcreditsType ==="ctcdis") {
+//              var tcType = 'Working Tax Credit including a disability element';
+//            } else if (req.query.taxcreditsType ==="ctc") {
+//              var tcType = 'Child Tax Credit';
+//            } else if (req.query.taxcreditsType === 'wtc' || req.query.taxcreditsType === 'no') {
+//                setPartnerText(applicant.partner);
+//                res.render('sprints/b4/passported-benefits', {
+//                    'partnerandtext' : partnerAndText
+//                });
+//            }
 //            res.render('sprints/b4/tax-credits-income');
-//        } else {
-//            res.render('sprints/b4/tax-credits-under20');
+//        } else { //under 20
+//            if (req.query.taxcreditsType ==="wtcctc") {
+//              var tcType = 'Working Tax Credit and Child Tax Credit together';
+//            } else if (req.query.taxcreditsType ==="ctcdis") {
+//              var tcType = 'Working Tax Credit including a disability element';
+//            } else if (req.query.taxcreditsType ==="ctc") {
+//              var tcType = 'Child Tax Credit';
+//            } else if (req.query.taxcreditsType === 'wtc' || req.query.taxcreditsType === 'no') {
+//                setPartnerText(applicant.partner);
+//                res.render('sprints/b4/passported-benefits-under20', {
+//                    'partnercommatext' : partnerCommaText
+//                });
+//            }
+//            res.render('sprints/b3/taxcredit-info', {
+//                'tctype' : tcType
+//            });
 //        }
-//
-//
-//        if (req.query.taxcreditsType ==="wtcctc") {
-//          var tcType = 'Working Tax Credit and Child Tax Credit together';
-//          res.render('sprints/b3/taxcredit-info', {
-//            'tctype' : tcType
-//          });
-//        } else if (req.query.taxcreditsType ==="ctcdis") {
-//          var tcType = 'Working Tax Credit including a disability element';
-//          res.render('sprints/b3/taxcredit-info', {
-//            'tctype' : tcType
-//          });
-//        } else if (req.query.taxcreditsType ==="ctc") {
-//          var tcType = 'Child Tax Credit';
-//          res.render('sprints/b3/taxcredit-info', {
-//            'tctype' : tcType
-//          });
-//        } else if (req.query.taxcreditsType === 'wtc' && applicant.age < 20 ) {
-//        setPartnerText(applicant.partner);
-//        res.render('sprints/b4/passported-benefits-under20', {
-//        'partnercommatext' : partnerCommaText
-//      });
-//        } else {
-//            res.redirect('../passported-benefits');
-//        }
-//    });
+//        });
+
+      //new tax credits type handler
+    var tcType;
+      app.get(/taxcredit-type-handler/, function (req, res) {
+        if (req.query.taxcreditsType ==="wtcctc") {
+          tcType = 'Working Tax Credit and Child Tax Credit together';
+        } else if (req.query.taxcreditsType ==="ctcdis") {
+          tcType = 'Working Tax Credit including a disability element';
+        } else if (req.query.taxcreditsType ==="ctc") {
+          tcType = 'Child Tax Credit';
+        } else {
+          tcType = 'none';
+          setPartnerText(applicant.partner);
+        }
+        if (applicant.age >= 20) {
+          if (tcType === 'none') {
+            res.render('sprints/b4/passported-benefits', {
+              'partnerandtext' : partnerAndText
+            });
+          } else {
+            res.render('sprints/b4/tax-credits-income');
+          }
+        } else {
+          if (tcType = 'none') {
+            setPartnerText(applicant.partner);
+            res.render('sprints/b4/passported-benefits-under20', {
+              'partnercommatext' : partnerCommaText
+            });
+          } else {
+            res.render('sprints/b3/taxcredit-info', {
+              'tctype' : tcType
+            });
+          }
+        }
+      });
+
 
 // passported benefits under 20 handler
       app.get(/passportedBen-u20/, function (req, res) {
