@@ -451,10 +451,12 @@ module.exports = {
         if (applicant.age >= 20) {
           if (tcType === 'none') {
             res.render('sprints/b4/passported-benefits', {
-              'partnerandtext' : partnerAndText
+              'partnerortext' : partnerOrText
             });
           } else {
-            res.render('sprints/b4/tax-credits-income');
+            res.render('sprints/b4/tax-credits-income', {
+                'partnerandtext' : partnerAndText
+            });
           }
         } else {
           if (tcType = 'none') {
