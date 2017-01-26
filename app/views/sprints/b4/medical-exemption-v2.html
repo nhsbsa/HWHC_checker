@@ -16,18 +16,20 @@
 
     <h2 class="heading-large">Do you have any of these long-term illnesses?</h2>
 
+
                    <ul class="list-bullet">
 
                  <li><strong>Cancer and are undergoing treatment</strong>
                      <br>Including treatment for the effects of cancer or the effects of cancer treatment.</li>
 
-
-
-                <li><strong>Diabetes - type 1 or type 2</strong>
-                    <br>Which needs medication to keep your blood sugar levels stable
+                 <li><strong>Diabetes insipidus and other forms of hypopituitarism</strong>
                  </li>
 
-              <li><strong>Epilepsy</strong> <br>Which needs continuous anticonvulsive therapy</li>
+                <li><strong>Diabetes mellitus</strong>
+                    <br>Where treatment is not by diet alone
+                 </li>
+
+              <li><strong>Epilepsy</strong> <br>Which needs continuous anticonvulsive therapy<!--Which needs anti-epileptic drugs (AEDs)--></li>
 
                  <li><strong>A continuing physical disability</strong>
                      <br>Which means you can't go out without the help of another person</li>
@@ -37,39 +39,39 @@
 
 <!--
                  <li><strong>You need a continuous surgical dressing or an appliance</strong>
-                     <br>Like a tracheotomy or need to use a stoma</li>
+                     <br>Like a tracheotomy or need to use a stoma</li> another DH vitto
 -->
 
-                 <li><strong>Diabetes insipidus and other forms of hypopituitarism</strong>
-
-
+                                <li><strong>Myxoedema</strong>
+                     <br>For example, hypothyroidism which needs thyroid hormone replacement</li>
 
 <!--
-                    <li><strong>Myxoedema</strong>
-                     <br>For example, an underactive thyroid gland (Hypothyroidism) which needs thyroid hormone replacement</li>
+                 <li><strong>An underactive thyroid gland (Hypothyroidism)</strong>
+                     <br>Which needs hormone replacement</li> DH vitto
 -->
 
+                  <li><strong>Hypoparathyroidism</strong></li>
+<!--
+                 <li><strong>An underactive parathyroid gland (Hypoparathyroidism)</strong>
+                     <br>Which needs treatment to bring calcium and other minerals back to normal</li>
+-->
 
-                 <li><strong>Myxoedema</strong>
-                    <br>For example, hypothyroidism which needs thyroid hormone replacement</li>
-
-                  <li><strong>Hypoparathyroidism</strong>
-                 <br>Which means your parathyroid glands produce too little parathyroid hormone</li>
-
-                <li><strong>Hypoadrenalism, where specific substitution therapy is essential</strong>
+                <li><strong>Hypoadrenalism, for which specific substitution therapy is essential</strong>
                      <br>For example, Addison’s Disease</li>
+<!--
+                <li><strong>An underactive adrenal gland (Hypoadrenalism)</strong>
+                     <br>Like Addison’s Disease, which needs hormone replacement</li> DH vitto
+-->
 
+                <li><strong>Myasthenia gravis</strong></li>
 
-                <li><strong>Myasthenia gravis</strong>
-                <br>Where an autoimmune condition affects the nerves and muscles</li>
-
-
+<!--                <li><strong>HIV</strong></li> because DH told us so-->
 
                </ul>
 
-        <div class="additional-info">If you're unsure about the name of your condition or treatment, check with your doctor. </div><br>
+        <div class="additional-info">If you are unsure about the name of your condition or treatment, check with your doctor. </div><br>
 
-       <form action="illness-handler" method="get" class="form">
+       <form action="illness-b4" method="get" class="form">
       <div class="form-item-wrapper">
         <fieldset>
           <div class="inline-form-groups">
@@ -92,8 +94,7 @@
 
     {{
       form_macros.button({
-        label: 'Next',
-        href:"care-home"
+        label: 'Next'
       })
     }}
   </form>
