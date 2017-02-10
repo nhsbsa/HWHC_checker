@@ -1,0 +1,306 @@
+﻿    
+{% extends 'templates/nhsbsa_website_template.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block content %}
+
+<style>
+p.lede {
+font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+font-size: 1.8rem;
+font-weight: 400;
+}
+</style>
+
+<!-- Stylesheet includes -->     
+<link href="/public/stylesheets/cacheflush.menu.css" rel="stylesheet" media="all">
+<link href="/public/stylesheets/redweb_a.css" rel="stylesheet" media="all">
+<link href="/public/stylesheets/addition_redweb.css" rel="stylesheet" media="all">
+<link rel="stylesheet" href="/public/stylesheets/accordian.css">
+
+
+
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-Tileimage" content="/themes/custom/nhsbsa/favicons/mstile-144x144.png">
+<meta name="msapplication-config" content="/themes/custom/nhsbsa/favicons/browserconfig.xml">
+
+
+<div class="page">
+<!-- swoosh header and logo -->
+  <header class="main_header" id="main-header">
+    <div class="container">
+      <div class="header-row">
+        <div class="header-logo site-logo">
+          <a title="Home" class="site-logo-link" href="homepage" rel="home"><img width="356" height="77" class="site-logo-image" alt="NHS Buisness Services authority" src="/public/images/bsa-logo.png">
+            <span class="sr-only">NHSBSA </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+<!-- main -->
+    <main class="main_body accordion-with-descriptions-03" id="main-content" role="main" tabindex="-1">
+      <div class="content-header sm-mt-40 mt-20">
+
+        <div class="container">
+
+          <div class="row is-just-between sm-is-direction-row is-direction-column ie-text-right">
+
+            <div class="column sm-is-none is-auto ie-is-inline-block ie-is-8 ie-text-left">
+<h1 class="js-quickedit-page-title">Help paying NHS costs</h1>
+
+<!-- search bar -->
+            <button class="js-search-toggle search-toggle show-from-sm ie-is-hidden"><span class="sr-only">Toggle search</span> </button>
+          </div>
+          <div class="column sm-is-none is-auto search-column ie-is-inline-block ie-is-4">
+            <div class="js-search-controller search-controller">
+              <div class="js-search-container">
+                <div class="views-exposed-form bef-exposed-form" id="block-search-block" data-block-plugin-id="views_exposed_filter_block:search-search_block" data-drupal-selector="views-exposed-form-search-search-block">
+                  <div class="search-block-form searchBar">
+                    <form id="views-exposed-form-search-search-block" action="/search" method="get" accept-charset="UTF-8" block="block-search-block">
+                      <div class="js-form-item form-item js-form-type-textfield form-item-aggregated-field js-form-item-aggregated-field">
+                        <label for="edit-aggregated-field">Search</label>
+                        <input name="aggregated_field" class="form-text" id="edit-aggregated-field" type="text" size="30" maxlength="128" placeholder="Search the NHSBSA website" value="" data-drupal-selector="edit-aggregated-field">
+                      </div>
+                      <div class="form-actions js-form-wrapper form-wrapper" id="edit-actions--2" data-drupal-selector="edit-actions">
+                        <div class="submit-controller">
+                          <button class="button js-form-submit form-submit" id="edit-submit-search" type="submit" data-drupal-selector="edit-submit-search" value="Search"><span class="submit-inner">Search</span>
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<!-- drop down nav -->
+<!-- taken out as confusing naviagtion -->
+
+            <nav class="service-nav-mobile show-from-md ie-is-hidden">
+              <div class="js-mobile-menu-container is-hidden">
+                <nav class="navigation">
+                  <ul class="menu depth-0">
+                    <li class="menu-item menu-item--expanded menu-item--active-trail"><a class="link-level-0 is-active" href="" data-drupal-link-system-path="node/6">Help paying NHS costs</a>
+                      <ul class="menu depth-1">
+                        <li class="menu-item"><a class="link-level-1" href="" data-drupal-link-system-path="node/485">Content page</a>
+                        </li>
+                        <li class="menu-item"><a class="link-level-1" href="" data-drupal-link-system-path="node/202">Continuing students 
+(non-medical/non-dental)</a>
+                        </li>
+                        <li class="menu-item"><a class="link-level-1" href="" data-drupal-link-system-path="node/125">New students (non-medical / 
+non-dental)</a>
+                        </li>
+                        <li class="menu-item"><a class="link-level-1" href="" data-drupal-link-system-path="node/484">the third child page</a>
+                        </li>
+                        <li class="menu-item"><a class="link-level-1" href="" data-drupal-link-system-path="node/214">Guidence videos</a>
+                        </li>
+                        <li class="menu-item"><a class="link-level-1" href="" data-drupal-link-system-path="node/213">Student Guides</a>
+                        </li>
+                        <li class="menu-item"><a class="link-level-1" href="" data-drupal-link-system-path="node/215">Student forms</a>
+                        </li>
+                        <li class="menu-item"><a class="link-level-1" href="" data-drupal-link-system-path="node/46">Student news</a>
+                        </li>
+                      </ul>
+                      <li class="menu-item"><a class="link-level-0" href="" data-drupal-link-system-path="node/13">Social work students</a>
+                        <ul class="menu depth-1"></ul>
+                      </li>
+                  </ul>
+                </nav>
+              </div>
+              <button name="toggleMobilenav" class="menu-toggle js-menu-toggle" type="button">Help paying NHS costs</button>
+            </nav>
+      </div>
+    </div>
+
+
+<div class="content-row">
+        <div class="container tablet-mb-65 mb-25">
+          <div class="row mt--15">
+            <div class="column is-block lg-is-8 is-12 ie-is-8" >
+<!--               <div title="Check your eligibility" class="content_page" id="block-pagetitle" url="nhsbsabeta.redweb.network%2Fsocial-work-bursary%2Fcheck-your-eligibility" data-block-plugin-id="page_title_block">
+                <h1 class="js-quickedit-page-title">Help to pay NHS costs</h1>
+              </div> -->
+              <article role="article" about="/social-work-bursary/check-your-eligibility" data-history-node-id="595">
+                <div>
+                  <div class="field field--name-body field--type-text-with-summary field--label-hidden field__item">
+                  <p>Most NHS treatment is free, but there are a number of things you may have to pay for. This information tells you what help is available, and whether you might get it.</p>
+
+                  <h3><strong>NHS costs for which you can get help</strong></h3>
+                  <p>You may be able to get help with:-
+                    <ul class="list-bullet">
+                      <li>prescription charges
+                      <li>NHS dental charges, including check-ups</li>
+                      <li>sight tests</li>
+                      <li>vouchers towards the cost of glasses and contact lenses</li>
+                      <li>travel costs to and from hospital for NHS treatment</li>
+                      <li>travel costs if travelling abroad for treatment</li>
+                      <li>wigs and fabric supports, for example, abdominal and spinal supports, and support tights.</li>
+                    </ul>
+                  </p>
+                  <BR>
+                                    <h3><strong>Getting the help you're entitled to</strong></h3>
+                  <p>You can get help for lots of different reasons based on your personal circumstances.<br>
+                  Each reason in which you get help are explained in more detail in the sections on the right, or you can use our checker to help you find out if you get help.</p>
+
+<div class="row" style="margin-left:0">
+            <div class="col-sm-5" style="padding-left:0">
+            <a href="../b4/start" class="button button-secondary-cta">Can I get any help?</a>
+            </div>
+            <div class="col-sm-7 panel panel-border-narrow"">
+ <span>Use our questionaire tool for a quick check</span>
+  </div>
+           
+            </div>
+<br>
+<br>
+                  <div class="status-message undefined Warning">
+                    <h2 class="status-title">Penalty charges if you get help but can't prove you are eligible</h2>
+                    <p class="status-content">If you get help with health costs without showing any proof you are eligible, you could be asked for this proof later. If you can’t provide any, you may have to pay the original costs plus a <a href="">penalty charge</a>. </p>
+                  </div>
+                  <article class="embedded-entity">
+                  </article>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="column is-block is-normal lg-is-4 is-12 ie-is-4">
+            <div class="row is-direction-column">
+              <div class="column is-block is-normal is-12 ie-is-12 hide-from-md">
+                <nav class="breadcrumb sidebar-nav" role="navigation" aria-labelledby="system-breadcrumb">
+                  <h2 class="visually-hidden" id="system-breadcrumb">Breadcrumb</h2>
+                  <ul>
+                    <li class=" menu-item active menu-item--expanded level-0"><a href="">Help to pay NHS costs</a>
+                    </li>
+                    <li class="menu-item-child"><a href="content-children">Children, young people and students</a>
+                    </li>
+                    <li class="menu-item-child"><a href="">Aged 60 and over</a>
+                    </li>
+                    <li class="menu-item-child"><a href="">Getting benefits or tax credits</a>
+                    </li>
+                    <li class="menu-item-child"><a href="">Pregnant or given birth recently</a>
+                    </li>
+                    <li class="menu-item-child"><a href="">Long term illness</a>
+                    </li>
+                    <li class="menu-item-child"><a href="">Getting a war pension</a>
+                    </li>
+                    <li class="menu-item-child"><a href="">People with little money to live off</a>
+                    </li>
+                    <li class="menu-item-child"><a href="">Spreading the cost of prescriptions</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+
+              <div class="column is-normal is-12 ie-is-12">
+                <div class="social-links-block has-3-items"><span>Tweet us:</span>
+                  <ul class="social-list">
+                    <li><a title="Go to link to twitter" href="" target="_blank">link to twitter</a>
+                    </li>
+                    <li><a title="Go to link to Facebook" href="" target="_blank">link to Facebook</a>
+                    </li>
+                    <li><a title="Go to link to instagram" href="" target="_blank">link to instagram</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="column is-normal is-12 ie-is-12">
+                <div class="question-block">
+                  <h3>Got a question?</h3>
+                  <ul class="link-list">
+                    <li><a title="Go to First question" href="">Visit our FAQ's</a>
+
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="site-back-to-top-wrapper show-from-md ie-is-hidden"><a class="site-back-to-top" href="https://nhsbsabeta.redweb.network/nhs-bursary-students#top">Back to 
+top</a>
+    </div>
+  </main>
+  <footer class="main_footer" id="main-footer">
+    <div class="footer-wrap">
+      <div class="container">
+        <div class="footer-row footer-primary-row">
+          <div class="header-supporting">
+            <nav id="block-footerprimary" role="navigation" aria-labelledby="block-footerprimary-menu" data-block-plugin-id="system_menu_block:footer">
+              <h2 class="visually-hidden" id="block-footerprimary-menu">footer primary </h2>
+              <ul class="primary-footer-nav">
+                <li class="primary-footer-nav-item"><a href="" data-drupal-link-system-path="<front>">NHSBSA Home</a>
+                </li>
+                <li class="primary-footer-nav-item"><a href="" data-drupal-link-system-path="<front>">Accessibility </a>
+                </li>
+                <li class="primary-footer-nav-item"><a href="" data-drupal-link-system-path="sitemap">Sitemap</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="footer-logo site-logo">
+            <a title="Home" class="site-logo-link" href=""><img width="329" height="71" class="site-logo-image" alt="NHS Buisness Services authority" src="page2_files/NHSBSa.gif"> </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-row footer-secondary-row">
+        <div class="container">
+          <div class="header-supporting">
+            <nav id="block-footersecondary" role="navigation" aria-labelledby="block-footersecondary-menu" data-block-plugin-id="system_menu_block:footer-secondary">
+              <h2 class="visually-hidden" id="block-footersecondary-menu">footer secondary</h2>
+              <ul class="secondary-footer-nav">
+                <li class="secondary-footer-nav-item"><a href="https://nhsbsabeta.redweb.network/demo-content" data-drupal-link-system-path="node/319">Secondary</a> </li>
+                <li class="secondary-footer-nav-item"><a href="https://nhsbsabeta.redweb.network/" data-drupal-link-system-path="<front>">Terms &amp; Conditions</a>
+                </li>
+                <li class="secondary-footer-nav-item"><a href="https://nhsbsabeta.redweb.network/" data-drupal-link-system-path="<front>">privacy policy &amp; Cookies</a>
+                </li>
+                <li class="secondary-footer-nav-item"><a href="https://nhsbsabeta.redweb.network/" data-drupal-link-system-path="<front>">Data protection</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+
+<script src="public/javascripts/a.js" defer="defer" type="text/javascript"></script>
+         
+
+<script src="/public/javascripts/vendor/jquery-1.11.2.min.js"></script>
+<script src="/public/javascripts/vendor/jquery-ui.min.js"></script>
+<script src="/public/javascripts/vendor/jquery.select-to-autocomplete.js"></script>
+<script src="/public/javascripts/vendor/jquery.sticky-kit.min.js"></script>
+<script src="/public/javascripts/vendor/jquery.easing.1.3.js"></script>
+<script src="/public/javascripts/vendor/jquery.transit.js"></script>
+<script src="/public/javascripts/toggle.js"></script>
+<script src="/public/javascripts/details.polyfill.js"></script>
+<script src="/public/javascripts/cards.js"></script>
+<script src="/public/javascripts/modules.js"></script>
+<script src="/public/javascripts/application.js"></script>
+ <script src="/public/javascripts/modules/accordion-with-descriptions.js"></script>
+
+<script>
+ $(function() {
+
+   $(".sticky").stick_in_parent();
+
+ });
+</script>
+
+<script src="public/javascripts/EQCSS.min.js" defer="defer" type="text/javascript"></script>
+<script src="https://use.fontawesome.com/df8872eeb0.js"></script>
+
+
+{% endblock %}
+
+

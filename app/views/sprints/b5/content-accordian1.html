@@ -1,0 +1,311 @@
+﻿{% extends 'templates/nhsbsa_website_template.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block content %}
+
+<style>
+a.service-name {
+    text-decoration: none;
+        color: #555;
+    line-height: 1.8;
+  }
+a.service-name a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+
+<!-- Stylesheet includes -->     
+<link rel="stylesheet" type="text/css" href="/public/stylesheets/redweb_a.css">
+<link rel="stylesheet" href="/public/stylesheets/font-awesome.css">
+<link rel="stylesheet" href="/public/stylesheets/accordian.css">
+    
+
+<div class="page">
+<header class="main_header" id="main-header">
+<div class="container">
+<div class="header-row">
+<div class="header-logo site-logo">
+<a title="Home" class="site-logo-link" href="page1" rel="home">
+<img width="356" height="77" class="site-logo-image" alt="NHS Buisness Services authority" src="/public/images/bsa-logo.svg">       
+<span class="sr-only">NHSBSa</span>   
+</a>
+</div>
+</div>
+</div>
+</header>
+
+<main class="main_body accordion-with-descriptions-03" id="main-content" role="main" tabindex="-1">
+<div class="content-header sm-mt-40 mt-20">
+<div class="container">
+<div class="row is-just-between sm-is-direction-row is-direction-column ie-text-right">
+<div class="column sm-is-none is-auto ie-is-inline-block ie-is-8 ie-text-left">
+
+
+<div class="service-name-wrapper"><a class="service-name" href="page3"> Help with NHS costs</a>     
+</div>
+<button class="js-search-toggle search-toggle show-from-sm ie-is-hidden">
+<span class="sr-only">Toggle search</span>                
+</button>               
+</div>
+
+<div class="column sm-is-none is-auto search-column ie-is-inline-block ie-is-4">
+<div class="js-search-controller search-controller">
+<div class="js-search-container">
+<div title="Welcome" class="views-exposed-form bef-exposed-form homepage" id="block-search-block" url="" data-block-plugin-id="views_exposed_filter_block:search-search_block" data-drupal-selector="views-exposed-form-search-search-block">
+<div class="search-block-form searchBar">
+<form id="views-exposed-form-search-search-block" action="/search" method="get" accept-charset="UTF-8" block="block-search-block">
+<div class="js-form-item form-item js-form-type-textfield form-item-aggregated-field js-form-item-aggregated-field">
+<label for="edit-aggregated-field">Search</label>
+<input name="aggregated_field" class="form-text" id="edit-aggregated-field" type="text" size="30" maxlength="128" placeholder="Search the NHSBSa website" value="" data-drupal-selector="edit-aggregated-field">
+</div>
+
+<div class="form-actions js-form-wrapper form-wrapper" id="edit-actions" data-drupal-selector="edit-actions">
+<div class="submit-controller">
+<button class="button js-form-submit form-submit" id="edit-submit-search" type="submit" data-drupal-selector="edit-submit-search" value="Search">
+<span class="submit-inner">Search</span>
+</button> 
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="contextual-tabs"></div>
+<div class="content-row">
+<div class="container tablet-mb-65 mb-25">
+<div class="row mt--15">
+<div class="column is-block lg-is-8 is-12 ie-is-8">
+<div title="Check your eligibility" class="content_page" id="block-pagetitle" url="" data-block-plugin-id="page_title_block">
+<h1 class="js-quickedit-page-title">Check your eligibility</h1></div><article role="article" about="/social-work-bursary/check-your-eligibility" data-history-node-id="595">
+<div>
+<div class="field field--name-body field--type-text-with-summary field--label-hidden field__item">
+<p>Your university or college will decide which students should be on a 
+shortlist (or capping list) for a bursary.</p>
+<p>You’ll only be assessed for a bursary if you‘re on the capping list and meet 
+the eligibility criteria.</p>
+<p><strong>To apply, you need to meet eligibility criteria to show 
+you:</strong></p>
+<ul>
+  <li>live in England on the day your course starts (and normally live 
+  there)</li>
+  <li>have lived in the UK, the channel islands or the isle of man, for the 
+  three years before the start of your course</li>
+  <li>are studying on an approved course</li></ul>
+<p>&nbsp;</p>
+<p><strong>You can’t apply if you: </strong></p>
+<ul>
+  <li>are on an employment based course</li>
+  <li>are studying on a joint discipline course (<U>apply for an NHS Bursary 
+  here</U>)</li>
+  <li>already have a higher education social work qualification</li></ul>
+<p>&nbsp;</p>
+<H3><strong>Eligibility criteria </strong></H3>
+<p>You must meet all of the eligibility criteria to be considered for a 
+bursary.</p>
+
+
+
+<!--      <div class="test-case">-->
+
+        <div class="subsections js" data-module="accordion-with-descriptions">
+
+          <div class="subsection-controls">
+
+          <a href="#" class="js-open-close" aria-expanded="false" aria-controls="subsection_content_0 subsection_content_1 subsection_content_2"></a></div>
+          <div class="subsection-wrapper">
+
+            <div class="subsection">
+              <div class="subsection__header">
+              <span class="subsection__icon"></span>
+                <h2 class="subsection__title"><a class="subsection__link" aria-expanded="false" aria-controls="subsection_content_0" href="#">
+                  Eligible courses
+                </a></h2>
+<!--              <p class="subsection__description">
+                  Names, addresses, telephone numbers, start relationship
+                </p> -->
+              </div>
+
+              <div class="subsection__content js-hide" id="subsection_content_0">
+                <ul class="subsection__items">
+                  <li><a href="../sprint0/change-of-circumstances/details/name/change_your_name">Change your name</a></li>
+                  <li><a href="../sprint0/change-of-circumstances/details/address/change_your_address">Change your address</a></li>
+                  <li><a href="../sprint0/change-of-circumstances/details/telephone/change_your_telephone">Change your telephone number</a></li>
+                  <li><a href="../../renewals15/change-of-circumstances/personal-and-partner-details/relationship-changes_single">Started a relationship</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection__header">
+                  <h2 class="subsection__title"><a class="subsection__link" aria-expanded="false" aria-controls="subsection_content_1" href="#">
+                    Work and hours
+                  </a></h2>
+<!--                   <p class="subsection__description">
+Started a job, ended a job, change the number of hours worked in a week
+                  </p> -->
+              <span class="subsection__icon"></span></div>
+
+              <div class="subsection__content js-hide" id="subsection_content_1">
+                <ul class="subsection__items">
+                  <li><a href="">Started a job</a></li>
+                  <li><a href="">Ended a job</a></li>
+                  <li><a href="">Started self-employed work</a></li>
+                  <li><a href="">Change number of hours worked in a week</a></li>
+                </ul>
+              </div>
+            </div>
+            </div>
+            </div>
+
+
+</article>
+<div title="Check your eligibility" class="content_page" id="block-contentsubchildrenblock" 
+url="nhsbsabeta.redweb.network%2Fsocial-work-bursary%2Fcheck-your-eligibility" 
+data-block-plugin-id="content_sub_children_block"></div>
+</div>
+<div class="column is-block is-normal lg-is-4 is-12 ie-is-4">
+<div class="row is-direction-column">
+<div class="column is-block is-normal is-12 ie-is-12 hide-from-md"><nav class="breadcrumb sidebar-nav" 
+role="navigation" aria-labelledby="system-breadcrumb">
+<H2 class="visually-hidden" id="system-breadcrumb">Breadcrumb</H2>
+<ul>
+  <li class="menu-item level-0 menu-item--expanded"><a href="">Social 
+  work bursary</a></li>
+  <li class="menu-item active"><a href="">Check 
+  your eligibility</a></li>
+  <li class="menu-item"><a href="">apply 
+  for an undergraduate bursary</a></li>
+  <li class="menu-item"><a href="">apply 
+  for a postgraduate bursary</a></li>
+  <li class="menu-item"><a href="">Manage 
+  your social work bursary</a></li>
+  <li class="menu-item"><a href="">Contact 
+  social work bursaries</a></li></ul></nav></div></div></div></div></div></div>
+<div title="Check your eligibility" class="content_page" id="block-relatedblock" 
+url="nhsbsabeta.redweb.network%2Fsocial-work-bursary%2Fcheck-your-eligibility" 
+data-block-plugin-id="related_block"></div>
+<div title="Check your eligibility" class="content_page" id="block-relatedblock-2" url="" 
+data-block-plugin-id="related_block"></div>
+<div class="service-area-footer bg-white mr--15 ml--15 pl-20 pr-20 tablet-pt-50 pt-15 tablet-pb-50 pb-15">
+<div class="container tablet-pb-60 pb-25">
+<div block="block-service-footer-blocks">
+<div class="row view view-service-footer-v1 view-id-service_footer_v1 view-display-id-block_1 js-view-dom-id-730e935ba271773c5fa5cc00e3c42e2c07019e0ddef602f0a5734ab87acc36c1">
+<div class="column tablet-is-4 sm-is-6 is-12 ie-is-4">
+<div class="servicefooterBlock">
+<H3 class="servicefooterBlock-title"><a href="">NHSBSa 
+website public beta</a></H3>
+
+<p>If you have any feedback or queries regarding our new website, please contact 
+nhsbsa.digital@nhs.net</p><a class="servicefooterBlock-link" href="">Read 
+more</a>    </div></div></div></div></div></div>
+<div class="site-back-to-top-wrapper show-from-md ie-is-hidden"><a class="site-back-to-top" 
+href="https://nhsbsabeta.redweb.network/social-work-bursary/check-your-eligibility#top">Back 
+to top</a></div>
+</main>
+
+
+<footer class="main_footer" id="main-footer">
+<div class="footer-wrap">
+<div class="container">
+<div class="footer-row footer-primary-row">
+<div class="header-supporting"><nav title="Welcome" class="homepage" id="block-footerprimary" 
+role="navigation" aria-labelledby="block-footerprimary-menu" url="" 
+data-block-plugin-id="system_menu_block:footer">
+<H2 class="visually-hidden" id="block-footerprimary-menu">footer primary </H2>
+<ul class="primary-footer-nav">
+  <li class="primary-footer-nav-item"><a href="" 
+  data-drupal-link-system-path="<front>">NHSBSa Home</a>               </li>
+  <li class="primary-footer-nav-item"><a href="" 
+  data-drupal-link-system-path="<front>">accessibility </a>               </li>
+  <li class="primary-footer-nav-item"><a href="" 
+  data-drupal-link-system-path="sitemap">Sitemap</a>               
+</li></ul></nav></div>
+
+<div class="footer-logo site-logo"><a title="Home" class="site-logo-link" href=""><img 
+width="329" height="71" class="site-logo-image" alt="NHS Buisness Services authority" src="/public/images/bsa-logo.svg">               </a>             
+</div></div></div>
+
+
+<div class="footer-row footer-secondary-row">
+<div class="container">
+<div class="header-supporting"><nav title="Welcome" class="homepage" id="block-footersecondary" 
+role="navigation" aria-labelledby="block-footersecondary-menu" url="" 
+data-block-plugin-id="system_menu_block:footer-secondary">
+<H2 class="visually-hidden" id="block-footersecondary-menu">footer 
+secondary</H2>
+
+
+<ul class="secondary-footer-nav">
+  <li class="secondary-footer-nav-item"><a href="" 
+  data-drupal-link-system-path="node/319">Secondary</a>               </li>
+  <li class="secondary-footer-nav-item"><a href="" 
+  data-drupal-link-system-path="<front>">Terms &amp; Conditions</a>              
+   </li>
+  <li class="secondary-footer-nav-item"><a href="" 
+  data-drupal-link-system-path="<front>">privacy policy &amp; Cookies</a>        
+         </li>
+  <li class="secondary-footer-nav-item"><a href="" 
+  data-drupal-link-system-path="<front>">Data protection</a>               
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+
+
+<script>
+        // Toggle class indicating that JS is enabled; used for styling purpose.
+        document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'') + ' js';
+    </script>
+     <NOscript>        &lt;div class="no-script alert"&gt;            
+&lt;p&gt;You currently have &lt;strong&gt;Javascript disabled&lt;/strong&gt; in 
+your web browser, please &lt;strong&gt;enable Javascript&lt;/strong&gt; to view 
+our website as intended.&lt;/p&gt;            &lt;p&gt;&lt;a 
+href="http://www.enable-javascript.com/"&gt;Here are the instructions of how to 
+enable Javascript in your browser.&lt;/a&gt;&lt;/p&gt;        &lt;/div&gt;     
+</NOscript>         
+<script type="text/javascript">
+        var isLoggedIn =  false ;
+    </script>
+<script src="public/javascripts/a.js" defer="defer" type="text/javascript"></script>
+         
+
+<script src="/public/javascripts/vendor/jquery-1.11.2.min.js"></script>
+<script src="/public/javascripts/vendor/jquery-ui.min.js"></script>
+<script src="/public/javascripts/vendor/jquery.select-to-autocomplete.js"></script>
+<script src="/public/javascripts/vendor/jquery.sticky-kit.min.js"></script>
+<script src="/public/javascripts/vendor/jquery.easing.1.3.js"></script>
+<script src="/public/javascripts/vendor/jquery.transit.js"></script>
+<script src="/public/javascripts/toggle.js"></script>
+<script src="/public/javascripts/details.polyfill.js"></script>
+<script src="/public/javascripts/cards.js"></script>
+<script src="/public/javascripts/modules.js"></script>
+<script src="/public/javascripts/application.js"></script>
+ <script src="/public/javascripts/modules/accordion-with-descriptions.js"></script>
+
+<script>
+ $(function() {
+
+   $(".sticky").stick_in_parent();
+
+ });
+</script>
+
+<script src="public/javascripts/EQCSS.min.js" defer="defer" type="text/javascript"></script>
+<script src="https://use.fontawesome.com/df8872eeb0.js"></script>
+
+
+{% endblock %}
+
+
+

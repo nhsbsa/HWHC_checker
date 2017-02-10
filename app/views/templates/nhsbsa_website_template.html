@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+    <title>{% block pageTitle %}NHS.UK{% endblock %}</title>
+
+    <link href="{{assetPath}}stylesheets/govuk-template.css?0.12.0" media="screen" rel="stylesheet" type="text/css" />
+    <link href="{{assetPath}}stylesheets/nhs_fonts.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAF0lEQVRIx2NgGAWjYBSMglEwCkbBSAcACBAAAeaR9cIAAAAASUVORK5CYII=" rel="icon" type="image/x-icon">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% block head %}{% endblock %}
+  </head>
+
+  <body class="{% block bodyClasses %}{% endblock %}">
+    <script type="text/javascript">document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+
+
+    <div id="skiplink-container">
+      <div>
+        <a href="#content" class="skiplink">Skip to main content</a>
+      </div>
+    </div>
+
+<!--
+    <header role="banner" id="global-header">
+      <div class="header-container">
+
+        <a href="{% block logotypeLink %}/{% endblock %}" class="header-logo" title="{% block logotypeTitle %}Go to the NHS.UK homepage{% endblock %}">
+          <img src="{{assetPath}}images/nhs-rev-logotype.svg" alt="">
+        </a>
+
+        {% block header-controls %}{% endblock %}
+
+      </div>
+    </header>
+-->
+    <!--end header-->
+
+
+    {% block afterHeader %}{% endblock %}
+
+    {% block content %}{% endblock %}
+
+
+    <div id="global-app-error" class="app-error hidden"></div>
+
+    {% block bodyEnd %}{% endblock %}
+  </body>
+</html>

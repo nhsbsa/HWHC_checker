@@ -1,0 +1,85 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+
+{% block pageTitle %}NHS.UK prototyping kit{% endblock %}
+
+{% block content %}
+
+<style>
+
+element 
+
+.print-link {
+	text-align:left;
+	margin:2em 0 0 0
+}
+.print-link a,.print-link a:link,.print-link a:visited {
+	background:url(/public/images/icon-file-download.png) no-repeat 0% 50%;
+	padding:0.5em 0 0.5em 28px;
+	zoom:1
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+	.print-link a,.print-link a:link,.print-link a:visited {
+		background-image:url(/public/images/icon-file-download.png);
+		background-size:16px 18px
+	}
+}
+@media (max-width: 640px) {
+	.print-link {
+		width:60%
+	}
+	.print-link a,.print-link a:link,.print-link a:visited {
+		padding-bottom:4px
+	}
+}
+}
+</style>
+
+<main id="content" role="main">
+  <a class="back-link" href="index">Back </a>
+  <h1 class="heading-xlarge">Help paying for NHS costs prototype</h1>
+
+  <h2 class="heading-large">Beta sprint 6</h2>
+  <p>31 January 2017 to 13 February</p>
+
+    <h3>
+    <span class="strong">Eligibity checker within NHSBSA website</span> </h3>
+
+    <p><a class="" href="/sprints/b4/start" id="next">Start from Google</a></p>
+    <br>
+    <h4>NHSBSA website prototype templates</h4>
+    <div class="print-link">
+    <a rel="nofollow" href="/public/redweb.pdf" target="_blank">NHSBSA website document</a>
+  </div>
+  <br>
+    <p><a class="" href="/sprints/b5/homepage" id="next">Homepage</a></p>
+    <p><a class="" href="/sprints/b5/service" id="next">Service page</a></p>
+    <p><a class="" href="/sprints/b5/section" id="next">Section page- template</a></p>
+    <p><a class="" href="/sprints/b5/section" id="next">Section page- proposed changes</a></p>
+    <p><a class="" href="/sprints/b5/service" id="next">Content page</a></p>
+    <p><a class="" href="/sprints/b5/service" id="next">Content page- with accordian</a></p>
+    p><a class="" href="/sprints/b5/service" id="next">Content page- with jump link</a></p>
+        <br>
+
+         <div class="grid-row">
+  <div class="column-two-thirds">
+  <h3><span class="strong">Key findings: </span> </h3>
+
+  <ul class="list list-bullet">
+    <li>Didn't read the NHS BSA content</li>
+    <li>Didn't understand the 'tax credits exemption card' question</li>
+    <li>Searched via benefit type for Universal credits only</li>
+    <li>Didn't understand the difference between income based vs contribution based benefits</li>
+  </ul>
+  <br>
+    <h3><span class="strong">Next research: </span> </h3>
+
+  <ul class="list list-bullet">
+    <li>Device testing</li>
+    <li>Content with mothers around loss of a baby</li>
+  </ul>
+</div>
+ </div>
+
+</main>
+
+{% endblock %}

@@ -1,0 +1,219 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+<!--
+{% block afterHeader %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
+{% endblock %}
+-->
+
+{% block content %}
+
+  <link rel="stylesheet" href="/public/stylesheets/accordian.css">
+
+
+<main class="accordion-with-descriptions-03" id="content" role="main" tabindex="-1">
+
+
+
+<div class="grid-row">
+
+<div class="column-two-thirds">
+
+<!--      <div class="test-case">-->
+
+        <div class="subsections js" data-module="accordion-with-descriptions">
+
+          <div class="subsection-controls">
+
+          <a href="#" class="js-open-close" aria-expanded="false" aria-controls="subsection_content_0 subsection_content_1 subsection_content_2"></a></div>
+          <div class="subsection-wrapper">
+
+            <div class="subsection">
+              <div class="subsection__header">
+                <h2 class="subsection__title"><a class="subsection__link" aria-expanded="false" aria-controls="subsection_content_0" href="#">
+                  Your details
+                </a></h2>
+             <!-- <p class="subsection__description">
+                  Names, addresses, telephone numbers, start relationship
+                </p> -->
+              <span class="subsection__icon"></span></div>
+
+              <div class="subsection__content js-hide" id="subsection_content_0">
+                <ul class="subsection__items">
+                  <li><a href="../sprint0/change-of-circumstances/details/name/change_your_name">Change your name</a></li>
+                  <li><a href="../sprint0/change-of-circumstances/details/address/change_your_address">Change your address</a></li>
+                  <li><a href="../sprint0/change-of-circumstances/details/telephone/change_your_telephone">Change your telephone number</a></li>
+                  <li><a href="../../renewals15/change-of-circumstances/personal-and-partner-details/relationship-changes_single">Started a relationship</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection__header">
+                  <h2 class="subsection__title"><a class="subsection__link" aria-expanded="false" aria-controls="subsection_content_1" href="#">
+                    Work and hours
+                  </a></h2>
+                  <p class="subsection__description">
+Started a job, ended a job, change the number of hours worked in a week
+                  </p>
+              <span class="subsection__icon"></span></div>
+
+              <div class="subsection__content js-hide" id="subsection_content_1">
+                <ul class="subsection__items">
+                  <li><a href="../../renewals15/change-of-circumstances/work-and-hours/started-a-job-employed">Started a job</a></li>
+                  <li><a href="../../renewals15/change-of-circumstances/work-and-hours/job-has-stopped">Ended a job</a></li>
+                  <li><a href="../../renewals15/change-of-circumstances/work-and-hours/started-a-job-self-employed">Started self-employed work</a></li>
+                  <!--<li><a href="../../renewals15/change-of-circumstances/work-and-hours/job-has-stopped">Ended self-employed work</a></li>-->
+                  <li><a href="../sprint0/change-of-circumstances/work/change_number_of_hours">Change number of hours worked in a week</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection__header">
+                <h2 class="subsection__title"><a class="subsection__link" aria-expanded="false" aria-controls="subsection_content_2" href="#">
+                  Benefits
+                </a></h2>
+                <p class="subsection__description">
+Started or stopped receiving a benefit
+                </p>
+              <span class="subsection__icon"></span></div>
+
+              <div class="subsection__content js-hide" id="subsection_content_2">
+                <ul class="subsection__items">
+                  <li><a href="../../renewals15/change-of-circumstances/other-changes/other-started-benefits">Started receiving a benefit</a></li>
+                  <li><a href="../../renewals15/change-of-circumstances/other-changes/other-stopped-benefits">Stopped receiving a benefit
+</a></li>
+<!--                  <li><a href="#">Subsection 3 - link 3</a></li>-->
+                </ul>
+              </div>
+            </div>
+
+                        <div class="subsection">
+              <div class="subsection__header">
+                <h2 class="subsection__title"><a class="subsection__link" aria-expanded="false" aria-controls="subsection_content_2" href="#">
+                  Health
+                </a></h2>
+                <p class="subsection__description">
+Long-term illness or hospital stay, certified severely sight impaired or blind
+                </p>
+              <span class="subsection__icon"></span></div>
+
+              <div class="subsection__content js-hide" id="subsection_content_2">
+                <ul class="subsection__items">
+                  <li><a href="../../renewals15/change-of-circumstances/other-changes/other-illness"><span class="visuallyhidden">Tell us you were </span>Ill or in hospital for more than 28 weeks</a></li>
+                  <li><a href="../../renewals15/change-of-circumstances/other-changes/other-blind"><span class="visuallyhidden">Tell us you are </span>Certified as severely sight impaired or blind</a></li>
+                </ul>
+              </div>
+            </div>
+
+                         <div class="subsection">
+              <div class="subsection__header">
+                <h2 class="subsection__title"><a class="subsection__link" aria-expanded="false" aria-controls="subsection_content_2" href="#">
+                  Children
+                </a></h2>
+                <p class="subsection__description">
+Add children, remove children, update disability status, certified as severely sight impaired or blind, started or ended education or training, registered or left careers service
+                </p>
+              <span class="subsection__icon"></span></div>
+
+              <div class="subsection__content js-hide" id="subsection_content_2">
+                <h3 class="heading-small">Children on your claim</h3>
+                 <ul class="subsection__items">
+                  <li><a href="../../renewals15/change-of-circumstances/children/add-a-child">Add a child</a></li>
+                  <li><a href="../../renewals15/change-of-circumstances/children/remove-child">Remove a child</a></li>
+                  <li><a href="../../renewals15/change-of-circumstances/children/change-name">Change a child&rsquo;s name</a></li>
+                  <li><a href="../../renewals15/change-of-circumstances/children/correct-date-of-birth">Correct a child&rsquo;s date of birth</a></li>
+                  <li><a href="">Change a child's disability status</a></li>
+                  <li><a href="../../renewals15/change-of-circumstances/other-changes/other-blind-child.html"><span class="visuallyhidden">Tell us a </span>Child is certified as severely sight impaired or blind</a></li>
+                </ul>
+                                <h3 class="heading-small">Children who have left or are about to leave school, sixth form, college or training</h3>
+                 <ul class="subsection__items">
+                  <li><a href="../../renewals15/change-of-circumstances/children/child-is-over-16">Child has started or ended education or training</a></li>
+                  <li><a href="../../renewals15/change-of-circumstances/children/education">Child is continuing with education</a></li>
+                     <li><a href="../../renewals15/change-of-circumstances/children/training">Child is continuing with training</a></li>
+                  <li><a href="../../renewals15/change-of-circumstances/children/connexions-changes">Child has started or left careers service or Connexions</a></li>
+                </ul>
+              </div>
+            </div>
+
+                                               <div class="subsection">
+              <div class="subsection__header">
+                <h2 class="subsection__title"><a class="subsection__link" aria-expanded="false" aria-controls="subsection_content_2" href="#">
+                  Childcare
+                </a></h2>
+                <p class="subsection__description">Update childcare costs, add or remove childcare providers
+
+                </p>
+              <span class="subsection__icon"></span></div>
+
+              <div class="subsection__content js-hide" id="subsection_content_2">
+                <ul class="subsection__items">
+                  <li><a href="../sprint0/change-of-circumstances/childcare/childcare-costs-changed">Change weekly childcare costs</a></li>
+
+                </ul>
+              </div>
+            </div>
+
+                        <div class="subsection">
+              <div class="subsection__header">
+                <h2 class="subsection__title"><a class="subsection__link" aria-expanded="false" aria-controls="subsection_content_2" href="#">
+                  Bank or building society details
+                </a></h2>
+                <p class="subsection__description">
+                  Change where your tax credits payments are paid
+
+                </p>
+              <span class="subsection__icon"></span></div>
+
+              <div class="subsection__content js-hide" id="subsection_content_2">
+                <ul class="subsection__items">
+                  <li><a href="../../renewals15/change-of-circumstances/bank-details/change-details">Change bank or building society details</a></li>
+                </ul>
+              </div>
+            </div>
+                                    <div class="subsection">
+              <div class="subsection__header">
+                <h2 class="subsection__title"><a class="subsection__link" aria-expanded="false" aria-controls="subsection_content_2" href="#">
+                  Other changes
+                </a></h2>
+                <p class="subsection__description">
+                 Someone on your claim has left the UK, went overseas for 8 weeks or more, gone to prison, or died
+                </p>
+              <span class="subsection__icon"></span></div>
+
+              <div class="subsection__content js-hide" id="subsection_content_2">
+                <ul class="subsection__items">
+                  <li><a href="../../renewals15/change-of-circumstances/other-changes/other-overseas-joint"><span class="visuallyhidden">Tell us you </span>Live overseas or went abroad for 8 weeks or more
+</a></li>
+                  <li><a href="../../renewals15/change-of-circumstances/other-changes/other-prison-joint">Sent to prison</a></li>
+                  <li><a href="../../renewals15/change-of-circumstances/report-a-death/change-details">Someone on your claim has died</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+<!--      </div>-->
+
+    </div>
+</div>
+                <br>
+     <p><a href="summary_15_single_no_change" class="">I have finished all my changes</a></p>
+</main>
+
+
+
+  
+
+
+
+
+{% endblock %}
+
+
+
+
+
+

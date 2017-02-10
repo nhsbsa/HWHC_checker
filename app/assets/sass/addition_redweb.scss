@@ -1,0 +1,146 @@
+.form-hint-list-item {
+  margin:0 0 0.6em 0;
+  display:table
+}
+
+ul.form-hint-list {
+  padding-left:14px;
+}
+
+.form-hint-list-item__indicator {
+  vertical-align:middle;
+  margin-right:.26316em;
+  display:inline-block;
+  width:20px;
+  height:20px;
+  background-position:center center;
+  background-repeat:no-repeat;
+  background-image:url("../images/bullet-icon.svg")
+}
+
+.form-hint-list-item--valid .form-hint-list-item__indicator {
+  background-image:url("/public/images/tick-green.svg")
+}
+    .form-hint-list-item--false {
+  color:black
+}
+.form-hint-list-item--false .form-hint-list-item__indicator {
+  background-image:url("/public/images/cross-red.svg")
+}
+.form-hint-list-item__primary {
+  display:table-cell;
+    padding-right: 0.25em;
+}
+.button-secondary-cta {
+ background-color: #0072C6;
+border-color: #002F87;
+
+}
+ 
+.button-secondary-cta:link, .button-secondary-cta:hover, .button-secondary-cta:focus, .button-secondary-cta:visited {
+color: #fff;
+background-color: #0072C6;
+
+}
+
+.appointment-option .button-secondary-cta {
+ font-size: 1.6rem;
+}
+ 
+ @media screen and (min-width: 40em) {
+.appointment-option .button-secondary-cta {
+font-size: 1.3333333333rem;
+}
+}
+
+
+a.service-name {
+    text-decoration: none;
+        color: #555;
+    line-height: 1.8;
+  }
+a.service-name a:hover {
+    text-decoration: underline;
+  }
+  .column{
+    padding-top: 0px;
+  }
+  .content-block{
+    margin-top: 1em;
+  }
+
+
+
+.button {
+  display: -moz-inline-stack;
+  display: inline-block;
+  width: 100%;
+  height: 4rem;
+  line-height: 4rem;
+  padding: 0 2rem;
+  border: 0;
+  color: #fff;
+  background-color: #006647;
+  cursor: pointer;
+  border: 3px solid #003300;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-appearance: none;
+  /* to be fixed */
+  text-decoration: none !important;
+}
+
+.button:link, .button:hover, .button:focus, .button:visited {
+  color: #fff;
+  background-color: #006647;
+}
+
+@media (min-width: 641px) {
+  .button {
+    width: auto;
+  }
+}
+
+.button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+.button:focus {
+  outline: 3px solid #FFED00;
+}
+
+.button-secondary-cta {
+  background-color: #0072C6;
+    border-color: #002F87;
+    border-width: 2px;
+    color: #fff;
+    height: 4rem;
+    line-height: 3.4rem;
+    font-size: 18px;
+    font-weight: bold;
+    padding-right: 3.5rem;
+    background-image: url(/public/images/icon-button-start.svg);
+    background-repeat: no-repeat;
+    background-position: 97.5% 57.5%;
+}
+
+.button-secondary-cta:link, .button-secondary-cta:hover, .button-secondary-cta:focus, .button-secondary-cta:visited {
+  color: #fff;
+  background-color: #0072C6;
+}
+.panel-border-narrow {
+    border-left-width: 3px;
+    margin-left:1rem;
+}
+.panel {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    clear: both;
+    border-left-style: solid;
+    border-color: #bfc1c3;
+    padding: 1rem 0em 1rem 0.8rem;
+    
+}

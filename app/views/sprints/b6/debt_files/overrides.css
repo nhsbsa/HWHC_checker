@@ -1,0 +1,493 @@
+﻿/* Start summary page css */
+#row-total td{
+	font-weight:bold;
+
+}
+.row > div{
+padding-top:15px;
+}
+/*.row > div:first-child{
+padding-top:0px;
+}*/
+
+a.well{
+padding-top:8px;
+display:block;
+	height:90px;
+	min-width:99%;
+}
+
+.btn-edit{
+	margin-right:10px;
+}
+.amount{
+	text-align:right;
+}
+.totalrow td{
+	font-weight:bold !important;
+}
+table tr td{
+    vertical-align:top;
+    font-size:19px;
+}
+.actions .edit{
+    display:block;
+}
+.group-title > *:first-child{
+	font-weight:bold;
+}
+tr td.actions{
+	min-width:200px;
+	padding-bottom:0;
+}
+
+tr td.actions a.edit{
+	width:100px;
+}
+
+/* End summary page css */
+
+/* Start table dividers for divs */
+.tabledivide{
+	border-bottom:thin silver solid;
+}
+
+/* End table dividers for divs */
+
+.inner-block > .col-md-9{
+	padding-left:0;
+}
+#content .form-group legend{
+	border-bottom:0 transparent none;
+}
+h1.heading-large{
+	margin-bottom:30px;
+}
+#stepscontainer{
+    margin-left: 20px;
+    padding-left: 0;
+}
+#stepscontainer .row.setup-content,
+#stepscontainer .col-ms-12,
+#stepscontainer .doc-demo{
+    margin-left: 0;
+    margin-right: 0;
+}
+#stepscontainer .tab-pane{
+    background-color:#fff;
+}
+.beta-banner {
+  background-color: #f47738;
+  padding-bottom: 8px;
+  padding-top: 8px; }
+
+.beta-banner p {
+  color: #0B0C0C;
+  font-family: "nta",Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.25;
+  margin: 0;
+  text-transform: none; }
+
+.beta-banner strong {
+  font-weight: bold; }
+
+.beta-banner a, .beta-banner a:link, .beta-banner a:visited, .beta-banner a:active {
+  color: #0B0C0C; }
+
+.days-of-week .form-group .block-label {
+  /* need min width for large screens */ }
+
+table.date-period {
+  /* style tables foir time periods differently */ }
+
+ul.list-bullet {
+margin-bottom: 20px
+}
+
+form .panel-indent {
+margin-bottom: 30px
+}
+
+.form-group > .form-group, .form-group > fieldset > .form-group {
+margin-bottom: 0px
+}
+
+#benefits_options {
+margin-bottom: 15px
+}
+
+select {
+font-size: 19px;
+font-family: "nta",Arial,sans-serif
+}
+@media (max-width: 640px) {
+    select{
+      font-size: 16px} }
+
+
+ol.bulleted {
+  list-style-type: none; }
+  ol.bulleted li {
+    margin-bottom: 1em;
+    padding-left: 2.5em; }
+  ol.bulleted li:nth-child(1) {
+    background: url("/static/public/images/icons/icon-steps/icon-step-1.png") no-repeat 3px 5px; }
+  ol.bulleted li:nth-child(2) {
+    background: url("/static/public/images/icons/icon-steps/icon-step-2.png") no-repeat 3px 5px; }
+  ol.bulleted li:nth-child(3) {
+    background: url("/static/public/images/icons/icon-steps/icon-step-3.png") no-repeat 3px 5px; }
+
+.summary ul.benefit-item-list {
+  list-style: none; }
+
+.bolder {
+  font-weight: bold; }
+
+/*# sourceMappingURL=overrides.css.map */
+
+.input-email {
+	width: 70%;
+	}
+
+
+[class^="col-sm-"]{
+    display: table-cell;
+}
+
+main main {
+	word-break: break-word;
+}
+
+/* ============================== NEW OVERVIEW STYLE - START ============================== */
+
+.govuk-box-highlight.completed p, .govuk-box-highlight.completed p .button {
+	margin-bottom: 0;
+}
+
+.govuk-box-highlight.completed p span {
+	margin: 8px 10px 0 0;
+	display: inline-block;
+}
+
+#next .govuk-box-highlight.completed {
+	background-color: #28A197;
+}
+
+#loop .button {
+	margin-top: 25px;
+}
+
+.new-title-format h1.form-title.heading-xlarge /*#content h1*/ {
+	margin-bottom: 0;
+	font-weight: bold;
+}
+
+.new-title-format .heading-large.form-hint {
+	font-weight: normal;
+	margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+	.new-title-format .heading-large.form-hint {
+		margin-top: 0;
+	}
+}
+
+
+/* ============================== NEW OVERVIEW STYLE - END ============================== */
+
+/* ============================== NEW FORM OVERVIEW STYLE - START ============================== */
+
+select {
+  margin: 1px 10px 0 0;
+  border: 2px solid #6f777b;
+  border-radius: 0;
+  background: transparent;
+  padding: 2px 35px 2px 2px;
+  font-size: 16px;
+  height: 35px;
+  clear: left;
+  float: left;
+  font-weight: normal !important;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: url(../images/svgs/arrow-down.svg) 96% / 20px no-repeat #fff;
+	font-weight: normal;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select:focus {
+  background: url(../images/svgs/arrow-up.svg) 96% / 20px no-repeat #fff;
+}
+
+input, input.form-control, textarea {
+  border: 2px solid #6f777b;
+  border-radius: 0;
+  box-shadow: none;
+  border-color: #6f777b;
+	height: 35px;
+	margin-top: 1px;
+}
+
+input[type=radio], input[type=checkbox] {
+	height: initial;
+	width: initial;
+}
+
+input:focus, input.form-control:focus, select:focus {
+  border: 2px solid #FFBF47;
+  box-shadow: none;
+}
+
+input.input-with-button {
+	height: 40px;
+	width: 50%;
+	margin: 0 15px 0 0;
+}
+
+label {
+	width: 100%;
+}
+
+textarea {
+	height: initial;
+	resize: none;
+}
+
+.block-label {
+	width: auto;
+}
+
+.wrap-radio-button label {
+	width: auto;
+}
+
+/* ============ Mobile Styling - START ============ */
+
+@media (max-width: 640px) {
+  .wrap-radio-button {
+    width: 100%;
+  }
+  input[type=radio], input[type=checkbox] {
+    margin: 0;
+  }
+  input {
+    width: 100%;
+  }
+	/*.wrap-radio-button .specify {
+    padding: 11px 10px 15px 0;
+	}*/
+}
+
+/* ============ Mobile Styling - END ============ */
+
+.wrap-radio-button .row {
+	margin: 0;
+}
+
+.wrap-radio-button .row > div {
+	padding: 0;
+}
+
+.wrap-radio-button input[type=text] {
+	margin-top: 12px;
+	width: 100%;
+}
+
+#details1, #familylist  {
+	margin-bottom: 60px;
+}
+
+#details1 thead, #familylist thead {
+	border-bottom: 5px solid #bfc1c3;
+}
+
+#details1 thead th, #familylist thead th {
+	font-size: 19px;
+}
+
+#details1 td, #familylist td {
+	padding: 1em 1.05263em 1em 0;
+}
+
+#details1 .group-heading td:nth-of-type(2), #familylist .group-heading td:nth-of-type(2) {
+	font-weight: bold;
+}
+
+#details1 .group-heading td:last-of-type, #familylist td:last-of-type, #details1 thead th:last-of-type, #familylist thead th:last-of-type {
+	text-align: right;
+	padding-right: 0;
+}
+
+
+/* ============================== NEW FORM OVERVIEW STYLE - END ============================== */
+
+.panel.with-nav-tabs.panel-default {
+	padding: 0;
+}
+
+#newcontent, #familylist, #pnl-director_table, #details1, #dependentslist {
+	margin: 20px 0 30px 0;
+	display: inline-block;
+	width: 100%;
+}
+
+#newcontent header, #familylist header, #pnl-director_table header, #details1 header, #dependentslist header {
+	border-bottom: 5px solid #eee;
+}
+
+#newcontent header h2, #familylist header h2, #newcontent main p, #familylist main p, #pnl-director_table header h2, #pnl-director_table main p, #details1 header h2, #details1 main p, #dependentslist header h2, #dependentslist main p {
+	margin-top: 0;
+}
+
+/* ------------------------ Intro Banner and Search - Start ------------------------ */
+
+header.homepage-top {
+  background: #005ea5;
+  color: white;
+  margin-bottom: 0;
+}
+
+header.homepage-top .homepage-top-inner {
+  padding: 20px 30px 30px 30px;
+  text-align: left;
+  margin: 0 auto;
+  width: auto;
+  max-width: 1020px;
+  /*color: white;*/
+}
+
+@media (max-width: 640px) {
+	header.homepage-top .homepage-top-inner {
+	  padding: 20px 15px 30px 15px;
+	}
+}
+
+
+/*header.homepage-top .homepage-top-inner:first-of-type {
+  padding-bottom: 0;
+}*/
+
+header.homepage-top .phase-banner {
+  border-bottom: 1px solid white;
+  display: inline-block;
+  width: 100%;
+}
+
+header.homepage-top .homepage-top-inner h1 {
+  margin: 15px 0;
+}
+
+header.homepage-top .homepage-top-inner p {
+  font-size: 19px;
+  color: white;
+}
+
+header.homepage-top .homepage-top-inner .status {
+  float: left;
+  width: 75%;
+}
+
+header.homepage-top .homepage-top-inner .cta {
+  float: right;
+  width: 25%;
+  text-align: right;
+}
+
+header.homepage-top .homepage-top-inner .cta a, header.homepage-top .homepage-top-inner .cta .glyphicon {
+  color: white;
+}
+
+/*#global-header .header-wrapper .header-global .header-logo .content, #global-header.with-proposition .header-wrapper .header-proposition .content {
+  margin: 0;
+}*/
+
+.header-search-content {
+	width: 100%;
+	float: left;
+}
+
+.header-search-content button.submit {
+  border: 1px solid #0b0c0c;
+  border-width: 0 0 0 1px;
+  border-left-color: #222;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  overflow: hidden;
+  text-indent: -5000px;
+  cursor: pointer;
+  color: #fff;
+  background: #0b0c0c;
+  position: relative;
+  margin: 4px 0 0 -46px;
+  width: 42px;
+  height: 42px;
+}
+
+.header-search-content button.submit i.glyphicon-search {
+  width: 20px;
+  height: 20px;
+  color: white;
+  position: absolute;
+  margin: 0;
+  text-indent: 0;
+  top: 11px;
+  left: 12px;
+}
+
+.header-search-content label {
+  display: none;
+}
+
+.header-search-content input {
+  border: 4px solid #0b0c0c;
+  padding: 10px;
+  height: 50px;
+  float: left;
+  padding: 10px;
+  width: 100%;
+  margin: 0;
+}
+
+
+/* OVERRIDE BOOTSTRAP BUTTON COLOUR FOR GOV.UK */
+.btn{
+	 text-decoration:none!important;
+}
+.btn-success{
+	 background:#00823B!important;
+	 color:#fff!important;
+	
+}
+.btn-success:hover{
+	 background:#006435!important;
+	 color:#fff!important;
+}
+
+/* overview start buttons */
+.rowtop label a{
+	text-decoration:none!important;
+	
+}
+.rowtop .label-success{
+	text-decoration:none;
+	background:#00823B!important;
+	 color:#fff!important;
+	 font-size:large!important;
+	 vertical-align:middle;
+	
+}
+.rowtop .label-success:hover{
+	 background:#006435!important;
+	 color:#fff!important;
+}
+
+
+/* ------------------------ Intro Banner and Search - End ------------------------ */

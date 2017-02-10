@@ -1,0 +1,314 @@
+﻿{% extends 'templates/nhsbsa_website_template.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block content %}
+
+<style>        .phase-banner .phase-tag {
+font-size: 16px;
+line-height: 1.25;
+}
+.phase-banner .phase-tag {
+display: -moz-inline-stack;
+display: inline-block;
+margin: 0 8px 0 0;
+padding: 2px 5px 0;
+font-family: "nta", Arial, sans-serif;
+font-weight: 700;
+text-transform: none;
+font-size: 14px;
+line-height: 1.1428571429;
+text-transform: uppercase;
+letter-spacing: 1px;
+text-decoration: none;
+color: #fff;
+background-color: #005ea5;
+</style>
+
+<!-- Stylesheet includes -->     
+<link rel="stylesheet" type="text/css" href="/public/stylesheets/redweb_a.css">
+<link rel="stylesheet" type="text/css" href="/public/stylesheets/redweb_a.css">
+<link rel="stylesheet" href="/public/stylesheets/font-awesome.css">
+
+
+
+<meta name="msapplication-TileColor" content="#ffffff">     
+<meta name="msapplication-TileImage" content="/themes/custom/nhsbsa/favicons/mstile-144x144.png"> 
+<meta name="msapplication-config" content="/themes/custom/nhsbsa/favicons/browserconfig.xml"> 
+<meta name="theme-color" content="#ffffff"> 
+
+
+<div class="page">
+
+<!-- header -->
+  <header class="main_header" id="main-header">
+    <div class="container">
+      <div class="header-row">
+        <div class="header-logo site-logo">
+          <a title="Home" class="site-logo-link" href="page1" rel="home">
+            <img width="" height="77" class="site-logo-image" alt="NHS Buisness Services authority" src="/public/images/bsa-logo.png">
+            <span class="sr-only">NHSBSA</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+<!--   main -->
+  <main class="main_body" id="main-content" style="">
+    <div class="home-bar">
+      <div class="container">
+        <div class="row">
+          <div class="welcome-block column is-block sm-pr-20 is-12 sm-is-6 tablet-is-7 md-is-8 ie-is-8 sm-has-border-right-small">
+
+<!-- welcome row -->
+<!-- took welcome out as an introduction is not needed and takes up space unneccisary on a mobile -->
+    <!--         <h1 class="home-bar-title"> Welcome </h1> -->
+            <article role="article" about="/welcome" data-history-node-id="18">
+              <div class="field field--name-body field--type-text-with-summary field--label-hidden field__item">
+                <article class="embedded-entity">
+                  <article class="media media-image view-mode-default">
+                    <div class="phase-banner">
+                      <p>
+                        <strong class="phase-tag">BETA</strong>
+                        <span>This is a new version of our website – your <a href="mailto:nhsbsa.digital@nhs.net">feedback</a> will help us to improve it.</span>
+                      </p>
+                    </div>
+                  </article>
+                </article>
+                <!-- changed beta banner as all this info isn't needed and takes up room on a mobile -->
+<!--                   <BR>The beta label means you’re looking at a new version of the website which we'll be continually testing and looking to improve. Your feedback is important so please&nbsp;
+                  <a title="Tell us what you think" href="mailto:nhsbsa.digital@nhs.net">tell us what you think&nbsp;about it.</a> -->
+                </p>
+              </div>
+            </article>
+
+<!-- search bar -->
+            <div class="views-exposed-form bef-exposed-form" id="block-search-block" data-block-plugin-id="views_exposed_filter_block:search-search_block" data-drupal-selector="views-exposed-form-search-search-block">
+              <div class="search-block-form searchBar">
+                <form id="views-exposed-form-search-search-block" action="/search" method="get" block="block-search-block">
+                  <div class="js-form-item form-item js-form-type-textfield form-item-aggregated-field js-form-item-aggregated-field">
+                    <label for="edit-aggregated-field">Search</label>
+                    <input name="aggregated_field" class="form-text" id="edit-aggregated-field" type="text" size="30" maxlength="128" placeholder="Search the NHSBSa website" value="">
+                  </div>
+                  <div class="form-actions js-form-wrapper form-wrapper" id="edit-actions--2" data-drupal-selector="edit-actions">
+                    <div class="submit-controller">
+                      <button class="button js-form-submit form-submit" id="edit-submit-search" type="submit" data-drupal-selector="edit-submit-search" value="Search"><span class="submit-inner">Search</span>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+<!--  popular links   -->       
+          <div class="home-bar-link-list column sm-pl-30 is-12 sm-is-6 tablet-is-5 md-is-4 ie-is-4">
+            <h2 style="color:#005eb8">Popular links</h2>
+            <ul class="link-list">
+              <li><a title="Go to apply for your EHIC" href="">Apply for your EHIC</a> </li>
+              <li><a title="Go to apply for your EHIC" href="section">Find help to pay for NHS cost</a> </li>
+              <li><a title="Go to NHS Student Bursaries: BOSS" href="">NHS Student Bursaries: BOSS</a> </li>
+              <li><a title="Go to NHS Dental Services: Compass" href="">NHS Dental Services: Compass</a> </li>
+              <li><a title="Go to Buy a prescription prepayment certificate" href="">Buy a prescription prepayment certificate</a> </li>
+              <li><a title="Go to Information Services portal" href="">Information Services portal</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!--  buckets -->   
+    <div class="services-row">
+      <div class="services-title-row">
+
+<!--       taken this out as it means nothing to citizens -->
+        <!-- <div class="container">
+<div class="row">
+<div class="column">
+<h2 class="services-title">Our service areas...</h2>
+</div>
+</div>
+</div> -->
+      </div>
+      <div class="container mb-60">
+        <div title="Welcome" class="views-element-container homepage" id="block-service-block" data-block-plugin-id="views_block:service_section_block-block_1" url="">
+          <div block="block-service-block">
+            <div class="row view view-service-section-block view-id-service_section_block view-display-id-block_1 js-view-dom-id-bbc41dbac1efc3d5b42f3acad46bb910c9de96fc1e420c4ab2fa2385221beed2">
+              <div class="column tablet-is-4 sm-is-6 is-12 ie-is-4">
+                <div class="serviceBlock light-green">
+                  <div class="serviceBlock-block">
+                    <h3 class="serviceBlock-title">
+<a title="NHS Help with Health Costs" href="section">Help paying NHS costs</a></h3>
+                    <p>Help with prescription and dental charges, and the cost of glasses, travel and other healthcare expenses</p>
+                  </div>
+                </div>
+              </div>
+              <div class="column tablet-is-4 sm-is-6 is-12 ie-is-4">
+                <div class="serviceBlock dark-red">
+                  <div class="serviceBlock-block">
+                    <h3 class="serviceBlock-title"><a title="Student Services" href="">Student 
+Services</a></h3>
+                  </div>
+                </div>
+              </div>
+              <div class="column tablet-is-4 sm-is-6 is-12 ie-is-4">
+                <div class="serviceBlock green">
+                  <div class="serviceBlock-block">
+                    <h3 class="serviceBlock-title"><a title="NHS pensions" href="">NHS 
+pensions</a></h3>
+                  </div>
+                </div>
+              </div>
+              <div class="column tablet-is-4 sm-is-6 is-12 ie-is-4">
+                <div class="serviceBlock dark-green">
+                  <div class="serviceBlock-block">
+                    <h3 class="serviceBlock-title"><a title="NHS prescription Services" href="">NHS 
+prescription Services</a></h3>
+                    <p>Prescribing, dispensing and submitting claims for payment
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="column tablet-is-4 sm-is-6 is-12 ie-is-4">
+                <div class="serviceBlock aqua-green">
+                  <div class="serviceBlock-block">
+                    <h3 class="serviceBlock-title"><a title="NHS Dental Services" href="">NHS 
+Dental Services</a></h3>
+                    <p>Processing, payments and contractual and performance information for dentists and commissioners</p>
+                  </div>
+                </div>
+              </div>
+              <div class="column tablet-is-4 sm-is-6 is-12 ie-is-4">
+                <div class="serviceBlock nhs-blue">
+                  <div class="serviceBlock-block">
+                    <h3 class="serviceBlock-title"><a title="Total Reward Statements" href="">Total 
+Reward Statements</a></h3>
+                  </div>
+                </div>
+              </div>
+              <div class="column tablet-is-4 sm-is-6 is-12 ie-is-4">
+                <div class="serviceBlock orange">
+                  <div class="serviceBlock-block">
+                    <h3 class="serviceBlock-title"><a title="NHS protect" href="">NHS 
+protect</a>
+</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="column tablet-is-4 sm-is-6 is-12 ie-is-4">
+                <div class="serviceBlock light-blue">
+                  <div class="serviceBlock-block">
+                    <h3 class="serviceBlock-title"><a title="Information Services" href="">Information 
+Services</a></h3>
+                    <p>Reports and data to help NHS customers track trends, inform decisions and support policy</p>
+                  </div>
+                </div>
+              </div>
+              <div class="column tablet-is-4 sm-is-6 is-12 ie-is-4">
+                <div class="serviceBlock red">
+                  <div class="serviceBlock-block">
+                    <h3 class="serviceBlock-title"><a title="NHS Injury Benefit Scheme" href="">NHS 
+Injury Benefit Scheme</a>
+</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="column tablet-is-4 sm-is-6 is-12 ie-is-4">
+                <div class="serviceBlock red-alt">
+                  <div class="serviceBlock-block">
+                    <h3 class="serviceBlock-title"><a title="Supplier Management" href="">Supplier 
+Management</a>
+</h3>
+                    <p>Includes NHS Supply Chain and other DH/pHE contracts, NHS customer and supplier boards and price benchmarking</p>
+                  </div>
+                </div>
+              </div>
+              <div class="column tablet-is-4 sm-is-6 is-12 ie-is-4">
+                <div class="serviceBlock nhs-blue">
+                  <div class="serviceBlock-block">
+                    <h3 class="serviceBlock-title"><a title="about us" href="about-us-0">About 
+us</a>
+</h3>
+                    <p>What we do and how we do it, contacting us and making payments
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="related-content-row">
+      <div class="container md-pt-80 pt-60 mb-80 has-border-top-large">
+        <div block="block-views-block-related-blocks-related-blocks">
+          <div class="row view view-related-blocks view-id-related_blocks view-display-id-related_blocks js-view-dom-id-f2e606970ac1f2f38f51efa3eb82a9c5cd8b553ab139b42bd7a034fc87d2b028">
+            <div class="column tablet-is-4 sm-is-6 is-12 ie-is-4">
+              <div class="relatedpageBlock nhs-blue">
+                <div class="relatedpageBlock-block">
+                  <h3 class="relatedpageBlock-title"><a title="Go to NHSBSA website public beta" href="">NHSBSA website public beta</a></h3>
+                  <p>If you have any feedback or queries regarding our new website, please contact nhsbsa.digital@nhs.net</p><a title="Go to NHSBSa website public beta" class="relatedpageBlock-readMore" href="">Read more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="site-back-to-top-wrapper show-from-md ie-is-hidden"><a class="site-back-to-top" href="#top">Back to 
+top</a>
+    </div>
+  </main>
+  <footer class="main_footer" id="main-footer">
+    <div class="footer-wrap">
+      <div class="container">
+        <div class="footer-row footer-primary-row">
+          <div class="header-supporting">
+            <nav id="block-footerprimary" role="navigation" aria-labelledby="block-footerprimary-menu" data-block-plugin-id="system_menu_block:footer">
+              <h2 class="visually-hidden" id="block-footerprimary-menu">footer primary </h2>
+              <ul class="primary-footer-nav">
+                <li class="primary-footer-nav-item"><a class="is-active" href="" data-drupal-link-system-path="<front>">NHSBSA Home</a>
+                </li>
+                <li class="primary-footer-nav-item"><a class="is-active" href="" data-drupal-link-system-path="<front>">Accessibility </a>
+                </li>
+                <li class="primary-footer-nav-item"><a href="" data-drupal-link-system-path="sitemap">Sitemap</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="footer-logo site-logo">
+            <a title="Home" class="site-logo-link" href=""><img width="329" height="71" class="site-logo-image" alt="NHS Buisness Services authority" src="/public/images/bsa-logo.png"> </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-row footer-secondary-row">
+        <div class="container">
+          <div class="header-supporting">
+            <nav id="block-footersecondary" role="navigation" aria-labelledby="block-footersecondary-menu" data-block-plugin-id="system_menu_block:footer-secondary">
+              <h2 class="visually-hidden" id="block-footersecondary-menu">footer 
+secondary</h2>
+              <ul class="secondary-footer-nav">
+                <li class="secondary-footer-nav-item"><a href="" data-drupal-link-system-path="node/319">Secondary</a> </li>
+                <li class="secondary-footer-nav-item"><a class="is-active" href="" data-drupal-link-system-path="<front>">Terms &amp; Conditions</a>
+                </li>
+                <li class="secondary-footer-nav-item"><a class="is-active" href="" data-drupal-link-system-path="<front>">privacy policy &amp; Cookies</a>
+                </li>
+                <li class="secondary-footer-nav-item"><a class="is-active" href="" data-drupal-link-system-path="<front>">Data protection</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+
+<script src="https://use.fontawesome.com/df8872eeb0.js"></script>
+<script src="/public/javascripts/a.js" defer="defer" type="text/javascript"></script>       
+<script src="/public/javascripts/EQCSS.min.js" defer="defer" type="text/javascript"></script>
+
+
+{% endblock %}

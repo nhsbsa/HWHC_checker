@@ -4,6 +4,7 @@ $(document).ready(function(){
 
   // Initialise auto-suggest fields
   //$('.auto-suggest').selectToAutocomplete();
+  GOVUK.modules.start();
   
 
   // Uses radio buttons to emulate a more usable select box
