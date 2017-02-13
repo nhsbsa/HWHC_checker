@@ -142,5 +142,35 @@ a.service-name a:hover {
     border-left-style: solid;
     border-color: #bfc1c3;
     padding: 1rem 0em 1rem 0.8rem;
-    
+}
+a.service-name {
+    text-decoration: none;
+        color: #555;
+    line-height: 1.8;
+  }
+a.service-name a:hover {
+    text-decoration: underline;
+  }
+  .content-panel{
+      border-bottom:2px solid #e0e0e0;
+      margin-bottom:2rem;
+      padding-bottom:1rem;
+ } 
+   .top-line{
+      border-bottom:2px solid #e0e0e0;
+      margin-bottom:2rem;
+      padding-bottom:1rem;
+ } 
+   @media (max-width: 641px) {
+  .top-line {
+  border-bottom:none;
+}
+}
+
+p.bullet{
+margin:0rem;
+}
+
+.part-number::after {
+    text-decoration: none;
 }

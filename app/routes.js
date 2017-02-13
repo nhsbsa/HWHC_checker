@@ -73,6 +73,23 @@ module.exports = {
 
     // add your routes here
 
+
+    
+    //foogle search
+    app.get(/go-handler/, function (req, res) {
+      var term = req.query.search;
+      if(term === 'LIS' || term === 'low income scheme' || term === 'HC2' || term === 'hc2') {
+        res.render('sprints/b6/google/prescription-result', {
+          term : term
+        });
+        console.log(term);
+      } else {
+        res.render('sprints/b6/google/result', {
+          term : term
+        });
+      }
+    });
+
           // partner handler v2
     app.get(/p2-handler/, function (req, res) {
       sprint = req.url.charAt(5);
