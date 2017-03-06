@@ -32,17 +32,26 @@ var warPension = false;
       partnerOrText = 'you';
       partnerAndText = 'you';
       partnersText = 'your';
+      partnersAndText = "your";
       iWe = 'I';
+      jointOrText = 'your';
+      combinedOrText = 'your';
+      partnerPlustext = 'your';
+      singleJointUC = 'Was your take-home pay for your last Universal Credit period £935 or less?';
     } else {
       partnerBothText = 'you, your partner or both of you';
       partnerCommaText = 'you, your partner';
       partnerOrText = 'you or your partner';
       partnerAndText = 'you and your partner';
       partnersText = "your or your partner's";
+      partnersAndText = "your and your partner's";
       parentText = "your parents";
       parentOrText = "your or your parents";
       iWe = 'we';
-
+      jointOrText = 'your joint';
+      combinedOrText = "your and your partner's combined";
+      partnerPlustext = "yours plus your partner's";
+      singleJointUC = 'Did you and your partner have a combined take-home pay of £935 or less in your last Universal Credit period?'
     }
   };
 
@@ -416,7 +425,8 @@ module.exports = {
         if (applicant.age >= 20) {
           if (tcType === 'none') {
             res.render('sprints/b4/passported-benefits', {
-              'partnerortext' : partnerOrText
+              'partnerortext' : partnerOrText,
+                'iwe' : iWe
             });
           } else {
             res.render('sprints/b4/tax-credits-income', {
@@ -487,7 +497,7 @@ var benType;
         } else if (req.query.benefits ==="uniCredit") {
           benType = 'Universal Credit';
           setPartnerText(applicant.partner);
-          res.render('sprints/b3/uc-claim-type', {
+          res.render('sprints/b4/uc-claim-type-v2', {
             'bentype' : benType,
             'partnerortext' : partnerOrText
       });
@@ -518,7 +528,7 @@ var benType;
           // universal credits income handler
       app.get(/uc-type-handler/, function (req, res) {
       if (req.query.ucElement === 'yes') {
-        res.redirect('../uc-income-with-element-v2');
+        res.redirect('../uc-income-with-element-v3');
       } else {
         res.redirect('../uc-income-without-element-v2');
       }

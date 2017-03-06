@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, h6 {
   -moz-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
   -ms-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
   -o-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
-  font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+  font-feature-settings: 'dlig' 0, 'liga' 1, 'lnum' 1, 'kern' 1;
 
   font-family: unquote(map-get($headingtype, font-family));
   font-style: normal;

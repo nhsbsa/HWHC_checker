@@ -1,4 +1,3 @@
-﻿
 @font-face {
 src: url('../fonts/fontawesome-webfont.eot?v=4.7.0');
   src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
@@ -6992,7 +6991,7 @@ li {
   margin: 0px; text-transform: none !important; line-height: 1; font-family: "nhsbsa" !important; font-size: inherit; font-style: normal !important; font-variant: normal !important; font-weight: normal !important; display: inline; transform: translate(0px, 0px); text-rendering: auto; speak: none; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; -webkit-transform: translate(0, 0);
 }
 .status-message::before {
-  padding: 2.4rem 0.8rem; top: 0px; right: 100%; color: rgb(255, 255, 255); font-size: 3.4rem; display: block; position: absolute; content: "\EA18" !important;
+  color: rgb(255, 255, 255); font-size: 3.4rem; display: block; position: absolute; content: url(/public/images/exlaim.png) !important; margin-left:-69px;
 }
 .tick.status-message::before {
   content: "\EA17" !important;
@@ -7175,7 +7174,7 @@ li {
   padding: 0rem 2.9rem; top: 0px; width: 0px; height: 100%; right: 0px; border-left-color: rgba(255, 255, 255, 0.3); border-left-width: 1px; border-left-style: solid; display: block; position: absolute; content: "";
 }
 .ckbtn::after {
-  top: 50%; right: 2rem; font-size: 1.8rem; margin-top: -0.5em; position: absolute; content: "\EA04" !important;
+  top: 50%; right: 2rem; font-size: 1.8rem; margin-top: -0.5em; position: absolute; content: "\f054" !important
 }
 .corporate .ckbtn {
   color: rgb(255, 255, 255);
@@ -8379,8 +8378,9 @@ li {
   border-bottom-color: rgb(226, 174, 92) !important;
 }
 .question-block .link-list li:first-child::before {
-  top: -4px; font-size: 4.6rem; text-decoration: none; content: "\EA06" !important;
+  top: -4px; font-size: 4.6rem; text-decoration: none; content: url(/public/images/askus.png) !important;
 }
+
 .news-block-container h3 {
   margin: 0rem 0rem 1.5rem; color: rgb(85, 85, 85); line-height: 1.4; font-family: Arial,"Helvetica Neue",Helvetica,sans-serif; font-size: 2.8rem; font-weight: 400;
 }
@@ -10012,7 +10012,9 @@ li {
 }
 .sidebar-nav .menu-item-child a:hover {
   text-decoration: underline;
-  border-left-color: rgb(0, 94, 184); border-left-width: 3px; border-left-style: solid;
+  border-left-color: rgb(0, 94, 184);
+  border-left-width: 3px;
+  border-left-style: solid;
 }
 .sidebar-nav .menu-item a:hover {
   text-decoration: underline;

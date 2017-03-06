@@ -1,0 +1,285 @@
+{% extends 'templates/nhsbsa_website_template.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block content %}
+
+
+<!-- Stylesheet includes -->
+<link rel="stylesheet" type="text/css" href="/public/stylesheets/redweb_a.css">
+<link rel="stylesheet" type="text/css" href="/public/stylesheets/redweb_a.css">
+<link rel="stylesheet" href="/public/stylesheets/font-awesome.css">
+
+
+
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/themes/custom/nhsbsa/favicons/mstile-144x144.png">
+<meta name="msapplication-config" content="/themes/custom/nhsbsa/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+
+<div class="page">
+<HEADER class="main_header" id="main-header">
+<DIV class="container">
+<DIV class="header-row">
+<DIV class="header-logo site-logo"><A title="Home" class="site-logo-link" href="https://nhsbsabeta.redweb.network/"
+rel="home"><IMG width="356" height="77" class="site-logo-image" alt="NHS Buisness Services Authority"
+src="HWHC%20-%20NHS%20prescription%20charges%20%20NHSBSA_files/NHSBSA.gif">
+ <SPAN class="sr-only">NHSBSA </SPAN>     </A>
+</DIV></DIV></DIV></HEADER><main class="main_body" id="main-content">
+<DIV class="content-header sm-mt-40 mt-20">
+<DIV class="container">
+<DIV class="row is-just-between sm-is-direction-row is-direction-column ie-text-right">
+<DIV class="column sm-is-none is-auto ie-is-inline-block ie-is-8 ie-text-left">
+<DIV class="service-name-wrapper"><A class="service-name" href="https://nhsbsabeta.redweb.network/nhs-help-health-costs">
+NHS Help with Health Costs</A>                   </DIV><BUTTON class="js-search-toggle search-toggle show-from-sm ie-is-hidden"><SPAN
+class="sr-only">Toggle search</SPAN>                 </BUTTON>
+</DIV>
+<DIV class="column sm-is-none is-auto search-column ie-is-inline-block ie-is-4">
+<DIV class="js-search-controller search-controller">
+<DIV class="js-search-container">
+<DIV title="Welcome" class="views-exposed-form bef-exposed-form homepage" id="block-search-block"
+url="nhsbsabeta.redweb.network%2F" data-block-plugin-id="views_exposed_filter_block:search-search_block"
+data-drupal-selector="views-exposed-form-search-search-block">
+<DIV class="search-block-form searchBar">
+<FORM id="views-exposed-form-search-search-block" action="/search" method="get"
+accept-charset="UTF-8" block="block-search-block">
+<DIV class="js-form-item form-item js-form-type-textfield form-item-aggregated-field js-form-item-aggregated-field"><LABEL
+for="edit-aggregated-field">Search</LABEL><INPUT name="aggregated_field" class="form-text" id="edit-aggregated-field" type="text" size="30" maxlength="128" placeholder="Search the NHSBSA website" value="" data-drupal-selector="edit-aggregated-field"></DIV>
+<DIV class="form-actions js-form-wrapper form-wrapper" id="edit-actions"
+data-drupal-selector="edit-actions">
+<DIV class="submit-controller"><BUTTON class="button js-form-submit form-submit"
+id="edit-submit-search" type="submit" data-drupal-selector="edit-submit-search"
+value="Search"><SPAN class="submit-inner">Search</SPAN></BUTTON>
+</DIV></DIV></FORM></DIV></DIV></DIV></DIV></DIV></DIV>
+<DIV class="row md-mb-40 mb-20 md-mt--10">
+<DIV class="column is-12">
+<DIV title="NHS prescription charges" class="section_page" id="block-custommenu"
+url="nhsbsabeta.redweb.network%2Fhwhc-nhs-prescription-charges"
+data-block-plugin-id="custom_menu_block"><NAV class="service-nav hide-from-md">
+<UL class="nav" block="block-custommenu">
+  <LI class="nav-item nav-item--expanded menu-item--active-trail"><A class="is-active"
+  href="https://nhsbsabeta.redweb.network/hwhc-nhs-prescription-charges"
+  data-drupal-link-system-path="node/874">NHS prescription charges</A>
+
+  <UL class="nav">
+    <LI class="nav-item"><A href="https://nhsbsabeta.redweb.network/nhs-prescription-charges/hwhc-free-nhs-prescriptions"
+    data-drupal-link-system-path="node/873">Free NHS prescriptions</A></LI>
+    <LI class="nav-item"><A href="https://nhsbsabeta.redweb.network/nhs-prescription-charges/hwhc-prescription-prepayment-certificates"
+    data-drupal-link-system-path="node/875">Prescription prepayment
+    certificates</A></LI>
+    <LI class="nav-item"><A href="https://nhsbsabeta.redweb.network/nhs-prescription-charges/hwhc-prescription-exemption-checking-service"
+    data-drupal-link-system-path="node/1215">Prescription Exemption Checking
+    Service</A></LI>
+    <LI class="nav-item"><A href="https://nhsbsabeta.redweb.network/nhs-prescription-charges/hwhc-nhs-prescription-charges-news"
+    data-drupal-link-system-path="node/777">NHS prescription charges
+    news</A></LI></UL></LI>
+  <LI class="nav-item nav-item--expanded"><A href="https://nhsbsabeta.redweb.network/hwhc-nhs-dental-charges"
+  data-drupal-link-system-path="node/1210">NHS dental charges</A>
+
+  <UL class="nav">
+    <LI class="nav-item"><A href="https://nhsbsabeta.redweb.network/nhs-dental-charges/hwhc-free-nhs-dental-treatment"
+    data-drupal-link-system-path="node/1211">Free NHS dental treatment</A></LI>
+    <LI class="nav-item"><A href="https://nhsbsabeta.redweb.network/nhs-dental-charges/hwhc-dental-exemption-checking-service"
+    data-drupal-link-system-path="node/1212">Dental Exemption Checking
+    Service</A></LI>
+    <LI class="nav-item"><A href="https://nhsbsabeta.redweb.network/nhs-dental-charges/hwhc-replacement-dental-appliances"
+    data-drupal-link-system-path="node/1214">Replacement dental
+    appliances</A></LI>
+    <LI class="nav-item"><A href="https://nhsbsabeta.redweb.network/nhs-dental-charges/hwhc-nhs-dental-charges-news"
+    data-drupal-link-system-path="node/1331">NHS dental charges
+  news</A></LI></UL></LI>
+  <LI class="nav-item nav-item--expanded"><A href="https://nhsbsabeta.redweb.network/hwhc-travel-optical-wigs-and-fabric-supports"
+  data-drupal-link-system-path="node/1206">Travel, optical, wigs and fabric
+  supports</A>
+  <UL class="nav">
+    <LI class="nav-item"><A href="https://nhsbsabeta.redweb.network/travel-optical-wigs-and-fabric-supports/hwhc-travel-receive-nhs-treatment"
+    data-drupal-link-system-path="node/1207">Travel to receive NHS
+    treatment</A></LI>
+    <LI class="nav-item"><A href="https://nhsbsabeta.redweb.network/travel-optical-wigs-and-fabric-supports/hwhc-sight-tests-glasses-and-lenses"
+    data-drupal-link-system-path="node/1208">Sight tests, glasses and
+    lenses</A></LI>
+    <LI class="nav-item"><A href="https://nhsbsabeta.redweb.network/travel-optical-wigs-and-fabric-supports/hwhc-wigs-and-fabric-supports"
+    data-drupal-link-system-path="node/1209">Wigs and fabric
+  supports</A></LI></UL></LI>
+  <LI class="nav-item nav-item--expanded"><A href="https://nhsbsabeta.redweb.network/hwhc-nhs-low-income-scheme"
+  data-drupal-link-system-path="node/1203">NHS Low Income Scheme</A>
+
+  <UL class="nav">
+    <LI class="nav-item"><A href="https://nhsbsabeta.redweb.network/nhs-low-income-scheme/hwhc-hc2-certificates"
+    data-drupal-link-system-path="node/1204">HC2 certificates</A></LI>
+    <LI class="nav-item"><A href="https://nhsbsabeta.redweb.network/nhs-low-income-scheme/hwhc-hc3-certificates"
+    data-drupal-link-system-path="node/1205">HC3 certificates</A></LI></UL></LI>
+  <LI class="nav-item nav-item--expanded"><A href="https://nhsbsabeta.redweb.network/hwhc-exemption-certificates"
+  data-drupal-link-system-path="node/1199">Exemption certificates</A>
+
+  <UL class="nav">
+    <LI class="nav-item"><A href="https://nhsbsabeta.redweb.network/exemption-certificates/hwhc-medical-exemption-certificates"
+    data-drupal-link-system-path="node/1200">Medical exemption
+    certificates</A></LI>
+    <LI class="nav-item"><A href="https://nhsbsabeta.redweb.network/exemption-certificates/hwhc-maternity-exemption-certificates"
+    data-drupal-link-system-path="node/1201">Maternity exemption
+    certificates</A></LI>
+    <LI class="nav-item"><A href="https://nhsbsabeta.redweb.network/exemption-certificates/hwhc-nhs-tax-credit-exemption-certficates"
+    data-drupal-link-system-path="node/1202">NHS tax credit exemption
+    certficates</A></LI></UL></LI></UL></NAV>         </DIV><NAV class="service-nav-mobile show-from-md ie-is-hidden">
+<DIV class="js-mobile-menu-container is-hidden"><NAV class="navigation">
+<UL class="menu depth-0">
+  <LI class="menu-item menu-item--expanded menu-item--active-trail"><A class="link-level-0 is-active"
+  href="https://nhsbsabeta.redweb.network/hwhc-nhs-prescription-charges"
+  data-drupal-link-system-path="node/874">NHS prescription charges</A>
+  <UL class="menu depth-1">
+    <LI class="menu-item"><A class="link-level-1" href="https://nhsbsabeta.redweb.network/nhs-prescription-charges/hwhc-free-nhs-prescriptions"
+    data-drupal-link-system-path="node/873">Free NHS prescriptions</A></LI>
+    <LI class="menu-item"><A class="link-level-1" href="https://nhsbsabeta.redweb.network/nhs-prescription-charges/hwhc-prescription-prepayment-certificates"
+    data-drupal-link-system-path="node/875">Prescription prepayment
+    certificates</A></LI>
+    <LI class="menu-item"><A class="link-level-1" href="https://nhsbsabeta.redweb.network/nhs-prescription-charges/hwhc-prescription-exemption-checking-service"
+    data-drupal-link-system-path="node/1215">Prescription Exemption Checking
+    Service</A></LI>
+    <LI class="menu-item"><A class="link-level-1" href="https://nhsbsabeta.redweb.network/nhs-prescription-charges/hwhc-nhs-prescription-charges-news"
+    data-drupal-link-system-path="node/777">NHS prescription charges
+    news</A></LI></UL></LI>
+  <LI class="menu-item"><A class="link-level-0" href="https://nhsbsabeta.redweb.network/hwhc-nhs-dental-charges"
+  data-drupal-link-system-path="node/1210">NHS dental charges</A>
+  <UL class="menu depth-1"></UL></LI>
+  <LI class="menu-item"><A class="link-level-0" href="https://nhsbsabeta.redweb.network/hwhc-travel-optical-wigs-and-fabric-supports"
+  data-drupal-link-system-path="node/1206">Travel, optical, wigs and fabric
+  supports</A>
+  <UL class="menu depth-1"></UL></LI>
+  <LI class="menu-item"><A class="link-level-0" href="https://nhsbsabeta.redweb.network/hwhc-nhs-low-income-scheme"
+  data-drupal-link-system-path="node/1203">NHS Low Income Scheme</A>
+  <UL class="menu depth-1"></UL></LI>
+  <LI class="menu-item"><A class="link-level-0" href="https://nhsbsabeta.redweb.network/hwhc-exemption-certificates"
+  data-drupal-link-system-path="node/1199">Exemption certificates</A>
+  <UL class="menu depth-1"></UL></LI></UL></NAV></DIV><BUTTON name="toggleMobileNav"
+class="menu-toggle js-menu-toggle" type="button">NHS prescription
+charges</BUTTON>                 </NAV></DIV></DIV></DIV></DIV>
+<DIV class="contextual-tabs"></DIV>
+<DIV class="content-row">
+<DIV class="container tablet-mb-65 mb-25">
+<DIV class="row mt--15">
+<DIV class="column is-block lg-is-8 is-12 ie-is-8">
+<DIV title="NHS prescription charges" class="section_page" id="block-pagetitle"
+url="nhsbsabeta.redweb.network%2Fhwhc-nhs-prescription-charges"
+data-block-plugin-id="page_title_block">
+<H1 class="js-quickedit-page-title">NHS prescription charges</H1></DIV><ARTICLE
+role="article" about="/hwhc-nhs-prescription-charges"
+data-history-node-id="874">
+<DIV>
+<DIV class="field field--name-body field--type-text-with-summary field--label-hidden field__item">
+<P>In England, most working age adults have to pay prescription charges. Certain
+groups are entitled to free NHS prescriptions.</P>
+<P>The NHS prescription charge is currently £8.40 for each prescribed item,
+which means that there is a charge for each different drug or medical appliance
+on your prescription. Support stockings are charged per stocking.</P>
+<P>NHS prescriptions in Scotland and Wales are free.</P>
+<H3><STRONG>Refunds</STRONG></H3>
+<P>If you pay NHS prescription charges then find out that you’re entitled to
+free prescriptions or backdate a prescription prepayment certificate, you can
+only get a refund if you were given an FP57 refund receipt when you paid. You
+can’t get one later.</P>
+<P>Take your FP57 refund receipt to any community pharmacy, with evidence that
+you were entitled to free NHS prescriptions when you paid. You must do this
+within three months of the date that you paid. The pharmacy will refund
+you.</P></DIV></DIV></ARTICLE></DIV>
+<DIV class="column is-block is-normal lg-is-4 is-12 ie-is-4">
+<DIV class="row is-direction-column">
+<DIV class="column is-block is-normal is-12 ie-is-12 hide-from-md"><NAV class="breadcrumb sidebar-nav"
+role="navigation" aria-labelledby="system-breadcrumb">
+<H2 class="visually-hidden" id="system-breadcrumb">Breadcrumb</H2>
+<UL>
+  <LI class=" menu-item active menu-item--expanded level-0"><A href="https://nhsbsabeta.redweb.network/hwhc-nhs-prescription-charges">NHS
+  prescription charges</A></LI>
+  <LI class="menu-item-child"><A href="https://nhsbsabeta.redweb.network/nhs-prescription-charges/hwhc-free-nhs-prescriptions">Free
+  NHS prescriptions</A></LI>
+  <LI class="menu-item-child"><A href="https://nhsbsabeta.redweb.network/nhs-prescription-charges/hwhc-prescription-prepayment-certificates">Prescription
+  prepayment certificates</A></LI>
+  <LI class="menu-item-child"><A href="https://nhsbsabeta.redweb.network/nhs-prescription-charges/hwhc-prescription-exemption-checking-service">Prescription
+  Exemption Checking Service</A></LI>
+  <LI class="menu-item-child"><A href="https://nhsbsabeta.redweb.network/nhs-prescription-charges/hwhc-nhs-prescription-charges-news">NHS
+  prescription charges news</A></LI></UL></NAV></DIV>
+<DIV class="column is-normal is-12 ie-is-12">
+<DIV class="social-links-block has-2-items"><SPAN>Follow us</SPAN>
+<UL class="social-list">
+  <LI><A title="Go to NHS Help with Health Costs Facebook" href="https://www.facebook.com/NHSBSAHelpWithHealthCosts"
+  target="_blank">NHS Help with Health Costs Facebook</A></LI>
+  <LI><A title="Go to NHS Help with Health Costs Twitter" href="https://twitter.com/nhshealthcosts"
+  target="_blank">NHS Help with Health Costs Twitter</A></LI></UL></DIV></DIV>
+<DIV class="column is-normal is-12 ie-is-12">
+<DIV class="question-block">
+<H3>Got a question?</H3>
+<UL class="link-list">
+  <LI><A title="Go to Visit our knowledge base" class="is-external" href="https://contactcentreservices.nhsbsa.nhs.uk/selfnhsukokb/AskUs_HWHC/template-group.do"
+  target="_blank">Visit our knowledge base</A></LI>
+  <LI><A title="Go to Contact us" class="is-external" href="https://nhsbsabeta.redweb.network/hwhc-contact-us"
+  target="_blank">Contact
+us</A></LI></UL></DIV></DIV></DIV></DIV></DIV></DIV></DIV>
+<DIV title="NHS prescription charges" class="section_page" id="block-relatedblock"
+url="nhsbsabeta.redweb.network%2Fhwhc-nhs-prescription-charges"
+data-block-plugin-id="related_block"></DIV>
+<DIV title="NHS prescription charges" class="section_page" id="block-relatedblock-2"
+url="nhsbsabeta.redweb.network%2Fhwhc-nhs-prescription-charges"
+data-block-plugin-id="related_block"></DIV>
+<DIV class="service-area-footer bg-white mr--15 ml--15 pl-20 pr-20 tablet-pt-50 pt-15 tablet-pb-50 pb-15">
+<DIV class="container tablet-pb-60 pb-25">
+<DIV block="block-service-footer-blocks">
+<DIV class="row view view-service-footer-v1 view-id-service_footer_v1 view-display-id-block_1 js-view-dom-id-8a41962b85f5af91f8c13120aaccc722d1c0c464a057b8dee08e5789d408da57">
+<DIV class="column tablet-is-4 sm-is-6 is-12 ie-is-4">
+<DIV class="serviceFooterBlock">
+<H3 class="serviceFooterBlock-title"><A href="https://nhsbsabeta.redweb.network/nhsbsa-website-public-beta">NHSBSA
+website public beta</A></H3>
+<P>If you have any feedback or queries about our new website, please contact
+nhsbsa.digital@nhs.net</P><A class="serviceFooterBlock-link" href="https://nhsbsabeta.redweb.network/nhsbsa-website-public-beta">Read
+more</A>    </DIV></DIV></DIV></DIV></DIV></DIV>
+<DIV class="site-back-to-top-wrapper show-from-md ie-is-hidden"><A class="site-back-to-top"
+href="https://nhsbsabeta.redweb.network/hwhc-nhs-prescription-charges#top">Back
+to top</A></DIV></main><FOOTER class="main_footer" id="main-footer">
+<DIV class="footer-wrap">
+<DIV class="container">
+<DIV class="footer-row footer-primary-row">
+<DIV class="header-supporting"><NAV id="block-footerprimary" role="navigation"
+aria-labelledby="block-footerprimary-menu" data-block-plugin-id="system_menu_block:footer">
+<H2 class="visually-hidden" id="block-footerprimary-menu">Footer primary </H2>
+<UL class="primary-footer-nav">
+  <LI class="primary-footer-nav-item"><A title="Go to the homepage of our website"
+  href="https://nhsbsabeta.redweb.network/welcome" data-drupal-link-system-path="node/18">NHSBSA
+  Home</A>               </LI>
+  <LI class="primary-footer-nav-item"><A href="https://nhsbsabeta.redweb.network/sitemap"
+  data-drupal-link-system-path="sitemap">Sitemap</A>               </LI>
+  <LI class="primary-footer-nav-item"><A href="https://nhsbsabeta.redweb.network/our-policies/corporate-accessibility"
+  data-drupal-link-system-path="node/887">Accessibility</A>               </LI>
+  <LI class="primary-footer-nav-item"><A title="Find the contact details for each of our services"
+  href="https://nhsbsabeta.redweb.network/contact-us"
+  data-drupal-link-system-path="node/735">Contact us</A>
+</LI></UL></NAV></DIV>
+<DIV class="footer-logo site-logo"><A title="Home" class="site-logo-link" href="https://nhsbsabeta.redweb.network/"><IMG
+width="329" height="71" class="site-logo-image" alt="NHS Buisness Services Authority"
+src="HWHC%20-%20NHS%20prescription%20charges%20%20NHSBSA_files/NHSBSA.gif">
+         </A>             </DIV></DIV></DIV>
+<DIV class="footer-row footer-secondary-row">
+<DIV class="container">
+<DIV class="header-supporting"><NAV id="block-footersecondary" role="navigation"
+aria-labelledby="block-footersecondary-menu" data-block-plugin-id="system_menu_block:footer-secondary">
+<H2 class="visually-hidden" id="block-footersecondary-menu">Footer
+secondary</H2>
+<UL class="secondary-footer-nav">
+  <LI class="secondary-footer-nav-item"><A title="The terms and conditions of our website"
+  href="https://nhsbsabeta.redweb.network/our-policies/corporate-terms-and-conditions"
+  data-drupal-link-system-path="node/888">Terms and conditions</A>
+  </LI>
+  <LI class="secondary-footer-nav-item"><A title="Find our privacy policy and cookie information"
+  href="https://nhsbsabeta.redweb.network/our-policies/corporate-privacy"
+  data-drupal-link-system-path="node/732">Privacy policy &amp; cookies</A>
+          </LI>
+  <LI class="secondary-footer-nav-item"><A title="Find out about FOI and our publication scheme"
+  href="https://nhsbsabeta.redweb.network/our-policies/corporate-data-protection"
+  data-drupal-link-system-path="node/727">Data protection</A>
+</LI></UL></NAV></DIV></DIV></DIV></DIV></FOOTER></DIV>
+
+
+<script src="https://use.fontawesome.com/df8872eeb0.js"></script>
+<script src="/public/javascripts/a.js" defer="defer" type="text/javascript"></script>
+<script src="/public/javascripts/EQCSS.min.js" defer="defer" type="text/javascript"></script>
+
+
+{% endblock %}

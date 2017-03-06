@@ -1,4 +1,4 @@
-﻿{% extends 'templates/nhsbsa_website_template.html' %}
+{% extends 'templates/nhsbsa_website_template.html' %}
 {% import 'includes/form_macros.html' as form_macros %}
 
 {% block content %}
@@ -81,7 +81,7 @@
                 <div class="row is-just-between sm-is-direction-row is-direction-column ie-text-right">
                     <div class="column sm-is-none is-auto ie-is-inline-block ie-is-8 ie-text-left">
                         <div class="service-name-wrapper">
-                            <a class="service-name" href="section"> Help paying NHS costs</a>
+                            <a class="service-name" href="section-lis"> Help paying NHS costs</a>
                         </div>
 
                         <!-- search -->
@@ -122,9 +122,10 @@
                         <div class="row mt--15">
                             <div class="column is-block lg-is-8 is-12 ie-is-8">
                                 <div title="Check your eligibility" class="content_page" id="block-pagetitle" url="" data-block-plugin-id="page_title_block">
-                                    <h1 class="js-quickedit-page-title">Aged 60 or over</h1>
+                                    <h1 class="js-quickedit-page-title">Aged 60 and over</h1>
                                 </div>
 
+<!--
                                 <div class="article-container group top-line">
 
 
@@ -166,34 +167,26 @@
                                     </div>
                                 </div>
                                 <br>
+-->
 <!-- jump to links -->
                                 <article role="article" about="/social-work-bursary/check-your-eligibility" data-history-node-id="595">
                                     <div>
                                         <div class="field field--name-body field--type-text-with-summary field--label-hidden field__item">
 <!-- under 16 jump to -->
                                             <div id="over60">
-                                                <div class="content-panel">
-                                                    <h3>
-                                                        <strong>Aged 60 or over</strong>
-                                                    </h3>
-                                                    <p class="intro-to-list">
-                                                        People over 60 get:
-                                                    </p>
-                                                    <ul class="form-hint-list">
-                                                        <li>Free NHS prescriptions</li>
-                                                        <li>Free NHS Sight tests</li>
-                                                        <li style="list-style-type:none">and</li>
-                                                        <li>Free NHS dental check-ups, if you live in Scotland or Wales.</li>
-                                                    </ul>
+            <p>People aged 60 and over get free:</p>
+        <ul class="list list-bullet">
+          <li>NHS prescriptions</li>
+          <li>NHS sight tests</li>
+          <li style="list-style-type:none">and</li>
+          <li>NHS dental check-ups, if you live in Scotland or Wales.</li>
+        </ul><br>
 
-                                                    <h3>
-                                                        <strong>Getting Pension Credit Guarantee Credit</strong>
-                                                    </h3>
-                                                     <p class="intro-to-list">
-                                                        People who get Pension Credit Guarantee Credit get 
-                                                    </p>
+         <h3 class="headin-small">If you get Pension Credit Guarantee Credit</h3>
+                                                <p>Pension Credit has two parts – Guarantee Pension Credit and Savings Pension Credit.</p>
+                                                <p>Guarantee Credit tops up your weekly income if you have a low income below £155.60 (for single people) or £237.55 (for couples)</p>
 
-                                          
+         <p>If you get Pension Credit Guarantee Credit, you get free:</p>
         <ul class="list list-bullet">
           <li>NHS prescriptions</li>
           <li>NHS dental treatment for any course of treatment</li>
@@ -206,138 +199,17 @@
           <li>May get help towards the cost of repair or replacement of glasses or contact lenses</li>
           <li>May get help with travel costs for NHS treatment.</li>
         </ul>
-                                                    </ul>
-                                                </div>
+
+
                                             </div>
+<!-- 16,17,18 jump to -->
 
-
-         <h3 class="headin-small">If you get Pension Credit Guarantee Credit</h3>
-         
-
-        <div class="additional-info-no-image">
-        <h3 class="heading-medium">You could still get help with your health costs</h3>
-        <p>You do not have to get benefits to get help. If after your housing costs, you, your partner, or you both have less than:</p>
-<ul>
-    <li>£16,000 in savings, investments or properties – not including where you live</li>
-    <li>£23,250 in savings, investments or properties if you permanently live in a care home</li>
-    </ul>
-    <a href="lis">Help for people who have little money to live on</a>
- </div>
-        <br>
-
-        <p><a class="button button-get-started" href="../../start">Help me work out if I can get help with health costs</a></p>
-
-                                            <div id="u18">
-                                                <div class="content-panel">
-                                                    <h3>
-                                                        <strong>Young people aged 16,17 or 18</strong>
-                                                    </h3>
-                                                    <!-- FTE -->
-                                                    <h5><strong>Those in full time education</strong></h5>
-                                                    <p>Young people aged 16, 17 or 18 who are in full-time education get:</p>
-                                                    <ul class="form-hint-list">
-                                                        <li>Free NHS prescriptions</li>
-                                                        <li>Free NHS Sight tests</li>
-                                                        <li>Free NHS wigs and fabric supports</li>
-                                                        <li>Help towards the cost of new glasses or contact lenses</li>
-                                                        <li>Help towards the cost of repairing or replacing your glasses or contact lenses</li>
-                                                    </ul>
-
-                                                    <p>Unless they or the person responsible for them, usually a parent, gets <a href="">certain benefits</a> or has a <a href="">low income</a>, they don't automatically get:</p>
-                                                    <ul class="form-hint-list">
-                                                        <li class="form-hint-list-item form-hint-list-item--false">
-                                                            <span class="form-hint-list-item__indicator"></span> Help towards the cost of travelling for NHS treatment
-                                                        </li>
-                                                    </ul>
-                                                    <BR>
-                                                    <!--     not in FTE -->
-                                                    <h5><strong>Those not in full time education</strong></h5>
-                                                    <p>Young people aged 16, 17 or 18 who aren't in full-time education get:</p>
-                                                    <ul class="form-hint-list">
-                                                        <li>Free NHS dental treatment for any course of treatment that starts before their 18th birthday</li>
-                                                    </ul>
-
-                                                    <p>Unless they or the person responsible for them, usually a parent, gets <a href="">certain benefits</a> or has a <a href="">low income</a>, they don't automatically get:</p>
-
-                                                    <ul class="form-hint-list">
-                                                        <li>Free NHS prescriptions</li>
-                                                        <li>Free NHS Sight tests</li>
-                                                        <li>Free NHS wigs and fabric supports</li>
-                                                        <li>Help towards the cost of new glasses or contact lenses</li>
-                                                        <li>Help towards the cost of repairing or replacing your glasses or contact lenses</li>
-                                                        <li>Help towards the cost of travelling for NHS treatment
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-<!-- 19 jump to -->
-                                            <div id="u19">
-                                                <h3>
-                                                    <strong>Young people aged 19</strong>
-                                                </h3>
-                                                <p>Young people aged 19 don't automatically get any help with paying NHS costs, unless:</p>
-                                                <ul>
-                                                    <li>They or the person responsible for them (usually a parent or guardian) has a <a href="benefits">Tax Credit Exemption Certificate </a>and are receiving a Child Tax Credit payment for them</li>
-                                                    <p style="margin-bottom: 0rem">or</p>
-                                                    <li>They or the person responsible for them gets <a href="benefits">certain benefits</a> and they are named as dependant on the claim</li>
-                                                    <p style="margin-bottom: 0rem">or</p>
-                                                    <li>They have their own exemption through the <a href="lis">Low Income Scheme</a> (HC2 or HC3 certficate) because they have little money to live of.</li>
-                                                </ul>
-                                            </div>
-                                            <br>
 <!-- scotland and wales -->
-                                            <div id="udevolved">
+<!--                                            <div id="udevolved">-->
 <!-- scotland accoridans -->
 
-                                                <div class="subsections js" data-module="accordion-with-descriptions">
-                                                    <div class="subsection-wrapper">
 
-                                                        <div class="subsection">
-                                                            <div class="subsection__header">
-                                                                <span class="subsection__icon"></span>
-                                                                <h2 class="subsection__title"><a class="subsection__link" aria-expanded="false" aria-controls="subsection_content_0" href="#">Living in or getting treatment in Scotland</a>
-                                                                </h2>
-                                                            </div>
-
-                                                            <div class="subsection__content js-hide" id="subsection_content_0">
-
-                                                                <p class="bullet">Regardless of age, if your GP is in Scotland and your prescription is dispensed in Scotland, you'll get:
-                                                                    <ul>
-                                                                        <li>Free NHS prescriptions</li>
-                                                                    </ul>
-                                                                    <p class="bullet">Regardless of age, if you are a UK resident and visit an opticians in Scotland, you'll get:</p>
-                                                                    <ul>
-                                                                        <li>Free NHS eye examinations</li>
-                                                                    </ul>
-                                                                    <p class="bullet">Regardless of age, if you are registered with a Scottish dentist, you'll get:</p>
-                                                                    <ul>
-                                                                        <li>Free NHS dental check ups</li>
-                                                                    </ul>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="subsection">
-                                                            <div class="subsection__header">
-                                                                <h2 class="subsection__title"><a class="subsection__link" aria-expanded="false" aria-controls="subsection_content_1" href="#">Living in or getting treatment in Wales</a>
-                                                                </h2>
-                                                                <span class="subsection__icon"></span>
-                                                            </div>
-
-                                                            <div class="subsection__content js-hide" id="subsection_content_1">
-                                                                <p class="bullet">Regardless of age, if your GP is in Wales and your prescription is dispensed in Wales, you'll get:</p>
-                                                                <ul>
-                                                                    <li>Free NHS prescriptions</li>
-                                                                </ul>
-                                                                <p class="bullet">Up until your 25th birthday, if you are registered with a Welsh dentist, you'll get:</p>
-                                                                <ul>
-                                                                    <li>Free NHS dental check ups</li>
-                                                                </ul>
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+<!--                                            </div>-->
                                 </article>
 
 <!-- right navigation -->
@@ -350,8 +222,8 @@
                                             <nav class="breadcrumb sidebar-nav" role="navigation" aria-labelledby="system-breadcrumb">
                                                 <h2 class="visually-hidden" id="system-breadcrumb">Breadcrumb</h2>
                                                 <ul>
-                                                    <li class="menu-item level-0 menu-item--expanded">
-                                                        <a href="">Help paying NHS costs</a>
+                                                <li class="menu-item level-0 menu-item--expanded">
+                                                        <a href="section-lis">Help paying NHS costs</a>
                                                     </li>
                                                     <li class="menu-item active">
                                                         <a href="content-children">Children and young people</a>
@@ -381,6 +253,17 @@
                                             </nav>
                                         </div>
                                     </div>
+                                                      <div class="row" style="margin-left:0; margin-top:0;">
+            <div class="col-sm-5" style="padding-left:0">
+            <a title="Check if you can get help" href="../b4/start" style="color: white; text-decoration: none; margin-top:0px;" class="ckbtn">Check if you could get help paying NHS costs</a>
+            </div>
+<!--
+            <div class="panel panel-border-narrow">
+ <span>Use our questionaire tool for a quick check</span>
+  </div>
+-->
+
+            </div>
                                 </div>
                                 </div>
                             </div>

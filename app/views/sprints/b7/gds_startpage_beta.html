@@ -1,0 +1,146 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+
+<style>nav.popular-needs {
+    display: block;
+    width: 30%;
+    float: right;
+    padding-top: 20px;}
+
+nav.popular-needs ul.top-tasks {
+    list-style: none;
+    padding-left: 0;
+}
+    nav.popular-needs ul.top-tasks li a {
+        text-decoration: none;}
+
+nav.popular-needs ul.top-tasks li {
+    font-size: 16px;
+    line-height: 1.25;
+    text-transform: none;
+    font-weight: 700;
+           padding-top: 5px;
+        padding-bottom: 5px;}
+
+.this-is-a-beta {
+    margin: 0;
+    padding-top: 12px;
+    margin-bottom: 20px;
+    font-size: 16px;
+line-height: 1.25;
+font-weight: 400;
+text-transform: none;
+}
+    span.beta {
+    display: inline-block;
+    background: #f47738;
+    color: #fff;
+    font-family: "nta", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    padding: 5px 5px 2px 6px;
+    vertical-align: middle;
+        margin-left: 10px;
+    margin-right: 10px;
+}
+
+</style>
+
+  <div class="grid-row">
+   <div class="column-two-thirds">
+              	<h1 class="heading-xlarge">Apply for help to pay for NHS costs</h1>
+    </div>
+
+  <div class="column-one-third">
+    <nav class="popular-needs">
+      <ul class="top-tasks">
+
+<!--
+        <li><a href="">Changes that affect your tax credits</a></li>
+        <li><a href="">Report a change to your circumstances</a></li>
+-->
+        <li><a href="">Check if you automatically get help to pay for NHS costs</a></li>
+
+      </ul>
+    </nav>
+    </div>
+    </div>
+
+  <div class="grid-row">
+   <div class="column-two-thirds">
+<p class="lede">If you have little money to live off, help is available to pay for things like prescriptons, dental treatment and glasses.</p>
+    </div>
+    </div>
+
+
+  <div class="grid-row" style="border-top: 1px solid #bfc1c3">
+   <div class="column-two-thirds">
+
+   <p style="margin-top:15px">The actual amount you get depends on your income, personal circumstances and outgoings, like council tax and housing costs.</p>
+
+   <p>If you qualify you, your partner and your children may get help to pay for:
+
+   <ul class="list-bullet">
+       <li>NHS dental check-ups and treatments</li>
+       <li>NHS prescriptions</li>
+       <li>NHS wigs and fabric supports</li>
+       <li>sight tests, glasses and contact lenses</li>
+    <li>travel to hospital to receive NHS treatment </li>
+  </ul>
+</p>
+
+  <h2 class="heading-medium">Are you already entitled to help? </h2>
+    <p>You can already claim help with health costs if you have an NHS Tax Credit Exemption Certificate or get any of these benefits:</p>
+
+    Income Support
+    Pension Credit Guarantee Credit
+    Universal Credit
+
+
+
+
+<!--
+        <h1 class="heading-medium" style="margin-top:15px; margin-bottom:0px"><span class="beta">beta</span>
+</h1>
+        <p class="this-is-a-beta">This is a 'beta' service - find out <a href="">what this means for you</a>.</p>
+-->
+  <a class="button button-start" href="mvp/sprint30/renewal_intercept" role="button">Start now</a>
+      </div>
+
+<!--
+<div class="column-half">
+
+        <h2 class="heading-medium" style="margin-top:15px">What you will need</h2>
+        <p>You will need:</p>
+<ul class="list-bullet">
+
+          <li>online reference number &ndash; this is printed on your renewal pack, which is issued between April and July<br><br><img class="award-period" src="/public/images/Award-barcode.png" alt="">
+<div class="" style="padding-left: 20px"></li>
+          <li>National Insurance number</li>
+          <li>mobile phone</li></ul>
+    </div>
+-->
+
+      </div>
+
+    </div>
+
+
+</main>
+
+
+
+{% endblock %}

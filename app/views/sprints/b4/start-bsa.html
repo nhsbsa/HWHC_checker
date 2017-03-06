@@ -1,0 +1,149 @@
+{% extends 'templates/nhsbsa_website_template.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block content %}
+
+<style>
+
+.main_header {
+  padding: 0rem 1.5rem; margin-bottom: 6rem; position: relative; z-index: 1; background-color: rgb(255, 255, 255);
+}
+@media all and (max-width:53.75em)
+{
+.main_header {
+  padding: 0rem 2rem;
+}
+}
+@media all and (max-width:38.75em)
+{
+.main_header {
+  margin-bottom: 0px;
+}
+}
+.main_header::after {
+  background-position: center; left: 0px; top: 85%; width: 100%; height: 120px; position: absolute; z-index: -1; content: ""; background-image: url("/public/images/headerBanner_corporate.png"); background-repeat: no-repeat; background-size: cover;
+}
+@media all and (max-width:38.75em)
+{
+.main_header::after {
+  content: none !important;
+}
+}
+
+.header-row {
+  padding-top: 3.5rem;
+}
+@media all and (max-width:71.25em)
+{
+.header-row {
+  margin: 0px;
+}
+}
+.header-logo {
+  text-align: right; display: block;
+}
+@media all and (max-width:38.75em)
+{
+.header-logo {
+  text-align: center; padding-bottom: 2rem; border-bottom-color: rgb(224, 224, 224); border-bottom-width: 1px; border-bottom-style: solid;
+}
+}
+
+.site-logo-link {
+  text-decoration: none; display: inline-block; max-width: 100%;
+}
+.site-logo-image {
+  margin: 0px; width: 100%;
+}
+.main_header .site-logo-image {
+  max-width: 356px;
+}
+.main_footer .site-logo-image {
+  max-width: 329px;
+}
+/*
+.page {
+  height: 100%; display: flex; min-height: 100vh; flex-direction: column; -webkit-flex-direction: column;
+}
+*/
+</style>
+
+
+<!-- Stylesheet includes -->
+<link rel="stylesheet" href="/public/stylesheets/font-awesome.css">
+
+
+<!-- header -->
+  <header class="main_header" id="main-header">
+    <div class="container">
+      <div class="header-row">
+        <div class="header-logo site-logo">
+          <a title="Home" class="site-logo-link" href="page1" rel="home">
+            <img width="" height="77" class="site-logo-image" alt="NHS Buisness Services authority" src="/public/images/bsa-logo.png">
+            <span class="sr-only">NHSBSA</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!--   main -->
+<main id="content" role="main">
+<a href="javascript:history.go(-1)" class="link-back">Back</a>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+             <form action="uc-type-handler" method="get" class="form">
+
+    <h2 class="heading-large">Do you get any of the following Additional Elements of Universal Credit? </h2>
+         <ul class="list-bullet">
+            <li>
+              <span>Child element</span>
+            </li>
+            <li>
+              <span>Limited capability for work element</span><br>
+              <span class="hint">&nbsp;£126.11 per month</span>
+            </li>
+            <li>
+              <span>Limited capability for work related activity element </span><br>
+              <span class="hint">&nbsp;£315.60 per month</span>
+            </li>
+            </ul>
+
+
+      <div class="form-item-wrapper">
+        <fieldset>
+          <div class="inline-form-groups">
+            <div class="form-group">
+              <input id="yes" name="ucElement" type="radio" value="yes">
+              <label class="form-control-radio" for="yes">
+                Yes
+              </label>
+            </div>
+            <div class="form-group">
+              <input id="no" name="ucElement" type="radio" value="no">
+              <label class="form-control-radio" for="no">
+                No
+              </label>
+            </div>
+          </div>
+
+        </fieldset>
+      </div>
+
+    {{
+      form_macros.button({
+        label: 'Next'
+      })
+    }}
+
+  </form>
+      </div>
+
+    </div>
+
+
+</main>
+
+
+{% endblock %}
