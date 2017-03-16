@@ -203,22 +203,38 @@ module.exports = {
       }
     });
 
-            // country-handler in sprint B4
+            // country-handler with scotland and wales added
       app.get(/country-b4-handler/, function (req, res) {
       if (req.query.countryBeta  === 'englandBeta'&& req.query.gp === 'no'){
         res.redirect('../date-of-birth');
       } else if (req.query.countryBeta  === 'englandBeta'&& req.query.gp === 'yes'){
-        res.redirect('../results/prescription-eng');
+        res.redirect('../date-of-birth');
       } else if (req.query.countryBeta  === 'scotlandBeta') {
-        res.render('sprints/b4/results/country-kickout-scot', {
+        res.render('sprints/b4/date-of-birth', {
             sightText : variText.sightText
         });
       } else if (req.query.countryBeta  === 'walesBeta') {
-        res.redirect('../results/country-kickout-wales');
+        res.redirect('../date-of-birth');
       } else {
         res.redirect('../results/country-kickout-ni');
       }
     });
+                  // country-handler in sprint B4
+//      app.get(/country-b4-handler/, function (req, res) {
+//      if (req.query.countryBeta  === 'englandBeta'&& req.query.gp === 'no'){
+//        res.redirect('../date-of-birth');
+//      } else if (req.query.countryBeta  === 'englandBeta'&& req.query.gp === 'yes'){
+//        res.redirect('../results/prescription-eng');
+//      } else if (req.query.countryBeta  === 'scotlandBeta') {
+//        res.render('sprints/b4/results/country-kickout-scot', {
+//            sightText : variText.sightText
+//        });
+//      } else if (req.query.countryBeta  === 'walesBeta') {
+//        res.redirect('../results/country-kickout-wales');
+//      } else {
+//        res.redirect('../results/country-kickout-ni');
+//      }
+//    });
 
 
       // country-handler in sprint B2
@@ -684,6 +700,54 @@ var benType;
         
 // saving-handler
       app.get(/saving-handler/, function (req, res) {
+        //scotland
+          if (countryBeta === 'scotlandBeta'){
+                if (req.query.savings === 'yes') {
+           if (pregnancy === true) {
+                res.redirect('../answers-preg-nolis');
+           } else if (warPension === true) {
+              res.redirect ('../answers-warpension-nolis');
+           } else if (medicalEx === true) {
+              res.redirect ('../answers-medex-nolis');
+           } else {
+              res.redirect ('../savings-kickout');
+           }
+        } else if (req.query.savings === 'no') {
+            if (pregnancy === true) {
+                res.redirect('../answers-preg-lis-v2');
+            } else if (warPension === true) {
+                res.redirect ('../answers-warpension-lis-v2');
+            } else if (medicalEx === true) {
+                res.redirect ('../answers-medex-lis-v3');
+            } else {
+                res.redirect ('../lis-v3');
+            }
+        }
+        // wales
+              if (countryBeta === 'walesBeta'){
+                    if (req.query.savings === 'yes') {
+           if (pregnancy === true) {
+                res.redirect('../answers-preg-nolis');
+           } else if (warPension === true) {
+              res.redirect ('../answers-warpension-nolis');
+           } else if (medicalEx === true) {
+              res.redirect ('../answers-medex-nolis');
+           } else {
+              res.redirect ('../savings-kickout');
+           }
+        } else if (req.query.savings === 'no') {
+            if (pregnancy === true) {
+                res.redirect('../answers-preg-lis-v2');
+            } else if (warPension === true) {
+                res.redirect ('../answers-warpension-lis-v2');
+            } else if (medicalEx === true) {
+                res.redirect ('../answers-medex-lis-v3');
+            } else {
+                res.redirect ('../lis-v3');
+            }
+
+        }
+              } if (countryBeta === 'englandBeta'){
         if (req.query.savings === 'yes') { 
            if (pregnancy === true) {
                 res.redirect('../answers-preg-nolis');
@@ -702,8 +766,10 @@ var benType;
             } else if (medicalEx === true) {
                 res.redirect ('../answers-medex-lis-v3');
             } else {
-                res.redirect ('../lis-v2');
+                res.redirect ('../lis-v3');
             }
+        }//end scot
+        }//else wales
         }
     });
 
