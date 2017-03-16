@@ -24,6 +24,16 @@ var pregnancy = false;
 var medicalEx = false;
 var warPension = false;
 
+var variText = {
+    sightText : "sight test",
+    setSightText : function() {
+      if(applicant.countryBeta === "scotlandBeta") {
+        this.sightText = "eye exam";
+      }
+    },
+};
+
+
 //partner question variable
  var setPartnerText = function (partner) {
     if (applicant.partner === false) {
@@ -200,7 +210,9 @@ module.exports = {
       } else if (req.query.countryBeta  === 'englandBeta'&& req.query.gp === 'yes'){
         res.redirect('../results/prescription-eng');
       } else if (req.query.countryBeta  === 'scotlandBeta') {
-        res.redirect('../results/country-kickout-scot');
+        res.render('sprints/b4/results/country-kickout-scot', {
+            sightText : variText.sightText
+        });
       } else if (req.query.countryBeta  === 'walesBeta') {
         res.redirect('../results/country-kickout-wales');
       } else {
