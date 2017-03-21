@@ -7,7 +7,7 @@ var person = require("./person.js");
 var applicant = person.createPerson(
   this.age = undefined,
   this.need = undefined,
-  this.country = undefined, 
+  this.country = "england",
   this.education = undefined,
   this.namedOnTaxCredits = undefined,
   this.claimsTaxCredits = false,
@@ -27,10 +27,10 @@ var warPension = false;
 var variText = {
     sightText : "sight test",
     setSightText : function() {
-      if(applicant.countryBeta === "scotlandBeta") {
+      if(applicant.country === "scotland") {
         this.sightText = "eye exam";
       }
-    },
+    }
 };
 
 
@@ -108,6 +108,9 @@ module.exports = {
         });
       }
     });
+
+
+
 
           // partner handler v2
     app.get(/p2-handler/, function (req, res) {
@@ -210,6 +213,7 @@ module.exports = {
       } else if (req.query.countryBeta  === 'englandBeta'&& req.query.gp === 'yes'){
         res.redirect('../date-of-birth');
       } else if (req.query.countryBeta  === 'scotlandBeta') {
+        applicant.country = "scotland";
         res.render('sprints/b4/date-of-birth', {
             sightText : variText.sightText
         });
@@ -701,7 +705,7 @@ var benType;
 // saving-handler
       app.get(/saving-handler/, function (req, res) {
         //scotland
-          if (countryBeta === 'scotlandBeta'){
+          if (applicant.country === 'scotland'){
                 if (req.query.savings === 'yes') {
            if (pregnancy === true) {
                 res.redirect('../answers-preg-nolis');
@@ -720,7 +724,7 @@ var benType;
             } else if (medicalEx === true) {
                 res.redirect ('../answers-medex-lis-v3');
             } else {
-                res.redirect ('../lis-v3');
+                res.redirect ('../lis-scot');
             }
         }
         // wales
@@ -805,3 +809,4 @@ var benType;
       
     }
   };
+

@@ -1,0 +1,200 @@
+ {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+<!--
+{% block afterHeader %}
+  {% include "includes/service-headers/health-costs-checker.html" %}
+{% endblock %}
+-->
+<style>
+.error-message {
+    font-size: 19px;
+    line-height: 1.3157894737;
+}
+.error-message {
+    font-family: "nta", Arial, sans-serif;
+    font-weight: 700;
+    text-transform: none;
+    font-size: 16px;
+    line-height: 1.25;
+    color: #b10e1e;
+    display: block;
+    clear: both;
+    margin: 0;
+    padding: 2px 0;
+}
+
+.form-date .form-group label {
+  display: block;
+  padding-bottom: 2px;
+}
+
+.form-date .form-group input {
+  width: 100%;
+}
+
+.form-date .form-group-year {
+  width: 70px;
+}
+
+.form-group-error {
+  margin-right: 15px;
+  border-left: 4px solid #b10e1e;
+  padding-left: 10px;
+}
+
+@media (min-width: 641px) {
+  .form-group-error {
+    border-left: 5px solid #b10e1e;
+    padding-left: 15px;
+  }
+}
+
+.form-control-error {
+  border: 4px solid #b10e1e;
+}
+
+.error-message {
+  font-family: "nta", Arial, sans-serif;
+  font-weight: 700;
+  text-transform: none;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #b10e1e;
+  display: block;
+  clear: both;
+  margin: 0;
+  padding: 2px 0;
+}
+
+@media (min-width: 641px) {
+  .error-message {
+    font-size: 19px;
+    line-height: 1.3157894737;
+  }
+}
+
+.form-label .error-message,
+.form-label-bold .error-message {
+  padding-top: 4px;
+  padding-bottom: 0;
+}
+
+.error-summary {
+  border: 4px solid #b10e1e;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 15px 10px;
+}
+
+@media (min-width: 641px) {
+  .error-summary {
+    border: 5px solid #b10e1e;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 20px 15px 15px;
+  }
+}
+
+.error-summary:focus {
+  outline: 3px solid #ffbf47;
+}
+
+.error-summary .error-summary-heading {
+  margin-top: 0;
+}
+
+.error-summary p {
+  margin-bottom: 10px;
+}
+
+.error-summary .error-summary-list {
+  padding-left: 0;
+}
+
+@media (min-width: 641px) {
+  .error-summary .error-summary-list li {
+    margin-bottom: 5px;
+  }
+}
+
+.error-summary .error-summary-list a {
+  color: #b10e1e;
+  font-weight: bold;
+  text-decoration: underline;
+}
+</style>
+
+{% block content %}
+  <main id="content" role="main">
+<a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row content-block">
+    <div class="column-two-thirds">
+
+
+  <h1 class="heading-large">
+      <span class="heading-secondary">Based on what you've told us:</span>
+      <br>
+
+
+  <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+
+  <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+    Message to alert the user to a problem goes here
+  </h1>
+
+  <p>
+    Optional description of the errors and how to correct them
+  </p>
+
+  <ul class="error-summary-list">
+    <li><a href="#example-personal-details">Descriptive link to the question with an error</a></li>
+  </ul>
+
+</div>
+
+<h1 class="heading-large">
+  Check your personal details
+</h1>
+
+<p>
+  Look at your name, signature and other details.
+</p>
+
+<form>
+  <div class="form-group form-group-error">
+    <fieldset>
+
+      <legend id="example-personal-details">
+
+        <span class="form-label-bold">
+          Are your personal details correct and up-to-date?
+        </span>
+        <span class="error-message">
+          Error message about personal details goes here
+        </span>
+
+      </legend>
+
+      <div class="multiple-choice">
+        <input id="personal_details_yes" type="radio" name="personalDetails" value="Yes">
+        <label for="personal_details_yes">Yes, my personal details are correct</label>
+      </div>
+
+      <div class="multiple-choice">
+        <input id="personal_details_no" type="radio" name="personalDetails" value="No">
+        <label for="personal_details_no">No, some details are wrong or have changed</label>
+      </div>
+
+    </fieldset>
+  </div>
+
+  <input class="button" type="submit" value="Continue">
+
+</form>
+</main>
+
+          {% endblock %}
+
+
