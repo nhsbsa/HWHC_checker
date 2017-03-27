@@ -43,6 +43,7 @@ var variText = {
       partnerAndText = 'you';
       partnersText = 'your';
       partnersAndText = "your";
+      parentText = "Does your parent or guardian";
       iWe = 'I';
       jointOrText = 'your';
       combinedOrText = 'your';
@@ -55,7 +56,7 @@ var variText = {
       partnerAndText = 'you and your partner';
       partnersText = "your or your partner's";
       partnersAndText = "your and your partner's";
-      parentText = "your parents";
+      parentText = "Does your parent or guardian";
       parentOrText = "your or your parents";
       iWe = 'we';
       jointOrText = 'your joint';
@@ -657,19 +658,21 @@ var benType;
     });
 
 
-    // long term illness
-      app.get(/illness-b4/, function (req, res) {
-      if (req.query.illness === 'yes') {
-          medicalEx = true;
-          setPartnerText(applicant.partner);
-          res.render('sprints/b4/care-home', {
-            'partnerortext' : partnerOrText
-      });
-      } else {
-          medicalEx = false;
-        res.redirect('../care-home');
-      }
+// long term illness
+app.get(/illness-b4/, function (req, res) {
+  if (req.query.illness === 'yes') {
+    medicalEx = true;
+    setPartnerText(applicant.partner);
+    res.render('sprints/b4/care-home', {
+      'partnerortext' : partnerOrText
     });
+  } else {
+    medicalEx = false;
+    res.render('sprints/b4/care-home', {
+      'partnerortext' : partnerOrText
+    });
+  }
+});
 
     // long term illness
 //      app.get(/illness-handler/, function (req, res) {
@@ -697,15 +700,92 @@ var benType;
           res.render('sprints/b4/sc/authority-assessed', {
             'partnerortext' : partnerOrText
       });
-      } else {
-        res.redirect('../savings1');
-      }
+  } else {
+    res.render('sprints/b4/savings1', {
+      'partnerortext' : partnerOrText
     });
+  }
+});
+
+
+//      // saving-handler
+//      app.get(/saving-handler/, function (req, res) {
+//        //scotland
+//          if (applicant.country === 'scotland'){
+//                if (req.query.savings === 'yes') {
+//           if (pregnancy === true) {
+//                res.redirect('../answers-preg-nolis');
+//           } else if (warPension === true) {
+//              res.redirect ('../answers-warpension-nolis');
+//           } else if (medicalEx === true) {
+//              res.redirect ('../answers-medex-nolis');
+//           } else {
+//              res.redirect ('../savings-kickout');
+//           }
+//        } else if (req.query.savings === 'no') {
+//            if (pregnancy === true) {
+//                res.redirect('../answers-preg-lis-v2');
+//            } else if (warPension === true) {
+//                res.redirect ('../answers-warpension-lis-v2');
+//            } else if (medicalEx === true) {
+//                res.redirect ('../answers-medex-lis-v3');
+//            } else {
+//                res.redirect ('../answers-lis-scot');
+//            }
+//        }
+//        // wales
+//         if (applicant.country === 'wales'){
+//                if (req.query.savings === 'yes') {
+//           if (pregnancy === true) {
+//                res.redirect('../answers-preg-nolis');
+//           } else if (warPension === true) {
+//              res.redirect ('../answers-warpension-nolis');
+//           } else if (medicalEx === true) {
+//              res.redirect ('../answers-medex-nolis');
+//           } else {
+//              res.redirect ('../savings-kickout');
+//           }
+//        } else if (req.query.savings === 'no') {
+//            if (pregnancy === true) {
+//                res.redirect('../answers-preg-lis-v2');
+//            } else if (warPension === true) {
+//                res.redirect ('../answers-warpension-lis-v2');
+//            } else if (medicalEx === true) {
+//                res.redirect ('../answers-medex-lis-v3');
+//            } else {
+//                res.redirect ('../answers-lis-scot');
+//            }
+//
+//        }
+//              } if (applicant.country === 'england'){
+//        if (req.query.savings === 'yes') {
+//           if (pregnancy === true) {
+//                res.redirect('../answers-preg-nolis');
+//           } else if (warPension === true) {
+//              res.redirect ('../answers-warpension-nolis');
+//           } else if (medicalEx === true) {
+//              res.redirect ('../answers-medex-nolis');
+//           } else {
+//              res.redirect ('../savings-kickout');
+//           }
+//        } else if (req.query.savings === 'no') {
+//            if (pregnancy === true) {
+//                res.redirect('../answers-preg-lis-v2');
+//            } else if (warPension === true) {
+//                res.redirect ('../answers-warpension-lis-v2');
+//            } else if (medicalEx === true) {
+//                res.redirect ('../answers-medex-lis-v3');
+//            } else {
+//                res.redirect ('../lis-v3');
+//            }
+//        }//end scot
+//        }//else wales
+//        }
+//    });
         
 // saving-handler
       app.get(/saving-handler/, function (req, res) {
-        //scotland
-          if (applicant.country === 'scotland'){
+        //england
                 if (req.query.savings === 'yes') {
            if (pregnancy === true) {
                 res.redirect('../answers-preg-nolis');
@@ -724,56 +804,11 @@ var benType;
             } else if (medicalEx === true) {
                 res.redirect ('../answers-medex-lis-v3');
             } else {
-                res.redirect ('../lis-scot');
-            }
+                setPartnerText(applicant.partner);
+          res.render('sprints/b4/lis-v3', {
+            'partnerortext' : partnerOrText,
+            });
         }
-        // wales
-              if (countryBeta === 'walesBeta'){
-                    if (req.query.savings === 'yes') {
-           if (pregnancy === true) {
-                res.redirect('../answers-preg-nolis');
-           } else if (warPension === true) {
-              res.redirect ('../answers-warpension-nolis');
-           } else if (medicalEx === true) {
-              res.redirect ('../answers-medex-nolis');
-           } else {
-              res.redirect ('../savings-kickout');
-           }
-        } else if (req.query.savings === 'no') {
-            if (pregnancy === true) {
-                res.redirect('../answers-preg-lis-v2');
-            } else if (warPension === true) {
-                res.redirect ('../answers-warpension-lis-v2');
-            } else if (medicalEx === true) {
-                res.redirect ('../answers-medex-lis-v3');
-            } else {
-                res.redirect ('../lis-v3');
-            }
-
-        }
-              } if (countryBeta === 'englandBeta'){
-        if (req.query.savings === 'yes') { 
-           if (pregnancy === true) {
-                res.redirect('../answers-preg-nolis');
-           } else if (warPension === true) {
-              res.redirect ('../answers-warpension-nolis');
-           } else if (medicalEx === true) {
-              res.redirect ('../answers-medex-nolis');
-           } else {
-              res.redirect ('../savings-kickout');
-           }
-        } else if (req.query.savings === 'no') {
-            if (pregnancy === true) {
-                res.redirect('../answers-preg-lis-v2');
-            } else if (warPension === true) {
-                res.redirect ('../answers-warpension-lis-v2');
-            } else if (medicalEx === true) {
-                res.redirect ('../answers-medex-lis-v3');
-            } else {
-                res.redirect ('../lis-v3');
-            }
-        }//end scot
-        }//else wales
         }
     });
 
@@ -784,7 +819,7 @@ var benType;
       } else {
            setPartnerText(applicant.partner);
           res.render('sprints/b4/sc/savings', {
-            'partnerortext' : partnerOrText,
+            'partnerortext' : partnerAndText,
       });
       }
     });

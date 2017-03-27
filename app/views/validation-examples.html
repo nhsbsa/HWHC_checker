@@ -6,6 +6,8 @@
 
 {% block content %}
 
+
+
 <main id="content" role="main">
   <div class="grid-row">
     <div class="column-two-thirds">
@@ -14,6 +16,7 @@
 
       <form>
         <!-- Text inputs -->
+<!--
         <div class="form-group">
          <fieldset data-required data-error="Cannot be blank">
            <label class="form-label-bold" for="full-name">
@@ -32,8 +35,9 @@
            <input class="form-control" name="occupation" type="text">
          </fieldset>
         </div>
-
+-->
         <!-- Date of birth -->
+<!--
         <div class="form-group">
          <fieldset data-required data-error="Cannot be blank">
            <legend class="form-label-bold">Date of birth</legend>
@@ -57,25 +61,51 @@
            </div>
          </fieldset>
         </div>
+-->
 
         <!-- Radio buttons -->
+<!--
+        <div class="inline-form-groups">
         <div class="form-group">
+         <fieldset class="" data-required data-error="Choose yes or no">
+           <legend class="heading-medium">Do have a personal user account?</legend>
+
+           <label class="form-control-radio" for="yes">
+             <input id="yes" type="radio" name="ftehigher" value="Yes">
+             Yes
+           </label>
+             </div>
+
+            <div class="form-group">
+           <label class="form-control-radio" for="no">
+             <input id="no" type="radio" name="ftehigher" value="No">
+             No
+           </label>
+         </fieldset>
+        </div>
+          </div>
+-->
+
+<div class="form-group">
          <fieldset class="inline" data-required data-error="Choose yes or no">
            <legend class="heading-medium">Do have a personal user account?</legend>
 
-           <label class="block-label" for="radio-inline-1">
+           <label class="form-control-radio" for="radio-inline-1">
              <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
              Yes
            </label>
 
-           <label class="block-label" for="radio-inline-2">
+           <label class="form-control-radio" style="margin-left:1em" for="radio-inline-2">
              <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
              No
            </label>
          </fieldset>
         </div>
 
+
+
         <!-- Checkboxes -->
+<!--
         <div class="form-group">
          <fieldset data-required data-error="Choose at least one option">
            <legend class="heading-medium">Which documents do you have?</legend>
@@ -96,8 +126,12 @@
            </label>
          </fieldset>
         </div>
+-->
+
+
 
         <!-- Textarea -->
+<!--
         <div class="form-group">
          <fieldset data-required data-error="Cannot be blank">
            <legend class="heading-medium">Do you have difficulty completing daily activities</legend>
@@ -109,6 +143,7 @@
            <textarea id="circumstances" rows="5" cols="30" class="form-control" name="circumstances"></textarea>
          </fieldset>
         </div>
+-->
 
         <div class="form-group">
          <input type="submit" class="button" value="Continue">
@@ -118,7 +153,7 @@
   </div>
 </main>
 
-<script src="/link_to_validation.js">
+<script src="/public/javascripts/validation.js">
 </script>
 
 {% endblock %}
