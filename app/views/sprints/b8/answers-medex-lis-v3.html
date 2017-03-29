@@ -10,15 +10,6 @@
 
 
 <style>
-
-        .lis-callout{
-background-color: #F8F8F8;
-float: left;
-margin-right: 2%;
-border: 10px solid #dee0e2;
-padding: 0 15px;
-    }
-
     .panel__column{
         background-color: #F8F8F8;
 border-left-width: 3px;
@@ -123,7 +114,7 @@ font-size:19px;
   }
 }
     .callout{
-        margin-top:32px;
+        margin-top:1.5em;
     }
     .callout--compact {
     display: inline-block;
@@ -134,11 +125,13 @@ font-size:19px;
     border: solid #768692;
     border-width: 0 0 0 4px;
 }
-        .neg-heading{
-            padding-top: 1em;
-            border-top: 2px solid #b9d2dc;
+    .top-space
+    {
+        margin-top:1.3em;
     }
-
+    .text-smaller-spacing{
+        line-height:2.5rem
+    }
 
 </style>
 
@@ -153,43 +146,62 @@ font-size:19px;
   <h1 class="heading-large">
       <span class="heading-secondary">Based on what you've told us:</span>
       <br>
-
-
 You get free prescriptions</h1>
 
          <p class="intro-to-list">
-         Because you have a GP in Scotland, you get free:         </p>
+          Because you have a listed long-term medical condition, you could get free:
+        </p>
         <ul class="form-hint-list">
     <li class="form-hint-list-item form-hint-list-item--valid">
         <span class="form-hint-list-item__indicator"></span>
-        <strong>NHS prescriptions</strong><br>
-        <span style="padding-left:30px">If your prescription is also dispensed in Scotland.</span>
+        NHS prescriptions<br>
+    </li>
+    </ul>
+    <h2 class="heading-small">You don't get help towards the cost of:</h2>
+        <ul>
+                       <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__indicator"></span>
+        NHS dental check ups and treatment
+    </li>
+            <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__indicator"></span>
+        NHS sight tests
+    </li>
+    <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__indicator"></span>
+       New or replacement glasses or contact lenses
+    </li>
+    <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__indicator"></span>
+        NHS wigs and fabric supports
     </li>
 
-<br>
-
-      <div class="lis-callout" id="get" style="padding: 0 15px;">
-    <div class="panel__content">
-
-<h2 class="heading-medium">You may also get help paying for:</h2>
-<!--                <h2 class="heading-small">You don't get help towards the cost of:</h2>-->
-        <ul class="list-bullet">
-            <li>NHS dental check ups and treatment</li>
-            <li>Eye exams</li>
-            <li>New or replacement glasses or contact lenses</li>
-            <li>NHS wigs and fabric supports</li>
-            <li>Travel to receive NHS treatment</li>
+    <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__indicator"></span>
+        Travel to receive NHS treatment
+    </li>
         </ul>
 
-            <p>If you find it hard to pay your NHS costs, you could get help if you're left with less than £128 after you pay your council tax and housing costs.</p>
-        <p>How much help you get depends on your household income and outgoings.</p>
-        <p>You don't have to be claiming benefits to apply.</p>
+     <section class="top-space">
+<h2 class="heading-medium">What you should do next</h2>
 
-<p class="box-height">Any help you're entitled to is also available to your partner.</p>
-            <p><a class="button button-get-started" href="http://www.nhsbsa.nhs.uk/1125.aspx" id="next">Find out more</a></p>
-    </div>
-  </div>
+         <p style="text-smaller-spacing">To get free prescriptions you need a medical exemption certificate.<br>
+         You should speak to your doctor to see if you can apply.</p>
 
+</section>
+
+
+
+
+<h3 class="heading-small">If you find it hard to pay for the other things you don't get free, you might get help through the Low Income Scheme.</h3>
+
+          {{
+        form_macros.button({
+          classes: 'button-secondary-cta',
+          href: 'http://www.nhsbsa.nhs.uk/HealthCosts/1128.aspx',
+          label: 'Find out about the Low Income Scheme'
+        })
+      }}
 
     </div>
     </div>

@@ -10,15 +10,6 @@
 
 
 <style>
-
-        .lis-callout{
-background-color: #F8F8F8;
-float: left;
-margin-right: 2%;
-border: 10px solid #dee0e2;
-padding: 0 15px;
-    }
-
     .panel__column{
         background-color: #F8F8F8;
 border-left-width: 3px;
@@ -153,44 +144,87 @@ font-size:19px;
   <h1 class="heading-large">
       <span class="heading-secondary">Based on what you've told us:</span>
       <br>
-
-
-You get free prescriptions</h1>
+You get free prescriptions and dental care</h1>
 
          <p class="intro-to-list">
-         Because you have a GP in Scotland, you get free:         </p>
+          Because you're pregnant or have had a baby in the last 12 months, you get free:
+        </p>
         <ul class="form-hint-list">
     <li class="form-hint-list-item form-hint-list-item--valid">
         <span class="form-hint-list-item__indicator"></span>
-        <strong>NHS prescriptions</strong><br>
-        <span style="padding-left:30px">If your prescription is also dispensed in Scotland.</span>
+        NHS prescriptions (with a valid maternity exemption certificate) <br>
+<!--        <p>To get free prescriptions you need to have a valid maternity exemption certificate.</p>-->
+    </li>
+    <li class="form-hint-list-item form-hint-list-item--valid">
+        <span class="form-hint-list-item__indicator"></span>
+        NHS dental treatment
+    </li>
+    </ul>
+
+ <h2 class="heading-small">You don't get help towards the cost of:</h2>
+        <ul>
+            <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__indicator"></span>
+        NHS sight tests
+    </li>
+    <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__indicator"></span>
+       New or replacement glasses or contact lenses
+    </li>
+    <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__indicator"></span>
+        NHS wigs and fabric supports
     </li>
 
-<br>
-
-      <div class="lis-callout" id="get" style="padding: 0 15px;">
-    <div class="panel__content">
-
-<h2 class="heading-medium">You may also get help paying for:</h2>
-<!--                <h2 class="heading-small">You don't get help towards the cost of:</h2>-->
-        <ul class="list-bullet">
-            <li>NHS dental check ups and treatment</li>
-            <li>Eye exams</li>
-            <li>New or replacement glasses or contact lenses</li>
-            <li>NHS wigs and fabric supports</li>
-            <li>Travel to receive NHS treatment</li>
+    <li class="form-hint-list-item form-hint-list-item--false">
+        <span class="form-hint-list-item__indicator"></span>
+        Travel to receive NHS treatment
+    </li>
         </ul>
 
-            <p>If you find it hard to pay your NHS costs, you could get help if you're left with less than £128 after you pay your council tax and housing costs.</p>
-        <p>How much help you get depends on your household income and outgoings.</p>
-        <p>You don't have to be claiming benefits to apply.</p>
 
-<p class="box-height">Any help you're entitled to is also available to your partner.</p>
-            <p><a class="button button-get-started" href="http://www.nhsbsa.nhs.uk/1125.aspx" id="next">Find out more</a></p>
+  <h2 class="heading-medium">What you should do next</h2>
+
+          <h3 class="heading-small">Prescriptions</h3>
+
+          <p>To get free prescriptions you need to have a valid maternity exemption certificate. Get an application form from your midwife, doctor or health visitor.</p>
+          <p>You can apply while you're pregnant and up to a year after your baby was born.</p>
+
+                <details>
+  <summary><span class="summary">Loss of a baby</span></summary>
+
+  <div class="panel panel-border-narrow">
+      <p>If you lost your baby after the 24th week of your pregnancy, you can still apply for a maternity exemption certificate.</p>
+      <p>If you have a miscarriage, abortion or stillborn birth you can use your maternity exemption certificate until it expires.</p>
     </div>
-  </div>
+
+</details>
+
+          <br>
+
+          <h3 class="heading-small">Dental check ups and treatment </h3>
+          <p>To get free dental care you may need to show proof of your pregnancy, or that you have had a baby in the past 12 months. You can show things like:</p>
+
+        <ul class="list-bullet">
+        <li>a valid maternity exemption certificate</li>
+        <li>a MATB1 certificate issued by your midwife or GP</li>
+        <li>your child's birth certificate</li>
+        <li>a notification of birth form – the midwife who delivers your baby will give you this form</li>
+        <li>a stillbirth certificate- issued by your local registrar of births, marriages and deaths</li>
+
+        </ul>
 
 
+
+    <h3 class="heading-small">If you find it hard to pay for the other things you don't get free, you might get help through the Low Income Scheme.</h3>
+
+          {{
+        form_macros.button({
+          classes: 'button-secondary-cta',
+          href: 'http://www.nhsbsa.nhs.uk/HealthCosts/1128.aspx',
+          label: 'Find out about the Low Income Scheme'
+        })
+      }}
     </div>
     </div>
 
