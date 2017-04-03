@@ -41,6 +41,7 @@ var variText = {
       partnerCommaText = 'you';
       partnerOrText = 'you';
       partnerAndText = 'you';
+      partnerAndTextDo = 'Do you';
       partnersText = 'your';
       partnersAndText = "your";
       parentText = "Does your parent or guardian";
@@ -54,6 +55,7 @@ var variText = {
       partnerCommaText = 'you, your partner';
       partnerOrText = 'you or your partner';
       partnerAndText = 'you and your partner';
+      partnerAndTextDo = 'Do you and your partner';
       partnersText = "your or your partner's";
       partnersAndText = "your and your partner's";
       parentText = "Does your parent or guardian";
@@ -345,7 +347,7 @@ module.exports = {
       if (applicant.namedOnTaxCredits === 'yes' || applicant.namedOnTaxCredits === 'nk' ) {
         setPartnerText(applicant.partner);
         res.render('sprints/b4/tax-credits-income', {
-        'partnerandtext' : partnerAndText
+        'partnerandtextdo' : partnerAndTextDo
       });
       } else {
         res.redirect('../tax-credits-under20-parents');
