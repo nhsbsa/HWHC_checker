@@ -50,6 +50,7 @@ var variText = {
       combinedOrText = 'your';
       partnerPlustext = 'your';
       singleJointUC = 'Was your take-home pay for your last Universal Credit period £935 or less?';
+      parentUC = 'Was your take-home pay for your last Universal Credit period £935 or less?';
     } else {
       partnerBothText = 'you, your partner or both of you';
       partnerCommaText = 'you, your partner';
@@ -64,7 +65,8 @@ var variText = {
       jointOrText = 'your joint';
       combinedOrText = "your and your partner's combined";
       partnerPlustext = "yours plus your partner's";
-      singleJointUC = 'Did you and your partner have a combined take-home pay of £935 or less in your last Universal Credit period?'
+      singleJointUC = 'Did you and your partner have a combined take-home pay of £935 or less in your last Universal Credit period?';
+      parentUC = 'Did you and your partner have a combined take-home pay of £935 or less in your last Universal Credit period?';
     }
   };
 
@@ -170,7 +172,7 @@ module.exports = {
 //      }
 //    });
 
-          // dob-handler
+    // dob-handler
     app.get(/dob-handler/, function (req, res) {
       applicant.age = (thisYear - req.query.dobyear);
       console.log(applicant.age);
@@ -487,7 +489,7 @@ var benType;
       app.get(/passportedBen-u20/, function (req, res) {
         if (req.query.benefits ==="incomeSupport") {
           benType = 'Income Support';
-          res.render('sprints/b3/results/full-exemption-benefits', {
+          res.render('sprints/b4/results/full-exemption-benefits', {
             'bentype' : benType
           });
         } else if (req.query.benefits ==="uniCredit") {
@@ -499,17 +501,17 @@ var benType;
       });
         } else if (req.query.benefits ==="jsa") {
           benType = 'income based Job Seekers Allowance (JSA)';
-          res.render('sprints/b3/results/full-exemption-benefits', {
+          res.render('sprints/b4/results/full-exemption-benefits', {
             'bentype' : benType
           });
         } else if (req.query.benefits ==="esa") {
           benType = 'income related Employment and Support Allowance (ESA)';
-          res.render('sprints/b3/results/full-exemption-benefits', {
+          res.render('sprints/b4/results/full-exemption-benefits', {
             'bentype' : benType
           });
         } else if (req.query.benefits ==="penCredit") {
           benType = 'Pension Credit (Guarantee Credit)';
-          res.render('sprints/b3/results/full-exemption-benefits', {
+          res.render('sprints/b4/results/full-exemption-benefits', {
             'bentype' : benType
           });
         } else if (req.query.benefits === 'continue') {
@@ -526,7 +528,7 @@ var benType;
       app.get(/passportedBen-handler/, function (req, res) {
         if (req.query.benefits ==="incomeSupport") {
           benType = 'Income Support';
-          res.render('sprints/b3/results/full-exemption-benefits', {
+          res.render('sprints/b4/results/full-exemption-benefits', {
             'bentype' : benType
           });
         } else if (req.query.benefits ==="uniCredit") {
@@ -538,17 +540,17 @@ var benType;
       });
         } else if (req.query.benefits ==="jsa") {
           benType = 'income based Job Seekers Allowance (JSA)';
-          res.render('sprints/b3/results/full-exemption-benefits', {
+          res.render('sprints/b4/results/full-exemption-benefits', {
             'bentype' : benType
           });
         } else if (req.query.benefits ==="esa") {
           benType = 'income related Employment and Support Allowance (ESA)';
-          res.render('sprints/b3/results/full-exemption-benefits', {
+          res.render('sprints/b4/results/full-exemption-benefits', {
             'bentype' : benType
           });
         } else if (req.query.benefits ==="penCredit") {
           benType = 'Pension Credit (Guarantee Credit)';
-          res.render('sprints/b3/results/full-exemption-benefits', {
+          res.render('sprints/b4/results/full-exemption-benefits', {
             'bentype' : benType
           });
         } else if (req.query.benefits === 'continue') {
